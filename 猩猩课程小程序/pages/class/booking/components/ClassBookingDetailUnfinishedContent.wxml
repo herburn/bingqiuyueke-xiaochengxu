@@ -1,0 +1,20 @@
+<view class="unfinished-content">
+    <booking-detail-header bind_init="_initComponent" chatType="friend" detail="{{bookingDetail.header}}"></booking-detail-header>
+    <booking-detail-body bind_init="_initComponent" class="booking-detail-body" isShowTips="{{true}}" notes="{{bookingDetail.notes}}">
+        <view class="body-top" slot="top">
+            <waiting-count-row bind_init="_initComponent" class="row" waitInfo="{{bookingDetail.waitInfo}}" wx:if="{{bookingDetail.waitInfo}}"></waiting-count-row>
+            <subscribe-msg-row bind_init="_initComponent" class="row" params="{{bookingDetail.subscribeMsg}}"></subscribe-msg-row>
+            <first-read-row bind_init="_initComponent" class="row" label="{{bookingDetail.bookingTip.label}}" url="{{bookingDetail.bookingTip.tipUrl}}" wx:if="{{bookingDetail.bookingTip}}"></first-read-row>
+            <entry-password-unfinished-row bind_init="_initComponent" class="row" value="{{bookingDetail.entryPassword}}" wx:if="{{!bookingDetail.waitInfo}}"></entry-password-unfinished-row>
+            <person-num-unfinished-row bind_init="_initComponent" class="row" value="{{bookingDetail.bookingCount+'人'}}"></person-num-unfinished-row>
+            <address-row bind_init="_initComponent" boxInfo="{{bookingDetail.boxInfo}}" class="row" value="{{bookingDetail.boxInfo.address}}"></address-row>
+            <booking-num-unfinished-row bind_init="_initComponent" bookingNumberInfo="{{bookingDetail.bookingNumberInfo}}" class="row" wx:if="{{!bookingDetail.waitInfo&&bookingDetail.bookingNumberInfo}}"></booking-num-unfinished-row>
+        </view>
+        <view class="body-bottom" slot="bottom">
+            <price-row bind_init="_initComponent" class="price-row" needAmount="{{bookingDetail.price.actuallyPay}}" orderAmount="{{bookingDetail.price.totalPrice}}" payWay="{{bookingDetail.price.payTypeStr}}"></price-row>
+            <page-resident-button bind_init="_initComponent" bindtapPageBtn="_proxy" class="page-btn" data-wpy-evt="1066-0" items="{{bookingDetail.btnInfo.items}}" width="654rpx"></page-resident-button>
+            <view class="btn-tip">{{bookingDetail.btnInfo.tip}}</view>
+        </view>
+    </booking-detail-body>
+</view>
+<refund-dialog bind_init="_initComponent" bindclose="_proxy" bindconfirm="_proxy" class="refund-dialog" confirmDialogContent="{{refundConfirmInfo.isRefund?'':'本次取消不支持退款，确认取消预约么？'}}" data-wpy-evt="1066-1" isShowRefundDialog="{{isShowRefundDialog}}" refundConfirmInfo="{{refundConfirmInfo}}"></refund-dialog>

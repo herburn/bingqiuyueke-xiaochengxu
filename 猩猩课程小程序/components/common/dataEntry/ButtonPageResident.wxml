@@ -1,0 +1,13 @@
+<view class="page-btn page-btn-single" style=" {{'width:'+width+';'+'height:'+height+';'}}" wx:if="{{mode==='single'}}">
+    <view bindtap="_proxy" class="btn {{itemsClass[0]}}" data-wpy-evt="1050-0" hoverClass="{{itemsHoverClass[0]}}">{{items[0].label}}</view>
+</view>
+<view class="page-btn page-btn-double-avg {{cuttingClass}}" style=" {{'width:'+width+';'+'height:'+height+';'}}" wx:elif="{{mode==='doubleAvg'}}">
+    <view bindtap="_proxy" class=" btn btn-first {{itemsClass[0]}}" data-wpy-evt="1050-1" hoverClass="{{itemsHoverClass[0]}}">{{items[0].label}}</view>
+    <view bindtap="_proxy" class=" btn btn-second {{itemsClass[1]}}" data-wpy-evt="1050-2" hoverClass="{{itemsHoverClass[1]}}">{{items[1].label}}</view>
+</view>
+<view class="page-btn page-btn-double-prior {{cuttingClass}}" style=" {{'width:'+width+';'+'height:'+height+';'}}" wx:else>
+    <button bindtap="_proxy" class="btn btn-first {{itemsClass[0]}}" data-wpy-evt="1050-3" hoverClass="{{itemsHoverClass[0]}}" openType="share" wx:if="{{items[0].btnType==='share'}}">{{items[0].label}}</button>
+    <view bindtap="_proxy" class="btn btn-first {{itemsClass[0]}}" data-wpy-evt="1050-4" hoverClass="{{itemsHoverClass[0]}}" wx:else>{{items[0].label}}</view>
+    <button bindtap="_proxy" class="btn btn-second {{itemsClass[1]}}" data-wpy-evt="1050-5" hoverClass="{{itemsHoverClass[1]}}" openType="share" wx:if="{{items[1].btnType==='share'}}">{{items[1].label}}</button>
+    <view bindtap="_proxy" class="btn btn-second {{itemsClass[1]}}" data-wpy-evt="1050-6" hoverClass="{{itemsHoverClass[1]}}" wx:else>{{items[1].label}}</view>
+</view>

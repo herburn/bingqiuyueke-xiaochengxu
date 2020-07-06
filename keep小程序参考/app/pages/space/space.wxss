@@ -1,0 +1,219 @@
+page {
+    background-color: #fafafa;
+}
+
+.top-card {
+    background-color: #fff;
+    padding-bottom: 30rpx;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 500rpx;
+}
+
+.banner .swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.banner .swiper .slide-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.banner .swiper-index {
+    position: absolute;
+    bottom: 60rpx;
+    right: 30rpx;
+    padding: 0 10rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    border-radius: 4rpx;
+    background-color: rgba(0,0,0,0.4);
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.banner .banner-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20rpx;
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+}
+
+.gym-info {
+    position: relative;
+    margin: -30rpx 30rpx 0;
+}
+
+.gym-info .gym-name-wrap {
+    padding: 30rpx 0 42rpx;
+    margin: 0 30rpx;
+}
+
+.gym-info .gym-name-wrap .gym-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.gym-info .gym-name-wrap .gym-name .name {
+    line-height: 60rpx;
+    font-size: 46rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.gym-info .gym-name-wrap .gym-name .collection-common {
+    width: 46rpx;
+    height: 46rpx;
+    background-image: url("https://static1.keepcdn.com/2019/09/30/14/1569826776984_69x69.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.gym-info .gym-name-wrap .gym-name .collection-common.active {
+    background-image: url("https://static1.keepcdn.com/2019/09/30/14/1569826797144_69x69.png");
+}
+
+.gym-info .gym-name-wrap .score-wrap {
+    margin-top: 30rpx;
+    display: flex;
+    align-items: center;
+    font-size: 0;
+}
+
+.gym-info .gym-name-wrap .score-wrap .score {
+    display: flex;
+    align-items: center;
+    height: 34rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.4);
+    font-weight: bold;
+}
+
+.gym-info .gym-name-wrap .score-wrap .score .keep-star {
+    margin-right: 10rpx;
+}
+
+.gym-info .gym-name-wrap .score-wrap .score text {
+    padding-left: 10rpx;
+}
+
+.gym-info .gym-name-wrap .score-wrap .operation-tags {
+    margin-left: 20rpx;
+}
+
+.gym-info .address-wrap {
+    padding: 37rpx 0;
+    margin: 0 30rpx;
+}
+
+.gym-info .address-wrap .address {
+    height: 72rpx;
+    display: flex;
+    align-items: center;
+}
+
+.gym-info .address-wrap .address .place {
+    padding-left: 42rpx;
+    padding-right: 136rpx;
+    background-image: url("https://static1.keepcdn.com/2019/09/30/15/1569826827766_48x48.png");
+    background-position: 0rpx 2rpx;
+    background-size: 32rpx 32rpx;
+    background-repeat: no-repeat;
+    line-height: 36rpx;
+    font-size: 26rpx;
+    color: #000;
+}
+
+.gym-info .address-wrap .address.line {
+    margin-top: 20rpx;
+}
+
+.gym-info .address-wrap .address.line .place {
+    background-image: url("https://static1.keepcdn.com/2019/09/30/15/1569826843884_48x48.png");
+}
+
+.gym-info .facilities {
+    margin-top: 20rpx;
+}
+
+.gym-info .facilities .title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    height: 110rpx;
+}
+
+.gym-info .facilities .title-wrap .title {
+    font-size: 36rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.gym-info .facilities .title-wrap .more {
+    padding-right: 36rpx;
+    font-size: 26rpx;
+    color: rgba(0,0,0,0.4);
+}
+
+.gym-info .facilities .fac-item {
+    display: flex;
+    margin-top: 30rpx;
+}
+
+.gym-info .facilities .fac-item view {
+    flex: 1;
+    height: 158rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gym-info .facilities .fac-item view image {
+    width: 64rpx;
+    height: 64rpx;
+    margin-bottom: 20rpx;
+}
+
+.gym-info .facilities .fac-item view text {
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.4);
+    white-space: nowrap;
+}
+
+.poi-tab {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.building {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100rpx 0;
+    background: #fff;
+}
+
+.building image {
+    display: block;
+    width: 300rpx;
+    height: 200rpx;
+}
+
+.building view {
+    margin-top: 32rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #666;
+}

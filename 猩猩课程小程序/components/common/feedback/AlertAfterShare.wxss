@@ -1,0 +1,95 @@
+.mask-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 800;
+    background-color: rgba(0,0,0,0.64);
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 701;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    padding-top: 332rpx;
+}
+
+.mask-container .container {
+    position: relative;
+    width: 700rpx;
+    height: 820rpx;
+}
+
+.mask-container .container .new-user-img {
+    position: absolute;
+    left: -25rpx;
+    width: 750rpx;
+    height: 820rpx;
+}
+
+.mask-container .container .icon-close {
+    position: absolute;
+    top: -84rpx;
+    right: 0;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.mask-container .container.special-ratio {
+    width: 700rpx;
+    height: 960rpx;
+}
+
+.mask-container .container.special-ratio .new-user-img {
+    left: -25rpx;
+    width: 750rpx;
+    height: 960rpx;
+}
+
+.mask-container .container.special-ratio .icon-close {
+    right: 0;
+}
+
+.mask-container .container .btn-group {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1;
+    width: 654rpx;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.mask-container .container .btn-group .btn-ok {
+    box-sizing: border-box;
+    height: 106rpx;
+    border-radius: 16rpx;
+    line-height: 106rpx;
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    background-color: #fcc800;
+}
+
+.mask-container .container .btn-group .btn-ok-grey {
+    color: #bbb;
+    background-color: #767678;
+}
+
+.mask-container .container .btn-group .btn-ok-disable {
+    color: #767678;
+    background-color: #2d2d2d;
+}
+
+.mask-container .container .btn-group .btn-text {
+    font-size: 28rpx;
+    color: #767678;
+    margin: 24rpx 0;
+}

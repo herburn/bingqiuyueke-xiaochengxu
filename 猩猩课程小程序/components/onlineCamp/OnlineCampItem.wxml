@@ -1,0 +1,6 @@
+<view class="online-camp-item-wrap">
+    <camp-item-layout bind_init="_initComponent" isModal="{{isModal}}" schedule="{{schedule}}"></camp-item-layout>
+    <view bindtap="_proxy" class="link" data-region-id-se="campTitleBtn" data-wpy-evt="1187-0" id="campTitleBtn">
+        <text>来自{{schedule.campInfo.campName}}</text>
+    </view>
+</view>

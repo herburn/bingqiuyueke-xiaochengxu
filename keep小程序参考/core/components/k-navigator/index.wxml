@@ -1,0 +1,6 @@
+<navigator appId="{{appId}}" bindcomplete="oncomplete" bindfail="onfail" bindsuccess="onsuccess" bindtap="ontap" extraData="{{extraData}}" hoverClass="{{hoverClass}}" hoverStartTime="{{hoverStartTime}}" hoverStayTime="{{hoverStayTime}}" hoverStopPropagation="{{hoverStopPropagation}}" openType="{{openType}}" path="{{path}}" target="{{target}}" version="{{version}}" wx:if="{{target=='miniprogram'}}">
+    <slot></slot>
+</navigator>
+<view bindcomplete="oncomplete" bindfail="onfail" bindsuccess="onsuccess" bindtap="ontap" hoverClass="{{hoverClass}}" hoverStartTime="{{hoverStartTime}}" hoverStayTime="{{hoverStayTime}}" hoverStopPropagation="{{hoverStopPropagation}}" wx:else>
+    <slot></slot>
+</view>

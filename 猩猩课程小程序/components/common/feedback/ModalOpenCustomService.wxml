@@ -1,0 +1,15 @@
+<view catchtouchmove="_proxy" class="mask-screen" data-wpy-evt="1189-0" wx:if="{{isShowModal}}">
+    <view class="modal-box">
+        <view class="title" wx:if="{{title}}">{{title}}</view>
+        <view class="content slot-content">
+            <slot name="content"></slot>
+        </view>
+        <view bindtap="_proxy" class="iconfont icon-close close-btn" data-wpy-evt="1189-1"></view>
+        <view class="btn-box">
+            <view class="border-line"></view>
+            <button bindtap="_proxy" class="confirm-btn" data-wpy-evt="1189-2" id="{{responseRegionId}}" openType="contact" sessionFrom="{{code}}" style="color: #333; background-color: #fcc800;">
+        {{confirmText}}
+      </button>
+        </view>
+    </view>
+</view>

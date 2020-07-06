@@ -1,0 +1,104 @@
+<view class="class-item-wrap" wx:if="{{propData&&propData.length}}">
+    <view class="tips {{type=='history'?'history':''}}">
+        <keep-notice-bar customClass="notice-bar" leftIcon="https://static1.keepcdn.com/2019/10/09/10/1570589785862_60x60.png" wx:if="{{type=='plan'&&packageInfo.schedulePreviewPrivilege}}">22:00即可预约计划中的课程，抢课别错过哦</keep-notice-bar>
+        <keep-notice-bar customClass="notice-bar" leftIcon="https://static1.keepcdn.com/2019/10/09/10/1570589785862_60x60.png" wx:if="{{type=='waiting'}}">请及时关注等位状态，提前准备装备</keep-notice-bar>
+        <keep-notice-bar customClass="notice-bar" height="{{104}}" leftIcon="https://static1.keepcdn.com/2019/10/09/10/1570589785862_60x60.png" wx:if="{{type=='pending'}}">开课前 4 小时不支持取消，训练营开始前 7 天不支持取消，请合理安排时间</keep-notice-bar>
+    </view>
+    <view class="section {{!priorityPlanList.length?'prt-wrap':''}}" wx:if="{{type=='plan'}}">
+        <view class="time" style="top: {{totalNavHeight}}px">
+            <view class="prt">优先抢</view>
+        </view>
+        <view class="prt-intro" wx:if="{{!priorityPlanList.length}}">
+            <block wx:if="{{!isNotPreviewTime}}">
+                <text decode="{{true}}">点击&nbsp;“&nbsp;</text>
+                <image src="https://static1.keepcdn.com/2019/09/30/15/1569829431955_51x51.png"></image>
+                <text decode="{{true}}">&nbsp;”&nbsp;可置顶课程，22:00优先抢</text>
+            </block>
+            <text wx:else>暂无优先抢课程</text>
+        </view>
+        <block wx:else>
+            <view bindlongpress="longPressContro" bindtap="toOrder" class="class-item" data-item="{{el}}" data-types="{{type}}" wx:for="{{priorityPlanList}}" wx:for-item="el" wx:key="{{index}}">
+                <view catchtap="to" class="class-coach keep-avatar-placeholder" data-el="{{el}}" data-types="{{type}}">
+                    <keep-avatar size="130" src="{{el.coachPic}}"></keep-avatar>
+                </view>
+                <view class="class-info">
+                    <view>{{el.date}} {{el.scheduleDate}}</view>
+                    <view>{{el.scheduleName}}</view>
+                    <view class="gym">{{el.gymName}}</view>
+                </view>
+                <view class="btn-wrapper">
+                    <view class="btn">
+                        <view catchtap="changePlanPrt" class="change-prt" data-el="{{el}}" wx:if="{{el.bookableStatus=='PREVIEW'}}">
+                            <image src="https://static1.keepcdn.com/2019/09/30/15/1569829464531_51x51.png"></image>
+                        </view>
+                        <keep-button shape="circle" size="small" wx:if="{{el.bookableStatus=='BOOKABLE'}}">马上预约</keep-button>
+                        <keep-button border="border" shape="circle" size="small" wx:if="{{el.bookableStatus=='SOLD_OUT'}}">等位</keep-button>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="section" wx:if="{{!isOrgLevelList.length||isOrgLevelList[index]}}" wx:for="{{propData}}" wx:key="{{index}}">
+        <view class="time" style="top: {{totalNavHeight}}px">
+            <view>{{item.date}}</view>
+        </view>
+        <view bindlongpress="longPressContro" bindtap="toOrder" class="class-item" data-item="{{el}}" data-types="{{type}}" wx:if="{{!el.priorityStatus}}" wx:for="{{item.scheduleTabDetailList}}" wx:for-item="el" wx:key="{{index}}">
+            <view catchtap="to" class="class-coach keep-avatar-placeholder" data-el="{{el}}" data-types="{{type}}">
+                <keep-avatar size="130" src="{{el.coachPic}}"></keep-avatar>
+            </view>
+            <view class="class-info">
+                <view class="view date">{{el.scheduleDate}}</view>
+                <view class="view name">
+                    <text>{{el.scheduleName}}</text>
+                    <block wx:if="{{el.index}}">
+                        <text style="margin: 0 16rpx;">第 {{el.index}} 节</text>
+                        <keep-tag customClass="camp-tag" size="small">训练营</keep-tag>
+                    </block>
+                </view>
+                <view class="view gym">{{el.gymName}}</view>
+            </view>
+            <view class="btn-wrapper" wx:if="{{!el.index}}">
+                <view class="btn" wx:if="{{type=='waiting'}}">
+                    <view class="gray" wx:if="{{el.waitingStatus==3}}">等位失败</view>
+                    <block wx:else>
+                        <view class="btn-title">第{{el.currentWaitingPosition}}位</view>
+                        <view class="sub-btn">共{{el.totalWaitingCount}}位</view>
+                    </block>
+                </view>
+                <view class="btn" wx:elif="{{type=='pending'}}">
+                    <view wx:if="{{el.waitingStatus==2}}">等位成功</view>
+                </view>
+                <view class="btn" wx:elif="{{type=='history'}}">
+                    <view wx:if="{{el.bookStatus==2}}">已支付</view>
+                    <view class="gray" wx:if="{{el.bookStatus==3}}">未完成</view>
+                    <view wx:if="{{el.bookStatus==4}}">已签到</view>
+                    <view wx:if="{{el.bookStatus==5}}">已完成</view>
+                    <view wx:if="{{el.bookStatus==6}}">已完成</view>
+                    <view class="gray" wx:if="{{el.bookStatus==7}}">已退款</view>
+                    <view class="gray" wx:if="{{el.bookStatus==8}}">已退款</view>
+                    <view class="gray" wx:if="{{el.bookStatus==9}}">已转课</view>
+                </view>
+                <view class="btn" wx:elif="{{type=='plan'}}">
+                    <view catchtap="changePlanPrt" class="change-prt" data-el="{{el}}" wx:if="{{el.bookableStatus=='PREVIEW'}}">
+                        <image src="https://static1.keepcdn.com/2019/09/30/15/1569829431955_51x51.png"></image>
+                    </view>
+                    <keep-button shape="circle" size="small" wx:if="{{el.bookableStatus=='BOOKABLE'}}">马上预约</keep-button>
+                    <keep-button border="border" shape="circle" size="small" wx:if="{{el.bookableStatus=='SOLD_OUT'}}">等位</keep-button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="empty" wx:elif="{{type=='plan'}}">
+    <image mode="aspectFill" src="https://static1.keepcdn.com/2019/09/30/12/1569817687149_450x300.png"></image>
+    <view>{{packageInfo.schedulePreviewPrivilege?'下周课表已开放':'每周五晚 8 点 - 10 点可使用'}}</view>
+    <view>提前放入计划，抢课快人一步</view>
+    <keep-button bind:click="goHome" customClass="navigator" shape="circle" wx:if="{{packageInfo.schedulePreviewPrivilege}}">查看课程</keep-button>
+</view>
+<view class="empty {{type=='history'?'history':''}}" wx:else>
+    <image mode="aspectFill" src="https://static1.keepcdn.com/2019/09/30/12/1569817687149_450x300.png"></image>
+    <view>暂无{{type=='waiting'?'等位':'课程'}}记录</view>
+    <keep-button customClass="navigator" shape="circle">
+        <navigator hoverClass="none" openType="switchTab" url="/app/pages/index/index">立即约课</navigator>
+    </keep-button>
+</view>

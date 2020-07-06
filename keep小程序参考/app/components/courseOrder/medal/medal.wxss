@@ -1,0 +1,423 @@
+@font-face {
+    font-family: 'Keep';
+    src: url("https://static1.keepcdn.com/lego/webfont/keepfont.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family:'Keepfont2019';src:url("https://static1.keepcdn.com/lego/webfont/Keepfont2019.ttf") format('truetype');font-weight:normal;font-style:normal;
+}
+
+.keep-right-more-arrow {
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAeBAMAAAA4FegcAAAAFVBMVEUAAACloqmloaimprOloamloamkoKjRHZCjAAAABnRSTlMAodEUgoBCKx0OAAAAJ0lEQVQY02NAAEYBGMstEcYySoMJMqvRTxDBQsjSRYghLBEjNBAAAEvtD9kgyY+TAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: 17rpx 30rpx;
+    background-position: center right;
+}
+
+.keep-right-more-arrow-new {
+    background-image: url("https://static1.keepcdn.com/2019/09/30/15/1569827395455_24x51.png");
+    background-repeat: no-repeat;
+    background-size: 16rpx 34rpx;
+    background-position: center right;
+}
+
+.keep-location-icon-black {
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAbFBMVEUAAAAzMzMzMzMzMzMzMzNHR0czMzM2NjYzMzMzMzMzMzM0NDRCQkIzMzMzMzMzMzM0NDQ1NTU3Nzc0NDQ0NDQzMzM0NDQzMzMzMzMzMzMzMzM1NTU3Nzc7OzszMzMzMzM0NDQ2NjYzMzMzMzO+vKSRAAAAI3RSTlMA9dWjkgPaEfrgf1kH6eWnSEEb8uzBsquVeGdSMA0Kx5dRPHRLR7gAAADDSURBVDjLzY7ZFoIwDERTSsumoOyL4NL//0eR8Sgp5Z37lGTumRM6GKck06Lw5KDceRKZL97FESsfIYi3AvJ9IzEWF+u/yBY85Szw/FY7KxocfTWXScwPJuhV7ZQuy50JAgVYUBEx4bzcWiwZ6phQLTd9+swB7IYJMR6T05zXmHsm5CGuqczOmMRIDGksfOLkgudlQBYdF3qyUdU6r2lLXv7zKCAHr98bxY2cDCHy8Eo7PBdDIHdyTY3R6N8hiLuRDscbggwmX0Y67R4AAAAASUVORK5CYII=");
+    background-size: 32rpx 32rpx;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.keep-clock-icon-black {
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAWlBMVEUAAAAzMzMzMzM0NDQ3NzczMzM0NDQ0NDQzMzM0NDQ0NDQ1NTU0NDRGRkYzMzM0NDQzMzM1NTUzMzMzMzM0NDQ0NDQ0NDQ7Ozs9PT00NDQ0NDQzMzMzMzMzMzPp4KtwAAAAHXRSTlMA+N9jIdFJwpGJbmpVC7t/czbryqNOQBoV6LAUClEMYrkAAACySURBVDjL3ZFZDsMgDEQNhAZoyL518f2v2SYB4ZhcoH0/yJqHBwn4P2ajeyFrt1zHXYkBYT3kKIEJXeT5kQxK7qdc+f5wv4IWd0omxP4b3DGqlBkzQQPF5AKe3qkvBEWFPgkKAw0VRBKgCYOlgozC8G3ujqmlQo0RoQD8Pk5UcJh4vqDazDcVFkGMh9k6RjhhkSHYd3nNBAeMQiLFQMZakv0Orqh0iMfUz3tUY9vJw6/xAdzpH+vjTPP1AAAAAElFTkSuQmCC");
+    background-size: 32rpx 32rpx;
+    background-position: center left;
+    background-repeat: no-repeat;
+}
+
+.keep-1px-border {
+    position: relative;
+}
+
+.keep-1px-border:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    content: '';
+    height: 2rpx;
+    transform: scaleY(0.5);
+    background-color: #efefef;
+}
+
+.keep-1px-border.bottom-border:after {
+    bottom: 0;
+    transform-origin: 0% 100%;
+}
+
+.keep-1px-border.top-border:after {
+    top: 0;
+    transform-origin: 0% 0%;
+}
+
+.keep-text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.keep-avatar-placeholder {
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAIIAAACCCAMAAAC93eDPAAAAbFBMVEUAAADw8PD////v7+/v7+/w8PDw8PDy8vLz8/Pv7+/w8PDx8fHw8PDx8fH29vbw8PDw8PDv7+/w8PDw8PDw8PDw8PDw8PDw8PDv7+/w8PDx8fHx8fH09PTz8/P////v7+/////7+/v29vbz8/M1DrRyAAAAH3RSTlMA7QPF02JPOxP2o42JShz55+Xf287JuaqTaVlILywMDPRx6gAAA0hJREFUeNrE1tmOqzAQRdEyNpgpZJ7TOQH+/x9vJHTbatHpmCrjrNfwsJUqyyae3Kb18aDNRi2XamP04VinNqdI8uykFX6l9Cmbu+O+qHZ4Y1ct7jST5FoW8FKU14TCu1UrTLCqbhRWtsdk+yzgBC4GLOaShAlIt2DbpgEirIGIsSSTlxArc8kMzgoBqDN7Go1GILohloVCMGrBGUKNoOpEOoT4w/haI7j1F01gFWagLHnLCsyiyMhTitmkHy/wbMgwK49Z2AKzKuzb06gwM/XmbDZrzG7d0B8SjQh0Qq/ViKKmlxaIZEEvNAqRqIa1CDHW4YyIzvSLXCEildNYiahKGrGIzI520SAykwhv6PD3drJFdNuff8MFH3D5kWDwAUb0Ugr/gtrjI/au4AYvfY/AbvRfBR/t4/Fo4aF7ftjBR/V9IleeBU+d4MOxVUKDKzz0j4FHwQA+rjQo5QnjgseUy+pe+A140HsU+CcUd/diFCaMCzpMeEVW8oRxQQtMOBM7doK8ADt6ysFIkBY4ORFlvAR5gbsnToIEeQFORKQFCfICaCJSggR5ARRRDkaCvMDJyQLgJ8gLYCmFw0gQFyClGg4jQVyAmo5wmAl9KyjAkQ5w2LvQ8QtwIA2HnYCOXQBNBg4joWvbbvi5BY+hDZzpCe33AHowbUhhxD+hdWvIpmiJkfcJrkDesPzHrBmsMAgEMZRCKaWlFHqogoLM//+kx0Fy0Mnbw9wX80DdzSQLEJIAMXzBi0gCxHDzPsck4Aw/76dMAs5w97YmJQBbk7lBRwoHZPh7x9RBFjJMxmEtovCwNiyLSELLYhg3EYTGrW5fRY7a17KJFzFq4uujjErxUWb2EGLgQPewEGLkWPt0EGLccF+LOFSCRxxG0CMCMOgx4i55PGP4GKGfPByGfkb0mQQnDJdc/csIgIVAGSoIixGDB1qoMTgrA/jC7U0rEb5y7VQMdajHGpSEHarSBoVxg9q8w+WBBlco9mbugAQAAABA0P/XrQj8kQkhiZDTAFGRkFYBgZmQ2QmxoZBcAuGpkN8KEbKQYgtBupDlCzhBIBoCVBG4joCWBLpFADaB8QmYkSCdBGwVeC+BnA3qTYB3gv0b84NlARHllUInaQGmnAAAAABJRU5ErkJggg==");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.keep-course-cover-placeholder {
+    background-color: #efefef;
+}
+
+.keep-course-cover-mark {
+    position: relative;
+}
+
+.keep-course-cover-mark:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(0deg,rgba(88,79,96,0.8) 0,rgba(88,79,96,0) 100%);
+}
+
+.keep-star {
+    width: 28rpx;
+    height: 28rpx;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.keep-star.all-star {
+    background-image: url("https://static1.keepcdn.com/2019/09/30/15/1569827026382_42x42.png");
+}
+
+.keep-star.half-star {
+    background-image: url("https://static1.keepcdn.com/2019/09/30/16/1569832043771_42x42.png");
+}
+
+.keep-star.empty-star {
+    background-image: url("https://static1.keepcdn.com/2019/09/30/16/1569831954695_42x42.png");
+}
+
+.keep-open-share {
+    display: block;
+    margin-top: 12rpx;
+    margin-left: 47rpx;
+    width: 46rpx;
+    height: 46rpx;
+    background-color: #fff;
+    border-radius: 0;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAMAAABgZ9sFAAAAQlBMVEUAAABmZmZmZmZnZ2dmZmZnZ2dnZ2dmZmZmZmZnZ2dmZmZmZmZnZ2dnZ2eAgIBnZ2dmZmZnZ2dnZ2dnZ2dmZmZmZmbupL8FAAAAFXRSTlMA5hll4fXGvxCjhHZIMQbu2rV8XB6ufgzHAAAApElEQVRIx+3PywrDIBCFYY3GMbGa63n/V22ZIlQXjl2Vhvy4UT9hVJfLE/l+nQig1M0njCOmXj1jxGvNfdoAD16mR7MD+JWsI08B8ExR0qfmPwL8Y30K3IFS5ongBL45rzJX3m1KLHPuJ3y3eGc/Zh90PtxLHcDV3CIXCm5xtIY5YOtrYX/zm7f5snzFY5R41WX5ijA0ClgLbiBkVOmdbuSM+v+eNCgUoPISBqMAAAAASUVORK5CYII=");
+    background-size: 46rpx 46rpx;
+    background-repeat: no-repeat;
+}
+
+.keep-open-share:after {
+    display: none;
+}
+
+.keep-wx-button {
+    background-color: #1aad19;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.keep-wx-button .icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10rpx;
+    width: 50rpx;
+    height: 41rpx;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAApCAMAAABA8IrbAAAAeFBMVEUAAAD////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////GqOSsAAAAJ3RSTlMA+ga/9KBUKCFz8OvUk4mCauIwFxLezKZA6MVjC9i7Obaxl0safV3vXcPKAAAB2klEQVRIx5WV67aCIBCFwRuQimZqZlqdbrz/Gx6IhiMGevp+tBxgL2DPDCELeozDLMXpGF6fFK2z442YMrJ6WUCvWMzB+ZKojISL9Og900X42AduxSj89K7D1ZlYonfs04tl9h8KBlNRON1uPG3gc+4BBa8OVBpnFFxeMYOZwZbEsIipCFZtVJDAVGEpAnv78B1sVdAJE01JBBDKiGCIOhntBXC2z2XoyyI1QcRLlV/cx5yVj24qCYUfHN8G9MnWK4j4/XXZHamolU3sU7REzp55qxeM12R1lzyQ1rTTkS0LFu+Sy0z+zAezChxzlxU5OPx4ne7oUhxqRKTfHs3gascEBZnHRuo+WYNQAbUGjuL3ricpqT5tLqDysNyO62raoUo/QMqC4kNSQeXlprhVVhMzFrRzyYBy/VEqyQ/0AtEpfn3O0pnqZZKLehlSKGWm3dSNCRrTHSehibtbqxcezw+sPUMv7o1lfuBJ8N/BoJkMFLH198YupyeifkkybTQcQUubyzjTrGmUUeegK8JG6Yh6BNw84ZmRC3r6DoZ7DY46m0JzExuGZjxciovp6LioV/9y7CcwAK0NmXvA0TpVvLEaGf2LqizyK2fdUEp1h75jt5cJ+xaS3+TvLyfWsMqHbkpuAAAAAElFTkSuQmCC");
+    background-size: cover;
+}
+
+.keep-wx-button:after {
+    display: none;
+}
+
+.keep-border-btn {
+    position: relative;
+}
+
+.keep-border-btn:after {
+    content: '';
+    position: absolute;
+    border: 2rpx solid #efefef;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    transform: scale(0.5);
+    border-radius: 8rpx;
+}
+
+.keep-border-btn.green:after {
+    border-color: #24c789;
+}
+
+.keep-vip-icon {
+    margin-left: 12rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.iphonex {
+    padding-bottom: 48rpx;
+}
+
+.keep-month-demon-title-new {
+    position: relative;
+    margin: 0;
+    padding: 0 16rpx 0 32rpx;
+    height: 36rpx;
+    line-height: 36rpx;
+    border-radius: 0 36rpx 36rpx 0;
+    background-image: linear-gradient(90deg,#3e3e3e 0%,#2b2b2b 100%);
+    font-size: 20rpx;
+    color: #fff;
+}
+
+.keep-month-demon-title-new:before {
+    position: absolute;
+    top: -6rpx;
+    left: -22rpx;
+    content: '';
+    width: 44rpx;
+    height: 48rpx;
+    background-image: url("https://static1.keepcdn.com/2019/09/30/15/1569827518874_66x72.png");
+    background-size: 44rpx 48rpx;
+    background-repeat: no-repeat;
+}
+
+.keep-month-demon-title {
+    position: relative;
+    display: inline-block;
+    padding: 0 12rpx 0 37rpx;
+    margin-left: 45rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    border-radius: 0 42rpx 42rpx 0;
+    background-image: linear-gradient(90deg,#3e3e3e 7%,#2b2b2b 100%);
+    font-size: 20rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.keep-month-demon-title:first-child {
+    margin-left: 25rpx;
+}
+
+.keep-month-demon-title:before {
+    position: absolute;
+    top: -4rpx;
+    left: -25rpx;
+    content: '';
+    width: 50rpx;
+    height: 50rpx;
+    background-image: url("https://static1.keepcdn.com/2019/01/09/15/1547019058522_50x50.png");
+    background-size: 50rpx 50rpx;
+    background-repeat: no-repeat;
+}
+
+.keep-month-demon-horn-small {
+    position: relative;
+}
+
+.keep-month-demon-horn-small:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url("https://static1.keepcdn.com/2019/01/09/18/1547029581015_72x26.png");
+    background-size: 72rpx 26rpx;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.keep-month-demon-horn-big {
+    position: relative;
+}
+
+.keep-month-demon-horn-big:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: url("https://static1.keepcdn.com/2019/01/09/18/1547029599472_108x36.png");
+    background-size: 108rpx 36rpx;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.keep-month-demon-horn-big-new {
+    position: relative;
+}
+
+.keep-month-demon-horn-big-new:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 170rpx;
+    height: 170rpx;
+    transform: translate(-50%,-50%);
+    background-image: url("https://static1.keepcdn.com/2019/09/30/15/1569827566613_255x255.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slogan {
+    text-align: center;
+    padding-bottom: 30rpx;
+    margin-top: 30rpx;
+    font-size: 26rpx;
+    color: #ccc;
+}
+
+.slogan image {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.medal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 20;
+    opacity: 0;
+    animation: fadeIn 0.3s 0.3s forwards;
+}
+
+.medal-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 580rpx;
+    height: 580rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    text-align: center;
+}
+
+.medal-box .top-mask {
+    height: 250rpx;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8rpx;
+}
+
+.medal-box .top-mask:after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: linear-gradient(to bottom,#24c789 46%,#4aa5d0 100%);
+    border-radius: 50%;
+    transform: scale(1.8);
+}
+
+.medal-box .medal-close {
+    display: block;
+    height: 48rpx;
+    background: url("https://static1.keepcdn.com/2018/08/01/11/1533095496576_64x64.png") no-repeat center;
+    background-size: 48rpx;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -112rpx;
+}
+
+.medal-box .medal {
+    position: relative;
+    z-index: 2;
+}
+
+.medal-box .medal .medal-title {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding-top: 48rpx;
+    color: #fff;
+}
+
+.medal-box .medal .medal-text {
+    font-size: 46rpx;
+    line-height: 60rpx;
+    padding-top: 4rpx;
+    color: #fff;
+    font-weight: bold;
+}
+
+.medal-box .medal .medal-text .view {
+    font-size: 28rpx;
+    font-weight: normal;
+}
+
+.medal-box .medal .first-pic {
+    display: inline-block;
+    width: 240rpx;
+    height: 150rpx;
+    padding-top: 100rpx;
+}
+
+.medal-box .medal .medal-pic {
+    background: url("https://static1.keepcdn.com/2018/08/28/19/1535454646516_540x540.png") no-repeat center;
+    background-size: 300rpx 300rpx;
+    padding-top: 300rpx;
+    position: relative;
+    margin: -90rpx auto 0;
+}
+
+.medal-box .medal .medal-pic .image {
+    position: absolute;
+    top: 108rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+}
+
+.medal-box .medal .medal-pic .medal-gym {
+    color: #333;
+    font-size: 36rpx;
+    padding-top: 10rpx;
+}
+
+.medal-box .medal .medal-pic .medal-gymtext {
+    display: block;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 33rpx;
+    padding-top: 6rpx;
+}
+
+.medal-box .medal .medal-tips {
+    font-size: 26rpx;
+    padding-top: 36rpx;
+    color: #999;
+}

@@ -1,0 +1,11 @@
+{
+    "backgroundColor": "#FAFAFA",
+    "usingComponents": {
+        "amountSelector": "/app/components/courseConfirm/amountSelector/amountSelector",
+        "waitSelector": "/app/components/courseConfirm/waitSelector/waitSelector",
+        "enterpriseVerify": "/app/components/courseConfirm/enterpriseVerify/enterpriseVerify",
+        "scheduleConflictTip": "/app/components/courseConfirm/scheduleConflictTip/scheduleConflictTip",
+        "showAdidasTip": "/app/components/showModalBox/showModalBox",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "faq": "./CourseDetailPanelFAQ",
+        "panel-title": "./CourseDetailPanelTitle",
+        "multi-line-text": "./../common/dataDisplay/TextMultiLineWithUnfold"
+    }
+}

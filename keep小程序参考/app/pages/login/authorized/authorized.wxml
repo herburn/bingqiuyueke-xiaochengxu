@@ -1,0 +1,5 @@
+<navigatorBar backgroundColor="#584F60" navigationBarColor="white"></navigatorBar>
+<view class="container">
+    <image class="avatar" mode="aspectFill" src="/app/images/default_avatar.png"></image>
+    <button bindgetuserinfo="getUserInfo" class="login" openType="getUserInfo">请先登录</button>
+</view>

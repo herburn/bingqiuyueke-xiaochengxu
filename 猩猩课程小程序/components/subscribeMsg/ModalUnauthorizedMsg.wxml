@@ -1,0 +1,9 @@
+<sm-modal bind_init="_initComponent" class="sm-model" id="unauthorizedMsgModal">
+    <view class="content" slot="content">
+        <view class="tip">由于微信规则，需要授权，方可接收以下通知：</view>
+        <view class="template" wx:for="{{templates}}" wx:for-item="template" wx:key="templateId">
+      • 【{{template.templateName}}】{{template.dialogText}}；
+    </view>
+        <view class="tip">我们不会随意打扰，请放心接收！点击“马上接收”即可授权。</view>
+    </view>
+</sm-modal>

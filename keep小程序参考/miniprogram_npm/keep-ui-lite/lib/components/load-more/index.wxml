@@ -1,0 +1,4 @@
+<view class="custom-class keep-load-more">
+    <image class="keep-load-more--loading" mode="aspectFit" src="https://static1.keepcdn.com/2018/12/13/12/1544673942422_64x64.gif" wx:if="{{loading}}"></image>
+    <view class="keep-load-more--tip" wx:else>- {{tip}} -</view>
+</view>

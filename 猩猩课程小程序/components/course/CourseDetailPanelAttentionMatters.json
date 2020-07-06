@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "agreement": "./CourseTextAgreement",
+        "text-render-paragraph": "./../common/dataDisplay/TextRenderParagraph",
+        "panel-title": "./CourseDetailPanelTitle"
+    }
+}

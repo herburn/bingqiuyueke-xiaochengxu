@@ -1,0 +1,101 @@
+.medal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+    opacity: 0;
+    animation: fadeIn 0.4s 0.4s forwards;
+}
+
+.medal-mask .medal-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 580rpx;
+    height: 560rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    text-align: center;
+}
+
+.medal-mask .medal-box .top-mask {
+    height: 266rpx;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: 8rpx;
+}
+
+.medal-mask .medal-box .top-mask:after {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-image: linear-gradient(90deg,#24c789 20%,#4aa5d0 100%);
+    border-radius: 50%;
+    transform: scale(1.8);
+}
+
+.medal-mask .medal-box .medal-close {
+    margin-top: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -112rpx;
+    display: block;
+    height: 64rpx;
+    background: url("https://static1.keepcdn.com/2018/08/01/11/1533095496576_64x64.png") no-repeat center;
+    background-size: contain;
+}
+
+.medal-mask .medal-box .medal {
+    position: relative;
+    z-index: 2;
+}
+
+.medal-mask .medal-box .medal .medal-title,.medal-mask .medal-box .medal .medal-text {
+    font-size: 40rpx;
+    line-height: 56rpx;
+    padding-top: 4rpx;
+    color: #fff;
+    font-weight: bold;
+}
+
+.medal-mask .medal-box .medal .medal-title {
+    padding-top: 48rpx;
+}
+
+.medal-mask .medal-box .medal .medal-pic {
+    background: url("https://static1.keepcdn.com/2018/08/28/19/1535454646516_540x540.png") no-repeat center;
+    background-size: 300rpx 300rpx;
+    padding-top: 300rpx;
+    position: relative;
+    margin: -40rpx auto 0;
+}
+
+.medal-mask .medal-box .medal .medal-pic image {
+    position: absolute;
+    top: 70rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180rpx;
+    height: 180rpx;
+    border-radius: 50%;
+}
+
+.medal-mask .medal-box .medal navigator {
+    margin: -16rpx 45rpx 0 45rpx;
+    line-height: 100rpx;
+    font-size: 36rpx;
+    color: #fff;
+    background: #24c789;
+    border-radius: 100rpx;
+}

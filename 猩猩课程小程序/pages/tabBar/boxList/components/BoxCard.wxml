@@ -1,0 +1,22 @@
+<view bindtap="_proxy" class="store-item" data-wpy-evt="1019-0">
+    <view class="store-post">
+        <image class="store-img" mode="widthFix" src="{{storeInfo.boxHomePageImage}}"></image>
+        <view catchtap="_proxy" class="store-like" data-wpy-evt="1019-1" wx:if="{{!isUnregistered}}">
+            <view class="iconfont icon-heart-filled" wx:if="{{favStatus===1}}"></view>
+            <view class="iconfont icon-heart-outlined" wx:else></view>
+        </view>
+    </view>
+    <view class="store-info">
+        <view class="name-address">
+            <view class="store-name ellipsis">{{storeInfo.branchName}}</view>
+            <view class="store-address ellipsis">{{storeInfo.address}}</view>
+        </view>
+        <observer-promotion-view bind_init="_initComponent" class="ad-wrapper" data-region-id-sm="boxAdsPromotion" id="boxAds" info="{{boxAdsMap[item.boxId]||boxAdsMap[referenceNoneType]}}" uniqueId="{{boxAdsMap[item.boxId].relateId||boxAdsMap[referenceNoneType].relateId}}" wx:if="{{boxAdsMap[item.boxId]||boxAdsMap[referenceNoneType]}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="boxAdsPromotion" id="boxAds" info="{{boxAdsMap[item.boxId]||boxAdsMap[referenceNoneType]}}">
+                <view>
+                    <image class="gift-ad-icon" src="{{giftIcon}}"></image>
+                </view>
+            </click-behavior>
+        </observer-promotion-view>
+    </view>
+</view>

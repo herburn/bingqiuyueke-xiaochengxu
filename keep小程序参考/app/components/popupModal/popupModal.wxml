@@ -1,0 +1,18 @@
+<view wx:if="{{popupInfo}}">
+    <view class="popup-modal-strong" wx:if="{{popupInfo.type==0}}">
+        <view catchtap="jumpTo" class="popup-wrap" data-link="{{popupInfo.wechatLink}}">
+            <image class="pic" mode="widthFix" src="{{popupInfo.image+'?imageMogr2/thumbnail/580x/quality/95'}}"></image>
+            <view class="button" wx:if="{{popupInfo.button}}">{{popupInfo.button}}</view>
+        </view>
+        <image catchtap="close" class="close" mode="aspectFit" src="/app/images/icon_popup_close_strong.png"></image>
+    </view>
+    <view class="popup-modal-weak" style="background-image: url( {{popupInfo.image+'?imageMogr2/thumbnail/694x/quality/95'}})" wx:else>
+        <div bindtap="close" class="close">
+            <image mode="aspectFit" src="/app/images/icon_popup_close_weak.png"></image>
+        </div>
+        <view wx:if="{{popupInfo.button}}">
+            <view bindtap="jumpTo" class="button" data-link="{{popupInfo.wechatLink}}" wx:if="{{popupInfo.wechatLink}}">{{popupInfo.button}}</view>
+            <view bindtap="close" class="button" wx:else>{{popupInfo.button}}</view>
+        </view>
+    </view>
+</view>

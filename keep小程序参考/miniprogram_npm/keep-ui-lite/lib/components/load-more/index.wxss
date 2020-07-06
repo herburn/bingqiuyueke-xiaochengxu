@@ -1,0 +1,19 @@
+@import "../../../../../__wuBaseWxss__/1.wxss";
+
+.keep-load-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 133rpx;
+}
+
+.keep-load-more--loading {
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.keep-load-more--tip {
+    font-size: 26rpx;
+    color: #ccc;
+}

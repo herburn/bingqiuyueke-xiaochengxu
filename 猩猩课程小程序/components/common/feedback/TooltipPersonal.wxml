@@ -1,0 +1,4 @@
+<view class="personal-prompt" wx:if="{{isSatisfyShowPersonal}}">
+    <view class="personal-prompt-text">私教订单即将过期</view>
+    <view class="icon-triangle"></view>
+</view>

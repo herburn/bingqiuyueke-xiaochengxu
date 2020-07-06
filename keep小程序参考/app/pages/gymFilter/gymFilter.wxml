@@ -1,0 +1,29 @@
+<navigatorBar></navigatorBar>
+<view class="screen-gym {{iphonex?'iphonex':''}}">
+    <view class="city" style="top: {{totalNavHeight}}px" wx:if="{{citys.length}}">
+        <picker bindchange="bindPickerChange" range="{{citys}}" value="{{index}}">
+            <view class="flex">
+                <view class="icon-addr"></view>
+                <viwe class="picker-text">{{citys[index]}}</viwe>
+            </view>
+        </picker>
+    </view>
+    <view class="gym-list">
+        <view bindtap="selectGym" class="gym-item flex {{item.selected?'selected':''}}" data-index="{{index}}" id="{{item.selected?'selectedDom':''}}" wx:for="{{gymList}}" wx:key="{{index}}">
+            <view>
+                <view class="name flex">
+                    <view>{{item.name}}</view>
+                    <view class="tag {{tag.type=='property'?'property':''}}" wx:if="{{item.tags&&item.tags.length}}" wx:for="{{item.tags}}" wx:for-item="tag" wx:key="{{index}}">
+                        <view>{{tag.title}}</view>
+                    </view>
+                </view>
+                <view class="addr">{{item.place}}</view>
+            </view>
+            <view class="distance" wx:if="{{item.kmDistance}}">{{item.kmDistance}}km</view>
+        </view>
+    </view>
+    <view class="btn">
+        <view bindtap="reset">重置</view>
+        <view bindtap="submit">确定</view>
+    </view>
+</view>

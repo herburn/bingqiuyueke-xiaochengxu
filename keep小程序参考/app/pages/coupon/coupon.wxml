@@ -1,0 +1,34 @@
+<navigatorBar backgroundColor="#584F60" color="#fff" navigationBarColor="white" title="Keepland 优惠券"></navigatorBar>
+<view class="coupon" wx:if="{{couponData}}">
+    <view class="coupon-cover" style="background-image: url({{res.newCourseBase.scheduleImg}})">
+        <view class="newClass-wrap">
+            <view class="newClass-tag" wx:if="{{res.newCourseBase.newSchedule}}">新课发布</view>
+            <view class="couese-info">
+                <view class="course-name">{{res.newCourseBase.scheduleName}}</view>
+                <view class="appointment-count" wx:if="{{res.newCourseBase.newSchedule}}">{{res.newCourseBase.finishCount}}人已体验新课</view>
+            </view>
+        </view>
+    </view>
+    <view class="coupon-wrap">
+        <view class="coupon-card coupon-card-finish" wx:if="{{res.bindStatus==1}}">优惠券已被领完</view>
+        <view class="coupon-card" wx:else>
+            <view class="card-name">{{couponData.title}}</view>
+            <view class="card-date" wx:if="{{couponData.validDate!='有效期至'}}">{{couponData.validDate}}</view>
+            <viwe class="card-addr">{{couponData.sponsorCopy}}</viwe>
+            <view class="card-bg">
+                <view class="price" wx:if="{{couponData.amountCent}}">
+                    <text>￥</text>{{couponData.amountCent/100}}</view>
+                <view class="price-desc">{{res.newCourseBase.newSchedule?'新课专享':'训练后分享'}}</view>
+            </view>
+        </view>
+        <navigator class="coupon-btn" openType="switchTab" url="/app/pages/index/index">{{res.button}}</navigator>
+        <view class="coupon-tips" wx:if="{{res.bindStatus==1||res.bindStatus==2}}">{{couponData.boundCount}}/{{couponData.total}} 张优惠券已被领取</view>
+        <view class="coupon-tips coupon-yet" wx:else>优惠券已放入账号：{{res.account}}</view>
+    </view>
+    <view class="coupon-rule">
+        <view class="rule-title">活动说明</view>
+        <view class="rule-list">
+            <view wx:for="{{rules}}" wx:key="{{index}}">{{item}}</view>
+        </view>
+    </view>
+</view>

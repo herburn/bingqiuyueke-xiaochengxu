@@ -1,0 +1,46 @@
+.select-prompt {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 800;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.64);
+}
+
+.select-prompt .prompt-list {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f2f2f7;
+}
+
+.select-prompt .prompt-list .list,.select-prompt .prompt-list .list-cancel {
+    width: 100%;
+    height: 100rpx;
+    border: none;
+    border-radius: 0;
+    font-size: 32rpx;
+    color: #333;
+    text-align: center;
+    line-height: 100rpx;
+    background-color: #fff;
+    border-bottom: 2rpx solid #eaeaec;
+}
+
+.select-prompt .prompt-list .list:last-child {
+    border-bottom: none;
+}
+
+.select-prompt .prompt-list .list::after {
+    border: 0;
+}
+
+.select-prompt .prompt-list .list-cancel {
+    margin-top: 10rpx;
+}
+
+.select-prompt .prompt-list .full-display {
+    padding-bottom: 80rpx;
+}

@@ -1,0 +1,210 @@
+page {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner-animate {
+    position: relative;
+    z-index: 17;
+    transition: transform 0.3s;
+    transition: transform 0.3s,-webkit-transform 0.3s;
+}
+
+.banner-animate .loading {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 64rpx;
+    height: 64rpx;
+    margin-left: -32rpx;
+    display: block;
+    transition: transform 0.3s;
+    transition: transform 0.3s,-webkit-transform 0.3s;
+}
+
+.banner {
+    background-color: #fff;
+    position: relative;
+    z-index: 9;
+    height: 180rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.banner navigator {
+    height: 140rpx;
+    overflow: hidden;
+    margin: 20rpx 28rpx;
+    background: no-repeat center;
+    background-size: contain;
+}
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 17;
+}
+
+.sticky-wrapper .schedule-date {
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    z-index: 9;
+}
+
+.sticky-wrapper .schedule-date swiper {
+    box-shadow: 0 8rpx 10rpx 0 rgba(0,0,0,0.02);
+    height: 174rpx;
+    position: relative;
+    z-index: 9;
+}
+
+.sticky-wrapper .schedule-date swiper swiper-item:first-child .week {
+    color: #24c789;
+}
+
+.sticky-wrapper .schedule-date swiper swiper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sticky-wrapper .schedule-date swiper swiper-item .week {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #ccc;
+    padding-top: 40rpx;
+}
+
+.sticky-wrapper .schedule-date swiper swiper-item .date {
+    margin-top: 14rpx;
+    width: 52rpx;
+    height: 52rpx;
+    line-height: 52rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+.sticky-wrapper .schedule-date swiper swiper-item.active .date {
+    color: #fff;
+    border-radius: 50%;
+    background-color: #24c789;
+}
+
+.sticky-wrapper .schedule-filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 20rpx 30rpx 0;
+    height: 58rpx;
+}
+
+.sticky-wrapper .schedule-filters .filters {
+    display: flex;
+    align-items: center;
+}
+
+.sticky-wrapper .schedule-filters .filters navigator {
+    padding-left: 44rpx;
+}
+
+.sticky-wrapper .schedule-filters .filters .screens {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    font-size: 30rpx;
+    color: #000;
+    line-height: 42rpx;
+    font-weight: bold;
+}
+
+.sticky-wrapper .schedule-filters .filters .screens view:last-child {
+    padding-right: 28rpx;
+    min-height: 20rpx;
+    background: url("https://static1.keepcdn.com/2019/05/05/12/1557029514106_20x20.png") no-repeat center right;
+    background-size: 20rpx;
+}
+
+.sticky-wrapper .schedule-filters .filters .screens.green {
+    color: #24c789;
+}
+
+.sticky-wrapper .schedule-filters .switch {
+    display: flex;
+    font-size: 26rpx;
+    color: rgba(0,0,0,0.4);
+    align-items: center;
+    height: 45rpx;
+    line-height: 45rpx;
+}
+
+.sticky-wrapper .schedule-filters .switch switch {
+    transform: scale(0.5) translateX(40rpx);
+}
+
+.schedule-wrapper {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    transition: transform 0.3s;
+    transition: transform 0.3s,-webkit-transform 0.3s;
+}
+
+.schedule-wrapper swiper-item {
+    height: 100%;
+}
+
+.schedule-wrapper swiper-item:first-child {
+    background: url("https://static1.keepcdn.com/2019/11/18/14/1574057731081_750x1081.png") repeat-y center top;
+    background-size: cover;
+}
+
+.schedule-wrapper.ready swiper-item:first-child {
+    background: transparent;
+}
+
+.schedule-wrapper scroll-view {
+    height: 100%;
+}
+
+.slogan {
+    padding-bottom: 50rpx;
+}
+
+.tap-tips {
+    position: fixed;
+    bottom: 16rpx;
+    right: 328rpx;
+    z-index: 17;
+    width: 282rpx;
+    height: 60rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.32);
+    font-size: 24rpx;
+    color: #fff;
+    background-color: #24c789;
+    text-align: center;
+    line-height: 60rpx;
+}
+
+.tap-tips:after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    bottom: -12rpx;
+    width: 0;
+    height: 0;
+    border-top: 17rpx solid #24c789;
+    border-left: 14rpx solid transparent;
+    border-right: 14rpx solid transparent;
+    transform: translateX(50%);
+}

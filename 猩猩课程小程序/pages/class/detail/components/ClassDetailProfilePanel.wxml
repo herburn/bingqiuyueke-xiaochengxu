@@ -1,0 +1,49 @@
+<view class="panel">
+    <view class="header">{{profile.className}}</view>
+    <view class="trainer" wx:if="{{profile.trainers.length===1}}">
+        <face bind_init="_initComponent" class="trainer__face" extraData="{{profile.trainers[0].extraData}}" face="{{profile.trainers[0].face}}" navigatorData="{{profile.trainers[0].navigatorData}}" navigatorPage="{{profile.trainers[0].navigatorPage}}"></face>
+        <view class="trainer__profile">
+            <view class="trainer__profile__name">{{profile.trainers[0].name}}</view>
+            <view class="trainer__profile__introduce">
+                <multi-line-text arrowStyle="left: 179rpx;transform: translateX(0);" bind_init="_initComponent" contentHeight="72rpx">
+          {{profile.trainers[0].introduce}}
+        </multi-line-text>
+            </view>
+        </view>
+    </view>
+    <view class="multi-trainer" wx:else>
+        <scroll-view class="multi-trainer__scroll" scrollX="{{true}}">
+            <view class="multi-trainer__scroll__inner">
+                <view class="trainer-info" wx:for="{{profile.trainers}}" wx:for-item="trainer" wx:key="index">
+                    <face bind_init="_initComponent" class="trainer-info__face" face="{{trainer.face}}" navigatorData="{{trainer.navigatorData}}" navigatorPage="{{trainer.navigatorPage}}"></face>
+                    <view class="trainer-info__name ellipsis">{{trainer.name}}</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="row time">
+        <view class="label">
+            <view class="label__inner">
+                <view class="iconfont icon-time icon"></view>时间:</view>
+        </view>
+        <view class="value">{{profile.time}}</view>
+    </view>
+    <view class="row location">
+        <view class="label">
+            <view class="label__inner">
+                <view class="iconfont icon-address icon"></view>地点:</view>
+        </view>
+        <view class="value">{{profile.location.address}}
+      <view bindtap="_proxy" class="location-view" data-wpy-evt="1051-0">查看地图</view>
+        </view>
+    </view>
+    <view class="row price">
+        <view class="label">
+            <view class="label__inner">
+                <view class="iconfont icon-price icon"></view>超猩卡:</view>
+        </view>
+        <view class="value" wx:if="{{isUnregistered}}">
+      (<view bindtap="_proxy" class="card-register" data-wpy-evt="1051-1">登录</view>后方可查看)</view>
+        <view class="value" wx:else>{{profile.price}}</view>
+    </view>
+</view>

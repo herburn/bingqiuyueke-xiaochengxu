@@ -1,0 +1,189 @@
+#topBlock {
+    padding: 90rpx 30rpx 30rpx;
+    background-color: #fff;
+}
+
+#topBlock .coach-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 30rpx 60rpx;
+    overflow: visible;
+}
+
+#topBlock .coach-info .coach-avatar {
+    margin-top: -60rpx;
+}
+
+#topBlock .coach-info .coach-name {
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+}
+
+#topBlock .coach-info .coach-intro {
+    margin-top: 40rpx;
+    font-size: 26rpx;
+    color: rgba(0,0,0,0.7);
+    text-align: justify;
+    word-break: break-all;
+}
+
+.coach-tab {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.schedule-date {
+    position: sticky;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+    text-align: center;
+    padding-top: 30rpx;
+    background-color: #fff;
+}
+
+.schedule-date swiper {
+    box-shadow: 0 8rpx 10rpx 0 rgba(0,0,0,0.02);
+    height: 134rpx;
+    position: relative;
+    z-index: 9;
+}
+
+.schedule-date swiper swiper-item:first-child .week {
+    color: #24c789;
+}
+
+.schedule-date swiper swiper-item {
+    height: 134rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-date swiper swiper-item .week {
+    font-size: 24rpx;
+    line-height: 33rpx;
+    color: #ccc;
+}
+
+.schedule-date swiper swiper-item .date {
+    margin-top: 25rpx;
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #666;
+    text-align: center;
+}
+
+.schedule-date swiper swiper-item.active .date {
+    color: #fff;
+    border-radius: 50%;
+    background-color: #24c789;
+}
+
+.schedule-wrap {
+    min-height: calc(100vh - 400rpx);
+}
+
+.table-empty {
+    min-height: calc(100vh - 400rpx);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.table-empty image {
+    width: 300rpx;
+    height: 200rpx;
+    display: block;
+    margin-bottom: 26rpx;
+}
+
+.table-empty>view {
+    color: #666;
+    font-size: 28rpx;
+    line-height: 50rpx;
+}
+
+.table-empty>view.tip2 {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 42rpx;
+}
+
+.camp-info {
+    padding: 8rpx 30rpx 0rpx;
+}
+
+.camp-info .camp-card {
+    height: 240rpx;
+    margin-top: 20rpx;
+    padding: 40rpx 30rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.camp-info .camp-card .camp-name {
+    line-height: 42rpx;
+    font-size: 30rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.camp-info .camp-card .count-place {
+    line-height: 33rpx;
+    margin-top: 12rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.5);
+}
+
+.camp-info .camp-card .count-place .line {
+    display: inline-block;
+    margin: 0 12rpx;
+    transform: translateY(2rpx);
+    width: 2rpx;
+    height: 21rpx;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.camp-info .camp-card .price {
+    margin-top: 30rpx;
+    line-height: 43rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #24c789;
+}
+
+.camp-info .camp-card .price .unit {
+    font-size: 26rpx;
+    margin-right: 2rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.camp-info .camp-card .button {
+    position: absolute;
+    bottom: 40rpx;
+    right: 20rpx;
+}
+
+.camp-info .camp-card .corner {
+    position: absolute;
+    top: 10rpx;
+    right: 10rpx;
+    display: block;
+    width: 66rpx;
+    height: 66rpx;
+}

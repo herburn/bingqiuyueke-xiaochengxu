@@ -1,0 +1,152 @@
+page {
+    background: #fff;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.screen-gym {
+    padding-bottom: 150rpx;
+}
+
+.screen-gym.iphonex {
+    padding-bottom: 200rpx;
+}
+
+.city {
+    padding: 16rpx 28rpx;
+    position: sticky;
+    top: 68px;
+    left: 0;
+    background: #fff;
+}
+
+.city .picker-text {
+    font-weight: bold;
+    font-size: 32rpx;
+    color: #4a4a4a;
+    padding-right: 32rpx;
+    background: url("https://static1.keepcdn.com/2018/11/07/18/1541586559209_28x28.png") no-repeat center right;
+    background-size: 28rpx;
+}
+
+.city .icon-addr {
+    width: 32rpx;
+    height: 32rpx;
+    background: url("https://static1.keepcdn.com/2018/11/15/19/1542280563337_32x32.png") no-repeat center left;
+    background-size: 32rpx;
+    margin-right: 8rpx;
+}
+
+.gym-list {
+    padding: 20rpx 28rpx;
+}
+
+.gym-list .gym-title {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    color: #666;
+}
+
+.gym-list .gym-item {
+    justify-content: space-between;
+    height: 196rpx;
+    border-radius: 8rpx;
+    background: #fafafa;
+    border: 1rpx solid #fafafa;
+    box-sizing: border-box;
+    margin-top: 16rpx;
+    padding: 0 23rpx 0 28rpx;
+}
+
+.gym-list .gym-item .name {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+    line-height: 45rpx;
+    width: 50rpx;
+    white-space: nowrap;
+}
+
+.gym-list .gym-item .name .tag {
+    font-size: 24rpx;
+    color: #666;
+    background: #efefef;
+    padding: 1rpx 10rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    margin-left: 16rpx;
+    border-radius: 4rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+}
+
+.gym-list .gym-item .name .tag view {
+    white-space: nowrap;
+}
+
+.gym-list .gym-item .name .tag.property {
+    background: #24c789;
+    color: #fff;
+}
+
+.gym-list .gym-item .addr {
+    font-size: 26rpx;
+    color: #999;
+    padding-top: 13rpx;
+}
+
+.gym-list .gym-item .distance {
+    font-size: 26rpx;
+    color: #999;
+    padding-left: 36rpx;
+    background: url("https://static1.keepcdn.com/2018/11/07/18/1541587721258_32x32.png") no-repeat center left;
+    background-size: 32rpx;
+    margin-left: 50rpx;
+}
+
+.gym-list .gym-item.selected {
+    background: #e9faf3;
+    border: 1rpx solid #24c789;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 124rpx;
+}
+
+.btn view {
+    margin: 0 8rpx;
+    text-align: center;
+    width: 340rpx;
+    line-height: 69rpx;
+    box-sizing: border-box;
+    border: 1rpx solid #24c789;
+    border-radius: 68rpx;
+    font-size: 28rpx;
+}
+
+.btn view:first-child {
+    color: #24c789;
+}
+
+.btn view:last-child {
+    color: #fff;
+    background: #24c789;
+}
+
+.iphonex .btn {
+    padding-bottom: 68rpx;
+}

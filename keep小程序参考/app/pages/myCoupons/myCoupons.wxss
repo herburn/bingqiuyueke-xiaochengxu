@@ -1,0 +1,282 @@
+.fixed-top-card {
+    padding-top: 28rpx;
+    background-color: #fff;
+}
+
+.fixed-top-card .input-wrap {
+    display: flex;
+    align-items: center;
+    margin: 0 28rpx;
+}
+
+.fixed-top-card .input-wrap .exchange-input {
+    flex: 1;
+    padding-left: 28rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    background-color: #fff;
+    border: 1rpx solid #ccc;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.fixed-top-card .input-wrap .exchange {
+    height: 90rpx;
+    line-height: 90rpx;
+    padding-left: 28rpx;
+    font-size: 28rpx;
+    color: #24c789;
+}
+
+.fixed-top-card .exchange-btn {
+    margin: 0 28rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    border: 1rpx solid #ccc;
+    border-radius: 8rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.fixed-top-card .tab-wrap {
+    margin-top: 28rpx;
+    display: flex;
+    box-shadow: 0 8rpx 10rpx 0 rgba(0,0,0,0.02);
+    position: relative;
+    z-index: 17;
+}
+
+.fixed-top-card .tab-wrap .tab {
+    flex: 1;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #999;
+}
+
+.fixed-top-card .tab-wrap .tab.active {
+    color: #584f60;
+    position: relative;
+}
+
+.fixed-top-card .tab-wrap .tab.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32rpx;
+    height: 4rpx;
+    background-color: #584f60;
+}
+
+.swiper {
+    min-height: calc(100% - 238rpx);
+}
+
+.swiper scroll-view {
+    height: 100%;
+}
+
+.swiper .has-coupon {
+    padding: 28rpx 28rpx 80rpx;
+}
+
+.swiper .has-coupon .coupon-wrap {
+    position: relative;
+    margin-bottom: 28rpx;
+    background-color: #fff;
+    border: 1rpx solid #ccc;
+    border-radius: 8rpx;
+}
+
+.swiper .has-coupon .coupon-wrap:last-child {
+    margin-bottom: 0;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-1 .coupon-info .right-part .amount {
+    color: #ff5363;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-1 .coupon-rules .rules-title .button {
+    background-color: #ff5363;
+    color: #fff;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-2 .coupon-info .right-part .amount {
+    color: #666;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-2 .coupon-rules .rules-title .button {
+    background-color: #fff;
+    border: 1rpx solid #24c789;
+    color: #24c789;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-3 .coupon-info .left-part .coupon-title,.swiper .has-coupon .coupon-wrap.coupon-status-3 .coupon-info .left-part .coupon-sponsor {
+    color: #999;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-3 .coupon-info .right-part {
+    opacity: 0.5;
+}
+
+.swiper .has-coupon .coupon-wrap.coupon-status-3 .coupon-info .right-part .amount {
+    color: #ff5363;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info {
+    display: flex;
+    justify-content: space-between;
+    height: 190rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .left-part {
+    margin-left: 28rpx;
+    width: 430rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .left-part .coupon-title {
+    margin-top: 42rpx;
+    line-height: 34rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .left-part .coupon-sponsor {
+    margin-top: 18rpx;
+    line-height: 24rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .left-part .valid-date {
+    margin-top: 26rpx;
+    line-height: 22rpx;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .right-part {
+    width: 200rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .right-part .amount {
+    margin-top: 38rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .right-part .amount text {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .right-part .amount .unit {
+    position: relative;
+    top: 6rpx;
+    line-height: 36rpx;
+    font-size: 36rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .right-part .amount .count {
+    line-height: 70rpx;
+    font-size: 70rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-info .right-part .bound {
+    margin-top: 18rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.swiper .has-coupon .coupon-wrap .line {
+    position: absolute;
+    top: 172rpx;
+    left: -1rpx;
+    right: -1rpx;
+    height: 36rpx;
+    background-image: url("https://static1.keepcdn.com/2019/06/13/17/1560419518835_696x36.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules {
+    background-color: #fafafa;
+    padding-left: 28rpx;
+    padding-right: 32rpx;
+    border-radius: 0 0 8rpx 8rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules .rules-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules .rules-title .text {
+    line-height: 30rpx;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules .rules-title .text:after {
+    position: relative;
+    top: 3rpx;
+    display: inline-block;
+    content: '';
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 8rpx;
+    background-image: url("https://static1.keepcdn.com/2019/05/24/16/1558686862138_24x24.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules .rules-title .text.show-rules:after {
+    transform: rotate(180deg);
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules .rules-title .button {
+    width: 112rpx;
+    height: 44rpx;
+    line-height: 44rpx;
+    border-radius: 44rpx;
+    text-align: center;
+    font-size: 24rpx;
+}
+
+.swiper .has-coupon .coupon-wrap .coupon-rules .rules-content {
+    padding-bottom: 18rpx;
+    line-height: 30rpx;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.swiper .empty-coupon {
+    overflow: hidden;
+}
+
+.swiper .empty-coupon .img {
+    margin: 360rpx auto 20rpx;
+    width: 300rpx;
+    height: 200rpx;
+    background-image: url("https://static1.keepcdn.com/2018/07/12/14/1531378423777_300x200.png");
+    background-size: 300rpx 200rpx;
+}
+
+.swiper .empty-coupon .tip {
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+}

@@ -1,0 +1,59 @@
+<banner bannerList="{{bannerInfo.promotions}}" bind_init="_initComponent" class="banner" height="428rpx" wx:if="{{showBanner}}"></banner>
+<view class="tabs-outer {{[isFixTop?'tabs-outer-strick':'']}}" style=" {{'top:'+top+';'}}">
+    <view class="tabs-wrapper {{[isFixTop?'tabs-wrapper-strick':'']}}">
+        <view class="tabs">
+            <view bindtap="_proxy" class="tab-item" data-region-id-se="courseItemTab" data-wpy-evt="1033-0" id="courseItemTab">
+                <image class="icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/online-icon-subject.png"></image>
+                <view class="text">课程</view>
+            </view>
+            <view bindtap="_proxy" class="tab-item" data-region-id-se="campTab" data-wpy-evt="1033-1" id="campTab">
+                <image class="icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/online-icon-camp.png"></image>
+                <view class="text">营期</view>
+            </view>
+            <view bindtap="_proxy" class="tab-item" data-region-id-se="trainerTab" data-wpy-evt="1033-2" id="trainerTab">
+                <image class="icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/online-icon-coach.png"></image>
+                <view class="text">教练</view>
+            </view>
+            <click-behavior bind_init="_initComponent" info="{{info}}">
+                <view bindtap="_proxy" class="tab-item" data-region-id-se="liveTab" data-wpy-evt="1033-3" id="liveTab">
+                    <image class="icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/online-icon-live.png"></image>
+                    <view class="text">Live</view>
+                </view>
+            </click-behavior>
+        </view>
+    </view>
+</view>
+<view class="main">
+    <view class="content">
+        <view class="title">
+            <view class="title-text">热门课程</view>
+            <view bindtap="_proxy" class="title-action" data-region-id-se="allCourse" data-wpy-evt="1033-4" id="allCourse" wx:if="{{hotCampList.length}}">
+                <view>全部 {{campTotalCount}} 个课程</view>
+                <text class="iconfont icon-arrow-right"></text>
+            </view>
+        </view>
+        <view class="class-list" wx:if="{{hotCampList.length}}">
+            <camp-card bind_init="_initComponent" camp="{{camp}}" hasBadge="{{hasBadge}}" hasSubText="{{hasSubText}}" wx:for="{{hotCampList}}" wx:for-item="camp" wx:key="index"></camp-card>
+        </view>
+        <view class="class-empty" wx:else>
+            <image class="image" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/page-status-icon/calendar.png"></image>
+            <view class="text-tip">
+                <text>暂无内容，请稍后再试</text>
+            </view>
+        </view>
+        <view class="title" style="margin-bottom: 24rpx;">
+            <view class="title-text">推荐营期</view>
+            <view bindtap="_proxy" class="title-action" data-region-id-se="allCamp" data-wpy-evt="1033-5" id="allCamp" wx:if="{{campScheduleList.length}}">
+                <view>全部 {{scheduleTotalCount}} 个营期</view>
+                <text class="iconfont icon-arrow-right"></text>
+            </view>
+        </view>
+        <view class="camp-list" wx:if="{{campScheduleList.length}}">
+            <online-camp-item bind_init="_initComponent" schedule="{{scheduleInfo}}" wx:for="{{campScheduleList}}" wx:for-item="scheduleInfo" wx:key="index"></online-camp-item>
+            <bottom-text bind_init="_initComponent" class="bottom-text" mode="{{bottomTextMode}}"></bottom-text>
+        </view>
+        <view class="camp-empty" wx:else>
+            <text>暂无内容，请稍后再试</text>
+        </view>
+    </view>
+</view>

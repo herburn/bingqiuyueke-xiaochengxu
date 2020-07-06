@@ -1,0 +1,66 @@
+<navigatorBar title="评价"></navigatorBar>
+<view class="publisher-body">
+    <view class="koach-info">
+        <image class="avatar" mode="aspectFit" src="{{item.avatar}}?imageMogr2/thumbnail/260x/quality/95" style="left: {{index*70}}rpx;z-index:{{orderInfo.coachInfos.length-index}};" wx:for="{{orderInfo.coachInfos}}" wx:key="{{ index }}"></image>
+        <text style="left: 98rpx;" wx:if="{{orderInfo.coachInfos.length==1}}">{{orderInfo.coachInfos[0].name}}，刚带你上完一节课</text>
+        <text style="left: {{orderInfo.coachInfos.length*70+28}}rpx;" wx:else>教练们，刚带你上完一节课</text>
+    </view>
+    <view class="question-card" wx:if="{{personalReviewInfo&&personalReviewInfo.questionItem}}">
+        <view class="title">{{personalReviewInfo.questionItem.name}}</view>
+        <view class="selections-wrap {{personalReviewInfo.questionItem.selectStyle?'personalReviewInfo':''}}">
+            <view bindtap="chooseSelection" class="selection" data-item="{{item}}" wx:for="{{personalReviewInfo.questionItem.selection}}" wx:key="{{index}}">
+                <view wx:if="{{!personalReviewInfo.questionItem.selectStyle}}">
+                    <image class="icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/06/18/12/1560831554148_80x80.png" wx:if="{{index==0}}"></image>
+                    <image class="icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/06/18/12/1560831534247_80x80.png" wx:elif="{{personalReviewInfo.questionItem.selectCounts==3&&index==1}}"></image>
+                    <image class="icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/06/18/12/1560831566388_80x80.png" wx:else></image>
+                </view>
+                <view class="name {{selectionSelected==item?'selected':''}}">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="publisher-card {{stars?'publisher-card-bottom':''}}">
+        <view class="title">你对本节课体验满意吗？</view>
+        <view bindtap="makeStar" class="stars-wrap">
+            <image class="star" data-index="{{index}}" mode="aspectFit" src="https://static1.keepcdn.com/2019/05/31/16/1559290705775_80x80.png" wx:for="{{stars}}" wx:key="{{index}}"></image>
+            <image class="star" data-index="{{index+stars}}" mode="aspectFit" src="https://static1.keepcdn.com/2019/05/31/16/1559290691653_80x80.png" wx:for="{{5-stars}}" wx:key="{{index}}"></image>
+        </view>
+        <view class="star-des" wx:if="{{stars}}">{{starDesc[stars]}}</view>
+        <view class="tag-wrap">
+            <view bindtap="chooseReviewTagSelections" class="tag {{item.selected?'selected':''}}" data-index="{{index}}" data-item="{{item}}" wx:for="{{reviewTag}}" wx:key="{{index}}">{{item.text}}</view>
+        </view>
+        <view class="review-wrap {{isIOS?'iphone-style':''}}" wx:if="{{stars}}">
+            <textarea bindblur="bindblur" bindfocus="bindfocus" bindinput="descInput" cursorSpacing="64" focus="{{textareaFocus}}" maxlength="{{1000}}" placeholder="{{stars==5?'分享你的健身心得和经验':'说说哪里不满意，让Keepland变得更好'}}" placeholderStyle="color:#CCCCCC;" value="{{content}}" wx:if="{{isIOS}}"></textarea>
+            <block wx:else>
+                <textarea bindblur="bindblur" bindinput="descInput" cursorSpacing="64" fixed="{{true}}" focus="{{textareaFocus}}" maxlength="{{1000}}" placeholder="{{stars==5?'分享你的健身心得和经验':'说说哪里不满意，让Keepland变得更好'}}" placeholderStyle="color:#CCCCCC;" value="{{content}}" wx:if="{{textareaFocus}}"></textarea>
+                <view bindtap="bindfocus" class="textarea-holder" style="color: {{content?'#333333;':'#CCCCCC;'}}" wx:else>
+                    <text class="text" wx:if="{{content}}">{{content}}</text>
+                    <text class="text" wx:else>{{stars==5?'分享你的健身心得和经验':'说说哪里不满意，让Keepland变得更好'}}</text>
+                </view>
+            </block>
+            <view class="counter">
+                <block wx:if="{{content&&textareaFocus}}">
+                    <text class="count">{{content.length}}</text>
+                    <text>/1000</text>
+                </block>
+            </view>
+            <view class="upload-wrap">
+                <view class="upload-pic" wx:for="{{uploadPic}}" wx:key="{{index}}">
+                    <image bindtap="previewImg" class="img" data-item="{{item}}" mode="aspectFill" src="{{item}}"></image>
+                    <image bindtap="deleteImage" class="del-img" data-item="{{item}}" mode="aspectFit" src="https://static1.keepcdn.com/2019/05/31/18/1559297219574_34x34.png"></image>
+                </view>
+                <view bindtap="upload" class="upload-pic" wx:if="{{9>uploadPic.length}}">
+                    <image class="img" mode="aspectFit" src="https://static1.keepcdn.com/2019/05/31/17/1559296070455_135x135.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="isVisibleChange" class="isvisible {{!visible?'select-icon':''}}" data-visible="{{visible?0:1}}">匿名评价</view>
+    <cover-view bindtap="submit" class="button-wrap {{stars==0||personalReviewInfo.questionItem&&!selectionSelected?'disabled':''}}" wx:if="{{personalReviewInfo}}">
+        <cover-view class="loading-wrap" wx:if="{{showLoading}}">
+            <cover-image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png"></cover-image>
+            <cover-view>正在发布...</cover-view>
+        </cover-view>
+        <cover-view wx:elif="{{visible}}">提交评价</cover-view>
+        <cover-view wx:else>匿名评价</cover-view>
+    </cover-view>
+</view>

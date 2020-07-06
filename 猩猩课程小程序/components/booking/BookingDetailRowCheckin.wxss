@@ -1,0 +1,18 @@
+.checkin-row {
+    padding: 36rpx 0;
+}
+
+.checkin-row .checkin {
+    font-size: 36rpx;
+    color: #fcc800;
+}
+
+.checkin-row .un-checkin {
+    font-size: 36rpx;
+    color: #f2f2f7;
+}
+
+.checkin-row .note {
+    font-size: 22rpx;
+    color: #767678;
+}

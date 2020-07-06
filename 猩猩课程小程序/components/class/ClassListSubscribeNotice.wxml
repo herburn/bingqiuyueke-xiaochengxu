@@ -1,0 +1,3 @@
+<view bindtap="_proxy" class="notice" data-wpy-evt="1214-0">
+    <view class="msg">{{msg}}</view>
+</view>

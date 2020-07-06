@@ -1,0 +1,158 @@
+<view class="amount-selector">
+    <view class="select-amount keep-1px-border bottom-border">
+        <view class="title">
+            <view class="text">预约人数</view>
+            <view class="tips" wx:if="{{item.tips}}" wx:for="{{preBookInfo.bookItems}}" wx:key="{{ index }}">{{item.tips}}</view>
+        </view>
+        <view bindtap="selectAmount" class="amount {{item.amount==bookAmount.amount?'selected':''}} {{item.available?'':'forbid'}}" data-amount="{{item}}" wx:for="{{preBookInfo.bookItems}}" wx:key="{{ index }}">{{item.amount}}人<view class="promotion-tag" wx:if="{{item.tag}}">{{item.tag}}</view>
+        </view>
+    </view>
+    <view class="select-pay">
+        <view class="pay-info">
+            <block wx:if="{{bookAmount.packageAmount>preBookInfo.availableCount&&recommendPackage}}">
+                <text class="title">补充课包</text>
+                <text class="tips">
+                    <text>剩余 {{preBookInfo.availableCount}} 个，本次预约需要 {{bookAmount.packageAmount}} 个</text>
+                </text>
+            </block>
+            <block wx:else>
+                <text class="title">支付方式</text>
+                <text class="package-amount-tips" wx:if="{{preBookInfo.availableCount>=bookAmount.packageAmount&&currentPayment.type=='package'}}">
+                    <text>剩余 </text>
+                    <text class="count">{{preBookInfo.availableCount}} </text>
+                    <text>个，本次预约消耗 </text>
+                    <text class="count">{{bookAmount.packageAmount}} </text>
+                    <text>个</text>
+                </text>
+            </block>
+        </view>
+        <view bindtap="selectPayment" class="payment {{currentPayment.type=='package'?'selected':''}}" data-type="package" wx:if="{{preBookInfo.availableCount>=bookAmount.packageAmount}}">
+            <view class="payment-info">
+                <view class="name-wrap">
+                    <image class="icon" mode="aspectFit" src="/app/images/icon_class_bag_medium.png"></image>
+                    <text class="name">课包支付</text>
+                </view>
+            </view>
+            <view class="single-price">
+                <text class="price">{{preBookInfo.bookItems[0].packageAmount}}</text>
+                <text class="text">个课包/人</text>
+            </view>
+        </view>
+        <block wx:elif="{{recommendPackage}}">
+            <view bindtap="selectPayment" class="payment {{currentPayment.type=='package'&&currentPayment.packageInfo.id==item.id?'selected':''}}" data-package="{{item}}" data-type="package" wx:for="{{preBookInfo.schedulePackageList.list}}" wx:key="{{ index }}">
+                <view class="payment-info">
+                    <view class="name-wrap">
+                        <text class="name small-size">{{item.name}}</text>
+                        <text class="gift-tag" wx:if="{{item.giftTag}}">{{item.giftTag}}</text>
+                    </view>
+                    <view class="description">有效期 {{item.advanceDay}} 天</view>
+                </view>
+                <view class="single-price">
+                    <text class="unit">¥</text>
+                    <text class="price">{{item.realSinglePrice/100}}</text>
+                    <text class="text">/个</text>
+                </view>
+                <image class="recommend" mode="aspectFit" src="/app/images/class_bag_recommend.png" wx:if="{{item.id==recommendPackage.id&&!item.packageTag}}"></image>
+                <view class="new-coupon-tip" wx:if="{{item.packageTag}}">
+                    <text>{{item.packageTag}}</text>
+                </view>
+            </view>
+        </block>
+        <view bindtap="selectPayment" class="payment {{currentPayment.type=='cash'?'selected':''}}" data-type="cash">
+            <view class="payment-info">
+                <view class="name-wrap">
+                    <text class="name">现金支付</text>
+                </view>
+            </view>
+            <view class="single-price">
+                <text class="unit">¥</text>
+                <text class="price">{{preBookInfo.bookItems[0].centPrice/100}}</text>
+                <text class="text">/人</text>
+            </view>
+        </view>
+        <view bindtap="selectPayment" class="payment {{currentPayment.type=='package'&&currentPayment.packageInfo.id==preBookInfo.schedulePackageList.list[0].id?'selected':''}}" data-package="{{preBookInfo.schedulePackageList.list[0]}}" data-type="package" wx:if="{{bookAmount.packageAmount>preBookInfo.availableCount&&preBookInfo.schedulePackageList.list&&!recommendPackage&&!preBookInfo.couponPackageProduct}}">
+            <view class="payment-info">
+                <view class="name-wrap">
+                    <text class="name small-size">{{preBookInfo.schedulePackageList.list[0].name}}</text>
+                    <text class="gift-tag" wx:if="{{preBookInfo.schedulePackageList.list[0].giftTag}}">{{preBookInfo.schedulePackageList.list[0].giftTag}}</text>
+                </view>
+                <view class="description">
+                    <text>有效期 {{preBookInfo.schedulePackageList.list[0].advanceDay}} 天，本次预约消耗 </text>
+                    <text>{{bookAmount.packageAmount}} </text>
+                    <text>个</text>
+                </view>
+            </view>
+            <view class="single-price">
+                <text class="unit">¥</text>
+                <text class="price">{{preBookInfo.schedulePackageList.list[0].realSinglePrice/100}}</text>
+                <text class="text">/个</text>
+            </view>
+            <view class="new-coupon-tip" wx:if="{{preBookInfo.schedulePackageList.list[0].packageTag}}">
+                <text>{{preBookInfo.schedulePackageList.list[0].packageTag}}</text>
+            </view>
+        </view>
+        <view class="new-user-promotion" wx:if="{{preBookInfo.couponPackageProduct}}">
+            <view class="left">
+                <view class="tag">新人专享礼包</view>
+                <view class="title">
+                    <text>购买得 </text>
+                    <text class="count">{{preBookInfo.couponPackageProduct.couponTotalPrice/100}} </text>
+                    <text>元券</text>
+                    <block wx:if="{{bookAmount.reducePrice}}">
+                        <text>，本单立减 </text>
+                        <text class="count">{{bookAmount.reducePrice/100}} </text>
+                        <text>元</text>
+                    </block>
+                </view>
+                <navigator class="subtitle" hoverClass="none" url="/app/packages/activity/newUser/newUser?source=6">仅限新人购买，含 {{preBookInfo.couponPackageProduct.couponCount}} 张优惠券</navigator>
+            </view>
+            <view class="right">
+                <view class="popup {{isSelectPromotion?'':'select-style'}}">{{isSelectPromotion?'优惠券已自动抵扣':'勾选购买'}}</view>
+                <view bindtap="selectPromotionChange" class="promotion-select">
+                    <text class="before-price">¥{{preBookInfo.couponPackageProduct.couponTotalPrice/100}}</text>
+                    <text class="after-price">¥{{preBookInfo.couponPackageProduct.productPrice/100}}</text>
+                    <text class="select {{isSelectPromotion?'select-icon':''}}"></text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="pay-wrap {{iphonex?'iphonex':''}} {{canSubmit?'':'disabled'}}">
+        <view class="remind" style="background-color: {{preBookInfo.remindTxtStatus==1?'#FFFCF0':'#FFFFFF'}}" wx:if="{{preBookInfo.remindTxtStatus!=0}}">
+            <view class="remind-text {{preBookInfo.remindTxtStatus==1?'alert':'inform'}}">{{preBookInfo.bookCancelRemind}}</view>
+        </view>
+        <form bindsubmit="payWithPackage" reportSubmit="true" wx:if="{{currentPayment.type=='package'&&!currentPayment.packageInfo}}">
+            <button class="wx-button" formType="submit">
+                <view class="pay">
+                    <text wx:if="{{canSubmit}}">确认使用 {{bookAmount.packageAmount}} 个课包闪付</text>
+                    <block wx:else>
+                        <image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png"></image>
+                        <text>处理中</text>
+                    </block>
+                </view>
+            </button>
+        </form>
+        <view bindtap="payWithCash" class="pay" wx:elif="{{currentPayment.type=='cash'}}">
+            <block wx:if="{{canSubmit}}">
+                <block wx:if="{{!isSelectPromotion}}">
+                    <text>立即预约 ¥{{bookAmount.centSalesPrice/100}}</text>
+                    <text class="origin-cost" wx:if="{{bookAmount.tag}}">¥{{bookAmount.centPrice/100}}</text>
+                </block>
+                <text wx:elif="{{preBookInfo.couponPackageProduct}}">立即预约 ¥{{bookAmount.couponAfterPrice/100}}</text>
+            </block>
+            <block wx:else>
+                <image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png"></image>
+                <text>处理中</text>
+            </block>
+        </view>
+        <view bindtap="buyPackageSchedule" class="pay" wx:else>
+            <block wx:if="{{canSubmit}}">
+                <text>{{recommendPackage?'补充课包并预约':'购买课包并预约'}} ¥{{currentPayment.packageInfo.realTotalPrice/100}}</text>
+                <text class="origin-cost" wx:if="{{currentPayment.packageInfo.realTotalPrice!=currentPayment.packageInfo.totalPrice}}">¥{{currentPayment.packageInfo.totalPrice/100}}</text>
+            </block>
+            <block wx:else>
+                <image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png"></image>
+                <text>处理中</text>
+            </block>
+        </view>
+    </view>
+</view>

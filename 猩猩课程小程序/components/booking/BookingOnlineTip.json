@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "multi-line-text": "./../common/dataDisplay/TextMultiLineWithUnfold"
+    }
+}

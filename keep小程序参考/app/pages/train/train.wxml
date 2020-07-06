@@ -1,0 +1,74 @@
+<navigatorBar backgroundColor="{{navigatorBarBackground}}" title="训练"></navigatorBar>
+<view class="train" wx:if="{{keepUserInfo}}">
+    <view class="top-wrap">
+        <view class="recent-train" wx:if="{{trainingInfo.scheduleName}}">
+            <keep-notice-bar height="74" linkUrl="/app/pages/courseOrder/courseOrder?orderNo={{trainingInfo.scheduleOrderNo}}" type="primary">
+                <view class="content">
+                    <text>最近完成一次训练</text>
+                    <text>{{trainingInfo.scheduleName}}</text>
+                </view>
+            </keep-notice-bar>
+        </view>
+        <keep-card customClass="top-card" shadow="shadow">
+            <navigator class="card" hoverClass="none" url="/app/packages/training/trainingData/trainingData">
+                <view wx:if="{{trainingInfo}}">
+                    <view class="month keep-right-more-arrow-new">
+                        <view>{{trainingInfo.monthAt}}月上课</view>
+                        <view>训练数据</view>
+                    </view>
+                    <view class="duration keep-1px-border bottom-border">
+                        <view class="duration-content">
+                            <text>{{trainingInfo.trainingDuration}}</text>
+                            <text>训练(分钟)</text>
+                        </view>
+                    </view>
+                    <view class="train-record">
+                        <view class="total-times">
+                            <text>{{trainingInfo.trainingCount}}</text>
+                            <text>完成(次)</text>
+                        </view>
+                        <view class="total-calorie">
+                            <text>{{trainingInfo.calorie}}</text>
+                            <text>消耗(千卡)</text>
+                        </view>
+                    </view>
+                </view>
+            </navigator>
+        </keep-card>
+    </view>
+    <view class="bottom-card">
+        <navigator class="history" hoverClass="none" url="/app/packages/training/orderHistory/orderHistory">
+            <view>我的训练</view>
+            <view class="keep-right-more-arrow-new">历史订单</view>
+        </navigator>
+        <view class="tab-wrap" style="top: {{totalNavHeight}}px">
+            <keep-tabs bindchange="handleChange" current="{{packagePrivilegeInfo.hasPreviewPrivilege?swiperIndex:swiperIndex+1}}" customClass="tab" data-current="{{packagePrivilegeInfo.hasPreviewPrivilege?swiperIndex:swiperIndex+1}}">
+                <keep-tab name="{{index}}" title="{{item.text}}" wx:if="{{item.isShow}}" wx:for="{{tab}}" wx:key="{{index}}">
+                    <keep-badge customClass="badge" wx:if="{{item.count}}">{{item.count}}</keep-badge>
+                </keep-tab>
+            </keep-tabs>
+        </view>
+        <swiper bindchange="bindchange" class="swiper" current="{{swiperIndex}}" duration="200" style="height: {{swiperHeight}}px; background: #ffffff;" wx:if="{{showList}}">
+            <swiper-item wx:if="{{packagePrivilegeInfo.hasPreviewPrivilege}}">
+                <view id="swiper-item-0">
+                    <trainingSchedule bindchangeplanprt="changePlanPrt" bindgettrainlist="getTrainList" packageInfo="{{packagePrivilegeInfo}}" priorityPlanList="{{priorityPlanList}}" propData="{{planList}}" type="plan"></trainingSchedule>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view id="swiper-item-1">
+                    <trainingSchedule propData="{{waitingList}}" type="waiting"></trainingSchedule>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view id="swiper-item-2">
+                    <trainingSchedule propData="{{pendingList}}" type="pending"></trainingSchedule>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</view>
+<view class="need-login" wx:else>
+    <image mode="aspectFill" src="https://static1.keepcdn.com/2019/09/30/15/1569828979576_435x435.png"></image>
+    <text>请先登录</text>
+    <keep-button bind:click="login" customClass="login" shape="circle">登录</keep-button>
+</view>

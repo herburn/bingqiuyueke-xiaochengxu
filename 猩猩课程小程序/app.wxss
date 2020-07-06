@@ -1,0 +1,29 @@
+@import "__wuBaseWxss__/0.wxss";
+
+button {
+    position: relative;
+    box-sizing: content-box;
+    width: auto;
+    margin: 0;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    font-size: medium;
+    color: inherit;
+    line-height: normal;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+}
+
+button::after,button::before {
+    display: none;
+}
+
+@import "__wuBaseWxss__/2.wxss";
+
+page {
+    min-width: 100%;
+    min-height: 100%;
+    background: #242424;
+}

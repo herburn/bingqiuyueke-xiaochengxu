@@ -1,0 +1,221 @@
+.coupon-cover {
+    display: flex;
+    align-items: center;
+    height: 372rpx;
+    justify-content: center;
+    background: no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+.coupon-cover:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(88,79,96,0.4);
+}
+
+.coupon-cover .newClass-tag {
+    z-index: 2;
+    position: absolute;
+    left: 28rpx;
+    top: 28rpx;
+    width: 132rpx;
+    height: 42rpx;
+    line-height: 42rpx;
+    text-align: center;
+    background-image: linear-gradient(-134deg,#ffa474 0%,#ff5363 100%);
+    border-radius: 4rpx;
+    font-size: 24rpx;
+    color: #fff;
+    font-weight: bold;
+}
+
+.coupon-cover .couese-info {
+    z-index: 2;
+    position: relative;
+}
+
+.coupon-cover .couese-info .course-name {
+    font-size: 48rpx;
+    line-height: 67rpx;
+    color: #fff;
+    font-weight: bold;
+}
+
+.coupon-cover .couese-info .appointment-count {
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 32rpx;
+    margin-top: 28rpx;
+}
+
+.banner {
+    display: block;
+    height: 372rpx;
+    width: 750rpx;
+}
+
+.banner-line {
+    height: 10rpx;
+    background: linear-gradient(to right,#4aa5d0,#24c789);
+}
+
+.coupon-wrap {
+    padding-top: 58rpx;
+    padding-bottom: 101rpx;
+    background: url("https://static1.keepcdn.com/2018/05/03/16/1525336816883_68x27.png") no-repeat center bottom/68rpx 27rpx;
+}
+
+.coupon-wrap .coupon-card {
+    width: 566rpx;
+    height: 160rpx;
+    margin: 0 auto;
+    color: #666;
+    background: rgba(253,225,191,0.1);
+    border: 1rpx solid #dad8db;
+    border-right: 0;
+    box-sizing: border-box;
+    padding-left: 26rpx;
+    position: relative;
+}
+
+.coupon-wrap .coupon-card:after,.coupon-wrap .coupon-card:before {
+    position: absolute;
+    top: 50%;
+    width: 20rpx;
+    height: 20rpx;
+    border-radius: 50%;
+    border: 1rpx solid #dad8db;
+    border-bottom-color: #fff;
+    background: #fff;
+    margin-top: -14rpx;
+}
+
+.coupon-wrap .coupon-card:after {
+    content: "";
+    left: -13rpx;
+    border-left-color: #fff;
+    transform: rotateZ(45deg);
+}
+
+.coupon-wrap .coupon-card.coupon-card-finish {
+    border: 1rpx solid #dad8db;
+    text-align: center;
+    line-height: 160rpx;
+    font-size: 60rpx;
+    color: #ccc;
+}
+
+.coupon-wrap .coupon-card.coupon-card-finish:before {
+    content: "";
+    right: -13rpx;
+    border-right-color: #fff;
+    transform: rotateZ(-45deg);
+}
+
+.coupon-wrap .coupon-card .card-name {
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding-top: 21rpx;
+}
+
+.coupon-wrap .coupon-card .card-date {
+    font-size: 20rpx;
+    line-height: 30rpx;
+    padding-top: 5rpx;
+}
+
+.coupon-wrap .coupon-card .card-addr {
+    font-size: 20rpx;
+    line-height: 30rpx;
+    padding-top: 17rpx;
+    color: #999;
+}
+
+.coupon-wrap .coupon-card .card-bg {
+    position: absolute;
+    top: -1rpx;
+    right: 0;
+    width: 186rpx;
+    height: 160rpx;
+    background: url("https://static1.keepcdn.com/2018/05/03/15/1525334264495_186x160.png") no-repeat center right;
+    background-size: 186rpx 160rpx;
+}
+
+.coupon-wrap .coupon-card .card-bg .price {
+    font-size: 60rpx;
+    color: #fde1bf;
+    line-height: 71rpx;
+    text-align: center;
+    padding-top: 30rpx;
+}
+
+.coupon-wrap .coupon-card .card-bg .price text {
+    font-size: 37rpx;
+    line-height: 44rpx;
+    vertical-align: middle;
+}
+
+.coupon-wrap .coupon-card .card-bg .price-desc {
+    font-size: 25rpx;
+    color: #fde1bf;
+    line-height: 34rpx;
+    text-align: center;
+    padding-top: 2rpx;
+}
+
+.coupon-wrap .coupon-btn {
+    display: block;
+    width: 566rpx;
+    height: 100rpx;
+    background: #24c789;
+    border-radius: 100rpx;
+    font-size: 36rpx;
+    color: #fff;
+    line-height: 100rpx;
+    text-align: center;
+    margin: 40rpx auto 0;
+}
+
+.coupon-wrap .coupon-tips {
+    font-size: 24rpx;
+    color: #24c789;
+    line-height: r32px;
+    padding-top: 38rpx;
+    text-align: center;
+}
+
+.coupon-rule {
+    padding: 70rpx 48rpx;
+}
+
+.coupon-rule .rule-title {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 32rpx;
+}
+
+.coupon-rule .rule-list {
+    padding-top: 46rpx;
+    font-size: 30rpx;
+    color: #666;
+    line-height: 50rpx;
+}
+
+.coupon-rule .rule-list>view {
+    padding-left: 24rpx;
+    position: relative;
+}
+
+.coupon-rule .rule-list>view:after {
+    position: absolute;
+    left: -4rpx;
+    top: 0;
+    content: "·";
+    font-size: 24rpx;
+}

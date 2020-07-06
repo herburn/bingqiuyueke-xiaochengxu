@@ -1,0 +1,4 @@
+<view class="address-row">
+    <view class="label">{{label}}</view>
+    <view bindtap="_proxy" class="value" data-wpy-evt="1109-0">{{value}}</view>
+</view>

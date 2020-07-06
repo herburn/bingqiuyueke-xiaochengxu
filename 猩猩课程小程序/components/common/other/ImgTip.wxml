@@ -1,0 +1,4 @@
+<view class="img-tip">
+    <image class="tip-img" src="{{imgSrc}}" style=" {{'width:'+width+';'+'height:'+height+';'}}"></image>
+    <view class="tip-msg">{{tipMsg}}</view>
+</view>

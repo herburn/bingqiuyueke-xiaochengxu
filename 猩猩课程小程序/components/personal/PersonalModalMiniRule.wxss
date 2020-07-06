@@ -1,0 +1,25 @@
+.mini-content {
+    padding: 16rpx 24rpx 31rpx;
+}
+
+.mini-content .sub-title {
+    font-size: 28rpx;
+    color: #333;
+    height: 39rpx;
+    line-height: 39rpx;
+    text-align: center;
+}
+
+.mini-content .label {
+    margin-top: 32rpx;
+}
+
+.mini-content .label,.mini-content .row {
+    font-size: 26rpx;
+    color: #767678;
+    text-align: left;
+}
+
+.mini-content .label-margin,.mini-content .row-margin {
+    margin-bottom: 50rpx;
+}

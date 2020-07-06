@@ -1,0 +1,33 @@
+page {
+    background-color: #242424;
+}
+
+.navigator-bar {
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.course-list,.online-list {
+    min-height: 100vh;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.class,.personal,.camp {
+    display: none;
+}
+
+.class-active,.personal-active,.camp-active {
+    display: block;
+}
+
+.copy-right-bottom {
+    display: block;
+    margin-top: auto;
+    padding: 24rpx 0;
+}

@@ -1,0 +1,27 @@
+<view class="booking-detail-main">
+    <view class="booking-detail-body {{[theme==='dark'?'dark-bg':'']}}">
+        <view class="card-add-content" wx:if="{{hasAddContent}}">
+            <slot name="add"></slot>
+        </view>
+        <view class="card-top">
+            <slot name="top"></slot>
+            <block wx:if="{{notes.length&&isShowTips}}">
+                <view class="divider"></view>
+                <view class="panel-title">注意：</view>
+                <view class="panel-content">
+                    <text-render-paragraph bind_init="_initComponent" fontColor="#f2f2f7" paragraphs="{{notes}}"></text-render-paragraph>
+                </view>
+            </block>
+            <view class="gap" wx:if="{{isShowTips}}">
+                <view class="panel-title">重要：</view>
+                <view class="panel-content">
+                    <agreement bind_init="_initComponent" fontColor="#f2f2f7" hasTitle="{{false}}"></agreement>
+                </view>
+            </view>
+        </view>
+        <view class="card-bottom" wx:if="{{hasBottom}}">
+            <view class="divider-dashed"></view>
+            <slot name="bottom"></slot>
+        </view>
+    </view>
+</view>

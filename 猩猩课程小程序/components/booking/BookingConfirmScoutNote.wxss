@@ -1,0 +1,21 @@
+.scout-note {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    height: 32rpx;
+    padding: 16rpx 0;
+    line-height: 0;
+    font-size: 32rpx;
+    color: #f2f2f7;
+}
+
+.scout-note .icon {
+    width: 28rpx;
+    height: 28rpx;
+    margin-left: 8rpx;
+}

@@ -1,0 +1,17 @@
+<view class="num-selection {{numArray.length<=4?'lesson-four':'lesson-more-four'}}">
+    <block wx:for="{{numArray}}" wx:key="value">
+        <view class="num-item-wrap" wx:if="{{item.disabled}}">
+            <view class="num-item num-item-disabled {{item.label.length>6?'auto-width':''}} {{index===0?'first-item':''}}">
+        {{item.label}}
+      </view>
+        </view>
+        <view class="num-item-wrap" wx:else>
+            <view catchtap="_proxy" class="num-item {{[activeIndex===index?'num-item-active':'',item.label.length>6?'auto-width':'',index===0?'first-item':'']}}" data-wpy-evt="1193-0" data-wpytap-a="{{item}}" data-wpytap-b="{{index}}">
+        {{item.label}}
+      </view>
+            <image class="discounts" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/num-selection/discounts-icon-n.png" wx:if="{{item.recommend}}"></image>
+            <image class="first-tip" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/num-selection/firsty_try_icon-n.png" wx:if="{{item.miniFirstTip}}"></image>
+            <image class="triangle-icon {{[item.recommend?'triangle-icon-top-2':'']}}" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/num-selection/discounts-icon-arrow.png" wx:if="{{item.recommend||item.miniFirstTip}}"></image>
+        </view>
+    </block>
+</view>

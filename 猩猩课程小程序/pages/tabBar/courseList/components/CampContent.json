@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "camp-card": "./../../../../components/camp/CampListCard",
+        "img-tip": "./../../../../components/common/other/ImgTip",
+        "camp-list-popover-filter": "./CampListPopoverFilter"
+    }
+}

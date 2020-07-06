@@ -1,0 +1,22 @@
+<view class="confirm-header">
+    <view class="title">{{headerInfo.title}}</view>
+    <view class="top-row" wx:if="{{renderConfig.time}}">
+        <view class="time">时间：</view>
+        <view class="detail">{{headerInfo.duration}}</view>
+    </view>
+    <view class="top-row" wx:if="{{renderConfig.trainer}}">
+        <view class="trainer">教练：</view>
+        <view class="detail">
+            <view>{{headerInfo.trainerStageName}}</view>
+        </view>
+    </view>
+    <view class="top-row" wx:if="{{renderConfig.address}}">
+        <view class="address">地点：</view>
+        <view class="detail">{{headerInfo.address}}</view>
+    </view>
+    <view class="top-row" wx:if="{{renderConfig.sections}}">
+        <view class="detail">{{headerInfo.sections}}</view>
+    </view>
+    <slot></slot>
+    <image class="monkey-mark" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/confirm/monkey-mark.png"></image>
+</view>

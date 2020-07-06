@@ -1,0 +1,12 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.row {
+    font-size: 36rpx;
+    color: #fcc800;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 32rpx 0;
+    font-weight: bold;
+}

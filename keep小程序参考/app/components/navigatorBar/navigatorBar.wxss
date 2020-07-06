@@ -1,0 +1,109 @@
+.position-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 19;
+}
+
+.custom-nav {
+    box-sizing: border-box;
+}
+
+.custom-nav .custom-nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.custom-nav .custom-nav-content>view {
+    flex: 1;
+    padding-bottom: 8rpx;
+}
+
+.custom-nav .custom-nav-content .custom-left-wrap.black .custom-left {
+    background-color: rgba(0,0,0,0.1);
+    border-color: rgba(255,255,255,0.3);
+}
+
+.custom-nav .custom-nav-content .custom-left-wrap.black .custom-left bd-right:after {
+    border-right-color: rgba(255,255,255,0.3);
+}
+
+.custom-nav .custom-nav-content .custom-left {
+    display: flex;
+    align-items: center;
+    width: 87px;
+    height: 32px;
+    border-radius: 32px;
+    border: 1rpx solid #eaeaea;
+    text-align: center;
+    margin-left: 24rpx;
+    box-sizing: border-box;
+}
+
+.custom-nav .custom-nav-content .custom-left>view {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.custom-nav .custom-nav-content .custom-left>view:nth-child(1) {
+    position: relative;
+}
+
+.custom-nav .custom-nav-content .custom-left>view:nth-child(1):after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 36rpx;
+    transform: translateY(-50%);
+    border-right: 1rpx solid #d2d2d2;
+}
+
+.custom-nav .custom-nav-content .custom-left>view image {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.custom-nav .custom-nav-content .custom-left-tab {
+    position: absolute;
+    bottom: 10rpx;
+    left: 30rpx;
+    height: 56rpx;
+}
+
+.custom-nav .custom-nav-content .custom-left-tab image {
+    width: 199rpx;
+    height: 56rpx;
+}
+
+.custom-nav .custom-nav-content .custom-left-tab .title {
+    height: 56rpx;
+    line-height: 56rpx;
+    font-size: 40rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.custom-nav .custom-nav-content .custom-mid {
+    text-align: center;
+    font-size: 36rpx;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 2;
+}
+
+.custom-nav .custom-nav-content .custom-message {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    font-size: 26rpx;
+    transform: translateX(-50%);
+}

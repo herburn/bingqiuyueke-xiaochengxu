@@ -1,0 +1,161 @@
+{
+  "pages": [
+    "app/pages/index/index",
+    "app/pages/schedule/schedule",
+    "app/pages/train/train",
+    "app/pages/mine/mine",
+    "app/pages/gymFilter/gymFilter",
+    "app/pages/scheduleFilter/scheduleFilter",
+    "app/pages/space/space",
+    "app/pages/commentDetail/commentDetail",
+    "app/pages/coach/coach",
+    "app/pages/courseDetail/courseDetail",
+    "app/pages/campDetail/campDetail",
+    "app/pages/courseBookList/courseBookList",
+    "app/pages/coursePoly/coursePoly",
+    "app/pages/login/confirm/confirm",
+    "app/pages/login/chooseLogin/chooseLogin",
+    "app/pages/login/otherLogin/otherLogin",
+    "app/pages/login/phoneLogin/phoneLogin",
+    "app/pages/webView/webView",
+    "app/pages/checkIn/checkIn",
+    "app/pages/checkInFailed/checkInFailed",
+    "app/pages/trainingRank/trainingRank",
+    "app/pages/coupon/coupon",
+    "app/pages/invitation/invitation",
+    "app/pages/couponInvitation/couponInvitation",
+    "app/pages/login/authorized/authorized",
+    "app/pages/agreement/agreement",
+    "app/pages/packageOrder/packageOrder",
+    "app/pages/generalPay/generalPay",
+    "app/pages/waitingDetail/waitingDetail",
+    "app/pages/myCoupons/myCoupons",
+    "app/pages/courseConfirm/courseConfirm",
+    "app/pages/courseOrder/courseOrder",
+    "app/pages/campOrder/campOrder",
+    "app/pages/publisher/publisher",
+    "app/pages/openMini/openMini",
+    "app/pages/db11/activity/activity",
+    "app/pages/db11/lottery/lottery"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Keepland",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#fafafa",
+    "backgroundTextStyle": "dark",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#BCB8BF",
+    "selectedColor": "#584F60",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "app/pages/schedule/schedule",
+        "text": "课程",
+        "iconPath": "app/images/icon_class_off.png",
+        "selectedIconPath": "app/images/icon_class.png"
+      },
+      {
+        "pagePath": "app/pages/index/index",
+        "text": "约课",
+        "iconPath": "app/images/icon_home_off.png",
+        "selectedIconPath": "app/images/icon_home.png"
+      },
+      {
+        "pagePath": "app/pages/train/train",
+        "text": "训练",
+        "iconPath": "app/images/icon_train_off.png",
+        "selectedIconPath": "app/images/icon_train.png"
+      },
+      {
+        "pagePath": "app/pages/mine/mine",
+        "text": "我的",
+        "iconPath": "app/images/icon_me_off.png",
+        "selectedIconPath": "app/images/icon_me.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000,
+    "connectSocket": 30000,
+    "uploadFile": 15000
+  },
+  "subPackages": [
+    {
+      "root": "app/packages/classBag/",
+      "pages": [
+        "enterpriseApplyResult/enterpriseApplyResult",
+        "enterpriseCooperation/enterpriseCooperation",
+        "enterpriseApply/enterpriseApply",
+        "list/list",
+        "history/history",
+        "saveList/saveList",
+        "enterpriseToken/enterpriseToken",
+        "enterpriseList/enterpriseList",
+        "jdSale/jdSale"
+      ]
+    },
+    {
+      "root": "app/packages/classBagRefund/",
+      "pages": [
+        "refundStatement/refundStatement",
+        "refundApply/refundApply",
+        "refundDetail/refundDetail"
+      ]
+    },
+    {
+      "root": "app/packages/training/",
+      "pages": [
+        "orderHistory/orderHistory",
+        "trainingData/trainingData",
+        "trainingRank/trainingRank",
+        "prizeRecord/prizeRecord",
+        "prizeDetail/prizeDetail",
+        "medal/medal"
+      ]
+    },
+    {
+      "root": "app/packages/preview/",
+      "pages": [
+        "actionList/actionList",
+        "actionDetail/actionDetail",
+        "viewImage/viewImage",
+        "facilities/facilities"
+      ]
+    },
+    {
+      "root": "app/packages/activity/",
+      "pages": [
+        "newUser/newUser",
+        "somaticGamesReport/somaticGamesReport",
+        "wristband/wristband",
+        "annualsummary/annualsummary"
+      ]
+    },
+    {
+      "root": "app/packages/mine/",
+      "pages": [
+        "info/info",
+        "messages/messages"
+      ]
+    },
+    {
+      "root": "app/packages/invite/",
+      "pages": [
+        "invite/invite",
+        "inviteRule/inviteRule"
+      ]
+    }
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wxbd687630cd02ce1d",
+    "wx4a310ad8ec6cacd8",
+    "wxd947200f82267e58"
+  ],
+  "debug": false,
+  "sitemapLocation": "sitemap45.json"
+}

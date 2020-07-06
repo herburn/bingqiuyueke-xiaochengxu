@@ -1,0 +1,4 @@
+<view class="sm-panel">
+    <view class="sm-panel-title">课程通知</view>
+    <view bindtap="_proxy" class="sm-panel-content" data-course-type-se="{{courseType}}" data-region-id-se="receiveMsgBtn" data-wpy-evt="1195-0" id="receiveMsgBtn">点击接收</view>
+</view>

@@ -1,0 +1,13 @@
+var floor = (function(num) {
+    return (Math.floor(num))
+});
+var formatReturn = (function(str) {
+    var ruleKey = '-_';
+    var reg = getRegExp('\\n', 'g');
+    var forDesc = str.replace(reg, ruleKey);
+    return (forDesc ? forDesc.split(ruleKey) : [])
+});
+module.exports = ({
+    floor: floor,
+    formatReturn: formatReturn,
+});

@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "img-tip": "./../other/ImgTip",
+        "page-resident-button": "./../dataEntry/ButtonPageResident"
+    }
+}

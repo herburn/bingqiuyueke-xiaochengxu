@@ -1,0 +1,20 @@
+<view class="confirm-page">
+    <view class="bg-layer">
+        <image class="bg" mode="aspectFill" src="{{bgSrc}}"></image>
+        <view class="mask-1"></view>
+        <view class="mask-2"></view>
+    </view>
+    <view class="flex-container">
+        <view class="confirm-box">
+            <view class="container">
+                <view class="card-top">
+                    <slot name="card-top"></slot>
+                </view>
+                <view class="card-bottom">
+                    <slot name="card-bottom"></slot>
+                </view>
+            </view>
+        </view>
+    </view>
+    <slot name="card-btn"></slot>
+</view>

@@ -1,0 +1,12 @@
+{
+    "component": true,
+    "usingComponents": {
+        "observer-promotion-view": "./../common/enrichment/ObserverView",
+        "click-behavior": "./../common/enrichment/ClickBehavior",
+        "class-box-header": "./ClassListBoxHeader",
+        "class-empty": "./ClassListClassEntityEmpty",
+        "class-entry": "./ClassListClassEntity",
+        "class-box-promotion": "./ClassListBoxPromotion",
+        "class-promotion": "./ClassListClassPromotion"
+    }
+}

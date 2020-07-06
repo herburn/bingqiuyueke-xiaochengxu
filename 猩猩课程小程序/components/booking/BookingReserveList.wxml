@@ -1,0 +1,20 @@
+<view class="reserve-list">
+    <view class="reserve-item" key="{{index}}" wx:for="{{reserveList}}" wx:key="index">
+        <view class="reserve-item_msg">
+            <view class="reserve-item_msg_time">
+        {{item.date}} {{item.startTime}} ~ {{item.endTime}}
+        <text class="reserve-item_msg_time_status {{[item.status===2?'on':'']}}" wx:if="{{item.status!==10}}">{{item.statusText}}</text>
+            </view>
+            <view class="reserve-item_msg_type" wx:if="{{item.status===10}}">教练预留课时</view>
+            <view class="reserve-item_msg_pwd" wx:else>入场密码：{{item.entryPassword||'开训前30分钟显示'}}</view>
+        </view>
+        <view class="reserve-item_operate">
+            <block wx:if="{{item.status===10}}">
+                <view bindtap="_proxy" class="reserve-item_operate_accept" data-wpy-evt="1096-0" data-wpytap-a="{{item}}">接受预留</view>
+                <view bindtap="_proxy" class="reserve-item_operate_refuse" data-wpy-evt="1096-1" data-wpytap-a="{{item}}">拒绝预留</view>
+            </block>
+            <view bindtap="_proxy" class="reserve-item_operate_refuse" data-wpy-evt="1096-2" data-wpytap-a="{{item}}" wx:if="{{item.status===1}}">取消预约</view>
+        </view>
+    </view>
+</view>
+<show-modal bind_init="_initComponent" id="accept-modal"></show-modal>

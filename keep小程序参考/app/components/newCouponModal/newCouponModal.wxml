@@ -1,0 +1,22 @@
+<view class="unread-Coupon-list" wx:if="{{newCouponList.length>0}}">
+    <view class="coupon-modal">
+        <view class="coupon-count">获得 {{newCouponList.length}} 张优惠券，开始训练吧</view>
+        <view class="coupon-wrap" style="height: {{newCouponList.length>1?'472':'174'}}rpx;">
+            <view class="coupon" wx:for="{{newCouponList}}">
+                <view class="left">
+                    <view class="coupon-desc keep-text-overflow">{{item.title}}</view>
+                    <view class="coupon-name">{{item.sponsorCopy}}</view>
+                    <view class="valid-date">{{item.validDate}}</view>
+                </view>
+                <view class="coupon-line"></view>
+                <view class="right">
+                    <view class="amount">
+                        <text class="unit">¥</text>
+                        <text>{{item.amountCent/100}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="confirm" class="optain-btn">好的，收下了</view>
+</view>

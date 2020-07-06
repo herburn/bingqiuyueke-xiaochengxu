@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "follow-public-modal": "./AlertFollowPublic"
+    }
+}

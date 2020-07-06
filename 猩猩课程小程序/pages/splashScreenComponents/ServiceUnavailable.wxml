@@ -1,0 +1,6 @@
+<view class="content">
+    <view class="logo-wrapper">
+        <image class="logo-img" src="../../images/common/logo.png"></image>
+    </view>
+    <view class="text">{{errMsg}}</view>
+</view>

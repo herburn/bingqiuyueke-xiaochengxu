@@ -1,0 +1,12 @@
+.filter-text {
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.filter-text .link-style {
+    text-decoration: underline;
+}
+
+.filter-text .filter-text {
+    min-height: 28rpx;
+}

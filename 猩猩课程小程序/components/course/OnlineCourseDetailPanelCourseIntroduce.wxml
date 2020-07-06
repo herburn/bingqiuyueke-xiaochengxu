@@ -1,0 +1,17 @@
+<view class="content-radius-box">
+    <view class="gap" wx:if="{{trainingEffect.length>0}}">
+        <panel-title bind_init="_initComponent" iconClass="icon-effect" title="训练效果"></panel-title>
+        <view class="course-detail-block-main">
+            <view wx:for="{{trainingEffect}}" wx:key="index">{{item}}</view>
+        </view>
+    </view>
+    <view class="gap" wx:if="{{suitablePeople.length>0}}">
+        <panel-title bind_init="_initComponent" iconClass="icon-crowd" title="适合人群"></panel-title>
+        <view class="course-detail-block-main">
+            <multi-line-text bind_init="_initComponent">
+                <view wx:for="{{suitablePeople}}" wx:key="index">{{item}}</view>
+            </multi-line-text>
+        </view>
+    </view>
+    <faq bind_init="_initComponent" class="gap" faqs="{{faqs}}"></faq>
+</view>

@@ -1,0 +1,26 @@
+@import "../../../../../__wuBaseWxss__/1.wxss";
+
+.keep-avatar {
+    position: relative;
+    border-radius: 50%;
+    background-image: url(https://static1.keepcdn.com/2019/08/15/16/1565858901556_225x225.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.keep-avatar>image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.keep-avatar--border {
+    position: absolute;
+    top: -1rpx;
+    bottom: -1rpx;
+    left: -1rpx;
+    right: -1rpx;
+    border-radius: 50%;
+    border-style: solid;
+}

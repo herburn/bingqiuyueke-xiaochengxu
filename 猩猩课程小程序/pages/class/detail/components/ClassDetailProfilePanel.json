@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "face": "./../../../../components/common/dataDisplay/Face",
+        "multi-line-text": "./../../../../components/common/dataDisplay/TextMultiLineWithUnfold"
+    }
+}

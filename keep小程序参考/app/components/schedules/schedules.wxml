@@ -1,0 +1,21 @@
+<view class="normal">
+    <view class="schedule-date-wrap" style="top: {{totalNavHeight}}px">
+        <slot></slot>
+        <view class="schedule-date">
+            <swiper current="{{dateSwiperIndex}}" displayMultipleItems="{{date.length>7?7:date.length}}" duration="300">
+                <swiper-item bindtap="selectDate" class="{{dateIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{date}}" wx:key="{{index}}">
+                    <view class="week">{{item.week}}</view>
+                    <view class="date">{{item.day}}</view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <swiper bindchange="swiperChange" class="schedule-wrap {{path=='poi'?'padding':''}}" current="{{dateIndex}}" duration="200" style="height: {{swiperHeight}};">
+        <swiper-item wx:for="{{date}}" wx:key="{{index}}">
+            <view id="swiper_{{index}}">
+                <course-table bindsetgymactivity="setGymActivity" coachInfoMap="{{coachInfoMap}}" courseInfoMap="{{courseInfoMap}}" gymInfoMap="{{gymInfoMap}}" lastScheduleWeekEnd="{{lastScheduleWeekEnd}}" packagePrivilegeInfo="{{packagePrivilegeInfo}}" schedules="{{schedules[index]}}"></course-table>
+                <view class="slogan" wx:if="{{schedules[index].scheduleTables.length}}">- 身型由己 -</view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

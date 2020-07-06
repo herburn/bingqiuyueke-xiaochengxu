@@ -1,0 +1,399 @@
+.comment-deleted {
+    height: calc(100vh - 68px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-deleted image {
+    width: 300rpx;
+    height: 200rpx;
+}
+
+.comment-deleted .deleted-desc {
+    font-size: 28rpx;
+    color: #666;
+    margin-top: 32rpx;
+}
+
+.detail {
+    height: 100vh;
+    width: 100%;
+    padding-bottom: 97rpx;
+    box-sizing: border-box;
+}
+
+.detail .comment .head {
+    padding: 28rpx 28rpx 30rpx;
+    background-color: #fff;
+}
+
+.detail .comment .head .baseinfo-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail .comment .head .baseinfo-box .author-head {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    background-size: 80rpx 80rpx;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box {
+    flex: 1;
+    padding-left: 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box .nickname-likestar_wrap .nickname {
+    font-size: 26rpx;
+    color: #333;
+    line-height: 36rpx;
+    display: flex;
+    align-items: center;
+    font-weight: 800;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box .nickname-likestar_wrap .likestar {
+    display: flex;
+    padding-top: 8rpx;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box .nickname-likestar_wrap .likestar .star {
+    width: 27rpx;
+    height: 27rpx;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box .officereply-statu_box .officereply-tag {
+    border-radius: 4rpx;
+    padding: 0 10rpx;
+    height: 29rpx;
+    line-height: 29rpx;
+    font-size: 20rpx;
+    color: #24c789;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box .officereply-statu_box .statu {
+    width: 144rpx;
+    background: url("https://static1.keepcdn.com/2019/04/04/18/1554372652355_32x32.png");
+    font-size: 24rpx;
+    color: #999;
+    background-repeat: no-repeat;
+    height: 33rpx;
+    background-size: 32rpx 32rpx;
+    background-position: 37rpx;
+    text-align: right;
+}
+
+.detail .comment .head .baseinfo-box .nickname-likestar_box .expirence-seal {
+    background: url("https://static1.keepcdn.com/2019/02/15/14/1550211042081_120x120.png") no-repeat center;
+    background-size: 120rpx;
+    position: absolute;
+    top: 16rpx;
+    right: 28rpx;
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.detail .comment .body {
+    background-color: #fff;
+    padding: 0 28rpx;
+    overflow: hidden;
+}
+
+.detail .comment .body .content-box .comment-text {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.detail .comment .body .content-box .nine-grid {
+    margin: 28rpx 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.detail .comment .body .content-box .nine-grid .img-box {
+    box-sizing: border-box;
+    width: 226rpx;
+    height: 226rpx;
+    margin-top: 8rpx;
+}
+
+.detail .comment .body .content-box .nine-grid .img-box:nth-child(2) {
+    margin-left: 8rpx;
+    margin-right: 8rpx;
+}
+
+.detail .comment .body .content-box .nine-grid .img-box:nth-child(5) {
+    margin-left: 8rpx;
+    margin-right: 8rpx;
+}
+
+.detail .comment .body .content-box .nine-grid .img-box:nth-child(8) {
+    margin-left: 8rpx;
+    margin-right: 8rpx;
+}
+
+.detail .comment .body .content-box .nine-grid .img-box image {
+    width: 100%;
+    height: 100%;
+}
+
+.detail .comment .body .content-box .coach-course_box {
+    position: relative;
+    background: #fafafa;
+}
+
+.detail .comment .body .content-box .coach-course_box .kind {
+    padding: 10rpx 16rpx;
+}
+
+.detail .comment .body .content-box .coach-course_box .kind>view {
+    padding: 10rpx 40rpx;
+    font-size: 24rpx;
+    color: #999;
+    line-height: 33rpx;
+}
+
+.detail .comment .body .content-box .coach-course_box .kind>view view {
+    color: #24c789;
+    display: inline;
+    padding-left: 12rpx;
+}
+
+.detail .comment .body .content-box .coach-course_box .kind .kind-coach {
+    background: url("https://static1.keepcdn.com/2018/05/15/12/1526357562355_32x32.png") no-repeat center left/32rpx 32rpx;
+}
+
+.detail .comment .body .content-box .coach-course_box .kind .kind-course {
+    background: url("https://static1.keepcdn.com/2018/05/15/12/1526357675502_32x32.png") no-repeat center left/32rpx 32rpx;
+}
+
+.detail .comment .body .content-box .date-del_box {
+    height: 44rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 44rpx 0;
+}
+
+.detail .comment .body .content-box .date-del_box .date {
+    height: 36rpx;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #999;
+}
+
+.detail .comment .body .content-box .date-del_box .del-icon {
+    height: 44rpx;
+    width: 44rpx;
+    background: url("https://static1.keepcdn.com/2019/04/03/19/1554291670882_44x44.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.detail .comment .footer {
+    margin-top: 24rpx;
+}
+
+.detail .comment .footer .sub-comment_box {
+    padding: 0 28rpx;
+    background: #fff;
+}
+
+.detail .comment .footer .sub-comment_box .counts {
+    font-size: 28rpx;
+    color: #333;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding: 28rpx;
+    border-bottom: 1rpx solid #efefef;
+    margin: 0 -28rpx 0;
+}
+
+.detail .comment .footer .sub-comment_box .no-subcomment {
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+    padding-top: 120rpx;
+    padding-bottom: 120rpx;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment {
+    margin-bottom: 28rpx;
+    border-bottom: 1rpx solid #efefef;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment:last-child {
+    border-bottom: 0;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head .avatar-nickname {
+    display: flex;
+    align-items: center;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head .avatar-nickname .user-head {
+    width: 70rpx;
+    height: 70rpx;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head .avatar-nickname .nickname-durtime {
+    margin-left: 20rpx;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head .avatar-nickname .nickname-durtime .nickname {
+    height: 37rpx;
+    line-height: 37rpx;
+    color: #333;
+    font-size: 26rpx;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head .avatar-nickname .nickname-durtime .durtime {
+    height: 28rpx;
+    line-height: 28rpx;
+    color: #999;
+    font-size: 20rpx;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_head .reply-icon {
+    height: 44rpx;
+    width: 44rpx;
+    background: url("https://static1.keepcdn.com/2019/04/04/14/1554359793013_44x44.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_body {
+    margin-left: 90rpx;
+    margin-top: 20rpx;
+    padding-bottom: 27rpx;
+    line-height: 40rpx;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_body .reply-user {
+    display: inline;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_body .reply-user .reply-username {
+    display: inline;
+    color: #24c789;
+}
+
+.detail .comment .footer .sub-comment_box .user-subcomment .subcomment_body .subcomment-content {
+    font-size: 28rpx;
+    color: #666;
+    display: inline;
+    word-break: break-all;
+}
+
+.detail .comment .bottom {
+    text-align: center;
+    padding: 26rpx 0 30rpx;
+    font-size: 26rpx;
+    color: #ccc;
+}
+
+.detail .comment .bottom image {
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.detail .reply-input_box {
+    padding: 13rpx 28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 750rpx;
+    box-sizing: border-box;
+    position: fixed;
+    background-color: #fff;
+    bottom: 0;
+    z-index: 10;
+}
+
+.detail .reply-input_box .input {
+    flex-grow: 1;
+    border-radius: 100rpx;
+    background: #efefef;
+    display: flex;
+    align-items: center;
+    height: 70rpx;
+    padding-right: 28rpx;
+    padding-left: 18rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.detail .reply-input_box .input .pen-icon {
+    display: inline-block;
+    width: 44rpx;
+    height: 44rpx;
+    background: url("https://static1.keepcdn.com/2019/04/04/17/1554368460299_44x44.png") no-repeat;
+    background-size: 100% 100%;
+}
+
+.detail .reply-input_box .input input {
+    display: inline-block;
+    background: #efefef;
+    font-size: 28rpx;
+    color: #999;
+    flex: 1;
+    box-sizing: border-box;
+    height: 70rpx;
+    max-height: 80rpx;
+    margin-left: 10rpx;
+}
+
+.detail .reply-input_box .reply-default {
+    font-size: 30rpx;
+    color: #91e3c4;
+    height: 70rpx;
+    line-height: 70rpx;
+    padding-left: 32rpx;
+    padding-right: 28rpx;
+    margin-right: -28rpx;
+}
+
+.detail .reply-input_box .reply-active {
+    font-size: 30rpx;
+    color: #24c789;
+    height: 70rpx;
+    line-height: 70rpx;
+    margin-left: 32rpx;
+}
+
+.mask {
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.7;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.sharecard {
+    width: 420px;
+    height: 336px;
+    position: absolute;
+    top: -1000px;
+}

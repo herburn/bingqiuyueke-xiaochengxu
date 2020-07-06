@@ -1,0 +1,5 @@
+<view class="booking-num-row">
+    <view class="label">课程照片:</view>
+    <view bindtap="_proxy" class="value" data-wpy-evt="1204-0">点击查看</view>
+    <view class="iconfont icon-arrow-right"></view>
+</view>

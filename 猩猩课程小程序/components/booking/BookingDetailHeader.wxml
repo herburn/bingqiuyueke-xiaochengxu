@@ -1,0 +1,26 @@
+<view class="booking-detail-header {{[theme==='dark'?'dark-bg':'']}}">
+    <view class="booking-detail-header-bg"></view>
+    <view class="header">
+        <view class="course-name-link">
+            <text class="course-name ellipsis">{{detail.title}}</text>
+            <text bindtap="_proxy" class="link-course-detail" data-wpy-evt="1085-0" wx:if="{{isShowDetail}}">详情
+      </text>
+        </view>
+        <view class="course-date">{{detail.dateStr}}</view>
+    </view>
+    <view class="trainer-container" wx:if="{{customBox}}">
+        <slot name="custom-box"></slot>
+    </view>
+    <view class="trainer-container" wx:else>
+        <face bind_init="_initComponent" face="{{detail.face}}" size="small"></face>
+        <view class="trainer-info">
+            <view class="trainer-name">{{detail.name}}</view>
+            <view bindtap="_proxy" class="chat-intro" data-wpy-evt="1085-1" wx:if="{{chatType}}">
+          {{chatText}}
+
+          <text class="iconfont icon-arrow-right right-icon"></text>
+            </view>
+            <slot name="sub-status-text" wx:else></slot>
+        </view>
+    </view>
+</view>

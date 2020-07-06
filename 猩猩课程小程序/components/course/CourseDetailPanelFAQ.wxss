@@ -1,0 +1,13 @@
+.fag-q {
+    font-weight: bolder;
+}
+
+.course-detail-block-main {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-size: 28rpx;
+    color: #767678;
+}

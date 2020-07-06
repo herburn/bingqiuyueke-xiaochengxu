@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "onReachBottomDistance": 800
+}

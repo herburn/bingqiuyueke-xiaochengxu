@@ -1,0 +1,36 @@
+<animation-wrapper bind_init="_initComponent" bindcancel="_proxy" class="animation-wrapper" contentHeight="{{contentHeight}}" data-wpy-evt="1086-0" id="animation-wrapper" show="{{isShowRefundDialog}}">
+    <view class="dialog-container" slot="content">
+        <view catchtap="_proxy" class="icon-cancel-container" data-wpy-evt="1086-1">
+            <text class="iconfont icon-close icon-cancel"></text>
+        </view>
+        <view class="refund-main">
+            <view class="title">自助退款</view>
+            <view class="panel">
+                <view class="left">{{refundInfo.orderType!==20?'预约时间：':'有效期至：'}}</view>
+                <view class="right">{{refundInfo.dateStr}}</view>
+            </view>
+            <view class="divider"></view>
+            <view class="panel">
+                <view class="left">预约内容：</view>
+                <view class="right">{{typeStr}}</view>
+            </view>
+            <view class="divider"></view>
+            <view class="panel">
+                <view class="left">退款金额：</view>
+                <view class="right">{{refundInfo.refundAmount/100}}元</view>
+            </view>
+            <view class="divider" wx:if="{{refundInfo.orderType===7}}"></view>
+            <view class="panel" wx:if="{{refundInfo.orderType===7}}">
+                <view class="left">退款说明：</view>
+                <view class="right">{{refundInfo.refundRemark}}</view>
+            </view>
+            <view class="divider"></view>
+            <view class="panel">
+                <view class="left">退款方式：</view>
+                <view class="right">{{refundInfo.refundTypeStr}}</view>
+            </view>
+        </view>
+        <button catchtap="_proxy" class="btn-cancel-grey btn-cancel" data-wpy-evt="1086-2" hoverClass="btn-grey-hover-class">确认取消
+    </button>
+    </view>
+</animation-wrapper>

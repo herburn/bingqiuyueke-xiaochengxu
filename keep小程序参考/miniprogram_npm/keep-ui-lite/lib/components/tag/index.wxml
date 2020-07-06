@@ -1,0 +1,4 @@
+<view class="custom-class {{utils.bem( 'tag',[type,'size--'+size,'weight--'+fontWeight] )}}">
+    <slot></slot>
+</view>
+<wxs module="utils" src="../../utils/utils.wxs" />

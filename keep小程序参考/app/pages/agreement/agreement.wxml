@@ -1,0 +1,11 @@
+<navigatorBar title="{{title}}"></navigatorBar>
+<view class="container">
+    <view class="show-disclaimers" wx:if="{{showType=='disclaimer'}}">
+        <view class="title">Keepland 免责声明</view>
+        <view class="content" wx:for="{{disclaimerArr}}"> {{item}}</view>
+    </view>
+    <view class="show-disclaimers" wx:else>
+        <view class="title">Keepland 用户公约</view>
+        <view class="content" wx:for="{{userConventionArr}}"> {{item}}</view>
+    </view>
+</view>

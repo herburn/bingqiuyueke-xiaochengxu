@@ -1,0 +1,24 @@
+page {
+    background-color: #fafafa;
+}
+
+.show-disclaimers {
+    padding: 0 25rpx;
+    background-color: #fff;
+}
+
+.show-disclaimers .title {
+    padding: 64rpx 0 32rpx;
+    line-height: 70rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+    color: #584f60;
+}
+
+.show-disclaimers .content {
+    padding-bottom: 40rpx;
+    line-height: 40rpx;
+    text-align: justify;
+    font-size: 28rpx;
+    color: #666;
+}

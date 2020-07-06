@@ -1,0 +1,74 @@
+.reserve-list .reserve-item {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    padding: 32rpx 0;
+}
+
+.reserve-list .reserve-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 2rpx;
+    background: #767678;
+    opacity: .1;
+}
+
+.reserve-list .reserve-item_msg {
+    font-size: 28rpx;
+}
+
+.reserve-list .reserve-item_msg_time {
+    color: #f2f2f7;
+}
+
+.reserve-list .reserve-item_msg_time_status {
+    font-size: 22rpx;
+    color: #bbbbbb;
+    border-radius: 6rpx;
+    margin-left: 27rpx;
+    padding: 3rpx;
+    background: #666;
+}
+
+.reserve-list .reserve-item_msg_time_status.on {
+    color: #333;
+    background: #fcc800;
+}
+
+.reserve-list .reserve-item_msg_pwd,.reserve-list .reserve-item_msg_type {
+    margin-top: 8rpx;
+    color: #767678;
+}
+
+.reserve-list .reserve-item_operate {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    font-size: 28rpx;
+    color: #c9c9cd;
+    text-decoration: underline;
+}
+
+.reserve-list .reserve-item_operate_refuse {
+    margin-left: 32rpx;
+}
+
+.reserve-list .reserve-item_operate_accept {
+    color: #fcc800;
+    text-decoration: underline;
+}

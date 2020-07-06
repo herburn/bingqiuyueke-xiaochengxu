@@ -1,0 +1,340 @@
+page {
+    height: 100%;
+    background-color: #fff;
+}
+
+.container {
+    height: calc(100vh - 68px);
+    box-sizing: border-box;
+    position: relative;
+    padding: 28rpx 28rpx 0;
+}
+
+.course-card {
+    position: relative;
+    width: 694rpx;
+    height: 250rpx;
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+
+.course-card.multi-coach {
+    height: 270rpx;
+}
+
+.course-card.multi-coach .all-coach {
+    margin-top: 4rpx;
+}
+
+.course-card.multi-coach .all-coach text {
+    margin-right: 0;
+}
+
+.course-card.multi-coach .course-time {
+    margin-top: 27rpx;
+}
+
+.course-card .course-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.course-card .course-cover:after {
+    background-image: none;
+    background-color: #584f60;
+    opacity: 0.7;
+}
+
+.course-card .info-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 28rpx;
+    right: 28rpx;
+    color: #fff;
+}
+
+.course-card .gym-coach {
+    margin-top: 28rpx;
+    line-height: 37rpx;
+    font-size: 26rpx;
+}
+
+.course-card .gym-coach text {
+    margin-right: 32rpx;
+}
+
+.course-card .course-time {
+    margin-top: 48rpx;
+    line-height: 42rpx;
+    font-size: 30rpx;
+}
+
+.course-card .course-name {
+    margin-top: 4rpx;
+    line-height: 67rpx;
+    font-size: 48rpx;
+    font-weight: bold;
+}
+
+.course-card .count-down {
+    position: absolute;
+    top: 0;
+    right: 28rpx;
+    width: 140rpx;
+    height: 100rpx;
+    background-color: #ff5363;
+    box-shadow: 0 -2rpx 4rpx 0 #ff5363;
+    border-radius: 0 0 8rpx 8rpx;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+.course-card .count-down .tip {
+    margin-top: 14rpx;
+    line-height: 37rpx;
+    font-size: 26rpx;
+}
+
+.course-card .count-down .count {
+    line-height: 36rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.waiting-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.waiting-status .tips {
+    width: 100%;
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 32rpx;
+    font-size: 24rpx;
+    color: #666;
+    top: -182rpx;
+    background-color: #fffcf0;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 28rpx;
+}
+
+.waiting-status .tips .warn-icon {
+    height: 24rpx;
+    width: 24rpx;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAIVBMVEUAAAD/zVT/zVP/0Fn/zVP/zFP/zVT/zFT/zlX/zFP///9+2uKBAAAACXRSTlMA/fMbbNm2m07uEZmdAAAAd0lEQVQY02MAAma3INUUAyADxC6cCQTiEF7TTDDQALFZJCGciQ5ATuNMKJAA6tAE0qtWAYlJBgzsM2GcmQUMhgiOMIMngjOFIRPBmcYQieBMZdBEcCahciIhNkKUZSI401CMRrEUxTkoDkX2AprnEN7GDBBEUAEAcbWCbcICb5wAAAAASUVORK5CYII=");
+    background-size: 24rpx 24rpx;
+    background-position: center left;
+    background-repeat: no-repeat;
+    margin-right: 12rpx;
+}
+
+.waiting-status .status {
+    line-height: 56rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.waiting-status .position {
+    margin-top: 20rpx;
+    line-height: 56rpx;
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.waiting-status .position .count {
+    position: relative;
+    top: 4rpx;
+    font-size: 48rpx;
+    color: #24c789;
+}
+
+.waiting-status .pay-type {
+    margin-top: 40rpx;
+    line-height: 34rpx;
+    opacity: 0.99;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.waiting-status .description {
+    margin-top: 24rpx;
+    line-height: 34rpx;
+    font-size: 26rpx;
+    color: #999;
+    opacity: 0.99;
+}
+
+.waiting-status .fail-icon {
+    margin-bottom: 23rpx;
+    display: block;
+    width: 72rpx;
+    height: 72rpx;
+}
+
+.waiting-status .fail-reason {
+    margin-top: 65rpx;
+    line-height: 34rpx;
+    opacity: 0.99;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.bottom-option {
+    position: absolute;
+    bottom: 80rpx;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bottom-option .button {
+    display: block;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    border: 1rpx solid #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    box-sizing: border-box;
+}
+
+.bottom-option .button.buy {
+    margin-bottom: 24rpx;
+    background-color: #24c789;
+    color: #fff;
+}
+
+.bottom-option .button.border {
+    color: #24c789;
+}
+
+.bottom-option .canceltime-selector-box {
+    margin-top: 52rpx;
+    font-size: 26rpx;
+    line-height: 34rpx;
+    color: #999;
+    display: inline-flex;
+}
+
+.bottom-option .canceltime-selector-box .canceltime-selector {
+    font-size: 26rpx;
+    color: #24c789;
+    text-decoration: underline;
+    margin-left: 12rpx;
+}
+
+.bottom-option-new-user {
+    bottom: 280rpx;
+}
+
+.bottom-option-new-user .canceltime-selector-box {
+    margin-top: 48rpx;
+}
+
+.new-user-guide {
+    position: fixed;
+    bottom: 60rpx;
+    width: 694rpx;
+    height: 140rpx;
+    background-size: cover;
+    background-image: url("https://static1.keepcdn.com/2019/07/12/11/1562902006667_694x140.png");
+    box-shadow: 0 6rpx 10rpx 0 rgba(0,0,0,0.1);
+    border-radius: 8rpx;
+}
+
+.waiting-cancel {
+    margin-top: 160rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.waiting-cancel .icon {
+    display: block;
+    width: 291rpx;
+    height: 290rpx;
+}
+
+.waiting-cancel .status {
+    line-height: 50rpx;
+    font-size: 36rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.waiting-cancel .description {
+    margin-top: 20rpx;
+    line-height: 38rpx;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.picker-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 998;
+    background: rgba(0,0,0,0.7);
+    height: 100vh;
+}
+
+.picker-container {
+    width: 100%;
+    display: flex;
+    z-index: 1000;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    height: 40vh;
+}
+
+.picker-container .picker-header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    width: 100%;
+    box-sizing: border-box;
+    padding-bottom: 2rpx;
+    border-bottom: 1rpx solid #efefef;
+}
+
+.picker-container .picker-header .picker-cancel {
+    color: #666;
+    padding-left: 32rpx;
+}
+
+.picker-container .picker-header .picker-desc {
+    color: #333;
+}
+
+.picker-container .picker-header .picker-confirm {
+    color: #24c789;
+    padding-right: 32rpx;
+}
+
+.picker-container .picker-body {
+    width: 100%;
+}

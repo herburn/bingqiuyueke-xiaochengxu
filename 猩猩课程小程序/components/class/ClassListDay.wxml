@@ -1,0 +1,7 @@
+<view style="height: {{beforeHeight||0}}px;"></view>
+<view class="class-empty" wx:if="{{boxesSchedulesList.length===0}}">排课中...</view>
+<block wx:else>
+    <block wx:for="{{boxesSchedulesList}}" wx:for-index="col" wx:key="id">
+        <class-box bind_init="_initComponent" boxSchedules="{{boxSchedules}}" classBoxPromotion="{{classBoxPromotionMap[boxSchedules.boxInfo.boxId]}}" classPromotion="{{classPromotionMap[boxSchedules.boxInfo.boxId]}}" isAllowTrainerNavigate="{{isAllowTrainerNavigate}}" isNovice="{{isNovice}}" isShowFav="{{isShowFav}}" isShowHeader="{{isShowHeader}}" noneClassBoxPromotion="{{classBoxPromotionMap['NONE']}}" noneClassPromotion="{{classPromotionMap['NONE']}}" topClassBoxPromotion="{{classBoxPromotionMap[col+row]}}" topClassPromotion="{{classPromotionMap[col+row]}}" wx:if="{{boxesListShow[col][row]!==false}}" wx:for="{{item.boxesSchedules}}" wx:for-index="row" wx:for-item="boxSchedules" wx:key="id"></class-box>
+    </block>
+</block>

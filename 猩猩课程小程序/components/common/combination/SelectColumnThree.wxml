@@ -1,0 +1,5 @@
+<scroll-view scrollTop="{{scrollTop}}" scrollY="{{true}}" style="height: 100%;">
+    <view class="item-select-wrapper">
+        <view catchtap="_proxy" class="item ellipsis {{[item.isActive?'active':'']}}" data-wpy-evt="1178-0" data-wpytap-a="{{item}}" data-wpytap-b="{{index}}" style=" {{'width:'+config.width+';'+'padding-left:'+config.padding+';'+'padding-right:'+config.padding+';'}}" wx:for="{{data}}" wx:key="index">{{item.label}}</view>
+    </view>
+</scroll-view>

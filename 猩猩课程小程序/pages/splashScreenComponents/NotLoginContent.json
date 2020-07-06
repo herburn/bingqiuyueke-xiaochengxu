@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "navigator-bar": "./../../components/common/navigation/NavigatorBar",
+        "img-tip": "./../../components/common/other/ImgTip"
+    }
+}

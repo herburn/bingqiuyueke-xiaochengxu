@@ -1,0 +1,19 @@
+.address-row {
+    display: flex;
+    padding: 32rpx 0;
+}
+
+.address-row .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    -webkit-box-flex: 0;
+    flex: none;
+    width: 64rpx;
+    margin-right: 16rpx;
+}
+
+.address-row .value {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    text-decoration: underline;
+}

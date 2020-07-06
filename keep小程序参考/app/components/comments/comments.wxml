@@ -1,0 +1,49 @@
+<view class="comment-wrapper">
+    <block wx:if="{{comments&&comments.length}}">
+        <view class="tips">此处只显示图文评价</view>
+        <view class="comment-item keep-1px-border bottom-border" data-item="{{item}}" data-rank="{{index}}" wx:for="{{comments}}" wx:key="{{index}}">
+            <keep-avatar size="70" src="{{item.authorUser.avatar}}"></keep-avatar>
+            <view class="wrapper">
+                <view bindtap="natoDetail" data-reviewid="{{item.review.id}}">
+                    <view class="user-info">
+                        <view class="base-info">
+                            <view class="name-wrap">
+                                <view class="user-name">{{item.authorUser.name}}</view>
+                                <image class="keep-vip-icon" mode="aspectFit" src="{{item.authorUser.vipImgBig}}" wx:if="{{item.authorUser.vip}}"></image>
+                            </view>
+                            <view class="user-star">
+                                <div class="keep-star all-star" wx:for="{{item.review.stars}}" wx:key="{{index}}"></div>
+                                <div class="keep-star empty-star" wx:for="{{5-item.review.stars}}" wx:key="{{index}}"></div>
+                            </view>
+                        </view>
+                        <view class="other-info">
+                            <view class="pubdate">{{item.formatCreateTime}}</view>
+                            <keep-tag customClass="tag" size="small" type="green" wx:if="{{item.officialReplyComment}}">小助手已回复</keep-tag>
+                        </view>
+                    </view>
+                    <view class="coach-course-info" style="margin-top: 30rpx;">
+                        <text>教练：</text>
+                        <text class="item" decode="{{true}}" wx:for="{{item.coachInfos}}" wx:for-index="coachIndex" wx:for-item="coach" wx:key="{{ coachIndex }}">{{coach.name}}&nbsp;</text>
+                    </view>
+                    <view class="coach-course-info">课程：{{item.schedule.scheduleName}}</view>
+                    <view class="comment-desc">{{item.review.content}}</view>
+                    <view class="comment-pic" wx:if="{{item.review.images.length}}">
+                        <image catchtap="previewBanner" data-imageitem="{{imgItem}}" data-item="{{item}}" mode="aspectFill" src="{{imgItem+'?imageMogr2/thumbnail/226x/quality/95'}}" wx:if="{{!(imgIndex>2)}}" wx:for="{{item.review.images}}" wx:for-index="imgIndex" wx:for-item="imgItem" wx:key="{{imgIndex}}"></image>
+                        <view class="pic-count" wx:if="{{item.review.images.length>3}}">共{{item.review.images.length}}张</view>
+                    </view>
+                </view>
+                <navigator hoverClass="none" url="/app/pages/commentDetail/commentDetail?reviewId={{item.review.id}}&toView=subcomment" wx:if="{{item.officialReplyComment||item.review.comments>0}}">
+                    <view class="office-replay" wx:if="{{item.officialReplyComment}}">
+                        <text class="office-name">{{item.officialReplyComment.officialUser.name}}：</text>
+                        <text>{{item.officialReplyComment.content}}</text>
+                    </view>
+                    <view class="comments-count">查看 {{item.review.comments}} 条回复</view>
+                </navigator>
+            </view>
+        </view>
+    </block>
+    <view class="no-comments" wx:else>
+        <image mode="aspectFit" src="https://static1.keepcdn.com/2019/09/30/12/1569817687149_450x300.png"></image>
+        <view>暂无图文评价</view>
+    </view>
+</view>

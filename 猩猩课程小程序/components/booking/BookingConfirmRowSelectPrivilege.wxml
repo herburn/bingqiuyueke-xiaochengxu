@@ -1,0 +1,6 @@
+<view bindtap="_proxy" class="row" data-wpy-evt="1058-0">
+    <view class="left">{{label}}：</view>
+    <view class="right">
+        <view class="iconfont {{[privilegeSelected===0?'icon-tick-circle-filled':'',privilegeSelected!==0?'icon-circle-outlined':'']}}"></view>{{privileges[0]}}
+  </view>
+</view>

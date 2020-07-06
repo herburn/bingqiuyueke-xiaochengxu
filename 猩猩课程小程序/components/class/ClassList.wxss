@@ -1,0 +1,51 @@
+.week-navbar {
+    display: flex;
+}
+
+.swiper {
+    padding-bottom: 48rpx;
+}
+
+.swiper.no-header {
+    margin-top: 24rpx;
+}
+
+.swiper .swiper-item {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.swiper .swiper-item .subscribe-notice {
+    display: flex;
+    margin-top: 24rpx;
+}
+
+.swiper .swiper-item .novice-banner {
+    display: flex;
+    height: 168rpx;
+    margin: 24rpx auto 0;
+}
+
+.swiper .swiper-item .banner {
+    display: flex;
+    width: 702rpx;
+    height: 168rpx;
+    margin: 24rpx auto 0;
+}
+
+.swiper .swiper-item .class-day {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.camp-list {
+    padding-top: 24rpx;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}

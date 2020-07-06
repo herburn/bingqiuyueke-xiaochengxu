@@ -1,0 +1,14 @@
+<view class="course-media-container" style=" {{'height:'+height+'rpx'+';'}}">
+    <view class="gallery-container" wx:if="{{!video}}">
+        <view class="poster-num" wx:if="{{showBannerTotal}}">
+            <view class="poster-num__text">{{posters.length}}</view>
+            <image class="poster-num__icon" src="/images/common/icon-banner-total.png"></image>
+        </view>
+        <view class="poster-container">
+            <image bindtap="_proxy" class="poster-image" data-wpy-evt="1047-0" mode="aspectFill" src="{{posters[0]}}" style="z-index: 1;"></image>
+        </view>
+    </view>
+    <view class="video-container" wx:else>
+        <sm-video autoplay="{{false}}" bind_init="_initComponent" class="msg-video" height="{{height}}" poster="{{showVideoPoster?realPoster:''}}" vid="{{video}}"></sm-video>
+    </view>
+</view>

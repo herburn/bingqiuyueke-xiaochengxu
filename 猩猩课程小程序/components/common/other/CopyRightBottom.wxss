@@ -1,0 +1,13 @@
+.version,.copy-right {
+    font-size: 22rpx;
+    color: #333;
+    width: 100%;
+    height: 31rpx;
+    line-height: 31rpx;
+    text-align: center;
+    opacity: .7;
+}
+
+.version {
+    font-size: 24rpx;
+}

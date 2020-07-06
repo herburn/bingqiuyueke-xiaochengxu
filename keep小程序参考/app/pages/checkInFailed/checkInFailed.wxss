@@ -1,0 +1,71 @@
+page {
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    padding: 0 92rpx;
+    overflow: hidden;
+}
+
+.title {
+    margin-top: 69rpx;
+    line-height: 62rpx;
+    font-size: 44rpx;
+    text-align: center;
+}
+
+.user {
+    margin-top: 120rpx;
+}
+
+.user .avatar-wrap {
+    position: relative;
+    margin: 0 auto;
+    width: 134rpx;
+    height: 134rpx;
+}
+
+.user .avatar-wrap .avatar {
+    display: block;
+    width: 134rpx;
+    height: 134rpx;
+    border-radius: 50%;
+}
+
+.user .avatar-wrap .icon-k {
+    position: absolute;
+    right: 0;
+    bottom: -20rpx;
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.user .name {
+    margin-top: 36rpx;
+    line-height: 42rpx;
+    font-size: 40rpx;
+    text-align: center;
+}
+
+.button {
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    color: #fff;
+}
+
+.login {
+    margin-top: 152rpx;
+    background-color: #24c789;
+    font-size: 36rpx;
+}
+
+.home {
+    margin-top: 38rpx;
+    border: 1rpx solid #24c789;
+    background-color: #fff;
+    color: #24c789;
+    font-size: 30rpx;
+}

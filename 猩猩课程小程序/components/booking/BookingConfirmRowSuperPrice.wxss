@@ -1,0 +1,38 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+@import "../../__wuBaseWxss__/2.wxss";
+
+.super-price-row {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 24rpx;
+}
+
+.super-price-row .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    padding-top: 32rpx;
+}
+
+.super-price-row .value {
+    padding: 32rpx 0;
+    font-size: 28rpx;
+}
+
+.super-price-row .value-normal {
+    color: #f2f2f7;
+}
+
+.super-price-row .value-insufficient,.super-price-row .value-card,.super-price-row .value-frozen {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #fcc800;
+}
+
+.super-price-row .value-insufficient .right-icon,.super-price-row .value-card .right-icon,.super-price-row .value-frozen .right-icon {
+    margin-left: 0;
+    color: #fcc800;
+    font-size: 39rpx;
+}

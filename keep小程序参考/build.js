@@ -1,0 +1,2 @@
+// build.js
+Page({data: {}})

@@ -1,0 +1,73 @@
+.schedule-date-wrap {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 17;
+}
+
+.schedule-date {
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    z-index: 9;
+}
+
+.schedule-date swiper {
+    box-shadow: 0 8rpx 10rpx 0 rgba(0,0,0,0.02);
+    height: 174rpx;
+    position: relative;
+    z-index: 9;
+}
+
+.schedule-date swiper swiper-item:first-child .week {
+    color: #24c789;
+}
+
+.schedule-date swiper swiper-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.schedule-date swiper swiper-item .week {
+    font-size: 24rpx;
+    line-height: 34rpx;
+    color: #ccc;
+    padding-top: 40rpx;
+}
+
+.schedule-date swiper swiper-item .date {
+    margin-top: 14rpx;
+    width: 52rpx;
+    height: 52rpx;
+    line-height: 52rpx;
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+}
+
+.schedule-date swiper swiper-item.active .date {
+    color: #fff;
+    border-radius: 50%;
+    background-color: #24c789;
+}
+
+.schedule-wrap.padding {
+    margin-top: 30rpx;
+}
+
+.slogan {
+    text-align: center;
+    padding-bottom: 32rpx;
+    margin-top: 26rpx;
+    font-size: 26rpx;
+    color: #ccc;
+}
+
+.slogan image {
+    width: 48rpx;
+    height: 48rpx;
+    margin-top: 35rpx;
+}

@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "booking-detail-body": "./../../../../components/booking/BookingDetailBody",
+        "booking-detail-header": "./../../../../components/booking/BookingDetailHeader",
+        "refund-status": "./../../../../components/booking/BookingDetailRowRefundStatus",
+        "price-row": "./../../../../components/booking/BookingDetailRowPrice",
+        "person-num-row": "./../../../../components/booking/BookingDetailRowPeopleNumber"
+    }
+}

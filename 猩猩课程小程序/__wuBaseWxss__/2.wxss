@@ -1,0 +1,22 @@
+.btn-primary-hover-class {
+    background-color: #eaba00!important;
+}
+
+.btn-grey-hover-class {
+    background-color: #606060!important;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-bs {
+    box-shadow: 0 8rpx 24rpx -8rpx rgba(0,0,0,.32);
+}
+
+.icon-arrow-r {
+    font-size: 28rpx;
+    color: #c9c9c9;
+}

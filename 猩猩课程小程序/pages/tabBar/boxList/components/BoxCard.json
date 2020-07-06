@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "click-behavior": "./../../../../components/common/enrichment/ClickBehavior",
+        "observer-promotion-view": "./../../../../components/common/enrichment/ObserverView"
+    }
+}

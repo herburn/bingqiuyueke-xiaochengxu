@@ -1,0 +1,16 @@
+<view class="mini-act" hidden="{{!show}}">
+    <view class="left-info">
+        <view bindtap="_proxy" class="title" data-wpy-evt="1091-0">
+            <view class="text">Mini挑战赛</view>
+            <text class="icon-ques iconfont icon-question-circle-outlined"></text>
+        </view>
+        <view bindtap="_proxy" class="detail" data-wpy-evt="1091-1">
+            <view class="time">{{actInfo.expireDate}}</view>
+            <view class="rule">前签到{{actInfo.targetValue}}课时可得¥{{actInfo.awardValue}}代金券</view>
+        </view>
+    </view>
+    <view bindtap="_proxy" class="right" data-wpy-evt="1091-2">
+        <view class="price">¥{{actInfo.price}}</view>
+        <text class="iconfont icon-choose {{selected?'icon-tick-circle-filled':'icon-circle-outlined'}}"></text>
+    </view>
+</view>

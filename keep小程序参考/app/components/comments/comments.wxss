@@ -1,0 +1,172 @@
+.comment-wrapper {
+    background-color: #fff;
+}
+
+.tips {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 22rpx;
+    color: rgba(0,0,0,0.4);
+    padding-left: 30rpx;
+}
+
+.comment-item {
+    padding: 40rpx 0;
+    margin: 0 30rpx;
+    display: flex;
+    align-items: flex-start;
+}
+
+.comment-item .wrapper {
+    flex: 1;
+    margin-left: 20rpx;
+}
+
+.comment-item .user-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 74rpx;
+}
+
+.comment-item .user-info .name-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.comment-item .user-info .name-wrap .user-name {
+    line-height: 36rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+}
+
+.comment-item .user-info .name-wrap .keep-vip-icon {
+    margin-left: 10rpx;
+}
+
+.comment-item .user-info .user-star {
+    display: flex;
+    margin-top: 10rpx;
+}
+
+.comment-item .user-info .user-star .keep-star {
+    margin-right: 10rpx;
+}
+
+.comment-item .user-info .other-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 0;
+}
+
+.comment-item .user-info .other-info .pubdate {
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.4);
+}
+
+.comment-item .user-info .other-info .tag {
+    margin-top: 10rpx;
+}
+
+.comment-item .coach-course-info {
+    margin-top: 10rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.4);
+}
+
+.comment-item .comment-desc {
+    margin-top: 30rpx;
+    font-size: 28rpx;
+    color: rgba(0,0,0,0.7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.comment-item .comment-pic {
+    display: flex;
+    position: relative;
+    margin-top: 30rpx;
+}
+
+.comment-item .comment-pic image {
+    width: 192rpx;
+    height: 192rpx;
+    margin-right: 12rpx;
+    background: #efefef;
+    border-radius: 4rpx;
+}
+
+.comment-item .comment-pic image:nth-child(3n+3) {
+    margin-right: 0;
+}
+
+.comment-item .comment-pic .pic-count {
+    position: absolute;
+    bottom: 10rpx;
+    right: 10rpx;
+    line-height: 34rpx;
+    padding: 2rpx 10rpx;
+    background: rgba(0,0,0,0.4);
+    border-radius: 4rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+    font-weight: bold;
+}
+
+.comment-item .office-replay {
+    padding-top: 30rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.7);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.comment-item .office-replay .office-name {
+    color: #24c789;
+}
+
+.comment-item .comments-count {
+    padding-left: 54rpx;
+    padding-top: 30rpx;
+    height: 38rpx;
+    line-height: 38rpx;
+    background-image: url("https://static1.keepcdn.com/2019/10/14/17/1571044444743_57x57.png");
+    background-repeat: no-repeat;
+    background-position: 0rpx 30rpx;
+    background-size: 38rpx 38rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.4);
+}
+
+.no-comments {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80rpx 0;
+}
+
+.no-comments image {
+    display: block;
+    width: 300rpx;
+    height: 200rpx;
+}
+
+.no-comments view {
+    margin-top: 32rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    color: #666;
+}

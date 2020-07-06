@@ -1,0 +1,56 @@
+<navigatorBar></navigatorBar>
+<view class="activity">
+    <image class="banner" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/23/14/1571813917126_750x767.png"></image>
+    <image class="sub" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/23/16/1571818967072_750x356.png" wx:if="{{status==2}}"></image>
+    <image class="sub" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/23/16/1571818977511_750x356.png" wx:elif="{{status==3}}"></image>
+    <image class="sub" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/23/16/1571818948331_750x356.png" wx:else></image>
+    <image mode="widthFix" src="https://static1.keepcdn.com/2019/10/30/15/1572421494949_1561x1226.png"></image>
+    <image mode="widthFix" src="https://static1.keepcdn.com/2019/10/30/15/1572421517276_1561x1478.png"></image>
+</view>
+<form bindsubmit="sendFormId" reportSubmit="true" wx:if="{{status==1}}">
+    <button bindtap="subscribeActivity" class="submit-btn {{iphonex?'iphonex':''}}" formType="submit">
+        <view>{{subscribeStatus==0?'活动开始通知我':'订阅成功（查看其他彩蛋）'}}</view>
+        <image mode="widthFix" src="https://static1.keepcdn.com/2019/10/23/19/1571831680532_212x192.gif"></image>
+    </button>
+</form>
+<navigator bindtap="track" class="submit-btn {{iphonex?'iphonex':''}}" hoverClass="none" url="/app/pages/db11/lottery/lottery" wx:elif="{{status>1}}">
+    <view>立即参与</view>
+</navigator>
+<view catchtouchmove="banTouch" class="modal-wrap" wx:if="{{showModal}}">
+    <view class="modal-second-wrap" wx:if="{{showSecond}}">
+        <view class="modal-second">
+            <view class="coach-wrap" wx:if="{{listenCoach}}">
+                <view class="coach-name">{{listenCoach.coachName}}</view>
+                <view class="coach-tips">给你发来一条神秘语音</view>
+                <view class="coach">
+                    <navigator hoverClass="none" url="/app/pages/coach/coach?coachId={{listenCoach.coachUserId}}">
+                        <image mode="aspectFill" src="{{listenCoach.coachImg}}?imageMogr2/thumbnail/150x/quality/95"></image>
+                    </navigator>
+                    <view bindtap="playVioce" class="{{audioPlayed?'played':''}} {{audioPlaying?'playing':''}}" data-voice="{{listenCoach.coachWish}}" hoverClass="play-active">
+                        <image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png" wx:if="{{audioWaiting}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="btn-wrap">
+                <view bindtap="closeModal" class="btn red">我知道了</view>
+                <button class="btn" openType="share">邀请好友来听</button>
+            </view>
+        </view>
+    </view>
+    <view bindtap="openEgg" class="modal-first" wx:else>
+        <view class="first-name">订阅成功</view>
+        <view class="first-tips">活动开始后将通过「Keepland」公众号提醒你</view>
+        <view class="egg-wrap">
+            <image class="egg-bg" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/24/17/1571908097046_480x480.png"></image>
+            <image class="egg" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/24/17/1571908200088_370x320.png"></image>
+        </view>
+        <view class="btn">打开看看</view>
+    </view>
+</view>
+<view class="image-preload">
+    <image src="https://static1.keepcdn.com/2019/10/24/19/1571915342177_36x36.gif"></image>
+    <image src="https://static1.keepcdn.com/2019/10/24/17/1571908097046_480x480.png"></image>
+    <image src="https://static1.keepcdn.com/2019/10/24/17/1571908200088_370x320.png"></image>
+    <image src="https://static1.keepcdn.com/2019/10/24/17/1571910247961_260x160.png"></image>
+    <image src="https://static1.keepcdn.com/2019/10/24/17/1571910838527_550x390.png"></image>
+</view>

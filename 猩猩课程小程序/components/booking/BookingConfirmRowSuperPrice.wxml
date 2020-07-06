@@ -1,0 +1,10 @@
+<view class="super-price-row">
+    <view class="label">超猩卡折后价：</view>
+    <view bindtap="_proxy" class="value value-card" data-wpy-evt="1057-0" wx:if="{{mode==='openCard'}}">{{price}}<text class="iconfont icon-arrow-right right-icon"></text>
+    </view>
+    <view bindtap="_proxy" class="value value-insufficient" data-wpy-evt="1057-1" wx:elif="{{mode==='recharge'}}">{{price}}<text class="iconfont icon-arrow-right right-icon"></text>
+    </view>
+    <view bindtap="_proxy" class="value value-frozen" data-wpy-evt="1057-2" wx:elif="{{mode==='frozen'}}">超猩卡冻结中，暂不可用<text class="iconfont icon-arrow-right right-icon"></text>
+    </view>
+    <view class="value value-normal" wx:else>{{price}}</view>
+</view>

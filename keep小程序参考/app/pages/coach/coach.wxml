@@ -1,0 +1,56 @@
+<navigatorBar></navigatorBar>
+<view class="coach" wx:if="{{coachDetail}}">
+    <view id="topBlock">
+        <keep-card customClass="coach-info" shadow="shadow">
+            <keep-avatar customClass="coach-avatar" preview="preview" size="150" src="{{coachDetail.avatar}}"></keep-avatar>
+            <view class="coach-name">{{coachDetail.name}}</view>
+            <view class="coach-intro">{{coachDetail.introduction}}</view>
+        </keep-card>
+    </view>
+    <view class="coach-tab" style="top: {{totalNavHeight}}px">
+        <keep-tabs bindchange="tabChange" current="{{tabIndex}}">
+            <keep-tab name="{{0}}" title="课程安排"></keep-tab>
+            <keep-tab name="{{1}}" title="训练营" wx:if="{{coachCamps&&coachCamps.length}}"></keep-tab>
+            <keep-tab name="{{2}}" title="用户评价"></keep-tab>
+        </keep-tabs>
+    </view>
+    <view wx:if="{{tabIndex==0}}">
+        <view wx:if="{{schedules&&schedules.length}}">
+            <schedules coachInfoMap="{{coachInfoMap}}" courseInfoMap="{{courseInfoMap}}" gymInfoMap="{{gymInfoMap}}" id="schedules" packagePrivilegeInfo="{{packagePrivilegeInfo}}" scheduleDynamicInfoMap="{{scheduleDynamicInfoMap}}" schedules="{{schedules}}" scrollTop="{{tabOffsetTop}}"></schedules>
+        </view>
+        <view class="table-empty" wx:else>
+            <image class="icon-schedule" mode="aspectFill" src="https://static1.keepcdn.com/2018/07/12/10/1531361733516_300x200.png"></image>
+            <view class="tip1">排课中…</view>
+        </view>
+    </view>
+    <view class="camp-info" wx:if="{{tabIndex==1}}">
+        <keep-card bindtap="jumpCampDetail" customClass="camp-card" data-campid="{{item.campId}}" shadow="shadow" wx:for="{{coachCamps}}" wx:key="{{index}}">
+            <image class="corner" mode="aspectFill" src="https://static1.keepcdn.com/2019/09/24/15/1569309783715_66x66.png" wx:if="{{item.userCampStatus==2}}"></image>
+            <image class="corner" mode="aspectFill" src="https://static1.keepcdn.com/2019/09/24/15/1569309751431_66x66.png" wx:elif="{{item.userCampStatus==0&&item.fullRate>=0.7}}"></image>
+            <view class="camp-name">{{item.campName}}</view>
+            <view class="count-place">
+                <text class="count">{{item.campCourseCount}} 节课</text>
+                <text class="line"></text>
+                <text class="place">{{item.gymName}}</text>
+            </view>
+            <view class="price">
+                <text class="unit">¥</text>
+                <text>{{item.centSalesPrice/100}}</text>
+            </view>
+            <view class="button">
+                <keep-button shape="circle" size="small" wx:if="{{item.userCampStatus==0}}">立即预约</keep-button>
+                <keep-button shape="circle" size="small" type="finish" wx:elif="{{item.userCampStatus==1}}">已开营</keep-button>
+                <block wx:elif="{{item.userCampStatus==2}}">
+                    <keep-button border="border" shape="circle" size="small" wx:if="{{item.waiting}}">取消等位</keep-button>
+                    <keep-button border="border" shape="circle" size="small" wx:else>等位通知</keep-button>
+                </block>
+                <keep-button shape="circle" size="small" wx:elif="{{item.userCampStatus==3}}">已预约</keep-button>
+            </view>
+        </keep-card>
+        <keep-load-more loading="{{false}}" tip="没有更多了"></keep-load-more>
+    </view>
+    <view class="comments" wx:if="{{tabIndex==2}}">
+        <comments comments="{{commentsList}}"></comments>
+        <keep-load-more loading="{{!noMore}}" tip="没有更多了" wx:if="{{commentsList.length}}"></keep-load-more>
+    </view>
+</view>

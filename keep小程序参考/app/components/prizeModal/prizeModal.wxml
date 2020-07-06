@@ -1,0 +1,14 @@
+<view class="medal-mask" wx:if="{{userHonorHisItem}}">
+    <view class="medal-box">
+        <view class="top-mask"></view>
+        <view class="medal">
+            <view class="medal-title">恭喜你获得</view>
+            <view class="medal-text">{{userHonorHisItem.honorName}}</view>
+            <view class="medal-pic">
+                <image mode="aspectFit" src="{{userHonorHisItem.honorIcon}}?imageMogr2/thumbnail/260x/quality/95"></image>
+            </view>
+            <navigator bindtap="closeMedal" url="/app/packages/training/prizeDetail/prizeDetail?honorId={{userHonorHisItem.id}}&userId={{userId}}&opened_from=0">查看奖励</navigator>
+        </view>
+        <view bindtap="closeMedal" class="medal-close"></view>
+    </view>
+</view>

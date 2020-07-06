@@ -1,0 +1,42 @@
+@import "../../../../../__wuBaseWxss__/1.wxss";
+
+.keep-card {
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.keep-card--white {
+    background-color: #fff;
+}
+
+.keep-card--gray {
+    background-color: #fafafa;
+}
+
+.keep-card--normal,.keep-card--normal:after {
+    border-radius: 8rpx;
+}
+
+.keep-card--small,.keep-card--small:after {
+    border-radius: 4rpx;
+}
+
+.keep-card--selected {
+    background-color: rgba(36,199,137,.08);
+    position: relative;
+}
+
+.keep-card--selected:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border: 1rpx solid #24c789;
+}
+
+.keep-card--shadow {
+    box-shadow: 0 10rpx 30rpx 0 rgba(0,0,0,.05);
+}

@@ -1,0 +1,17 @@
+<view class="badge">
+    <view class="badge-detail">
+        <view class="badge-box" wx:if="{{badgeInfo.currentValue===badgeInfo.targetValue}}">
+            <image class="complete" src="{{badgeInfo.badgeIcon}}"></image>
+        </view>
+        <view class="badge-box" wx:if="{{badgeInfo.currentValue>0&&badgeInfo.currentValue<badgeInfo.targetValue}}">
+            <image class="complete" src="{{badgeInfo.badgeIconBlack}}"></image>
+            <view class="mask" style="background: url('{{badgeInfo.badgeIcon}}');background-size: cover;-webkit-mask: -webkit-gradient(linear, 0 {{(1-badgeInfo.currentValue/badgeInfo.targetValue)*100+5+'%'}}, 0 {{(1-badgeInfo.currentValue/badgeInfo.targetValue)*100+'%'}}, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));};"></view>
+        </view>
+        <view class="badge-box" wx:if="{{badgeInfo.currentValue===0}}">
+            <image class="complete" src="{{badgeInfo.badgeIconBlack}}"></image>
+        </view>
+        <view class="badge-box" wx:if="{{badgeInfo.currentValue<0}}">
+            <image class="complete" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/badge/icon-badge-disable.png"></image>
+        </view>
+    </view>
+</view>

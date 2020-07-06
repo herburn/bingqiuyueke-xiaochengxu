@@ -1,0 +1,216 @@
+{
+  "pages": [
+    "pages/tabBar/boxList/BoxList",
+    "pages/tabBar/courseList/CourseList",
+    "pages/tabBar/myBooking/MyBooking",
+    "pages/tabBar/My",
+    "pages/course/BannerCourseList",
+    "pages/class/detail/ClassDetail",
+    "pages/class/booking/ClassBookingConfirm",
+    "pages/class/booking/ClassBookingSuccess",
+    "pages/class/booking/ClassBookingDetail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "light",
+    "navigationStyle": "custom",
+    "backgroundColor": "#1C1C1C",
+    "backgroundColorTop": "#1C1C1C",
+    "backgroundColorBottom": "#1C1C1C"
+  },
+  "tabBar": {
+    "color": "#424242",
+    "selectedColor": "#FCC800",
+    "borderStyle": "black",
+    "backgroundColor": "#171717",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/boxList/BoxList",
+        "text": "门店",
+        "iconPath": "images/menuIcon/store.png",
+        "selectedIconPath": "images/menuIcon/store-active.png"
+      },
+      {
+        "pagePath": "pages/tabBar/courseList/CourseList",
+        "text": "课表",
+        "iconPath": "images/menuIcon/course.png",
+        "selectedIconPath": "images/menuIcon/course-active.png"
+      },
+      {
+        "pagePath": "pages/tabBar/myBooking/MyBooking",
+        "text": "我的预约",
+        "iconPath": "images/menuIcon/book.png",
+        "selectedIconPath": "images/menuIcon/book-active.png"
+      },
+      {
+        "pagePath": "pages/tabBar/My",
+        "text": "超猩卡",
+        "iconPath": "images/menuIcon/me.png",
+        "selectedIconPath": "images/menuIcon/me-active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 40000
+  },
+  "subPackages": [
+    {
+      "root": "pagesSubPackage/common/",
+      "pages": [
+        "pages/BindPhone",
+        "pages/BindPhoneBridge",
+        "pages/CustomService",
+        "pages/LowerVersion",
+        "pages/NoticeList",
+        "pages/ShareMiniScan",
+        "pages/WebView"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/subscribeMessage/",
+      "pages": [
+        "pages/MsgManagement",
+        "pages/MsgManagementCourse"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/superCard/",
+      "pages": [
+        "pages/RechargeConfirm",
+        "pages/RechargeConfirmB",
+        "pages/RechargeResult",
+        "pages/EditUserInfo"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/box/",
+      "pages": [
+        "pages/BoxDetail",
+        "pages/BoxCourseList",
+        "pages/BoxBookingConfirm",
+        "pages/BoxBookingSuccess",
+        "pages/BoxBookingDetail"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/personal/",
+      "pages": [
+        "pages/PersonalDetail",
+        "pages/PersonalBookingConfirm",
+        "pages/PersonalBookingSuccess",
+        "pages/PersonalBookingDetail",
+        "pages/OldPersonalBookingDetail",
+        "pages/SelfPersonalBooking",
+        "pages/SelfPersonalBookingResult",
+        "pages/PersonalTrainingRecord",
+        "pages/PersonalCanceledTraining"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/camp/",
+      "pages": [
+        "pages/CampDetail",
+        "pages/OnlineCampDetail",
+        "pages/NewArrivalCampList",
+        "pages/CampBookingDetail",
+        "pages/CampBookingSuccess",
+        "pages/CampBookingConfirm",
+        "pages/OnLineCourse"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/ticket/",
+      "pages": [
+        "pages/InvalidTicketList",
+        "pages/MyTicket",
+        "pages/UseTicket"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/bookingRecord/",
+      "pages": [
+        "pages/BookingRecordList",
+        "pages/BookingRecordCanceledList"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/trainer/",
+      "pages": [
+        "pages/TrainerList",
+        "pages/TrainerIndex",
+        "pages/TrainerCourseList"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/vip/",
+      "pages": [
+        "pages/VIPRights",
+        "pages/VIPExplain",
+        "pages/VIPSuperRecords"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/giveClass/",
+      "pages": [
+        "pages/MyGiveClass",
+        "pages/GiveClassReceiveStatus",
+        "pages/GiveClassBookingSuccess",
+        "pages/GiveClassBookingConfirm",
+        "pages/GiveClassBookingDetail",
+        "pages/MyGiveClassDetail"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/rank/",
+      "pages": [
+        "pages/GroupRank",
+        "pages/SuperRank"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/invoice/",
+      "pages": [
+        "pages/InvoiceHistory",
+        "pages/PayOrderList",
+        "pages/PayOrderListInvoice",
+        "pages/InvoiceAgreement",
+        "pages/ChooseTaxpayer"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/balanceRecords/",
+      "pages": [
+        "pages/BalanceRecords",
+        "pages/ApplyReturnCard"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/others/",
+      "pages": [
+        "pages/badge/BadgeIndex",
+        "pages/badge/BadgeDetail",
+        "pages/badge/BadgeTypeList",
+        "pages/superAllianceTicket/ExchangeSuperAllianceTicket"
+      ]
+    },
+    {
+      "root": "pagesSubPackage/novice/",
+      "pages": [
+        "pages/NoviceClassList",
+        "pages/NoviceClassDetail"
+      ]
+    }
+  ],
+  "navigateToMiniProgramAppIdList": [
+    "wxaad1ec32ca918244",
+    "wx08e505b2e47af0cd",
+    "wx051c1ed699fdc10f",
+    "wx68cd627d6825ef5b",
+    "wx8280850d07d385eb",
+    "wx34b0738d0eef5f78",
+    "wx60d176f873ca2d67",
+    "wx5c3f2549f21da43b",
+    "wxa2e0208436fbede7"
+  ],
+  "sitemapLocation": "sitemap.json"
+}

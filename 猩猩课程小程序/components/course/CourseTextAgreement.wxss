@@ -1,0 +1,7 @@
+.agreement {
+    font-size: 28rpx;
+}
+
+.agreement .text-highlight {
+    text-decoration: underline;
+}

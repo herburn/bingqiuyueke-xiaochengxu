@@ -1,0 +1,4 @@
+<view class="ticket-prompt" wx:if="{{isShow}}">
+    <view class="ticket-prompt-text">你有{{expireTicketNumber}}张代金券将过期</view>
+    <view class="icon-triangle"></view>
+</view>

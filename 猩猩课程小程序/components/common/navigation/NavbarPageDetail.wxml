@@ -1,0 +1,15 @@
+<view class="page-navbar {{[isSticky?'page-navbar-sticky':'']}}">
+    <view class="picker-container" wx:if="{{enablePicker}}">
+        <picker bindchange="_proxy" data-wpy-evt="1049-0" id="navCity" range="{{pickerRange}}" value="{{pickerIndex}}">
+            <view class="picker-value {{[courseType==='camp'?'small-font':'']}}">
+                <text>{{pickerValue}}</text>
+                <text class="iconfont icon-down"></text>
+            </view>
+        </picker>
+    </view>
+    <view bindtap="_proxy" class="nav-item {{[navActive===index?'nav-item-active':'',courseType==='camp'?'small-font':'']}}" data-wpy-evt="1049-1" data-wpytap-a="{{index}}" id="menu" wx:for="{{navItems}}" wx:key="value">{{item.label}}
+  </view>
+    <view bindtap="_proxy" class="share" data-wpy-evt="1049-2" id="share" wx:if="{{isShare}}">
+        <view class="iconfont icon-gift share__icon"></view>分享有礼
+  </view>
+</view>

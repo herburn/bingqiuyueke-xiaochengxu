@@ -1,0 +1,74 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.mini-act {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: end;
+    align-items: flex-end;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 26rpx;
+    color: #f2f2f7;
+    padding: 32rpx 24rpx;
+}
+
+.mini-act .left-info .title {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    height: 39rpx;
+    margin-bottom: 16rpx;
+    font-size: 28rpx;
+    line-height: 39rpx;
+}
+
+.mini-act .left-info .detail {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.mini-act .left-info .detail .time {
+    height: 36rpx;
+    margin-right: 16rpx;
+    color: #fcc800;
+    line-height: 36rpx;
+}
+
+.mini-act .right {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+
+.mini-act .right .price {
+    margin-right: 16rpx;
+}
+
+.mini-act .icon-choose {
+    color: #fcc800;
+    font-size: 40rpx;
+}
+
+.mini-act .icon-ques {
+    margin-left: 16rpx;
+    color: #fcc800;
+    font-size: 39rpx;
+}

@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "animation-wrapper": "./../common/enrichment/WrapperAnimation"
+    }
+}

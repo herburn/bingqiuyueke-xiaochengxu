@@ -1,0 +1,27 @@
+@import "../../../__wuBaseWxss__/0.wxss";
+
+.multi-line-text {
+    position: relative;
+    padding-bottom: 48rpx;
+}
+
+.multi-line-text .icon-arrow-down-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    padding: 0 24rpx 0;
+    transform: translateX(-50%);
+}
+
+.multi-line-text .icon-arrow-down {
+    font-size: 32rpx;
+}
+
+.multi-line-text .content {
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.multi-line-text .content.show {
+    overflow: visible;
+}

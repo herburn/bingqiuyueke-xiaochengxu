@@ -1,0 +1,8 @@
+<view class="ticket-prompt" wx:if="{{isShow}}">
+    <view class="container">
+        <image bindtap="_proxy" class="icon-close" data-wpy-evt="1024-0" src="/images/common/icon-close-circle-black.png"></image>
+        <view class="ticket-prompt-text">超猩资讯一手掌握，活动福利不再错过。</view>
+        <view bindtap="_proxy" class="btn-close" data-wpy-evt="1024-1">开启通知</view>
+    </view>
+    <follow-public-modal bind_init="_initComponent" id="follow-modal"></follow-public-modal>
+</view>

@@ -1,0 +1,232 @@
+.class-item-wrap .section:last-child {
+    padding-bottom: 30rpx;
+}
+
+.tips {
+    padding: 0rpx 30rpx;
+    background-color: #fff;
+}
+
+.tips.history {
+    padding-bottom: 20rpx;
+}
+
+.tips .notice-bar {
+    font-size: 26rpx;
+    color: rgba(0,0,0,0.7);
+    margin-top: 40rpx;
+}
+
+.section {
+    background: #fff;
+    padding-bottom: 20rpx;
+}
+
+.section .class-item:last-child {
+    border-bottom: 0;
+}
+
+.section.prt-wrap {
+    padding-bottom: 4rpx;
+}
+
+.section .time {
+    display: flex;
+    padding-top: 40rpx;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background: #fff;
+}
+
+.section .time view {
+    padding-left: 30rpx;
+    padding-right: 15rpx;
+    height: 46rpx;
+    line-height: 46rpx;
+    background-image: linear-gradient(270deg,rgba(0,0,0,0) 0%,rgba(0,0,0,0.08) 100%);
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #24c789;
+    max-width: 393rpx;
+    white-space: nowrap;
+}
+
+.section .time .prt {
+    width: 393rpx;
+    box-sizing: border-box;
+    background-image: linear-gradient(270deg,rgba(255,255,255,0) 30%,#24c789 65%);
+    color: #fff;
+    padding-right: 0;
+}
+
+.section .prt-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 44rpx 28rpx 0rpx;
+    padding: 33rpx 0rpx;
+    height: 100rpx;
+    box-sizing: border-box;
+    border: 4rpx dashed #efefef;
+}
+
+.section .prt-intro text {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.section .prt-intro image {
+    height: 34rpx;
+    width: 34rpx;
+}
+
+.class-item {
+    display: flex;
+    align-items: center;
+    padding: 36rpx 30rpx;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    height: 214rpx;
+}
+
+.class-item .class-coach {
+    width: 130rpx;
+}
+
+.class-item .class-info {
+    margin: 0 20rpx;
+    flex: 1;
+    height: 142rpx;
+    overflow: hidden;
+    font-size: 30rpx;
+    color: #666;
+    line-height: 42rpx;
+    font-weight: bold;
+}
+
+.class-item .class-info .view {
+    height: 42rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.class-item .class-info .date {
+    color: rgba(0,0,0,0.4);
+    margin-bottom: 8rpx;
+}
+
+.class-item .class-info .name {
+    color: #000;
+    margin-bottom: 16rpx;
+}
+
+.class-item .class-info .name .camp-tag {
+    position: relative;
+    top: -4rpx;
+}
+
+.class-item .class-info .gym {
+    font-size: 24rpx;
+    color: #999;
+    margin-left: -5rpx;
+    line-height: 34rpx;
+    height: 34rpx;
+    padding-left: 34rpx;
+    background: url("https://static1.keepcdn.com/2019/09/30/15/1569829758433_48x48.png") no-repeat center left;
+    background-size: 32rpx;
+    font-weight: normal;
+}
+
+.class-item .btn-wrapper {
+    width: 136rpx;
+    height: 214rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.class-item .btn-wrapper .btn {
+    font-size: 26rpx;
+    color: #24c789;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.class-item .btn-wrapper .btn .btn-title {
+    height: 37rpx;
+    line-height: 37rpx;
+}
+
+.class-item .btn-wrapper .btn .gray {
+    color: #ccc;
+}
+
+.class-item .btn-wrapper .btn .change-prt {
+    display: flex;
+    width: 74rpx;
+    height: 74rpx;
+    justify-content: center;
+    align-items: center;
+    margin-left: 62rpx;
+}
+
+.class-item .btn-wrapper .btn .change-prt image {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.class-item .btn-wrapper .btn .sub-btn {
+    height: 28rpx;
+    line-height: 28rpx;
+    margin-top: 4rpx;
+    font-size: 20rpx;
+    color: #999;
+    font-weight: normal;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 80rpx 100rpx;
+}
+
+.empty.history {
+    height: 100%;
+    padding: 0;
+}
+
+.empty image {
+    width: 300rpx;
+    height: 200rpx;
+}
+
+.empty view:nth-of-type(1) {
+    font-size: 28rpx;
+    color: rgba(0,0,0,0.7);
+    padding-top: 32rpx;
+}
+
+.empty view:nth-of-type(2) {
+    font-size: 24rpx;
+    line-height: 38rpx;
+    color: #999;
+    padding-top: 16rpx;
+}
+
+.empty .navigator {
+    margin-top: 24rpx;
+    width: 240rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 72rpx;
+    font-size: 28rpx;
+}

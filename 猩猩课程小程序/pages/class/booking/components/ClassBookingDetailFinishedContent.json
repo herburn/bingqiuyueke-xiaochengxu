@@ -1,0 +1,13 @@
+{
+    "component": true,
+    "usingComponents": {
+        "booking-detail-body": "./../../../../components/booking/BookingDetailBody",
+        "booking-detail-header": "./../../../../components/booking/BookingDetailHeader",
+        "price-row": "./../../../../components/booking/BookingDetailRowPrice",
+        "person-num-row": "./../../../../components/booking/BookingDetailRowPeopleNumber",
+        "checkin-row": "./../../../../components/booking/BookingDetailRowCheckin",
+        "entry-password-row": "./../../../../components/booking/BookingDetailRowEntryPassword",
+        "course-photo-row": "./../../../../components/booking/BookingDetailRowCoursePhoto",
+        "booking-num-row": "./../../../../components/booking/BookingDetailRowBookingNumber"
+    }
+}

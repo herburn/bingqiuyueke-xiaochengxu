@@ -1,0 +1,17 @@
+.person-num-row {
+    display: flex;
+    padding: 32rpx 0;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.person-num-row .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+}
+
+.person-num-row .value {
+    font-size: 28rpx;
+    color: #f2f2f7;
+}

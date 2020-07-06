@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "agreement": "./../course/CourseTextAgreement",
+        "text-render-paragraph": "./../common/dataDisplay/TextRenderParagraph"
+    }
+}

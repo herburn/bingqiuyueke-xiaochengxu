@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "panel-title": "./CourseDetailPanelTitle",
+        "multi-line-text": "./../common/dataDisplay/TextMultiLineWithUnfold"
+    }
+}

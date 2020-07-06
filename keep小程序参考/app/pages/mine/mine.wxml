@@ -1,0 +1,90 @@
+<navigatorBar backgroundColor="rgba(255,255,255,{{navigatorBarOpacity}})" fixed="fixed" logo="{{navigatorBarLogo}}"></navigatorBar>
+<view class="container {{newCouponList?'not-scroll':''}}">
+    <view class="back-card"></view>
+    <view class="user-info">
+        <navigator class="user-wrap" hoverClass="none" url="/app/packages/mine/info/info" wx:if="{{keepUserInfo}}">
+            <view class="avatar-wrap {{userInfo.monthDemonTitles&&userInfo.monthDemonTitles.length?'keep-month-demon-horn-big-new':''}}">
+                <keep-avatar borderWidth="6" size="150" src="{{keepUserInfo.avatar}}"></keep-avatar>
+                <image class="keep-vip-icon" src="{{userInfo.vipImgBig}}" wx:if="{{userInfo.vip}}"></image>
+            </view>
+            <view class="username">{{keepUserInfo.userName}}</view>
+        </navigator>
+        <button bindgetuserinfo="getUserInfo" class="user-wrap login" openType="getUserInfo" wx:else>
+            <keep-avatar borderWidth="6" size="150"></keep-avatar>
+            <view class="username">点击登录</view>
+        </button>
+        <view class="month-demon-wrap" wx:if="{{keepUserInfo&&userInfo.monthDemonTitles&&userInfo.monthDemonTitles.length}}">
+            <view class="demon-item" wx:for="{{userInfo.monthDemonTitles}}" wx:key="{{ index }}">
+                <view class="keep-month-demon-title-new">{{item}}</view>
+            </view>
+        </view>
+        <view bindtap="jumpToMessages" class="message-tip" wx:if="{{newMsgCount&&keepUserInfo}}">
+            <keep-notice-bar customClass="keep-right-more-arrow-new" textAlign="center">{{newMsgCount}} 条新消息</keep-notice-bar>
+        </view>
+    </view>
+    <keep-card bindtap="jumpSecondaryPage" customClass="schedule-package" data-path="/app/packages/classBag/list/list?opened_from=1" shadow="shadow">
+        <view class="package-info {{db11==3?'db11':''}}">
+            <block wx:if="{{schedulePackageCount.expireAt}}">
+                <view class="status" wx:if="{{packageStatus==2}}">课包已过期</view>
+                <view class="status" wx:elif="{{schedulePackageCount.availableCount==0}}">课包已用光</view>
+                <view class="status available" wx:else>
+                    <text class="count">{{schedulePackageCount.availableCount}}</text>
+                    <text>剩余个数</text>
+                </view>
+            </block>
+            <view class="status nothing" wx:else>超值课包</view>
+            <view class="tips">
+                <text wx:if="{{!schedulePackageCount.expireAt}}">每节课超值价，买的越多省的越多</text>
+                <text wx:elif="{{packageStatus==2}}">不再享有提前看课表权益</text>
+                <block wx:elif="{{schedulePackageCount.availableCount==0||packageStatus==0}}">
+                    <text>已使用</text>
+                    <text class="number">{{schedulePackageCount.total-schedulePackageCount.availableCount}}</text>
+                    <text>个，有效期至 {{expireAt}}</text>
+                </block>
+                <block wx:else>
+                    <text>已使用</text>
+                    <text class="number">{{schedulePackageCount.total-schedulePackageCount.availableCount}}</text>
+                    <text>个，{{durationDay}} 天后到期</text>
+                </block>
+            </view>
+            <keep-button border="border" customClass="button" shape="circle" size="small" wx:if="{{schedulePackageCount.expireAt}}">{{packageStatus==2?'购买课包':'补充课包'}}</keep-button>
+            <keep-button customClass="button" shape="circle" size="small" wx:else>立即购买</keep-button>
+        </view>
+        <image class="pic" mode="aspectFit" src="https://static1.keepcdn.com/2019/10/25/14/1571985506837_150x150.png" wx:if="{{db11==3}}"></image>
+        <image class="pic" mode="aspectFit" src="https://static1.keepcdn.com/2019/09/30/15/1569828573697_225x225.png" wx:elif="{{!schedulePackageCount.expireAt}}"></image>
+        <image class="pic" mode="aspectFit" src="https://static1.keepcdn.com/2019/09/30/15/1569828615302_225x225.png" wx:elif="{{packageStatus==2}}"></image>
+        <image class="pic" mode="aspectFit" src="https://static1.keepcdn.com/2019/09/30/15/1569828634885_225x225.png" wx:elif="{{schedulePackageCount.availableCount==0}}"></image>
+        <image class="pic" mode="aspectFit" src="https://static1.keepcdn.com/2019/09/30/15/1569828655029_225x225.png" wx:else></image>
+    </keep-card>
+    <view class="wristband" wx:if="{{wristband&&wristband.saleBraceletUrl}}">
+        <navigator appId="wx4a310ad8ec6cacd8" hoverClass="none" path="/app/pages/detail/detail?pid=10872" target="miniProgram" wx:if="{{wristband.expireAt}}">
+            <image src="{{wristband.saleBraceletUrl}}"></image>
+            <view>有效期至 {{wristband.expireAt}}</view>
+        </navigator>
+        <navigator hoverClass="none" url="/app/packages/activity/wristband/wristband" wx:else>
+            <image src="{{wristband.saleBraceletUrl}}"></image>
+        </navigator>
+    </view>
+    <view class="tab" style="margin-top: {{wristband&&wristband.saleBraceletUrl?'20rpx':'40rpx'}}">
+        <view bindtap="jumpSecondaryPage" class="sub-tab keep-right-more-arrow-new" data-path="/app/pages/myCoupons/myCoupons">
+            <text class="title">优惠券</text>
+        </view>
+        <view bindtap="jumpSecondaryPage" class="sub-tab keep-right-more-arrow-new" data-path="/app/packages/training/prizeRecord/prizeRecord">
+            <text class="title">获奖记录</text>
+        </view>
+        <keep-button bindcontact="bindcontact" customClass="sub-tab keep-right-more-arrow-new" openType="contact" sessionFrom="nickName={{keepUserInfo.userName}}|avatarUrl={{keepUserInfo.avatar}}" wx:if="{{keepUserInfo}}">
+            <text class="title">联系客服</text>
+        </keep-button>
+        <view bindtap="showLoginTip" class="sub-tab keep-right-more-arrow-new" wx:else>
+            <text class="title">联系客服</text>
+        </view>
+        <view bindtap="jumpSecondaryPage" class="sub-tab keep-right-more-arrow-new" data-path="/app/packages/classBag/enterpriseCooperation/enterpriseCooperation">
+            <text class="title">企业合作</text>
+        </view>
+    </view>
+    <view class="account-tab" wx:if="{{keepUserInfo}}">
+        <view bindtap="jumpLogin" class="sub-tab">切换账号</view>
+        <view bindtap="signOut" class="sub-tab">退出登录</view>
+    </view>
+    <newCouponModal newCouponList="{{newCouponList}}"></newCouponModal>
+</view>

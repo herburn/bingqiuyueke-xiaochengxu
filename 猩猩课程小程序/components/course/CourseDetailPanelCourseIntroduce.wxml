@@ -1,0 +1,33 @@
+<view class="content-radius-box">
+    <panel-title bind_init="_initComponent" iconClass="icon-introduction" title="{{title}}"></panel-title>
+    <view class="course-detail-block-main">
+        <filter-text bind_init="_initComponent" textData="{{introduce}}"></filter-text>
+        <view class="tag-list" wx:if="{{tags.length>0}}">
+            <view class="tag" wx:for="{{tags}}" wx:for-item="tag" wx:key="index">{{tag}}</view>
+        </view>
+        <view class="gallery" wx:if="{{gallery.length>0}}">
+            <scroll-view scrollX="true">
+                <view class="gallery-scroll">
+                    <image bindtap="_proxy" class="gallery-img" data-wpy-evt="1045-0" data-wpytap-a="{{idx}}" mode="aspectFill" src="{{img}}" wx:for="{{thumbnailGallery}}" wx:for-index="idx" wx:for-item="img" wx:key="index"></image>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="gap" style=" {{'margin-top:'+'24rpx'+';'}}" wx:if="{{trainingEffect.length>0}}">
+        <panel-title bind_init="_initComponent" iconClass="icon-effect" title="训练效果"></panel-title>
+        <view class="course-detail-block-main">
+            <multi-line-text bind_init="_initComponent">
+                <view wx:for="{{trainingEffect}}" wx:key="index">{{item}}</view>
+            </multi-line-text>
+        </view>
+    </view>
+    <view class="gap" wx:if="{{suitablePeople.length>0}}">
+        <panel-title bind_init="_initComponent" iconClass="icon-crowd" title="适合人群"></panel-title>
+        <view class="course-detail-block-main">
+            <multi-line-text bind_init="_initComponent">
+                <view wx:for="{{suitablePeople}}" wx:key="index">{{item}}</view>
+            </multi-line-text>
+        </view>
+    </view>
+    <faq bind_init="_initComponent" class="gap" faqs="{{faqs}}"></faq>
+</view>

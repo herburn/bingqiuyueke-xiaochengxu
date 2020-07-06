@@ -1,0 +1,4 @@
+<view class="preview-privilege-tip {{movedTips?'moved':''}}" wx:if="{{privilegeInfo.schedulePreviewPrivilege}}">
+    <view class="title">你正在享受，抢先看课表权益</view>
+    <view class="expire">{{privilegeInfo.schedulePreviewPrivilegeExpireText}}</view>
+</view>

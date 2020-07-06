@@ -1,0 +1,41 @@
+page {
+    padding-bottom: 178rpx;
+    background-color: #242424;
+}
+
+.navigator-bar {
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: background-color .3s ease;
+}
+
+.media-area {
+    display: flex;
+    margin-bottom: 16rpx;
+}
+
+.class-detail-content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 0 24rpx;
+}
+
+.class-detail-content .panel {
+    margin-bottom: 24rpx;
+}
+
+.class-detail-content .panel:last-child {
+    margin-bottom: 0;
+}
+
+.page-resident-button {
+    position: fixed;
+    bottom: 48rpx;
+    left: 24rpx;
+    z-index: 600;
+}

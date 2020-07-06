@@ -1,0 +1,100 @@
+<view class="course-table" wx:if="{{schedules}}">
+    <block wx:if="{{schedules.scheduleTables.length}}">
+        <view class="table" wx:for="{{schedules.scheduleTables}}" wx:for-index="tableindex" wx:key="{{tableindex}}">
+            <navigator class="table-head" hoverClass="none" url="/app/pages/space/space?gymId={{item.gymId}}" wx:if="{{path!=='poi'}}">
+                <view class="head-wrap">
+                    <view class="gym-name">{{gymInfoMap[item.gymId].name}}</view>
+                    <keep-tag fontWeight="bold" size="small" type="green" wx:if="{{gymInfoMap[item.gymId].favoriteStatus==1}}">已收藏</keep-tag>
+                    <block wx:elif="{{gymInfoMap[item.gymId].tags&&gymInfoMap[item.gymId].tags.length}}">
+                        <keep-tag fontWeight="bold" size="small" style="padding-right: 16rpx" type="brand" wx:for="{{gymInfoMap[item.gymId].tags}}" wx:key="{{ index }}">{{item.title}}</keep-tag>
+                    </block>
+                </view>
+                <view class="tips keep-right-more-arrow-new">查看</view>
+            </navigator>
+            <keep-card customClass="table-empty" shadow="shadow" wx:if="{{gymInfoMap[item.gymId].status==5}}">
+                <view class="tip1">新店打造中</view>
+                <view class="tip2">{{gymInfoMap[item.gymId].description}}</view>
+                <view bindtap="getBond" class="buy-classbag" data-gymid="{{item.gymId}}" wx:if="{{gymInfoMap[item.gymId]&&gymInfoMap[item.gymId].activityCode}}">
+                    <keep-button disabled="{{gymInfoMap[item.gymId].hasBond}}" shape="circle" size="small">{{gymInfoMap[item.gymId].bindButton}}</keep-button>
+                </view>
+            </keep-card>
+            <block wx:elif="{{gymInfoMap[item.gymId].status==10}}">
+                <block wx:if="{{item.schedules&&item.schedules.length}}">
+                    <keep-card customClass="table-cell" shadow="shadow" wx:for="{{item.schedules}}" wx:for-item="schedule" wx:key="{{index}}">
+                        <image class="corner" mode="aspectFill" src="https://static1.keepcdn.com/2019/09/24/15/1569309783715_66x66.png" wx:if="{{schedule.scheduleStatus=='WAITABLE'||schedule.scheduleStatus=='IN_WAITING'}}"></image>
+                        <image class="corner" mode="aspectFill" src="https://static1.keepcdn.com/2019/09/24/15/1569309751431_66x66.png" wx:elif="{{schedule.scheduleStatus=='BOOKABLE'&&schedule.fullRate>=0.7}}"></image>
+                        <view class="time">{{schedule.formatHourRange}}</view>
+                        <view bindtap="routerDetail" class="introduce" data-schedule="{{schedule}}">
+                            <view catchtap="routerCoach" data-schedule="{{schedule}}" wx:if="{{path!=='coach'}}">
+                                <keep-avatar size="130" src="{{schedule.coachCount>1?'https://static1.keepcdn.com/2019/07/02/15/1562053074497_130x130.png':coachInfoMap[schedule.coachUserId].avatar}}"></keep-avatar>
+                            </view>
+                            <view class="to-course">
+                                <view class="course-info">
+                                    <view class="course-tag" wx:if="{{courseInfoMap[schedule.courseId].scheduleCourseTag}}">
+                                        <keep-tag fontWeight="bold" size="small" type="brand">{{courseInfoMap[schedule.courseId].scheduleCourseTag}}</keep-tag>
+                                    </view>
+                                    <view class="name">{{schedule.scheduleName}}</view>
+                                    <view class="tags">K{{courseInfoMap[schedule.courseId].difficulty}}·{{courseInfoMap[schedule.courseId].tagString}}</view>
+                                    <view class="price-info">
+                                        <text class="sale"> ¥<text>{{schedule.centSalesPrice/100}}</text>
+                                        </text>
+                                        <text class="origin" wx:if="{{schedule.centPrice>schedule.centSalesPrice}}">¥{{schedule.centPrice/100}}</text>
+                                        <text class="package-amount" wx:if="{{packagePrivilegeInfo.hasPreviewPrivilege}}">
+                                            <text class="amount">{{schedule.packageAmount}} </text>
+                                            <text>个课包</text>
+                                        </text>
+                                    </view>
+                                </view>
+                                <view catchtap="routerOrder" class="btn-wrap" data-index="{{index}}" data-scheduleid="{{schedule.id}}" data-status="{{schedule.scheduleStatus}}" data-tableindex="{{tableindex}}" wx:if="{{schedule.btnText}}">
+                                    <view class="course-status">
+                                        <keep-button border="{{schedule.btnBorder}}" class="btn" disabled="{{schedule.btnDisabled}}" shape="circle" size="small" type="{{schedule.btnType||'default'}}">{{schedule.btnText}}</keep-button>
+                                    </view>
+                                    <view class="course-book-count" wx:if="{{schedule.scheduleStatus=='BOOKABLE'&&courseInfoMap[schedule.courseId].scheduleCourseTag}}">{{courseInfoMap[schedule.courseId].courseBookCount}} 人已尝鲜</view>
+                                    <view class="waiting-success-rate" wx:if="{{schedule.scheduleStatus=='WAITABLE'&&schedule.waitingProcessRation}}">成功率 {{schedule.waitingProcessRation}}</view>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="activity-tags" wx:if="{{schedule.promotionTags.length||schedule.liteScheduleOperations&&schedule.liteScheduleOperations.length}}">
+                            <view class="tag-item" wx:if="{{schedule.promotionTags&&schedule.promotionTags.length}}" wx:for="{{schedule.promotionTags}}" wx:key="{{index}}">
+                                <keep-tag type="discount">折扣</keep-tag>
+                                <view class="tag-text">{{item}}</view>
+                            </view>
+                            <view catchtap="routerCooperateDetail" class="tag-item {{item.activityUrl?'keep-right-more-arrow-new':''}}" data-opera="{{item}}" wx:if="{{schedule.liteScheduleOperations&&schedule.liteScheduleOperations.length}}" wx:for="{{schedule.liteScheduleOperations}}" wx:key="{{index}}">
+                                <keep-tag type="activity">活动</keep-tag>
+                                <view class="tag-text">{{item.showTitle}}</view>
+                            </view>
+                        </view>
+                    </keep-card>
+                </block>
+                <block wx:else>
+                    <keep-card customClass="table-empty" shadow="shadow" wx:if="{{lastScheduleWeekEnd>=schedules.date}}">
+                        <view class="tip1">今天没有课</view>
+                        <view class="tip2">看看其它时间吧</view>
+                    </keep-card>
+                    <keep-card customClass="table-empty" shadow="shadow" wx:else>
+                        <view class="tip1">排课中{{!packagePrivilegeInfo.hasPreviewPrivilege?'（买课包抢先看）':''}}</view>
+                        <view class="tip2" wx:if="{{packagePrivilegeInfo.schedulePublishText}}">{{packagePrivilegeInfo.schedulePublishText}}</view>
+                        <navigator class="buy-classbag" hoverClass="none" url="/app/packages/classBag/list/list?opened_from=2" wx:if="{{!packagePrivilegeInfo.hasPreviewPrivilege}}">
+                            <keep-button shape="circle" size="small">购买课包</keep-button>
+                        </navigator>
+                    </keep-card>
+                </block>
+            </block>
+        </view>
+    </block>
+    <view class="beginning" wx:elif="{{schedules.date>lastScheduleWeekEnd}}">
+        <image class="icon-schedule" mode="aspectFill" src="https://static1.keepcdn.com/2018/07/12/10/1531361733516_300x200.png"></image>
+        <view class="tip1">排课中{{!packagePrivilegeInfo.hasPreviewPrivilege?'（买课包抢先看）':''}}</view>
+        <view class="tip2" wx:if="{{packagePrivilegeInfo.schedulePublishText}}">{{packagePrivilegeInfo.schedulePublishText}}</view>
+        <navigator hoverClass="none" url="/app/packages/classBag/list/list?opened_from=2" wx:if="{{!packagePrivilegeInfo.hasPreviewPrivilege}}">
+            <keep-button customClass="mid-button" shape="circle" size="small">购买课包</keep-button>
+        </navigator>
+    </view>
+    <view class="beginning" wx:else>
+        <image class="icon-schedule" mode="aspectFill" src="https://static1.keepcdn.com/2018/07/12/10/1531361733516_300x200.png"></image>
+        <view class="tip1">暂无课程</view>
+    </view>
+</view>
+<view bindanimationend="animationend" class="{{planAdd?'add-animation-wrap':''}}" style="top: calc({{planPositionY}}px - 252rpx - {{totalNavHeight}}px)" wx:if="{{path=='homepage'}}">
+    <view class="add-animation"></view>
+</view>

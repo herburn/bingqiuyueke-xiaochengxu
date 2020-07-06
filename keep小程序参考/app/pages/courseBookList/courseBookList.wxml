@@ -1,0 +1,17 @@
+<navigatorBar title="{{navTitle}}"></navigatorBar>
+<view class="book" wx:if="{{bookList.length}}">
+    <view class="book-item" wx:for="{{bookList}}" wx:key="{{index}}">
+        <view bindtap="previewImg" class="avatar {{item.monthDemonTitles&&item.monthDemonTitles.length?'keep-month-demon-horn-small':''}}" data-src="{{item.avatar}}">
+            <image mode="aspectFill" src="{{item.avatar?item.avatar+'?imageMogr2/thumbnail/128x/quality/95':'/app/images/default_avatar.png'}}"></image>
+        </view>
+        <view class="right">
+            <view class="name-wrap">
+                <view class="name">{{item.name}}</view>
+                <image class="keep-vip-icon" mode="aspectFit" src="{{item.vipImgBig}}" wx:if="{{item.vip}}"></image>
+            </view>
+            <view wx:if="{{item.monthDemonTitles&&item.monthDemonTitles.length}}">
+                <view class="keep-month-demon-title" wx:for="{{item.monthDemonTitles}}" wx:for-item="demonItem" wx:key="{{ index }}">{{demonItem}}</view>
+            </view>
+        </view>
+    </view>
+</view>

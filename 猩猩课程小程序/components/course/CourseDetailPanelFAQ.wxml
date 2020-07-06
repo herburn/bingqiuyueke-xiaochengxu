@@ -1,0 +1,11 @@
+<view wx:if="{{faqs.length>0}}">
+    <panel-title bind_init="_initComponent" iconClass="icon-FAQ" title="FAQ"></panel-title>
+    <view class="course-detail-block-main">
+        <multi-line-text bind_init="_initComponent">
+            <block wx:for="{{faqs}}" wx:key="index">
+                <view class="fag-q">Q: {{item.q}}</view>
+                <view class="faq-a">A: {{item.a}}</view>
+            </block>
+        </multi-line-text>
+    </view>
+</view>

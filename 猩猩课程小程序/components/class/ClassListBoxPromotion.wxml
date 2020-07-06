@@ -1,0 +1,8 @@
+<view bindtap="_proxy" class="schedule" data-wpy-evt="1224-0">
+    <image class="bg" src="images/class-box-promotion-bg.png"></image>
+    <view class="main">
+        <view class="highlight ellipsis">{{info.title}}</view>
+        <view class="title ellipsis">{{info.subtitle}}</view>
+    </view>
+    <view class="btn" hoverClass="btn-primary-hover-class">{{info.buttonText}}</view>
+</view>

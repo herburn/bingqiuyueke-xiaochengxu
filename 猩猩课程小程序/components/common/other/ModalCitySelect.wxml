@@ -1,0 +1,34 @@
+<view catchtouchmove="_proxy" class="modal-city-select" data-wpy-evt="1188-0" style=" {{'padding-top:'+navigatorFullHeightPxStr+';'}}" wx:if="{{isShow}}">
+    <view class="panel">
+        <view class="current-row">
+            <view class="label">当前选择</view>
+            <view class="value">{{currentCity}}</view>
+        </view>
+        <view class="location-row">
+            <view class="label">定位城市</view>
+            <view class="value" wx:if="{{locationStatus===1}}">
+                <view bindtap="_proxy" class="city-radio" data-wpy-evt="1188-1">{{locationCity}}</view>
+            </view>
+            <view class="value" wx:elif="{{locationStatus===0}}">定位城市暂无猩店哦～</view>
+            <view bindtap="_proxy" class="value" data-wpy-evt="1188-2" wx:elif="{{locationStatus===-1}}">
+        未开启定位功能，点击开启<view class="iconfont icon-arrow-right"></view>
+            </view>
+            <view class="value" wx:elif="{{locationStatus===-2}}">暂无法获取位置信息</view>
+        </view>
+        <view bindtap="_proxy" class="online-row" data-region-id-se="onlineCourseBtn" data-wpy-evt="1188-3" id="onlineCourseBtn">
+            <view class="label">线上课程</view>
+            <view class="value">
+                <view class="text">线上课程</view>
+                <image class="hot-icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/hot-icon.png"></image>
+                <image class="hot-icon-triangle" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/hot-icon-triangle.png"></image>
+            </view>
+        </view>
+        <view class="all-row">
+            <view class="label">全部城市</view>
+            <view class="city-list">
+                <view bindtap="_proxy" class="city-radio" data-wpy-evt="1188-4" data-wpytap-a="{{city}}" wx:for="{{cities}}" wx:for-item="city" wx:key="*this">{{city}}</view>
+            </view>
+            <view class="more">更多城市，敬请期待！</view>
+        </view>
+    </view>
+</view>

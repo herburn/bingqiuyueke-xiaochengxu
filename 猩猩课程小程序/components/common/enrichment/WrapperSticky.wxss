@@ -1,0 +1,16 @@
+.sticky-wrapper {
+    position: sticky;
+}
+
+.sticky-wrapper-pullDown {
+    position: static;
+}
+
+.sticky-wrapper__inner {
+    position: sticky;
+}
+
+.sticky-wrapper__inner-fixed {
+    position: fixed;
+    width: 100%;
+}

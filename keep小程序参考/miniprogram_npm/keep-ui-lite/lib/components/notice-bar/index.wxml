@@ -1,0 +1,6 @@
+<view class="custom-class {{utils.bem('notice-bar',textAlign)}} {{utils.bem('notice-bar',type)}}" style="width: {{width}}rpx; height: {{height}}rpx;">
+    <image class="left-icon" mode="aspectFill" src="{{leftIcon}}" wx:if="{{leftIcon}}"></image>
+    <navigator class="right-arrow" url="{{linkUrl}}" wx:if="{{linkUrl}}"></navigator>
+    <slot></slot>
+</view>
+<wxs module="utils" src="../../utils/utils.wxs" />

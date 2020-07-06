@@ -1,0 +1,18 @@
+<view bindtap="_proxy" class="camp-card" data-camp-info-se="{{camp}}" data-region-id-se="campCardCover" data-wpy-evt="1107-0" id="campCardCover">
+    <image class="camp-thumbnail" src="{{camp.image}}"></image>
+    <view class="camp-name">
+        <view class="camp-name__inner ellipsis">
+      {{camp.campName}}
+    </view>
+        <view class="campCount" wx:if="{{hasSubText&&camp.bookingableScheduleCount>0}}">
+      {{camp.totalScheduleCount}}个营期
+    </view>
+        <view class="zero-count" wx:if="{{hasSubText&&camp.bookingableScheduleCount===0}}">
+      售罄
+    </view>
+    </view>
+    <view class="camp-mask" wx:if="{{hasBadge}}">
+        <image class="camp-num-flag" src="images/icon-camp-mark.png"></image>
+        <view class="camp-schedule-num">{{camp.scheduleCount}}</view>
+    </view>
+</view>

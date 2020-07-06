@@ -1,0 +1,71 @@
+@import "../../../__wuBaseWxss__/2.wxss";
+
+.page-btn {
+    display: flex;
+    overflow: hidden;
+    border-radius: 16rpx;
+    font-size: 36rpx;
+    box-shadow: 0 8rpx 24rpx -8rpx rgba(0,0,0,0.32);
+}
+
+.page-btn .btn {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.page-btn-single .btn {
+    -webkit-box-flex: 1;
+    flex: auto;
+}
+
+.page-btn-double-avg {
+    position: relative;
+}
+
+.page-btn-double-avg .btn {
+    width: 50%;
+}
+
+.page-btn-double-prior .btn-first {
+    width: 38.2%;
+}
+
+.page-btn-double-prior .btn-second {
+    width: 61.8%;
+}
+
+.page-btn-enable-cutting .btn-first {
+    position: relative;
+}
+
+.page-btn-enable-cutting .btn-first::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 2rpx;
+    height: 74rpx;
+    background-color: #9b7b00;
+    transform: translate(0,-50%);
+    content: '';
+}
+
+.btn-enable {
+    color: #333;
+    background-color: #fcc800;
+}
+
+.btn-enable-grey {
+    color: #f2f2f7;
+    background-color: #767678;
+}
+
+.btn-disable {
+    color: #999;
+    background-color: #767678;
+}

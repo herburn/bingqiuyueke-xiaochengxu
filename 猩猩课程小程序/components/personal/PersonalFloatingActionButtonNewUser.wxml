@@ -1,0 +1,5 @@
+<view class="new-user-prompt" wx:if="{{isPersonalNewer}}">
+    <navigator appId="wxaad1ec32ca918244" class="icon-container" openType="navigate" path="pages/SplashScreen?url=RoutineActivity&activityNo=superMini" target="miniProgram" version="release">
+        <image class="fixed-prompt-icon" src="../common/feedback/images/prompt-new-user.png"></image>
+    </navigator>
+</view>

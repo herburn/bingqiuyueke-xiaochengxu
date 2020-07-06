@@ -1,0 +1,38 @@
+.navigator-bar {
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.header {
+    text-align: center;
+}
+
+.header__title {
+    font-size: 48rpx;
+    color: #333;
+    margin-bottom: 12rpx;
+    font-weight: bold;
+}
+
+.header__content {
+    font-size: 36rpx;
+    color: #333;
+    display: flex;
+    line-height: 36rpx;
+}
+
+.header__content .label {
+    margin-right: 14rpx;
+    font-size: 32rpx;
+}
+
+.header__content .value {
+    font-weight: bold;
+}
+
+.header__content-waiting {
+    font-weight: bold;
+}

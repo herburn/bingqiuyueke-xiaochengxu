@@ -1,0 +1,8 @@
+<view class="booking-num-row">
+    <view class="content">
+        <view class="label">预约编号:</view>
+        <view bindtap="_proxy" class="value" data-wpy-evt="1199-0">点击出示</view>
+    </view>
+    <view class="tips">预约编号用于上课时，核验报名信息</view>
+</view>
+<booking-number-modal bind_init="_initComponent" bindcloseDialog="_proxy" bookingNumberInfo="{{bookingNumberInfo}}" data-wpy-evt="1199-1" style=" {{'display:'+flex+';'}}"></booking-number-modal>

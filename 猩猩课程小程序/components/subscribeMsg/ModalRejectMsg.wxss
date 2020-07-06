@@ -1,0 +1,19 @@
+.content {
+    margin-right: auto;
+}
+
+.content .tip {
+    font-size: 28rpx;
+    color: #767678;
+    text-align: left;
+}
+
+.content .tip:last-child {
+    margin-top: 32rpx;
+}
+
+.content .template {
+    font-size: 28rpx;
+    color: #333;
+    text-align: left;
+}

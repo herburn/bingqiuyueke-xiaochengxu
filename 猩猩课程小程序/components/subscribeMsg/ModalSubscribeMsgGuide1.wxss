@@ -1,0 +1,23 @@
+.content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 48rpx;
+}
+
+.content .guid-img {
+    width: 590rpx;
+    height: 693rpx;
+    border-radius: 16rpx;
+}
+
+.content .tip {
+    font-size: 28rpx;
+    color: #333;
+    margin-top: 32rpx;
+}

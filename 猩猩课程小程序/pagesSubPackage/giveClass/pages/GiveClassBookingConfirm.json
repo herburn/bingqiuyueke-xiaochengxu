@@ -1,0 +1,26 @@
+{
+    "component": true,
+    "usingComponents": {
+        "unauthorized-msg": "./../../../components/subscribeMsg/ModalUnauthorizedMsg",
+        "reject-msg": "./../../../components/subscribeMsg/ModalRejectMsg",
+        "modal-subscribe-msg-guide1": "./../../../components/subscribeMsg/ModalSubscribeMsgGuide1",
+        "modal-subscribe-msg-guide2": "./../../../components/subscribeMsg/ModalSubscribeMsgGuide2",
+        "booking-confirm-layout": "./../../../components/booking/BookingConfirmLayout",
+        "booking-confirm-row-total-price": "./../../../components/booking/BookingConfirmRowTotalPrice",
+        "booking-confirm-row-radio": "./../../../components/booking/BookingConfirmRowRadio",
+        "booking-confirm-header": "./../../../components/booking/BookingConfirmHeader",
+        "booking-confirm-row-super-price": "./../../../components/booking/BookingConfirmRowSuperPrice",
+        "booking-confirm-row-select-ticket": "./../../../components/booking/BookingConfirmRowSelectTicket",
+        "booking-confirm-actually-pay": "./../../../components/booking/BookingConfirmActuallyPay",
+        "booking-confirm-tips": "./../../../components/booking/BookingConfirmTips",
+        "page-loading": "./../../../components/common/loading/LoadingPage",
+        "show-toast": "./../../../components/common/feedback/Toast",
+        "show-modal": "./../../../components/common/feedback/Modal",
+        "show-add-wechat-modal": "./../../../components/common/feedback/ModalAddWeChat",
+        "register-user": "./../../../components/common/feedback/ModalRegisterUser",
+        "show-action-sheet": "./../../../components/common/dataEntry/ActionSheet",
+        "show-picker-view": "./../../../components/common/dataEntry/PickerView",
+        "navigator-bar": "./../../../components/common/navigation/NavigatorBar",
+        "button-page-resident": "./../../../components/common/dataEntry/ButtonPageResident"
+    }
+}

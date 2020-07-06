@@ -1,0 +1,4 @@
+<view class="num-choose">
+    <view class="num-title left">{{label}}：</view>
+    <radio-button bind_init="_initComponent" bindconfirmNum="_proxy" data-wpy-evt="1055-0" numArray="{{numArray}}" selectedIndex="{{selectedIndex}}"></radio-button>
+</view>

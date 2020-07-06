@@ -1,0 +1,41 @@
+.total-price-row {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 0 24rpx;
+}
+
+.total-price-row .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    padding-top: 32rpx;
+}
+
+.total-price-row .value {
+    padding: 32rpx 0;
+    font-size: 28rpx;
+}
+
+.total-price-row .value-normal {
+    color: #f2f2f7;
+}
+
+.total-price-row .value-class-first1 .first-price,.total-price-row .value-class-first2 .first-price,.total-price-row .value-personal-first .first-price {
+    color: #fcc800;
+}
+
+.total-price-row .value-class-first1 .normal-price,.total-price-row .value-class-first2 .normal-price,.total-price-row .value-personal-first .normal-price {
+    color: #f2f2f7;
+}
+
+.total-price-row .value-class-first1,.total-price-row .value-class-first2 {
+    display: flex;
+}
+
+.total-price-row .value-class-first1 .normal-price,.total-price-row .value-personal-first .normal-price {
+    text-decoration: line-through;
+}
+
+.total-price-row .value-personal-first {
+    text-align: right;
+}

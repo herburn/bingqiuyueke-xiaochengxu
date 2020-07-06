@@ -1,0 +1,11 @@
+.waiting-count-row {
+    font-size: 36rpx;
+    color: #f2f2f7;
+    display: flex;
+    padding: 32rpx 0;
+    font-weight: bold;
+}
+
+.waiting-count-row .highlight {
+    color: #fcc800;
+}

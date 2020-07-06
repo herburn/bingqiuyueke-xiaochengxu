@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "promotion": "./BookingSuccessPromotion",
+        "booking-online-tip": "./BookingOnlineTip",
+        "face": "./../common/dataDisplay/Face",
+        "panel-list": "./BookingSuccessRowList",
+        "row-subscribe": "./BookingSuccessRowSubscribe"
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "components": [],
+    "miniprogram_npm": [],
+    "excepts": [
+        "core/cli",
+        "app/cdn_files"
+    ],
+    "others": []
+}

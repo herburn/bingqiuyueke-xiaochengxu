@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "sm-video": "./../common/dataDisplay/Video"
+    }
+}

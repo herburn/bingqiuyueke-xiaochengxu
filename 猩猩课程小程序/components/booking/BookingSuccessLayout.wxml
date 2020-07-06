@@ -1,0 +1,6 @@
+<view class="booking-success">
+    <view class="booking-success-header">
+        <slot name="header"></slot>
+    </view>
+    <slot name="box"></slot>
+</view>

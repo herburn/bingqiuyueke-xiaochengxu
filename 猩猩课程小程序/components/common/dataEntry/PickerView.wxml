@@ -1,0 +1,14 @@
+<view bindtap="_proxy" class="picker-view-custom" data-wpy-evt="1018-0" wx:if="{{isPickerView}}">
+    <view class="picker-box">
+        <view class="picker-tit">
+            <view catchtap="_proxy" class="cancel" data-wpy-evt="1018-1">取消</view>
+            <view class="text">{{title}}</view>
+            <view catchtap="_proxy" class="confirm" data-wpy-evt="1018-2">确定</view>
+        </view>
+        <picker-view bindchange="_proxy" class="picker-view" data-wpy-evt="1018-3" indicatorStyle="height: 50px;" style="height: 489rpx;" value="{{value}}">
+            <picker-view-column class="picker-view-column" style="line-height: 50px;" wx:for="{{range}}" wx:key="ind">
+                <view wx:for="{{item}}" wx:key="index">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</view>

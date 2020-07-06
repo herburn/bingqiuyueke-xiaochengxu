@@ -1,0 +1,33 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+.booking-num-row {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 142rpx;
+}
+
+.booking-num-row .content {
+    display: flex;
+    margin-bottom: 8rpx;
+}
+
+.booking-num-row .content .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    margin-right: 16rpx;
+}
+
+.booking-num-row .content .value {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    text-decoration: underline;
+}
+
+.booking-num-row .tips {
+    font-size: 22rpx;
+    color: #767678;
+}

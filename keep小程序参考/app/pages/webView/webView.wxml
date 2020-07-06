@@ -1,0 +1,4 @@
+<navigatorBar title="{{navTitle}}" wx:if="{{!isNew}}"></navigatorBar>
+<view class="container">
+    <web-view bindload="bindload" bindmessage="message" src="{{url}}"></web-view>
+</view>

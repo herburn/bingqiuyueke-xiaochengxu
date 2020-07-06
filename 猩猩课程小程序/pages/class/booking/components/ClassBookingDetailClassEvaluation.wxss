@@ -1,0 +1,228 @@
+.award-content {
+    position: relative;
+    text-align: center;
+}
+
+.award-content .top-img {
+    position: absolute;
+    z-index: 100;
+    top: -348rpx;
+    left: 50%;
+    width: 355rpx;
+    height: 236rpx;
+    transform: translate3d(-50%,0,0);
+}
+
+.award-content .second-row {
+    padding-bottom: 9rpx;
+}
+
+.evaluate-outdated {
+    box-sizing: border-box;
+    margin: 0 24rpx 24rpx;
+    padding: 24rpx 0 40rpx;
+    border-radius: 16rpx;
+    background: #333;
+}
+
+.evaluate-outdated .cry-img {
+    display: block;
+    width: 350rpx;
+    height: 350rpx;
+    margin: 0 auto;
+}
+
+.evaluate-outdated .title {
+    font-size: 32rpx;
+    color: #f2f2f7;
+    height: 45rpx;
+    margin: 8rpx 0 16rpx;
+    text-align: center;
+    line-height: 45rpx;
+}
+
+.evaluate-outdated .tips {
+    font-size: 28rpx;
+    color: #767678;
+    height: 39rpx;
+    text-align: center;
+    line-height: 39rpx;
+}
+
+.evaluate-box {
+    margin: 0 24rpx 48rpx;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    background: #333;
+}
+
+.evaluate-box .score-img {
+    width: 96rpx;
+    height: 96rpx;
+}
+
+.evaluate-box .evaluate-content {
+    height: 0;
+}
+
+.evaluate-box .title-row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 24rpx;
+}
+
+.evaluate-box .title-row .title {
+    font-size: 36rpx;
+    color: #f2f2f7;
+}
+
+.evaluate-box .title-row .tips {
+    font-size: 28rpx;
+    color: #fcc800;
+}
+
+.evaluate-box .scores-row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.evaluate-box .question-row {
+    position: relative;
+    padding: 24rpx 0;
+}
+
+.evaluate-box .question-row::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 654rpx;
+    height: 2rpx;
+    background: rgba(118,118,120,0.1);
+}
+
+.evaluate-box .question-row .desc {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    height: 39rpx;
+    margin-bottom: 24rpx;
+    font-weight: 500;
+    line-height: 39rpx;
+}
+
+.evaluate-box .question-row .optional {
+    color: #c9c9cd;
+    font-weight: normal;
+}
+
+.evaluate-box .question-row .tag-row {
+    display: none;
+    margin-top: 24rpx;
+}
+
+.evaluate-box .question-row .tag-row .tags {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-left: -24rpx;
+}
+
+.evaluate-box .question-row .tag-row .tag {
+    font-size: 26rpx;
+    color: #f2f2f7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 208rpx;
+    margin: 0 0 24rpx 24rpx;
+    border-radius: 16rpx;
+    padding: 19rpx 24rpx;
+    background: #767678;
+}
+
+.evaluate-box .question-row .tag-row .active {
+    font-size: 26rpx;
+    color: #333;
+    background: #fcc800;
+}
+
+.evaluate-box .overall-row .desc {
+    font-size: 32rpx;
+    color: #f2f2f7;
+}
+
+.evaluate-box .tag-row-show {
+    padding-bottom: 0;
+}
+
+.evaluate-box .tag-row-show .tag-row {
+    display: block;
+}
+
+.evaluate-box .suggestion {
+    padding-bottom: 0;
+}
+
+.evaluate-box .suggestion-input {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    width: 602rpx;
+    height: 240rpx;
+    border: solid 2rpx #767678;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    line-height: 44rpx;
+}
+
+.evaluate-box .submit-area .tips {
+    font-size: 28rpx;
+    color: #767678;
+    height: 38rpx;
+    line-height: 38rpx;
+    text-align: center;
+}
+
+.evaluate-box .submit-btn {
+    margin: 32rpx 0 24rpx;
+    box-sizing: border-box;
+    height: 106rpx;
+    border-radius: 16rpx;
+    line-height: 106rpx;
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    background-color: #fcc800;
+}
+
+.evaluate-box .submit-btn-grey {
+    color: #bbb;
+    background-color: #767678;
+}
+
+.evaluate-box .submit-btn-disable {
+    color: #767678;
+    background-color: #2d2d2d;
+}
+
+.hidden-score {
+    width: 0;
+    height: 0;
+}

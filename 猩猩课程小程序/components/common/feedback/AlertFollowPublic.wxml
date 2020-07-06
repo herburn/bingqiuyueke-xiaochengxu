@@ -1,0 +1,9 @@
+<view>
+    <view class="follow-mask" wx:if="{{isFollowModalShow}}">
+        <modal-open-custom-service bind_init="_initComponent" data="{{detail.chatSessionId}}" id="modal-open-custom-service">
+            <view class="follow-img-container" slot="content">
+                <image class="follow-img" src="http://img.supermonkey.com.cn/webapp/monkey-reservation/follow_wx_code_tip3.png"></image>
+            </view>
+        </modal-open-custom-service>
+    </view>
+</view>

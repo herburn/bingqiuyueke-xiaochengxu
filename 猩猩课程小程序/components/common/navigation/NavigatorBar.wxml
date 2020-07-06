@@ -1,0 +1,21 @@
+<view class="navigator-bar" style=" {{'height:'+navigatorFullHeightPxStr+';'}}">
+    <view class="navigator-bar__inner" style=" {{'height:'+navigatorFullHeightPxStr+';'+'background-color:'+backgroundColor+';'}}">
+        <view class="status-bar" style=" {{'height:'+statusBarHeightPxStr+';'}}"></view>
+        <view class="nav-bar" style=" {{'height:'+navigatorHeightPxStr+';'}}">
+            <view class="nav-menu {{[!isShowBackLastPage?'nav-menu-only-home':'']}}" style=" {{'height:'+menuButtonHeightPxStr+';'+'width:'+navMenuWidthPxStr+';'+'margin-left:'+menuButtonRightPxStr+';'}}" wx:if="{{menu==='navigation'}}">
+                <view class="nav-menu__cutting-line" style=" {{'height:'+menuButtonHeightPx*0.625+'px'+';'}}"></view>
+                <view bindtap="_proxy" class="nav-back" data-wpy-evt="1029-0" id="back" style=" {{'height:'+menuButtonHeightPxStr+';'}}" wx:if="{{isShowBackLastPage}}">
+                    <image class="nav-back__img" src="images/icon-nav-back-white.png" style=" {{'height:'+menuButtonHeightPx/2+'px'+';'+'width:'+menuButtonHeightPx/2+'px'+';'}}"></image>
+                </view>
+                <view bindtap="_proxy" class="nav-home" data-wpy-evt="1029-1" id="home" style=" {{'height:'+menuButtonHeightPxStr+';'}}">
+                    <image class="nav-home__img" src="images/icon-nav-home-white.png" style=" {{'height:'+menuButtonHeightPx/2+'px'+';'+'width:'+menuButtonHeightPx/2+'px'+';'}}"></image>
+                </view>
+            </view>
+            <view style=" {{'height:'+menuButtonHeightPxStr+';'+'font-size:'+leftSizePxStr+';'}}" wx:elif="{{menu==='custom'}}">
+                <slot name="custom"></slot>
+            </view>
+            <view class="title ellipsis" style=" {{'font-size:'+titleSizePxStr+';'}}">{{title}}</view>
+        </view>
+    </view>
+</view>
+<slot></slot>

@@ -1,0 +1,8 @@
+<view bindtap="_proxy" class="multi-line-text" data-wpy-evt="1191-0" style=" {{'padding-bottom:'+paddingBottom+';'}}">
+    <view class="content {{[isAuto?'show':'']}}" style=" {{'max-height:'+height+';'}}">
+        <slot></slot>
+    </view>
+    <view class="icon-arrow-down-container" style="{{arrowStyle}};" wx:if="{{!isAuto}}">
+        <view class="iconfont icon-down icon-arrow-down"></view>
+    </view>
+</view>

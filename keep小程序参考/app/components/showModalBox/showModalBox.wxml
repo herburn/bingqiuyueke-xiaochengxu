@@ -1,0 +1,32 @@
+<view bindtap="close" class="show-modal-box" wx:if="{{showModalInfo}}">
+    <view class="weak-modal-box" wx:if="{{showModalInfo.type=='weak'}}">
+        <view class="title" wx:if="{{showModalInfo.title}}">{{showModalInfo.title}}</view>
+        <view class="button-wrap">
+            <view catchtap="cancel" class="button cancel">{{showModalInfo.cancelText}}</view>
+            <view catchtap="confirm" class="button continue">{{showModalInfo.confirmText}}</view>
+        </view>
+    </view>
+    <view class="strong-modal-box {{showModalInfo.cancelText?'':'no-cancel'}}" wx:else>
+        <image class="strong-img {{showModalInfo.class?showModalInfo.class:''}}" mode="aspectFit" src="{{showModalInfo.imgSrc}}" wx:if="{{showModalInfo.imgSrc}}"></image>
+        <slot name="pic"></slot>
+        <view class="title" wx:if="{{showModalInfo.title}}">{{showModalInfo.title}}</view>
+        <slot name="text"></slot>
+        <view class="content-wrap" wx:if="{{showModalInfo.contentArray}}">
+            <view class="content-arr {{showModalInfo.title?'':'no-title'}} {{showModalInfo.class?showModalInfo.class:''}}" wx:for="{{showModalInfo.contentArray}}" wx:key="{{ index }}">
+                <text decode="true" wx:if="{{showModalInfo.class=='adidas-tip'}}">.&nbsp;</text>
+                <view class="sub-title">{{item.subTitle}}</view>
+                <view class="sub-content">{{item.subContent}}</view>
+            </view>
+        </view>
+        <text class="content {{showModalInfo.title?'':'no-title'}}" wx:elif="{{showModalInfo.content}}">{{showModalInfo.content}}</text>
+        <view class="transfer-token" wx:if="{{showModalInfo.transferToken}}">
+            <view>{{showModalInfo.transferToken}}</view>
+        </view>
+        <block wx:if="{{showModalInfo.cancelText}}">
+            <button class="keep-wx-button button continue" openType="{{showModalInfo.openType}}" wx:if="{{showModalInfo.openType}}">{{showModalInfo.confirmText}}</button>
+            <view catchtap="confirm" class="button continue" wx:else>{{showModalInfo.confirmText}}</view>
+            <view catchtap="cancel" class="button cancel" style="color: {{showModalInfo.cancelColor||'#584F60'}}">{{showModalInfo.cancelText}}</view>
+        </block>
+        <view catchtap="confirm" class="button" wx:else>{{showModalInfo.confirmText}}</view>
+    </view>
+</view>

@@ -1,0 +1,2 @@
+<view class="version" wx:if="{{isShowVersion}}">{{version}}</view>
+<view class="copy-right">{{text}}</view>

@@ -1,0 +1,20 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.class-empty {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 28rpx;
+    color: #767678;
+    height: 168rpx;
+    background-color: #333;
+}
+
+.class-empty .iconfont {
+    font-size: 36rpx;
+}

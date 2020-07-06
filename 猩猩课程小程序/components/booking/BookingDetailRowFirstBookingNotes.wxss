@@ -1,0 +1,15 @@
+.row {
+    display: flex;
+    padding: 32rpx 0;
+}
+
+.row .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    margin-right: 16rpx;
+}
+
+.row .value {
+    font-size: 28rpx;
+    color: #f2f2f7;
+}

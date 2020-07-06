@@ -1,0 +1,13 @@
+<view class="enterprise-verify">
+    <view class="title">请输入约课口令</view>
+    <input bindinput="changeCode" class="code {{codeIncorrect?'incorrect':''}}" cursorSpacing="80" focus="{{isShowKeyboard}}" maxlength="8" placeholder="请输入8位数口令" placeholderStyle="line-height: 100rpx;color: rgba(51,51,51,0.50);" type="number"></input>
+    <view bindtap="submit" class="btn {{code.length<8||disabled?'disabled':''}}">
+        <block wx:if="{{disabled}}">
+            <image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png"></image>
+            <text>处理中</text>
+        </block>
+        <text wx:else>确定预约</text>
+    </view>
+    <view class="tip">此为专场课程预约通道，不支持非专场邀请用户预约。</view>
+    <view class="tip">专场课程合作请联系 keepland@gotokeep.com</view>
+</view>

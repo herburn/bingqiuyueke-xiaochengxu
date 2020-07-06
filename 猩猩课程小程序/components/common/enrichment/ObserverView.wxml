@@ -1,0 +1,3 @@
+<view class="observer-promotion-view">
+    <slot></slot>
+</view>

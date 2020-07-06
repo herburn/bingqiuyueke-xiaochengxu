@@ -1,0 +1,14 @@
+{
+    "usingComponents": {
+        "trainingSchedule": "/app/components/trainingSchedule/trainingSchedule",
+        "keep-card": "/miniprogram_npm/keep-ui-lite/lib/components/card/index",
+        "keep-tabs": "/miniprogram_npm/keep-ui-lite/lib/components/tabs/index",
+        "keep-tab": "/miniprogram_npm/keep-ui-lite/lib/components/tab/index",
+        "keep-badge": "/miniprogram_npm/keep-ui-lite/lib/components/badge/index",
+        "keep-notice-bar": "/miniprogram_npm/keep-ui-lite/lib/components/notice-bar/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "backgroundColor": "#ffffff",
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,42 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 32rpx 24rpx;
+}
+
+.row .left,.row .right {
+    height: 39rpx;
+    line-height: 39rpx;
+}
+
+.row .left {
+    font-size: 28rpx;
+    color: #c9c9cd;
+}
+
+.row .right {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    font-size: 28rpx;
+    color: #f2f2f7;
+}
+
+.row .right .iconfont {
+    margin-right: 16rpx;
+    font-size: 40rpx;
+    color: #fcc800;
+}

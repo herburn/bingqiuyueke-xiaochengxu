@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "popover-layout-filter": "./../../../../components/common/feedback/PopoverLayoutFilter",
+        "select-two-filter": "./../../../../components/common/combination/SelectColumnTwo",
+        "select-three-filter": "./../../../../components/common/combination/SelectColumnThree"
+    }
+}

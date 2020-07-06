@@ -1,0 +1,35 @@
+.refund-status-container {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.refund-status-container .refund-status {
+    max-width: 500rpx;
+    font-size: 28rpx;
+    color: #c9c9cd;
+}
+
+.refund-status-container .refund-status-result {
+    -webkit-box-flex: 1;
+    flex: 1;
+    margin-left: 10rpx;
+    text-align: right;
+    font-size: 28rpx;
+    color: #c9c9cd;
+}
+
+.refund-status-container .refund-status-result.course-end {
+    color: #fcc800;
+}

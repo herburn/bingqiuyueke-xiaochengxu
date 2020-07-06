@@ -1,0 +1,6 @@
+<popover-layout-filter bind_init="_initComponent" bindchangeFilter="_proxy" data-wpy-evt="1179-0" isShow="{{isShowFilter}}" tabItems="{{filterTabItems}}">
+    <view class="personal-filter-content" slot="content">
+        <select-two-filter bind_init="_initComponent" bindtapItem="_proxy" class="filter-item {{[filterTabItems[0].isActive?'filter-item-active':'']}}" config="{{[ {width:'282rpx'},{width:'464rpx'} ]}}" data="{{boxFilter}}" data-wpy-evt="1179-1"></select-two-filter>
+        <select-one-filter bind_init="_initComponent" bindtapItem="_proxy" class="filter-item {{[filterTabItems[1].isActive?'filter-item-active':'']}}" data="{{classFilter}}" data-wpy-evt="1179-2"></select-one-filter>
+    </view>
+</popover-layout-filter>

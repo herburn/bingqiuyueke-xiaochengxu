@@ -1,0 +1,11 @@
+<view bindtap="_proxy" class="new-user-prompt" data-wpy-evt="1025-0" wx:if="{{isNewUserBonus}}">
+    <view catchtap="_proxy" class="icon-container" data-wpy-evt="1025-1">
+        <image class="fixed-prompt-icon" src="images/prompt-new-user.png"></image>
+    </view>
+    <view catchtouchmove="_proxy" class="mask-container" data-wpy-evt="1025-2" wx:if="{{isMaskShow}}">
+        <view class="container {{[!isBiggerRatio?'special-ratio':'']}}">
+            <image catchtap="_proxy" class="new-user-img" data-wpy-evt="1025-3" src="{{newPromtSrc}}"></image>
+            <image catchtap="_proxy" class="icon-close" data-wpy-evt="1025-4" src="/images/common/icon-close-circle.png"></image>
+        </view>
+    </view>
+</view>

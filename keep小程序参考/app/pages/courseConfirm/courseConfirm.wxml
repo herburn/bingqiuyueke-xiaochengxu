@@ -1,0 +1,41 @@
+<navigatorBar></navigatorBar>
+<view class="course-confirm {{iphonex?'iphonex':''}}" style="padding-bottom: {{preBookInfo&&preBookInfo.remindTxtStatus?'184rpx':'116rpx'}}" wx:if="{{scheduleHeadDetail}}">
+    <view class="course-card">
+        <view class="name keep-text-overflow">{{scheduleHeadDetail.scheduleName}}</view>
+        <image class="line" mode="aspectFit" src="https://static1.keepcdn.com/2019/03/19/15/1552979920390_694x28.png"></image>
+        <view class="info time">{{scheduleHeadDetail.formatTimeRange}}</view>
+        <view class="info gym-name">{{scheduleHeadDetail.gymName}}</view>
+        <view class="info coach">
+            <block wx:for="{{scheduleHeadDetail.coachInfos}}" wx:key="{{ index }}">
+                <text>{{item.name}}</text>
+                <text wx:if="{{index!=scheduleHeadDetail.coachInfos.length-1}}">、</text>
+            </block>
+        </view>
+    </view>
+    <amountSelector bindautonavtowait="autonavtowait" bookFrom="{{bookFrom}}" iphonex="{{iphonex}}" preBookInfo="{{preBookInfo}}" scheduleId="{{scheduleId}}" wx:if="{{currentOrderType=='normal'}}"></amountSelector>
+    <waitSelector autoWaiting="{{autoWaiting}}" iphonex="{{iphonex}}" preWaitInfo="{{preWaitInfo}}" scheduleId="{{scheduleId}}" wx:elif="{{currentOrderType=='wait'}}"></waitSelector>
+    <enterpriseVerify isShowKeyboard="{{isShowKeyboard}}" scheduleId="{{scheduleId}}" wx:elif="{{currentOrderType=='enterprise'}}"></enterpriseVerify>
+    <view class="other-info">
+        <view class="info" wx:if="{{riskDetails&&riskDetails.content}}">
+            <view bindtap="showDetail" class="title" data-type="showRisk">{{riskDetails.title}}</view>
+            <view class="des" wx:if="{{showRisk}}">
+                <view wx:for="{{util.formatReturn(riskDetails.content)}}" wx:for-item="content" wx:key="{{content}}">{{content}}</view>
+            </view>
+        </view>
+        <view class="info">
+            <view bindtap="showDetail" class="title" data-type="showRules">取消预约与转课规则</view>
+            <view class="des" wx:if="{{showRules}}">
+                <view wx:for="{{ruleDetails}}" wx:for-item="content" wx:key="{{content}}">{{content}}</view>
+            </view>
+        </view>
+        <view class="disclaimers">
+            <text>预约课程表示同意 Keepland </text>
+            <navigator class="link" hoverClass="none" url="/app/pages/agreement/agreement?showType=disclaimer">免责声明</navigator>
+            <text> 及 </text>
+            <navigator class="link" hoverClass="none" url="/app/pages/agreement/agreement?showType=convention">用户公约</navigator>
+        </view>
+    </view>
+    <scheduleConflictTip bindcloseconflicttip="closeconflicttip" conflictScheduleInfo="{{conflictScheduleInfo}}" wx:if="{{conflictScheduleInfo}}"></scheduleConflictTip>
+    <showAdidasTip showModalInfo="{{adidasTipInfo}}"></showAdidasTip>
+</view>
+<wxs module="util" src="../../wxs/util.wxs" />

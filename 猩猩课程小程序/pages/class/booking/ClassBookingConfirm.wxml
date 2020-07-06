@@ -1,0 +1,38 @@
+<navigator-bar backgroundColor="{{navigatorBgColor}}" bind_init="_initComponent" class="navigator-bar" title="确认订单信息"></navigator-bar>
+<view style=" {{'visibility:'+visibility+';'}}">
+    <booking-confirm-layer bgSrc="{{classBookingConfirmInfo.bg}}" bind_init="_initComponent">
+        <view class="card-top" slot="card-top">
+            <confirm-header bind_init="_initComponent" class="row" headerInfo="{{classBookingConfirmInfo.header}}"   >
+                <view class="card-top__content">
+                    <scout-note bind_init="_initComponent" class="card-top__content__item" scoutNote="{{classBookingConfirmInfo.header.scoutNote}}" wx:if="{{classBookingConfirmInfo.header.scoutNote}}"></scout-note>
+                    <view class="card-top__content__item item-waiting" wx:if="{{classBookingConfirmInfo.header.waitingCount>=0}}">
+                        <view class="text">当前等候人数
+              <text class="highlight"> {{classBookingConfirmInfo.header.waitingCount}} </text>人</view>
+                        <view class="remark">注意：加入等候队列后，若有空位，将自动加入课程；若取消等候或未排上，预付金自动退回超猩卡。</view>
+                    </view>
+                </view>
+            </confirm-header>
+            <people-num-radio-row bind_init="_initComponent" bindconfirmNum="_proxy" class="row" data-region-id-se="peopleNumClassBookingConfirm" data-wpy-evt="840-0" id="peopleNum" numArray="{{persons}}" selectedIndex="{{numIndexSelected}}"></people-num-radio-row>
+            <total-price-row bind_init="_initComponent" class="row" firstPrice="{{totalPriceText.firstPrice}}" mode="{{totalPriceText.mode}}" price="{{totalPriceText.price}}"></total-price-row>
+            <privilege-choose-row bind_init="_initComponent" bindchangePrivilege="_proxy" class="row" data-wpy-evt="840-1" privilegeSelected="{{privilegeSelected}}" privilegeText="{{classBookingConfirmInfo.privilege.privilegeNames[privilegeSelected]}}" privileges="{{classBookingConfirmInfo.privilege.privilegeNames}}" wx:if="{{classBookingConfirmInfo.privilege.privileges.length>1}}"></privilege-choose-row>
+            <super-price-row bind_init="_initComponent" class="row" mode="{{superCard.mode}}" price="{{superCard.price}}"></super-price-row>
+            <ticket-row bind_init="_initComponent" bindchangeTicket="_proxy" class="row" data-wpy-evt="840-2" ticketId="{{ticketId}}" tickets="{{classBookingConfirmInfo.tickets}}" totalPrice="{{total.priceCent}}"></ticket-row>
+        </view>
+        <view slot="card-bottom">
+            <need-pay bind_init="_initComponent" leftToPay="{{payPrice}}"></need-pay>
+            <tips bind_init="_initComponent" tips="{{tips}}"></tips>
+        </view>
+    </booking-confirm-layer>
+    <page-resident-button bind_init="_initComponent" bindtapPageBtn="_proxy" class="page-resident-button" data-wpy-evt="840-3" items="{{confirmBtn.items}}"></page-resident-button>
+</view>
+<page-loading bind_init="_initComponent" bindreload="_proxy" data-wpy-evt="840-4" id="__LoadingPage__"></page-loading>
+<show-toast bind_init="_initComponent" id="__Toast__"></show-toast>
+<show-modal bind_init="_initComponent" id="__Modal__"></show-modal>
+<show-action-sheet bind_init="_initComponent" id="__ActionSheet__"></show-action-sheet>
+<show-add-wechat-modal bind_init="_initComponent" id="__ModalAddWeChat__"></show-add-wechat-modal>
+<show-picker-view bind_init="_initComponent" id="__PickerView__"></show-picker-view>
+<register-user bind_init="_initComponent" id="__ModalRegisterUser__"></register-user>
+<unauthorized-msg bind_init="_initComponent" id="__ModalUnauthorizedMsg__"></unauthorized-msg>
+<reject-msg bind_init="_initComponent" id="__ModalRejectMsg__"></reject-msg>
+<modal-subscribe-msg-guide1 bind_init="_initComponent" id="__ModalSubscribeMsgGuide1__"></modal-subscribe-msg-guide1>
+<modal-subscribe-msg-guide2 bind_init="_initComponent" id="__ModalSubscribeMsgGuide2__"></modal-subscribe-msg-guide2>

@@ -1,0 +1,16 @@
+<view class="total-price-row">
+    <view class="label">{{labelText}}</view>
+    <view class="value value-normal" wx:if="{{mode==='normal'}}">{{price}}</view>
+    <view class="value value-class-first1" wx:if="{{mode==='classFirst1'}}">
+        <text class="first-price" space="nbsp">{{firstPrice}} </text>
+        <view class="normal-price">({{price}})</view>
+    </view>
+    <view class="value value-class-first2" wx:if="{{mode==='classFirst2'}}">
+        <text class="first-price" space="nbsp">({{firstPrice}}) </text>
+        <view class="normal-price">{{price}}</view>
+    </view>
+    <view class="value value-personal-first" wx:if="{{mode==='personalUnderline'}}">
+        <view class="first-price">{{price}}</view>
+        <view class="normal-price">{{underlinePrice}}</view>
+    </view>
+</view>

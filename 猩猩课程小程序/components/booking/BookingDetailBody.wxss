@@ -1,0 +1,116 @@
+.booking-detail-main {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    width: 100%;
+    -webkit-box-flex: 1;
+    flex: 1;
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 24rpx 24rpx;
+}
+
+.booking-detail-body {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 16rpx;
+    background-color: #333;
+}
+
+.booking-detail-body .card-add-content {
+    position: relative;
+    padding: 24rpx 24rpx 0;
+    border-radius: 16rpx 16rpx 0 0;
+    background-color: #3f3f3f;
+}
+
+.booking-detail-body .card-top {
+    position: relative;
+    padding: 24rpx;
+}
+
+.booking-detail-body.dark-bg .card-top::before,.booking-detail-body.dark-bg .card-add-content::before,.booking-detail-body.dark-bg .card-top::after,.booking-detail-body.dark-bg .card-add-content::after {
+    background-color: #242424;
+}
+
+.card-bottom {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-flex: 1;
+    flex: 1;
+    border-radius: 16rpx;
+    padding: 0 24rpx 24rpx;
+    color: #c9c9cd;
+    font-size: 28rpx;
+    background-color: #333;
+}
+
+.card-bottom::before,.card-bottom::after {
+    position: absolute;
+    top: -12.5rpx;
+    content: '';
+    z-index: 1;
+    box-sizing: border-box;
+    width: 25rpx;
+    height: 25rpx;
+    border-radius: 50%;
+    background-color: #242424;
+}
+
+.card-bottom::before {
+    left: -12.5rpx;
+}
+
+.card-bottom::after {
+    right: -12.5rpx;
+}
+
+.card-bottom .divider-dashed {
+    position: absolute;
+    top: -2rpx;
+    left: 4%;
+    width: 92%;
+    height: 4rpx;
+    margin: 0 auto;
+    background-image: -webkit-gradient(linear,left top,right top,color-stop(60%,#767678),color-stop(0%,rgba(0,0,0,0)));
+    background-image: -webkit-linear-gradient(left,#767678 60%,rgba(0,0,0,0) 0%);
+    background-image: linear-gradient(to right,#767678 60%,rgba(0,0,0,0) 0%);
+    background-position: bottom;
+    background-size: 16rpx 2rpx;
+    background-repeat: repeat-x;
+}
+
+.panel-title {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    height: 39rpx;
+    margin-bottom: 8rpx;
+    line-height: 39rpx;
+}
+
+.panel-content {
+    font-size: 28rpx;
+    line-height: 39rpx;
+    color: #f2f2f7;
+}
+
+.gap {
+    margin-top: 24rpx;
+}
+
+.agreement {
+    font-size: 28rpx;
+}
+
+.agreement .text-highlight {
+    text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+<view class="personal-list" wx:if="{{ready&&!isListEmpty}}">
+    <view class="content-list">
+        <view class="one-box" wx:for="{{personalList}}" wx:for-item="box" wx:key="boxId">
+            <view class="info-row">
+                <view class="box-name">{{box.boxName}}</view>
+                <view bindtap="_proxy" class="open-map" data-wpy-evt="1030-0" data-wpytap-a="{{box}}">查看地图</view>
+            </view>
+            <view class="schedules">
+                <view class="schedules-item" wx:for="{{box.classList}}" wx:for-item="schedule" wx:key="index">
+                    <personal-class-entry bind_init="_initComponent" class="personal-entry" schedule="{{schedule}}"></personal-class-entry>
+                    <view class="divider"></view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bottom-slogan">黑科技体测 | 30天随时退 | 量身定计划 | 7×24随心约</view>
+</view>
+<view class="no-data" wx:if="{{ready&&isListEmpty}}">
+    <img-tip bind_init="_initComponent" imgSrc="{{imgSrc}}" tipMsg="{{emptyTipMsg}}"></img-tip>
+</view>
+<personal-filter bind_init="_initComponent" bindchangeFilter="_proxy" bindtapItem="_proxy" boxFilter="{{boxFilter}}" classFilter="{{classFilter}}" data-wpy-evt="1030-1" filterTabItems="{{filterTabItems}}" isShowFilter="{{isShowFilter}}"></personal-filter>
+<new-personal-user-prompt bind_init="_initComponent"></new-personal-user-prompt>

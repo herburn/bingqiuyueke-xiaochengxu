@@ -1,0 +1,13 @@
+{
+    "usingComponents": {
+        "trainingSchedule": "/app/components/trainingSchedule/trainingSchedule",
+        "keep-load-more": "/miniprogram_npm/keep-ui-lite/lib/components/load-more/index",
+        "keep-tabs": "/miniprogram_npm/keep-ui-lite/lib/components/tabs/index",
+        "keep-tab": "/miniprogram_npm/keep-ui-lite/lib/components/tab/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "keep-avatar": "/miniprogram_npm/keep-ui-lite/lib/components/avatar/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "backgroundColor": "#ffffff",
+    "onReachBottomDistance": 800
+}

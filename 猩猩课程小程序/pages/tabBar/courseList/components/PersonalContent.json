@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "img-tip": "./../../../../components/common/other/ImgTip",
+        "personal-filter": "./PersonalFilter",
+        "personal-class-entry": "./../../../../components/personal/PersonalListEntity",
+        "new-personal-user-prompt": "./../../../../components/personal/PersonalFloatingActionButtonNewUser",
+        "select-column-three": "./../../../../components/common/combination/SelectColumnThree"
+    }
+}

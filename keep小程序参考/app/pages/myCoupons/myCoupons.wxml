@@ -1,0 +1,53 @@
+<navigatorBar title="优惠券"></navigatorBar>
+<view class="container" style="height: calc(100vh - {{totalNavHeight}}px)">
+    <view class="fixed-top-card">
+        <view class="input-wrap" wx:if="{{showExchange}}">
+            <input bindinput="pwdInput" class="exchange-input" focus="{{true}}" placeholder="请输入兑换码" placeholderStyle="color: #999999;line-height: 90rpx;"></input>
+            <view bindtap="getCouponByPwd" class="exchange">兑换</view>
+        </view>
+        <view bindtap="exchange" class="exchange-btn" wx:else>输入兑换码</view>
+        <view class="tab-wrap">
+            <view bindtap="tabChange" class="tab {{status==swiperIndex?'active':''}}" data-status="{{status}}" wx:for="{{couponInfo}}" wx:for-index="status" wx:for-item="value" wx:key="{{status}}">{{value.text}}</view>
+        </view>
+    </view>
+    <swiper bindchange="swiperChange" class="swiper" current="{{swiperIndex-1}}" duration="200" skipHiddenItemLayout="skip-hidden-item-layout">
+        <swiper-item wx:for="{{couponInfo}}" wx:for-index="status" wx:for-item="value" wx:key="{{status}}">
+            <scroll-view scrollY bindscrolltolower="loadMore" data-status="{{status}}">
+                <view class="has-coupon" wx:if="{{value.list.length}}">
+                    <view class="coupon-wrap coupon-status-{{status}}" wx:for="{{value.list}}" wx:key="{{index}}">
+                        <view class="coupon-info">
+                            <view class="left-part">
+                                <view class="coupon-title keep-text-overflow">{{item.title}}</view>
+                                <view class="coupon-sponsor">{{item.sponsorCopy}}</view>
+                                <view class="valid-date">{{item.validDate}}</view>
+                            </view>
+                            <view class="right-part">
+                                <view class="amount">
+                                    <text class="unit">¥</text>
+                                    <text class="count">{{item.amountCent/100}}</text>
+                                </view>
+                                <view class="bound" wx:if="{{item.limitCent>0}}">满{{item.limitCent/100}}可用</view>
+                            </view>
+                        </view>
+                        <view class="line"></view>
+                        <view class="coupon-rules">
+                            <view catchtap="showCouponRules" class="rules-title" data-index="{{index}}" data-status="{{status}}">
+                                <view class="text {{item.showCouponRules?'show-rules':''}}">使用说明</view>
+                                <block wx:if="{{item.url}}">
+                                    <view catchtap="jumpTo" class="button" data-url="{{item.url}}" wx:if="{{status==1}}">去使用</view>
+                                    <view catchtap="jumpTo" class="button" data-url="{{item.url}}" wx:if="{{status==2}}">去查看</view>
+                                </block>
+                            </view>
+                            <view class="rules-content" wx:if="{{item.showCouponRules}}">{{item.description}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="empty-coupon" wx:else>
+                    <view class="img"></view>
+                    <view class="tip">暂无优惠券</view>
+                </view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+    <official-account></official-account>
+</view>

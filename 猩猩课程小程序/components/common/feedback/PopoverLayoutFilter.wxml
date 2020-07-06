@@ -1,0 +1,15 @@
+<animation-wrapper bind_init="_initComponent" bindcancel="_proxy" class="animation-wrapper" contentHeight="{{config.contentHeight}}" data-wpy-evt="1176-0" id="animation-wrapper" show="{{isShow}}">
+    <view class="popover-layout-filter" slot="content">
+        <view class="popover-layout-filter__header">
+            <view catchtap="_proxy" class="tab-item {{[item.isActive?'tab-item-active':'']}}" data-wpy-evt="1176-1" data-wpytap-a="{{item}}" wx:for="{{tabItems}}" wx:key="index">
+                <view class="label">{{item.label}}</view>
+                <view class="badge" wx:if="{{item.badgeNum>0}}">{{item.badgeNum}}</view>
+            </view>
+            <view catchtap="_proxy" class="clear-btn {{[!isShowClearBtn?'clear-btn-hidden':'']}}" data-wpy-evt="1176-2">清空</view>
+            <view catchtap="_proxy" class="confirm-btn" data-wpy-evt="1176-3">确认</view>
+        </view>
+        <view class="popover-layout-filter__content">
+            <slot name="content"></slot>
+        </view>
+    </view>
+</animation-wrapper>

@@ -1,0 +1,138 @@
+@import "../../../../__wuBaseWxss__/0.wxss";
+
+@import "../../../../__wuBaseWxss__/2.wxss";
+
+.panel {
+    padding: 24rpx;
+    border-radius: 16rpx;
+    background-color: #333;
+}
+
+.panel .header {
+    font-size: 36rpx;
+    color: #fcc800;
+    width: 654rpx;
+    margin-bottom: 48rpx;
+    font-weight: bold;
+}
+
+.panel .trainer {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 24rpx;
+}
+
+.panel .trainer__profile {
+    position: relative;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.panel .trainer__profile__name {
+    font-size: 28rpx;
+    color: #f2f2f7;
+}
+
+.panel .trainer__profile__introduce {
+    font-size: 26rpx;
+    color: #767678;
+    width: 518rpx;
+}
+
+.panel .trainer__profile__arrow {
+    display: block;
+    width: 18rpx;
+    height: 18rpx;
+    border-top: 2rpx solid #767678;
+    border-right: 2rpx solid #767678;
+    transform: rotate(135deg);
+    position: absolute;
+    bottom: -16rpx;
+    left: 179rpx;
+}
+
+.panel .multi-trainer {
+    margin-bottom: 48rpx;
+}
+
+.panel .multi-trainer__scroll {
+    width: 678rpx;
+    height: 168rpx;
+}
+
+.panel .multi-trainer__scroll__inner {
+    display: flex;
+}
+
+.panel .multi-trainer__scroll .trainer-info {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 120rpx;
+    height: 168rpx;
+    margin-right: 40rpx;
+}
+
+.panel .multi-trainer__scroll .trainer-info__face {
+    margin-bottom: 8rpx;
+}
+
+.panel .multi-trainer__scroll .trainer-info__name {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    width: 120rpx;
+    text-align: center;
+}
+
+.panel .row {
+    display: flex;
+}
+
+.panel .row .label {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    display: flex;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    margin-right: 16rpx;
+}
+
+.panel .row .label .label__inner {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.panel .row .label .label__inner .icon {
+    margin-right: 16rpx;
+    font-size: 39rpx;
+    color: #fcc800;
+}
+
+.panel .row .value {
+    font-size: 28rpx;
+    color: #f2f2f7;
+}
+
+.panel .time,.panel .location {
+    margin-bottom: 48rpx;
+}
+
+.panel .location .value {
+    width: 510rpx;
+}
+
+.panel .location .value .location-view {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.panel .price .card-register {
+    display: inline-block;
+    color: #fcc800;
+    text-decoration: underline;
+}

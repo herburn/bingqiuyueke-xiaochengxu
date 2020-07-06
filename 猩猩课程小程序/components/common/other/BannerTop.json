@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "click-behavior": "./../enrichment/ClickBehavior",
+        "swiper-dots": "./../dataDisplay/SwiperDots",
+        "observer-promotion-view": "./../enrichment/ObserverView"
+    }
+}

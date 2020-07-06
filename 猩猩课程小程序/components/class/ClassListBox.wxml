@@ -1,0 +1,37 @@
+<view class="class-box">
+    <class-box-header bind_init="_initComponent" boxInfo="{{boxSchedules.boxInfo}}" isShowFav="{{isShowFav}}" wx:if="{{isShowHeader}}"></class-box-header>
+    <class-empty bind_init="_initComponent" class="class-empty" emptyReason="{{boxSchedules.emptyReason}}" wx:if="{{boxSchedules.schedules.length===0&&!topClassBoxPromotion&&!noneClassBoxPromotion&&!classBoxPromotion&&!topClassPromotion&&!noneClassPromotion&&!classPromotion}}"></class-empty>
+    <view class="class-list">
+        <observer-promotion-view bind_init="_initComponent" class="entry" data-region-id-sm="classBeforeOpenPromotion" id="classBeforeOpen" info="{{topClassBoxPromotion}}" uniqueId="{{topClassBoxPromotion.relateId}}" wx:if="{{topClassBoxPromotion}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="classBeforeOpenPromotion" id="classBeforeOpen" info="{{topClassBoxPromotion}}">
+                <class-box-promotion bind_init="_initComponent" info="{{topClassBoxPromotion}}"></class-box-promotion>
+            </click-behavior>
+        </observer-promotion-view>
+        <observer-promotion-view bind_init="_initComponent" class="entry" data-region-id-sm="classBeforeOpenPromotion" id="classBeforeOpen" info="{{noneClassBoxPromotion}}" uniqueId="{{noneClassBoxPromotion.relateId}}" wx:if="{{noneClassBoxPromotion}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="classBeforeOpenPromotion" id="classBeforeOpen" info="{{noneClassBoxPromotion}}">
+                <class-box-promotion bind_init="_initComponent" info="{{noneClassBoxPromotion}}"></class-box-promotion>
+            </click-behavior>
+        </observer-promotion-view>
+        <observer-promotion-view bind_init="_initComponent" class="entry" data-region-id-sm="classBeforeOpenPromotion" id="classBeforeOpen" info="{{classBoxPromotion}}" uniqueId="{{classBoxPromotion.relateId}}" wx:if="{{classBoxPromotion}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="classBeforeOpenPromotion" id="classBeforeOpen" info="{{classBoxPromotion}}">
+                <class-box-promotion bind_init="_initComponent" info="{{classBoxPromotion}}"></class-box-promotion>
+            </click-behavior>
+        </observer-promotion-view>
+        <class-entry bind_init="_initComponent" class="entry" isAllowTrainerNavigate="{{isAllowTrainerNavigate}}" isNovice="{{isNovice}}" schedule="{{schedule}}" wx:for="{{boxSchedules.schedules}}" wx:for-item="schedule" wx:key="id"></class-entry>
+        <observer-promotion-view bind_init="_initComponent" class="entry" data-region-id-sm="classAdsPromotion" id="classAds" info="{{topClassPromotion}}" uniqueId="{{topClassPromotion.relateId}}" wx:if="{{topClassPromotion}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="classAdsPromotion" id="classAds" info="{{topClassPromotion}}">
+                <class-promotion bind_init="_initComponent" info="{{topClassPromotion}}"></class-promotion>
+            </click-behavior>
+        </observer-promotion-view>
+        <observer-promotion-view bind_init="_initComponent" class="entry" data-region-id-sm="classAdsPromotion" id="classAds" info="{{noneClassPromotion}}" uniqueId="{{noneClassPromotion.relateId}}" wx:if="{{noneClassPromotion}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="classAdsPromotion" id="classAds" info="{{noneClassPromotion}}">
+                <class-promotion bind_init="_initComponent" info="{{noneClassPromotion}}"></class-promotion>
+            </click-behavior>
+        </observer-promotion-view>
+        <observer-promotion-view bind_init="_initComponent" class="entry" data-region-id-sm="classAdsPromotion" id="classAds" info="{{classPromotion}}" uniqueId="{{classPromotion.relateId}}" wx:if="{{classPromotion}}">
+            <click-behavior bind_init="_initComponent" data-region-id-sm="classAdsPromotion" id="classAds" info="{{classPromotion}}">
+                <class-promotion bind_init="_initComponent" info="{{classPromotion}}"></class-promotion>
+            </click-behavior>
+        </observer-promotion-view>
+    </view>
+</view>

@@ -1,0 +1,14 @@
+@import "../../../../../__wuBaseWxss__/1.wxss";
+
+.keep-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.keep-badge--primary {
+    color: #ff5363;
+    background-color: rgba(255,83,99,.15);
+}

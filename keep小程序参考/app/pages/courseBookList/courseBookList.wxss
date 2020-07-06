@@ -1,0 +1,49 @@
+.book {
+    background-color: #fff;
+}
+
+.book-item {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 28rpx;
+    border-bottom: 1rpx solid #efefef;
+}
+
+.book-item:last-child {
+    border-bottom: 0;
+}
+
+.book-item .right {
+    flex: 1;
+}
+
+.book-item .name-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.book-item .name-wrap .name {
+    font-size: 28rpx;
+    color: #584f60;
+}
+
+.book-item .keep-month-demon-title {
+    margin-top: 11rpx;
+}
+
+.book-item .avatar {
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 22rpx;
+}
+
+.book-item .avatar:before {
+    top: -4rpx;
+}
+
+.book-item .avatar image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}

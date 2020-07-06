@@ -1,0 +1,5 @@
+<view class="render-paragraph" style=" {{'color:'+fontColor+';'}}">
+    <text-parse-html bind_init="_initComponent" fontColor="{{fontColor}}" textData="{{paragraph}}" wx:for="{{paragraphs}}" wx:for-item="paragraph" wx:key="index">
+        <text slot="indexName">{{index+1}}、</text>
+    </text-parse-html>
+</view>

@@ -1,0 +1,30 @@
+.booking-success {
+    background-image: url("https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/bg-circle-monkey.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700rpx;
+    -webkit-background-size: 100% 700rpx;
+    background-size: 100% 700rpx;
+    background-position: center top;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100vh;
+    padding: 0 24rpx;
+    background-color: #242424;
+}
+
+.booking-success-header {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding-top: 208rpx;
+    color: #333;
+}

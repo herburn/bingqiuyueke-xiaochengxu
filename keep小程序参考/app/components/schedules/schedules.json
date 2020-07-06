@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "course-table": "/app/components/courseTable/courseTable",
+        "privilege": "/app/components/privilege/privilege",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

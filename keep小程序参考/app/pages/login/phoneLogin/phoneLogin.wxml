@@ -1,0 +1,21 @@
+<navigatorBar backgroundColor="#584F60" color="#fff" navigationBarColor="white"></navigatorBar>
+<view class="phone-login">
+    <view class="title">手机号登录</view>
+    <view class="input-wrap">
+        <view class="title">手机号</view>
+        <view class="input-item">
+            <input bindinput="phoneNumberInput" class="phone-number" type="number"></input>
+        </view>
+    </view>
+    <view class="input-wrap">
+        <view class="title">验证码</view>
+        <view class="input-item">
+            <input bindinput="captchaInput" class="captcha {{captcha?'verified':''}}" maxlength="4" placeholder="四位" type="number"></input>
+            <button bindtap="sendCaptcha" class="captcha-button {{phoneNumber?'verified':''}}">
+                <text wx:if="{{captchaStatus>=0}}">{{captchaStatus}}秒后重发</text>
+                <text wx:else>获取验证码</text>
+            </button>
+        </view>
+    </view>
+    <button bindtap="userLogin" class="login-button {{phoneNumber&&captcha?'verified':''}}">登录／注册</button>
+</view>

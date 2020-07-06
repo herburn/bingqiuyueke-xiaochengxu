@@ -1,0 +1,17 @@
+page {
+    background-color: #242424;
+}
+
+.course-selected-navbar {
+    position: relative;
+    z-index: 600;
+    display: flex;
+}
+
+.class,.personal,.camp {
+    display: none;
+}
+
+.class-active,.personal-active,.camp-active {
+    display: block;
+}

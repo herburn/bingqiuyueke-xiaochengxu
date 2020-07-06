@@ -1,0 +1,64 @@
+.prompt {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 26rpx;
+    color: #333;
+    position: fixed;
+    top: 200rpx;
+    z-index: 1101;
+    width: 468rpx;
+    height: 79rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.32);
+    background-color: #fcc800;
+}
+
+.prompt .icon-triangle {
+    position: absolute;
+    top: -12rpx;
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border-bottom: 17rpx solid #fcc800;
+    border-left: 14rpx solid transparent;
+    border-right: 14rpx solid transparent;
+}
+
+.bounce {
+    animation: bounce 1.4s infinite;
+    transform-origin: center bottom;
+}
+
+@-webkit-keyframes bounce {
+    0% {
+        transform: translate(0rpx,0rpx);
+    }
+
+    50% {
+        transform: translate(0rpx,-8rpx);
+    }
+
+    100% {
+        transform: translate(0rpx,0rpx);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: translate(0rpx,0rpx);
+    }
+
+    50% {
+        transform: translate(0rpx,-8rpx);
+    }
+
+    100% {
+        transform: translate(0rpx,0rpx);
+    }
+}

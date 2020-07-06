@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "showBusinessEmail": "/app/components/showModalBox/showModalBox",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

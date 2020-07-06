@@ -1,0 +1,10 @@
+<view catchtouchmove="_proxy" class="upgrade-modal-wrap" data-wpy-evt="1042-0" wx:if="{{isShow}}">><view class="upgrade-modal">
+        <view class="title">恭喜升级</view>
+        <view class="modal-content">
+            <view class="tip-words">{{tip}}</view>
+            <image class="animate-img" src="{{upgradeImg}}"></image>
+        </view>
+        <view bindtap="_proxy" class="btn" data-wpy-evt="1042-1">查看会员权益</view>
+        <image bindtap="_proxy" class="icon-close" data-wpy-evt="1042-2" src="../../../images/common/icon-close-black.png"></image>
+    </view>
+</view>

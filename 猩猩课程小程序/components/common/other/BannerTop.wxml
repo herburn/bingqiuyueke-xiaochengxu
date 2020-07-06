@@ -1,0 +1,13 @@
+<view class="banner" style="border-radius: {{borderRadius}}; transform: translateY(0); overflow: hidden;" wx:if="{{banners.length>0}}">
+    <observer-promotion-view bind_init="_initComponent" info="{{banners[activeIndex]}}" uniqueId="{{banners[activeIndex].relateId}}">
+        <swiper autoplay="{{autoplay}}" bindchange="_proxy" circular="{{circular}}" current="{{current}}" data-wpy-evt="1028-0" duration="{{duration}}" indicatorActiveColor="{{indicatorActiveColor}}" indicatorColor="{{indicatorColor}}" indicatorDots="{{indicatorDots}}" interval="{{interval}}" style=" {{'height:'+height+';'}}">
+            <swiper-item style="border-radius: {{borderRadius}}; overflow: hidden;" wx:for="{{banners}}" wx:key="index">
+                <click-behavior bind_init="_initComponent" info="{{item}}">
+                    <image bindtap="_proxy" class="slide-image" data-wpy-evt="1028-1" data-wpytap-a="{{item}}" mode="aspectFill" src="{{item.img}}" style=" {{'height:'+height+';'}}"></image>
+                    <view class="mask" wx:if="{{isShowMask}}"></view>
+                </click-behavior>
+            </swiper-item>
+        </swiper>
+    </observer-promotion-view>
+    <swiper-dots bind_init="_initComponent" class="user-swiper-indicator" count="{{banners.length}}" current="{{activeIndex}}" style=" {{'bottom:'+dotBottom+';'}}" wx:if="{{customIndicatorDots}}"></swiper-dots>
+</view>

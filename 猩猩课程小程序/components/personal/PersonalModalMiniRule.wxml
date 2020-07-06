@@ -1,0 +1,11 @@
+<show-modal bind_init="_initComponent" id="rule-modal">
+    <view class="mini-content" slot="content">
+        <view class="sub-title">参与者在指定时间内完成全部课时</view>
+        <view class="sub-title">签到，可获得Mini挑战奖励</view>
+        <view class="label">说明：</view>
+        <view class="row row-margin">- 挑战计时：从订单支付成功后开始，按天计时；在指定日期前完成签到，系统自动发放奖励；</view>
+        <view class="row row-margin">- 奖励为Mini私教代金券一张，全部私教课程可用，有效期30天；</view>
+        <view class="row row-margin">- 选择参与挑战并成功支付订单后，若订单发生退款，参与费用不退；</view>
+        <view class="row">- 有疑问请联系客服：400-900-9166</view>
+    </view>
+</show-modal>

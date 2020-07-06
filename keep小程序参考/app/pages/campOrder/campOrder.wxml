@@ -1,0 +1,93 @@
+<navigatorBar title="我的预约"></navigatorBar>
+<view class="container" wx:if="{{order}}">
+    <navigator class="course-info" hoverClass="none" url="/app/pages/campDetail/campDetail?campId={{order.campId}}">
+        <image class="course-cover keep-course-cover-placeholder keep-course-cover-mark" mode="aspectFill" src="{{order.campCover+'?imageMogr2/thumbnail/750x/quality/95'}}"></image>
+        <view class="info-wrap">
+            <view class="gym-coach">
+                <text>{{order.gymRoomName}}</text>
+                <text>{{order.coachName}}</text>
+            </view>
+            <view class="course-time">{{order.campCourseCount}} 节课</view>
+            <view class="course-name keep-text-overflow">{{order.campName}}</view>
+        </view>
+    </navigator>
+    <view class="course-option no-des keep-1px-border bottom-border" wx:if="{{order.userBookStatus==1}}">
+        <view class="tip">支付处理中，下拉刷新</view>
+    </view>
+    <block wx:if="{{order.userBookStatus==2||order.userBookStatus==5}}">
+        <view class="course-option keep-1px-border bottom-border">
+            <view class="icon-mark">
+                <image src="https://static1.keepcdn.com/2019/07/25/10/1564020694817_112x112.png"></image>
+            </view>
+            <block wx:if="{{order.campTeachType==='online'}}">
+                <view class="tip">在线训练营购买成功</view>
+                <view class="scan-limitation">添加教练微信进群：{{order.coachWeChatName}}</view>
+                <keep-button bindtap="copyWechat" border="border" customClass="copy-wechat" shape="circle">点击复制微信号</keep-button>
+            </block>
+            <block wx:else>
+                <view class="tip">训练营已预约成功</view>
+                <view class="scan-limitation">每节开课前 30 分钟在前台扫码签到</view>
+            </block>
+        </view>
+        <view class="camp-course-wrap">
+            <view class="camp-title">课程安排</view>
+            <view class="camp-course-card" id="camp-course-card-{{index}}" wx:for="{{order.campCourseInfos}}" wx:key="{{index}}">
+                <view class="progress">
+                    <view class="current">{{item.index}}</view>
+                    <view class="all">/ {{order.campCourseCount}} 节</view>
+                </view>
+                <view class="course-detail-wrap">
+                    <view class="course-detail">
+                        <view class="camp-course-info">{{item.campCourseName}}</view>
+                        <view class="camp-course-time">{{item.textTimeRange}}</view>
+                    </view>
+                    <view bindtap="handleBtn" class="btn-wrap" data-campcourse="{{item}}">
+                        <keep-button border="{{btnMap[item.courseStatus].border}}" class="course-status" disabled="{{btnMap[item.courseStatus].disabled}}" shape="circle" size="small" type="{{btnMap[item.courseStatus].type||'default'}}">{{btnMap[item.courseStatus].text}}</keep-button>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <view class="course-option keep-1px-border bottom-border" wx:if="{{order.userBookStatus==7||order.userBookStatus==8}}">
+        <view class="tip" wx:if="{{order.userBookStatus==7}}">训练营已经成功取消</view>
+        <block wx:if="{{order.userBookStatus==8}}">
+            <view class="tip" wx:if="{{order.campStatus==-5}}">没达到开营人数订单自动取消</view>
+            <view class="tip" wx:else>训练营已满订单自动取消</view>
+        </block>
+        <view class="scan-limitation">支付金额预计 1-3 个工作日返回</view>
+    </view>
+    <navigator class="gym-address keep-1px-border bottom-border" hoverClass="none" url="/app/pages/space/space?gymId={{order.gymId}}">
+        <view class="info">
+            <view class="name keep-location-icon-black">{{order.gymRoomName}}</view>
+            <view class="address">{{order.gymAddress}}</view>
+        </view>
+    </navigator>
+    <view class="purchase-note" wx:if="{{order.userBookStatus==2}}">
+        <view class="info">
+            <view class="title">取消预约规则</view>
+            <view class="des">
+                <view wx:for="{{ruleDetails}}" wx:for-item="content" wx:key="{{content}}">{{content}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="order-info">
+        <view class="title">
+            <text class="text">订单详情</text>
+        </view>
+        <view class="order">
+            <view class="item">订单编号：{{order.orderNo}}</view>
+            <view class="item">下单时间：{{order.createTime}}</view>
+            <view class="item pay">
+                <text decode="{{true}}">实&nbsp;&nbsp;&nbsp;&nbsp;付:  </text>
+                <text class="pay">¥{{order.salesCentPrice/100}}</text>
+            </view>
+        </view>
+        <view bindtap="orderPreRefund" class="refund" wx:if="{{order.refundable}}">取消预约</view>
+        <button bindcontact="bindcontact" class="contact" openType="contact" sessionFrom="nickName={{order.userName||''}}|avatarUrl={{order.userAvatar||''}}" type="primary">
+            <text>遇到问题？</text>
+            <text style="text-decoration:underline;">联系客服</text>
+        </button>
+    </view>
+    <showModalBox showModalInfo="{{refundOrderInfo}}"></showModalBox>
+</view>
+<wxs module="util" src="../../wxs/util.wxs" />

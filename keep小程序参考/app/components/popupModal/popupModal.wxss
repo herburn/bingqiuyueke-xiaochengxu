@@ -1,0 +1,86 @@
+.popup-modal-strong {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    animation: fadeIn 0.4s 0.4s forwards;
+}
+
+.popup-modal-strong .popup-wrap {
+    width: 576rpx;
+    background-color: #fff;
+    border-radius: 8rpx;
+    overflow: hidden;
+    transform: scale(0.9);
+    animation: scaleIn 0.5s 0.4s forwards;
+}
+
+.popup-modal-strong .popup-wrap .pic {
+    display: block;
+    width: 576rpx;
+}
+
+.popup-modal-strong .popup-wrap .button {
+    margin: 40rpx auto;
+    width: 480rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.popup-modal-strong .close {
+    display: block;
+    margin: 80rpx auto 0;
+    width: 64rpx;
+    height: 64rpx;
+}
+
+.popup-modal-weak {
+    position: fixed;
+    left: 28rpx;
+    right: 28rpx;
+    bottom: 28rpx;
+    height: 120rpx;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 8rpx;
+}
+
+.popup-modal-weak .close {
+    padding: 28rpx;
+}
+
+.popup-modal-weak .close image {
+    display: block;
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.popup-modal-weak .button {
+    margin-right: 28rpx;
+    width: 160rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 56rpx;
+    background-color: #fff;
+    text-align: center;
+    font-size: 24rpx;
+    color: #333;
+}

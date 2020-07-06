@@ -1,0 +1,86 @@
+<navigatorBar logo="brand"></navigatorBar>
+<view class="home">
+    <view wx:if="{{newCourseSpreadInfoList&&newCourseSpreadInfoList.length}}">
+        <view class="title">
+            <text>新课发布</text>
+            <image class="icon" src="https://static1.keepcdn.com/2019/09/30/15/1569828890706_51x51.png"></image>
+        </view>
+        <view class="banner">
+            <keep-card customClass="banner-card" shadow="shadow" wx:for="{{newCourseSpreadInfoList}}" wx:key="{{index}}">
+                <view bindtap="toDetail" class="banner-wrap keep-course-cover-placeholder" data-baseid="{{item.courseBaseId}}" data-status="{{item.spreadStatus}}" data-type="classifyCourse" style="background-image: url({{item.courseCover}}?imageMogr2/thumbnail/700x/quality/95)">
+                    <view class="name">
+                        <view wx:if="{{item.formatCourseName.EN}}">{{item.formatCourseName.EN}}</view>
+                        <view wx:if="{{item.formatCourseName.CN}}">{{item.formatCourseName.CN}}</view>
+                    </view>
+                    <keep-card borderRadius="small" customClass="banner-info">
+                        <view>
+                            <block wx:if="{{item.spreadStatus=='PRE_HEAT'}}">
+                                <view class="time">{{item.subTitle}}</view>
+                                <view class="count">
+                                    <text class="bold">{{item.courseExperienceCount}} </text>
+                                    <text>人想体验</text>
+                                </view>
+                            </block>
+                            <block wx:else>
+                                <view class="time">火热约课中</view>
+                                <view class="count">
+                                    <text>累计预约 </text>
+                                    <text class="bold">{{item.totalBookCount}} </text>
+                                    <text>人</text>
+                                </view>
+                            </block>
+                        </view>
+                        <keep-button border="border" shape="circle" size="small" wx:if="{{item.spreadStatus=='PRE_HEAT'}}">了解更多</keep-button>
+                        <keep-button shape="circle" size="small" wx:else>马上预约</keep-button>
+                    </keep-card>
+                </view>
+            </keep-card>
+        </view>
+    </view>
+    <view>
+        <view class="title">课程分类</view>
+        <view class="course" wx:if="{{allClassifyList}}">
+            <view class="tab-wrap" style="top: {{totalNavHeight}}px;">
+                <keep-tabs bindchange="selectClass" current="{{current}}">
+                    <keep-tab name="{{index}}" title="{{item.title}}" wx:for="{{allClassifyList}}" wx:key="{{index}}"></keep-tab>
+                </keep-tabs>
+            </view>
+            <view class="course-wrap">
+                <swiper bindchange="classSiwper" current="{{current}}" duration="250" style="height: {{swiperHeight}}px">
+                    <swiper-item wx:for="{{allClassifyList}}" wx:key="{{index}}">
+                        <view class="item-wrap {{item.gymCampItems.length?'':'camp-empty'}}" id="swiper-item-{{index}}" wx:if="{{item.title==='训练营'}}">
+                            <block wx:if="{{item.gymCampItems.length}}">
+                                <keep-card bindtap="toDetail" customClass="item" data-baseid="{{item.id}}" data-type="{{'camp'}}" type="gray" wx:for="{{item.gymCampItems}}" wx:key="{{index}}">
+                                    <view class="camp-info">
+                                        <view class="camp-name">
+                                            <view wx:if="{{item.formatCampName.EN}}">{{item.formatCampName.EN}}</view>
+                                            <view wx:if="{{item.formatCampName.CN}}">{{item.formatCampName.CN}}</view>
+                                        </view>
+                                        <view class="camp-desc">
+                                            <text class="course-num">{{item.period}} 节课 | </text>
+                                            <text class="course-gym">{{item.gymName}}</text>
+                                        </view>
+                                    </view>
+                                    <view class="pic keep-course-cover-placeholder" style="background-image: url({{item.campCover}}?imageMogr2/thumbnail/375x/quality/95)"></view>
+                                </keep-card>
+                            </block>
+                            <block wx:else>
+                                <image class="camp-empty-img" mode="aspectFit" src="https://static1.keepcdn.com/2018/07/12/10/1531361733516_300x200.png"></image>
+                                <view class="camp-empty-desc">该地区暂时没有开设训练营课程</view>
+                            </block>
+                        </view>
+                        <view class="item-wrap" id="swiper-item-{{index}}">
+                            <keep-card bindtap="toDetail" customClass="item" data-baseid="{{item.courseBaseId}}" data-type="{{'classifyCourse'}}" type="gray" wx:for="{{item.courses}}" wx:key="{{index}}">
+                                <view class="name">
+                                    <view wx:if="{{item.formatCourseName.EN}}">{{item.formatCourseName.EN}}</view>
+                                    <view wx:if="{{item.formatCourseName.CN}}">{{item.formatCourseName.CN}}</view>
+                                </view>
+                                <view class="pic keep-course-cover-placeholder" style="background-image: url({{item.cover}}?imageMogr2/thumbnail/375x/quality/95)"></view>
+                            </keep-card>
+                        </view>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+</view>

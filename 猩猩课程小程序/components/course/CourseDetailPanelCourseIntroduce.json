@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "faq": "./CourseDetailPanelFAQ",
+        "filter-text": "./../common/dataDisplay/TextParseHtml",
+        "panel-title": "./CourseDetailPanelTitle",
+        "multi-line-text": "./../common/dataDisplay/TextMultiLineWithUnfold"
+    }
+}

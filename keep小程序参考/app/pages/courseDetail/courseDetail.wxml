@@ -1,0 +1,236 @@
+<navigatorBar wx:if="{{spreadStatus=='BEFORE_PRE_HEAT'}}"></navigatorBar>
+<navigatorBar backgroundColor="rgba(255,255,255,{{navigatorBarOpacity}})" fixed="fixed" navigationBarColor="{{navigationBarColor}}" wx:else></navigatorBar>
+<view class="{{autoplay||showModal?'hidden':''}}" wx:if="{{course}}">
+    <view class="before-pre" wx:if="{{spreadStatus=='BEFORE_PRE_HEAT'}}">
+        <image mode="widthFix" src="https://static1.keepcdn.com/2019/03/14/13/1552540885090_750x540.png"></image>
+        <view class="before-name">{{course.name}}</view>
+        <view class="before-tip">该课程正在研发中，敬请期待</view>
+    </view>
+    <view wx:else>
+        <view class="banner-wrap">
+            <swiper bindchange="bannerChange" class="banner" current="{{bannerCurrent}}" duration="250">
+                <swiper-item catchtap="play" wx:if="{{course.videoPoster}}">
+                    <image mode="aspectFill" src="{{course.videoPoster}}?imageMogr2/thumbnail/750x/quality/95"></image>
+                    <view class="play-icon"></view>
+                </swiper-item>
+                <swiper-item bindtap="previewBanner" data-src="{{item}}" wx:for="{{course.coverList}}" wx:key="{{index}}">
+                    <image mode="aspectFill" src="{{item}}?imageMogr2/thumbnail/750x/quality/95"></image>
+                </swiper-item>
+            </swiper>
+            <view bindtap="changeMedia" class="banner-tip {{bannerCurrent>0?'on':''}}" wx:if="{{course.videoPoster&&course.coverList.length}}">
+                <view>预告片</view>
+                <view>图片</view>
+            </view>
+            <view class="banner-count" wx:if="{{!course.videoPoster||bannerCurrent>0}}"> {{course.videoPoster?bannerCurrent+'/'+course.coverList.length:bannerCurrent+1+'/'+course.coverList.length}}</view>
+            <view class="banner-mask" style="height: {{totalNavHeight}}px;"></view>
+        </view>
+        <view class="video-wrap" wx:if="{{autoplay}}">
+            <video autoplay="{{autoplay}}" bindfullscreenchange="videoFullScreen" class="{{autoplay?'autoplay':''}}" enablePlayGesture="{{true}}" showFullscreenBtn="{{!isAndroid}}" src="{{course.previewVideo}}"></video>
+            <cover-view bindtap="play" style="top: {{totalNavHeight-40}}px" wx:if="{{showCloseBtn}}">
+                <cover-image src="https://static1.keepcdn.com/2019/03/11/09/1552269022589_48x48.png"></cover-image>
+            </cover-view>
+        </view>
+        <keep-card customClass="base-wrap" shadow="shadow">
+            <block wx:if="{{spreadStatus!=='NONE'&&spreadStatus!=='END'}}">
+                <view class="class-state pre-heat" wx:if="{{spreadStatus=='PRE_HEAT'}}">
+                    <view>{{course.publishTime}}</view>
+                </view>
+                <view class="class-state" wx:else></view>
+            </block>
+            <view class="base">
+                <view class="name">
+                    <view>{{course.formatCourseName.EN}}</view>
+                    <view>{{course.formatCourseName.CN}}</view>
+                </view>
+                <view class="tags-book-count">
+                    <view class="tags-wrap">
+                        <keep-tag customClass="tags" fontWeight="normal" type="gray" wx:for="{{course.salesTags}}" wx:key="{{index}}">{{item}}</keep-tag>
+                    </view>
+                    <view class="book-count" wx:if="{{spreadStatus!='PRE_HEAT'}}">
+                        <text class="count">{{totalBookCount}}</text>
+                        <text>人已体验</text>
+                    </view>
+                </view>
+                <view class="course-info keep-1px-border top-border">
+                    <view class="info">
+                        <view class="title">时间(分钟)</view>
+                        <view class="count">{{course.trainingDuration}}</view>
+                    </view>
+                    <view class="info">
+                        <view class="title">燃脂(千卡)</view>
+                        <view class="count">{{course.calorie}}</view>
+                    </view>
+                    <view class="info">
+                        <view class="title">难度</view>
+                        <view class="count difficulty">{{course.difficulty}}</view>
+                    </view>
+                </view>
+            </view>
+        </keep-card>
+        <keep-card customClass="gym-card-wrap" shadow="shadow" wx:if="{{scheduleInfo}}">
+            <view class="date-gym keep-1px-border bottom-border">
+                <view class="date">{{scheduleInfo.formatTimeRange}}</view>
+                <navigator bindtap="track" class="gym" data-place="location" data-value="{{scheduleInfo.gymLocation.id}}" hoverClass="none" url="/app/pages/space/space?gymId={{scheduleInfo.gymLocation.id}}">
+                    <view class="keep-right-more-arrow-new">{{scheduleInfo.gymLocation.name}}</view>
+                </navigator>
+            </view>
+            <view class="coach-wrap">
+                <navigator bindtap="track" class="coach" data-place="coach" data-value="{{coachInfo.id}}" hoverClass="none" url="/app/pages/coach/coach?coachId={{coachInfo.id}}" wx:for="{{scheduleInfo.coachInfos}}" wx:for-item="coachInfo" wx:key="{{ index }}">
+                    <keep-avatar customClass="coach-avatar" size="90" src="{{coachInfo.avatar}}"></keep-avatar>
+                    <view class="coach-name keep-right-more-arrow-new">{{coachInfo.name}}</view>
+                </navigator>
+            </view>
+            <view class="book-user keep-1px-border top-border" wx:if="{{scheduleInfo.bookedUsers&&scheduleInfo.bookedUsers.length}}">
+                <navigator bindtap="track" class="keep-right-more-arrow-new" data-place="book_list" data-value="{{''}}" hoverClass="none" url="/app/pages/courseBookList/courseBookList?scheduleId={{scheduleInfo.scheduleId}}">
+                    <view class="avatar" style="left:{{index*50}}rpx;z-index:{{5-index}}" wx:if="{{!(index>=5)}}" wx:for="{{scheduleInfo.bookedUsers}}" wx:key="{{index}}">
+                        <keep-avatar borderWidth="4" size="70" src="{{item.avatar}}"></keep-avatar>
+                    </view>
+                    <view class="avatar" style="left:{{5*50}}rpx;" wx:if="{{scheduleInfo.bookedUsers.length>=5}}">
+                        <keep-avatar size="70" src="https://static1.keepcdn.com/2019/10/06/19/1570360730901_105x105.png"></keep-avatar>
+                    </view>
+                    <view class="book-count">
+                        <text>已预约</text>
+                        <text class="book">{{scheduleInfo.bookedCount}}</text>
+                        <text class="total">/{{scheduleInfo.capacity}}</text>
+                    </view>
+                </navigator>
+            </view>
+        </keep-card>
+        <view class="tab" id="tab" style="top: {{totalNavHeight}}px">
+            <keep-tabs bindchange="tabControll" current="{{tabCurrent}}">
+                <keep-tab name="{{0}}" title="课程详情"></keep-tab>
+                <keep-tab name="{{1}}" title="用户评价"></keep-tab>
+            </keep-tabs>
+        </view>
+        <swiper bindchange="swiperChange" class="content" current="{{tabCurrent}}" duration="250" style="height: {{swiperHeight}}px">
+            <swiper-item>
+                <view id="course-info-wrap-0">
+                    <view class="course-wrap">
+                        <view class="common-title">
+                            <view>课程简介</view>
+                            <image class="logo" mode="aspectFit" src="{{course.brandInfo.logo}}?imageMogr2/thumbnail/230x/quality/95" wx:if="{{course.brandInfo&&course.brandInfo.logo}}"></image>
+                        </view>
+                        <view class="brand-desc" wx:if="{{course.brandInfo&&course.brandInfo.description}}">{{course.brandInfo.description}}</view>
+                        <view class="course-desc">
+                            <view>{{course.desc}}</view>
+                        </view>
+                        <view class="suited">
+                            <view wx:if="{{item.title!='运动风险提示'&&item.title!='特别说明'}}" wx:for="{{course.descriptionDetails}}" wx:key="{{index}}">
+                                <view class="common-title">{{item.title}}</view>
+                                <view class="desc" wx:for="{{item.contentList}}" wx:key="{{index}}">{{item}}</view>
+                            </view>
+                        </view>
+                        <view class="action-preview" wx:if="{{previewList&&previewList.length}}">
+                            <view class="common-title">动作预览</view>
+                            <scroll-view>
+                                <view class="action-wrap">
+                                    <navigator class="item" style="background-image: url({{item.exerciseThumbnail||'https://static1.keepcdn.com/2019/02/19/15/1550562848198_640x640.png'}}?imageMogr2/thumbnail/230x/quality/95)" url="/app/packages/preview/actionDetail/actionDetail?exerciseId={{item.exerciseId}}" wx:if="{{!(index>2)}}" wx:for="{{previewList}}" wx:key="{{index}}">
+                                        <view>{{item.exerciseName}}</view>
+                                    </navigator>
+                                    <view wx:if="{{previewList.length>3}}">
+                                        <navigator url="/app/packages/preview/actionList/actionList?courseBaseId={{course.baseId}}&courseName={{course.name}}">查看全部动作</navigator>
+                                    </view>
+                                </view>
+                            </scroll-view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item>
+                <view class="comment-warp" id="course-info-wrap-1">
+                    <comments comments="{{commentsData}}"></comments>
+                    <keep-load-more loading="{{loading}}" tip="没有更多了" wx:if="{{commentsData&&commentsData.length}}"></keep-load-more>
+                </view>
+            </swiper-item>
+        </swiper>
+        <view class="btn {{scheduleInfo.centPrice>scheduleInfo.centSalesPrice||scheduleInfo.packagePrivilegeInfo.hasPreviewPrivilege?'':'divide-5-7'}} {{scheduleInfo.centPrice>scheduleInfo.centSalesPrice&&scheduleInfo.packagePrivilegeInfo.hasPreviewPrivilege?'divide-7-5':''}}" wx:if="{{scheduleInfo}}">
+            <view class="count schedule-count" wx:if="{{scheduleInfo.scheduleSalesType==0}}">
+                <view class="sales-price">
+                    <text class="unit">¥</text>
+                    <text>{{scheduleInfo.centSalesPrice/100}}</text>
+                </view>
+                <view class="price" wx:if="{{scheduleInfo.centPrice>scheduleInfo.centSalesPrice}}">¥{{scheduleInfo.centPrice/100}}</view>
+                <view class="package-price" wx:if="{{scheduleInfo.packagePrivilegeInfo.hasPreviewPrivilege}}">
+                    <text class="num">{{scheduleInfo.packagePrice}} </text>
+                    <text>个课包</text>
+                </view>
+            </view>
+            <view class="submit" wx:if="{{scheduleInfo.bookableStatus=='PREVIEW'}}">
+                <view wx:if="{{scheduleInfo.packagePrivilegeInfo.schedulePreviewPrivilege}}">
+                    <keep-button wx:if="{{scheduleInfo.inPlan}}">
+                        <navigator hoverClass="none" openType="switchTab" url="/app/pages/train/train">查看我的计划</navigator>
+                    </keep-button>
+                    <keep-button bind:click="addPlan" wx:else>加入计划</keep-button>
+                </view>
+                <keep-button disabled="disabled" wx:else>预发布</keep-button>
+            </view>
+            <view class="submit" wx:if="{{scheduleInfo.bookableStatus=='SOLD_OUT'}}">
+                <keep-button disabled="disabled" wx:if="{{scheduleInfo.scheduleSalesType!=0}}">专场课程已约满</keep-button>
+                <keep-button wx:elif="{{scheduleInfo.waiting}}">
+                    <navigator hoverClass="none" url="/app/pages/waitingDetail/waitingDetail?scheduleId={{scheduleId}}">查看等位详情 {{scheduleInfo.currentWaitingPosition}}/{{scheduleInfo.totalWaitingCount}}</navigator>
+                </keep-button>
+                <keep-button wx:else>
+                    <navigator hoverClass="none" url="/app/pages/courseConfirm/courseConfirm?scheduleId={{scheduleId}}&bookFrom={{bookFrom}}">加入等位</navigator>
+                </keep-button>
+            </view>
+            <view class="submit" wx:if="{{scheduleInfo.bookableStatus=='BOOKABLE'}}">
+                <keep-button>
+                    <navigator hoverClass="none" url="/app/pages/courseConfirm/courseConfirm?scheduleId={{scheduleId}}&bookFrom={{bookFrom}}">
+                        <view wx:if="{{scheduleInfo.scheduleSalesType==0}}">马上预约</view>
+                        <view wx:else>输入口令预约</view>
+                    </navigator>
+                </keep-button>
+            </view>
+            <view class="submit" wx:if="{{scheduleInfo.bookableStatus=='BOOKED'}}">
+                <keep-button>
+                    <navigator hoverClass="none" url="/app/pages/courseOrder/courseOrder?orderNo={{scheduleInfo.bookInfo.orderNo}}&opened_from=2">查看我的预约</navigator>
+                </keep-button>
+            </view>
+            <view class="submit" wx:if="{{scheduleInfo.bookableStatus=='CLOSE'}}">
+                <keep-button type="finish">
+                    <view wx:if="{{scheduleInfo.scheduleSalesType==0}}">已结束</view>
+                    <view wx:else>专场课程已结束</view>
+                </keep-button>
+            </view>
+        </view>
+        <view class="btn" wx:elif="{{spreadStatus=='PRE_HEAT'}}">
+            <view class="count">
+                <text class="bold">{{totalSubscriptionCount}}</text>
+                <text decode="{{true}}">&nbsp;人想体验</text>
+            </view>
+            <view class="submit">
+                <keep-button bind:click="callMe" wx:if="{{subscriptionStatus==0}}">上线通知我</keep-button>
+                <keep-button disabled="disabled" wx:if="{{subscriptionStatus==1}}">已订阅</keep-button>
+            </view>
+        </view>
+        <view class="btn" wx:else>
+            <view class="count">
+                <text class="bold">{{totalBookCount}}</text>
+                <text decode="{{true}}">&nbsp;人已体验</text>
+            </view>
+            <view class="submit">
+                <keep-button>
+                    <navigator bindtap="clickTrack" data-place="check_schedule" hoverClass="none" url="/app/pages/coursePoly/coursePoly?courseBaseId={{courseBaseId}}&courseName={{courseName}}">查看排课</navigator>
+                </keep-button>
+            </view>
+        </view>
+        <view class="model" wx:if="{{showModal}}">
+            <view wx:if="{{subscribeState==1}}">
+                <image src="https://static1.keepcdn.com/2019/03/20/12/1553054513451_90x90.png"></image>
+                <view>订阅成功</view>
+                <view>新课正式发布后，会通过微信消息通知你，记得约课哦</view>
+                <view>
+                    <keep-button bind:click="hideModal">我知道了</keep-button>
+                </view>
+            </view>
+            <view wx:else>
+                <image src="https://static1.keepcdn.com/2019/03/20/11/1553054338385_90x90.png"></image>
+                <view>订阅失败</view>
+                <view>请在微信搜索并关注 Keepland 服务号，以获取新课发布通知</view>
+                <view>
+                    <keep-button bind:click="hideModal">我知道了</keep-button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,4 @@
+<view class="row">
+    <view class="label">{{label}}</view>
+    <view bindtap="_proxy" class="value" data-wpy-evt="1198-0">点击查看</view>
+</view>

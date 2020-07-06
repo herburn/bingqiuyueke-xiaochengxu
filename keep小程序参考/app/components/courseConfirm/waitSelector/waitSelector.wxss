@@ -1,0 +1,170 @@
+.current-waiting {
+    margin: 24rpx 28rpx 0;
+    padding: 57rpx 0 51rpx;
+    background-color: #fff;
+    box-shadow: 0 6rpx 10rpx 0 rgba(0,0,0,0.02);
+    border-radius: 8rpx;
+    text-align: center;
+}
+
+.current-waiting .total-count {
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #333;
+    height: 56rpx;
+    line-height: 56rpx;
+}
+
+.current-waiting .total-count .count {
+    position: relative;
+    top: 4rpx;
+    margin-left: 16rpx;
+    font-size: 48rpx;
+    color: #24c789;
+}
+
+.current-waiting .waiting-success-rate {
+    margin-top: 20rpx;
+    margin-bottom: 50rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.current-waiting .waiting-success-rate .rate {
+    font-weight: bold;
+    color: #24c789;
+}
+
+.current-waiting .pay-tips {
+    margin-top: 16rpx;
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.selector-info {
+    margin-top: 24rpx;
+    padding: 0 28rpx 28rpx;
+    background-color: #fff;
+}
+
+.selector-info .title-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.selector-info .title-wrap .title {
+    padding: 38rpx 0;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.selector-info .title-wrap .subtitle {
+    margin-left: 28rpx;
+    font-size: 22rpx;
+    color: #666;
+}
+
+.selector-info .title-wrap .subtitle text {
+    color: #24c789;
+    font-weight: bold;
+}
+
+.selector-info .payment {
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 150rpx;
+    border-radius: 8rpx;
+    border: 1rpx solid #ccc;
+}
+
+.selector-info .payment.selected {
+    background-color: #e9faf3;
+    border: 1rpx solid #24c789;
+    color: #24c789;
+}
+
+.selector-info .payment.forbid {
+    background-color: #f4f4f4;
+    border: none;
+}
+
+.selector-info .payment.forbid .title,.selector-info .payment.forbid .des {
+    color: #999;
+}
+
+.selector-info .payment:last-child {
+    margin-bottom: 0;
+}
+
+.selector-info .payment .icon {
+    margin-left: 28rpx;
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.selector-info .payment .title {
+    margin-left: 16rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.selector-info .payment .des {
+    flex: 1;
+    margin-right: 28rpx;
+    text-align: right;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.selector-info .pay-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: #24c789;
+}
+
+.selector-info .pay-wrap.iphonex {
+    padding-bottom: 48rpx;
+}
+
+.selector-info .pay-wrap.disabled {
+    background-color: #70e0ae;
+}
+
+.selector-info .pay-wrap.disabled .button {
+    background-color: #70e0ae;
+}
+
+.selector-info .pay-wrap .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    height: 116rpx;
+    border-radius: 0;
+    box-sizing: content-box;
+    background-color: #24c789;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.selector-info .pay-wrap .button:after {
+    display: none;
+}
+
+.selector-info .pay-wrap .button .loading-icon {
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 16rpx;
+    animation: imgRotate 1s infinite linear;
+}

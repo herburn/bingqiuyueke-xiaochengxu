@@ -1,0 +1,33 @@
+<view class="camp-list-container" style=" {{'visibility:'+compsVisibility+';'}}">
+    <view bindtap="_proxy" class="new-camp-btn" data-wpy-evt="1031-0" wx:if="{{isShowNewCampTip}}">
+        <text class="new-camp-btn__text">有新CAMP上架</text>
+    </view>
+    <view class="camp-list" wx:if="{{hasScheduleCamps.length>0}}">
+        <camp-card bind_init="_initComponent" camp="{{camp}}" wx:for="{{hasScheduleCamps}}" wx:for-item="camp" wx:key="index"></camp-card>
+    </view>
+    <view class="camp-empty" wx:if="{{hasScheduleCamps.length===0}}">
+        <img-tip bind_init="_initComponent" imgSrc="https://img.supermonkey.com.cn/webapp/monkey-reservation2/page-status-icon/glass.png" tipMsg="{{emptyScheduleCamps.length===0?'当前城市暂无CAMP，看看其他课程吧！':'暂无CAMP'}}"></img-tip>
+    </view>
+    <view class="online-camp-list" wx:if="{{onlineCamps.length>0}}">
+        <view bindtap="_proxy" class="title-row" data-region-id-se="allOnlineCourseBtn" data-wpy-evt="1031-1" id="allOnlineCourseBtn">
+            <view class="left">
+                <text class="icon-online-course iconfont"></text>
+                <text class="text">线上课程</text>
+            </view>
+            <view class="right">
+                <view class="text">全部</view>
+                <text class="icon-arrow-right iconfont"></text>
+            </view>
+        </view>
+        <view class="online-camp-content">
+            <camp-card bind_init="_initComponent" camp="{{camp}}" hasBadge="{{false}}" hasSubText="{{false}}" wx:for="{{onlineCamps}}" wx:for-item="camp" wx:key="index"></camp-card>
+        </view>
+    </view>
+    <block wx:if="{{emptyScheduleCamps.length>0}}">
+        <view class="empty-camp-title">更多CAMP</view>
+        <view class="camp-list">
+            <camp-card bind_init="_initComponent" camp="{{camp}}" hasBadge="{{false}}" wx:for="{{emptyScheduleCamps}}" wx:for-item="camp" wx:key="index"></camp-card>
+        </view>
+    </block>
+</view>
+<camp-list-popover-filter bind_init="_initComponent" bindchangeFilter="_proxy" bindtapItem="_proxy" data-wpy-evt="1031-2" showFilter="{{showCampFilter}}" tagFilter="{{tagFilter}}"></camp-list-popover-filter>

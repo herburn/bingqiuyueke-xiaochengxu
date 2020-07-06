@@ -1,0 +1,167 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+@import "../../__wuBaseWxss__/0.wxss";
+
+.online-camp-item {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 24rpx 16rpx;
+}
+
+.online-camp-item .coach-avatar {
+    position: relative;
+}
+
+.online-camp-item .coach-avatar .tag {
+    position: absolute;
+    bottom: -9rpx;
+    width: 100%;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.online-camp-item .coach-avatar .tag .badge-text {
+    border-radius: 8rpx;
+    padding: 2rpx 7rpx;
+    font-size: 20rpx;
+    color: #f2f2f7;
+    background: #eb5757;
+}
+
+.online-camp-item .schedule-info-wrapper {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin: 0 16rpx;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-info .schedule-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 10rpx;
+    font-size: 26rpx;
+    color: #f2f2f7;
+    line-height: 39rpx;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-info .schedule-section {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: 9rpx;
+    font-size: 22rpx;
+    color: #c9c9cd;
+    line-height: 31rpx;
+    opacity: .8;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-info .schedule-extra-info {
+    font-size: 22rpx;
+    color: #f2f2f7;
+    line-height: 31rpx;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-info .schedule-extra-info .highlight {
+    color: #fcc800;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-options .iconfont {
+    margin-right: 12rpx;
+    font-size: 48rpx;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-options .iconfont.icon-tick-circle-filled {
+    color: #fcc800;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-options .disabled-select-img {
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 12rpx;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-btns .schedule-btn {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-btns .schedule-btn-grey {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #c9c9cd;
+    background-color: #767678;
+}
+
+.online-camp-item .schedule-info-wrapper .schedule-btns .schedule-btn-disable {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #999;
+    background-color: #767678;
+}
+
+.online-camp-item .badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 54rpx;
+    height: 54rpx;
+}
+
+.online-camp-item .badge .status-icon {
+    width: 54rpx;
+    height: 54rpx;
+}

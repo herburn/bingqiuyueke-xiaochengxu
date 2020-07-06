@@ -1,0 +1,11 @@
+<view catchtouchmove="_proxy" class="mask-container" data-wpy-evt="1026-0" wx:if="{{isMaskShow&&!hasClosed}}">
+    <view class="container {{[!isBiggerRatio?'special-ratio':'']}}">
+        <image class="new-user-img" src="{{promtSrc}}"></image>
+        <view class="btn-group">
+            <view bindtap="_proxy" class="btn-ok" data-wpy-evt="1026-1">我知道了</view>
+            <view bindtap="_proxy" class="btn-text" data-wpy-evt="1026-2">不再提示
+      </view>
+        </view>
+        <image catchtap="_proxy" class="icon-close" data-wpy-evt="1026-3" src="/images/common/icon-close-circle.png"></image>
+    </view>
+</view>

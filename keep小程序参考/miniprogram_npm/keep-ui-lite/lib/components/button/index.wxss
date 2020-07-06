@@ -1,0 +1,74 @@
+@import "../../../../../__wuBaseWxss__/1.wxss";
+
+.keep-button {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+    border: 0;
+    border-radius: 0rpx;
+    padding: 0;
+    margin: 0;
+}
+
+.keep-button:after {
+    display: none;
+}
+
+.keep-button--border {
+    border-width: 1rpx;
+    border-style: solid;
+    background-color: #fff;
+}
+
+.keep-button--border--default {
+    color: #24c789;
+}
+
+.keep-button--border--default.disabled {
+    color: #91e3c4;
+}
+
+.keep-button--border--default--active {
+    color: #31a56e;
+}
+
+.keep-button--default {
+    background-color: #24c789;
+    border: 1rpx solid #24c789;
+}
+
+.keep-button--default.disabled {
+    background-color: #91e3c4;
+    border: 1rpx solid #91e3c4;
+}
+
+.keep-button--default--active {
+    background-color: #31a56e;
+    border: 1rpx solid #31a56e;
+}
+
+.keep-button--finish {
+    background-color: #e5e5e5;
+    border: 1rpx solid #e5e5e5;
+}
+
+.keep-button--normal {
+    font-size: 36rpx;
+    height: 116rpx;
+    line-height: 114rpx;
+}
+
+.keep-button--small {
+    font-size: 24rpx;
+    width: 136rpx;
+    height: 56rpx;
+    line-height: 54rpx;
+}
+
+.keep-button--normal.keep-button--circle {
+    border-radius: 116rpx;
+}
+
+.keep-button--small.keep-button--circle {
+    border-radius: 56rpx;
+}

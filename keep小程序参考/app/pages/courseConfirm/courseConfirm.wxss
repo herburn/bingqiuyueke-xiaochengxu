@@ -1,0 +1,112 @@
+.course-confirm.iphonex {
+    padding-bottom: 164rpx!important;
+}
+
+.course-confirm .course-card {
+    position: relative;
+    padding: 0 28rpx;
+    margin: 28rpx 28rpx 0;
+    height: 285rpx;
+    box-shadow: 0 6rpx 10rpx 0 rgba(0,0,0,0.02);
+    border-radius: 8rpx;
+    background: #fff;
+}
+
+.course-confirm .course-card .name {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.course-confirm .course-card .line {
+    position: absolute;
+    top: 85rpx;
+    left: 0;
+    right: 0;
+    display: block;
+    width: auto;
+    height: 28rpx;
+}
+
+.course-confirm .course-card .info {
+    padding-left: 48rpx;
+    margin-top: 10rpx;
+    line-height: 37rpx;
+    background-size: 32rpx 32rpx;
+    background-position: center left;
+    background-repeat: no-repeat;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.course-confirm .course-card .time {
+    margin-top: 25rpx;
+    background-image: url("https://static1.keepcdn.com/2019/03/04/18/1551696033717_32x32.png");
+}
+
+.course-confirm .course-card .gym-name {
+    background-image: url("https://static1.keepcdn.com/2019/03/04/18/1551696003660_32x32.png");
+}
+
+.course-confirm .course-card .coach {
+    background-image: url("https://static1.keepcdn.com/2019/03/04/18/1551696020021_32x32.png");
+}
+
+.course-confirm .other-info {
+    margin-top: 24rpx;
+    padding: 0 28rpx;
+    background-color: #fff;
+}
+
+.course-confirm .other-info .info {
+    border-bottom: 1rpx solid #ebebeb;
+}
+
+.course-confirm .other-info .info .title {
+    height: 100rpx;
+    line-height: 100rpx;
+    font-size: 28rpx;
+    color: #666;
+    background-image: url("https://static1.keepcdn.com/2019/03/05/15/1551772577851_54x54.png");
+    background-size: 54rpx 54rpx;
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+.course-confirm .other-info .info .des {
+    padding-bottom: 28rpx;
+    line-height: 50rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.course-confirm .other-info .info .des view {
+    position: relative;
+    padding-left: 23rpx;
+}
+
+.course-confirm .other-info .info .des view:before {
+    content: '';
+    position: absolute;
+    top: 23rpx;
+    left: 0;
+    display: block;
+    width: 4rpx;
+    height: 4rpx;
+    border-radius: 50%;
+    background-color: #999;
+}
+
+.course-confirm .other-info .disclaimers {
+    height: 114rpx;
+    line-height: 114rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.course-confirm .other-info .disclaimers .link {
+    display: inline;
+    text-decoration: underline;
+}

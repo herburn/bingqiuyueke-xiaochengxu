@@ -1,0 +1,11 @@
+<navigatorBar title="{{courseName}}"></navigatorBar>
+<schedules coachInfoMap="{{coachInfoMap}}" courseInfoMap="{{courseInfoMap}}" gymInfoMap="{{gymInfoMap}}" id="schedules" packagePrivilegeInfo="{{packagePrivilegeInfo}}" scheduleDynamicInfoMap="{{scheduleDynamicInfoMap}}" schedules="{{schedules}}" scrollTop="{{scrollTop}}">
+    <view class="schedule-head">
+        <view bindtap="toGymFilter" class="screens {{screenGymLength?'green':''}}">
+            <view>{{showCityName}}门店</view>
+            <view>
+                <text wx:if="{{screenGymLength}}">({{screenGymLength}})</text>
+            </view>
+        </view>
+    </view>
+</schedules>

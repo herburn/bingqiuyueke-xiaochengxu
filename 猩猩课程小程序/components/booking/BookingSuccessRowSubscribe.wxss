@@ -1,0 +1,29 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+.sm-panel {
+    border-bottom: 2rpx solid rgba(118,118,120,0.1);
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 24rpx 32rpx;
+}
+
+.sm-panel-title {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    line-height: 39rpx;
+}
+
+.sm-panel-content {
+    font-size: 28rpx;
+    color: #fcc800;
+    -webkit-box-flex: 1;
+    flex: 1;
+    margin-left: 10rpx;
+    line-height: 39rpx;
+    text-align: right;
+    text-decoration: underline;
+}

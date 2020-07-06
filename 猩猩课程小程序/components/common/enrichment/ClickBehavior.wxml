@@ -1,0 +1,6 @@
+<view catchtap="_proxy" class="click-behavior" data-info-trace="{{info}}" data-wpy-evt="1043-0">
+    <navigator appId="{{info.navigateAppId}}" bindfail="_proxy" bindsuccess="_proxy" data-wpy-evt="1043-1" openType="navigate" path="{{info.navigateURL}}" target="miniProgram" version="release" wx:if="{{compatibilityVersion&&info.navigateType==='OUTER'}}">
+        <slot></slot>
+    </navigator>
+    <slot wx:else></slot>
+</view>

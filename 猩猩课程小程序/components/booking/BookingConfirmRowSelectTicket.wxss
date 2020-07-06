@@ -1,0 +1,40 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    font-size: 28rpx;
+    color: #c9c9cd;
+    position: relative;
+    padding: 32rpx 0;
+}
+
+.row .label {
+    padding-left: 24rpx;
+}
+
+.row .value {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    font-size: 28rpx;
+    color: #f2f2f7;
+    padding-right: 24rpx;
+}
+
+.row .icon-r-arrow {
+    margin-left: 0;
+    color: #f2f2f7;
+    font-size: 39rpx;
+}

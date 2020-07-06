@@ -1,0 +1,51 @@
+@import "../../../__wuBaseWxss__/0.wxss";
+
+.select-city {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    margin-left: 24rpx;
+    color: #f2f2f7;
+}
+
+.select-city-activated {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 120rpx;
+}
+
+.select-city-activated::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    border-radius: 120rpx;
+    border: solid 2rpx rgba(201,201,205,0.4);
+    transform-origin: 0 0;
+    transform: scale(.5);
+}
+
+.select-city .icon-down {
+    display: inline-block;
+    margin-left: 8rpx;
+}

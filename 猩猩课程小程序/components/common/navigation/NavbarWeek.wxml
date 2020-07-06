@@ -1,0 +1,36 @@
+<view class="week-navbar" wx:if="{{mode==='week'}}">
+    <view bindtap="_proxy" class="week {{[realWeekActive===index?'week-active':'']}}" data-page-name-se="{{pageName}}" data-region-id-se="weekItem" data-wpy-evt="1218-0" data-wpytap-a="{{index}}" id="weekItem" wx:for="{{weeksText}}" wx:key="value">
+        <view class="week__date">{{item.date}}</view>
+        <view class="week__label">{{item.label}}</view>
+    </view>
+</view>
+<view class="week-navbar week-navbar-camp" wx:elif="{{mode==='camp'}}">
+    <view bindtap="_proxy" class="week {{[realWeekActive===index?'week-active':'']}}" data-page-name-se="{{pageName}}" data-region-id-se="weekItem" data-wpy-evt="1218-1" data-wpytap-a="{{index}}" id="weekItem" wx:for="{{weeksText}}" wx:key="value">
+        <view class="week__date">{{item.date}}</view>
+        <view class="week__label">{{item.label}}</view>
+    </view>
+    <view bindtap="_proxy" class="course" data-region-id-se="camp" data-wpy-evt="1218-2" id="camp">
+        <view class="course__label {{[campActive?'camp-active':'']}}">CAMP</view>
+    </view>
+</view>
+<view class="week-navbar week-navbar-personal" wx:elif="{{mode==='personal'}}">
+    <view bindtap="_proxy" class="week {{[realWeekActive===index?'week-active':'']}}" data-page-name-se="{{pageName}}" data-region-id-se="weekItem" data-wpy-evt="1218-3" data-wpytap-a="{{index}}" id="weekItem" wx:for="{{weeksText}}" wx:key="value">
+        <view class="week__date">{{item.date}}</view>
+        <view class="week__label">{{item.label}}</view>
+    </view>
+    <view bindtap="_proxy" class="course" data-wpy-evt="1218-4">
+        <view class="course__label">私教</view>
+    </view>
+</view>
+<view class="week-navbar week-navbar-all" wx:elif="{{mode==='all'}}">
+    <view bindtap="_proxy" class="week {{[realWeekActive===index?'week-active':'']}}" data-page-name-se="{{pageName}}" data-region-id-se="weekItem" data-wpy-evt="1218-5" data-wpytap-a="{{index}}" id="weekItem" wx:for="{{weeksText}}" wx:key="value">
+        <view class="week__date">{{item.date}}</view>
+        <view class="week__label">{{item.label}}</view>
+    </view>
+    <view bindtap="_proxy" class="course" data-region-id-se="camp" data-wpy-evt="1218-6" id="camp">
+        <view class="course__label {{[campActive?'camp-active':'']}}">CAMP</view>
+    </view>
+    <view bindtap="_proxy" class="course" data-wpy-evt="1218-7">
+        <view class="course__label" id="personal">私教</view>
+    </view>
+</view>

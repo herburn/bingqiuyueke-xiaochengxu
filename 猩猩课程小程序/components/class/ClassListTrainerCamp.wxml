@@ -1,0 +1,8 @@
+<camp-item bind_init="_initComponent" class="camp-item" schedule="{{schedule}}" wx:for="{{campSchedules}}" wx:for-item="schedule" wx:key="index"></camp-item>
+<view class="camp-subscribe {{[campSchedules.length===0?'camp-subscribe-empty':'']}}">
+    <view class="tip-msg">{{campTip}}</view>
+    <view bindtap="_proxy" class="subscribe-btn" data-region-id-se="trainerSubscribe" data-wpy-evt="1217-0" id="trainerSubscribe" wx:if="{{!profile.isSubscribe}}">
+        <view class="text">有新课时提醒我</view>
+        <text class="icon-arrow-right iconfont"></text>
+    </view>
+</view>

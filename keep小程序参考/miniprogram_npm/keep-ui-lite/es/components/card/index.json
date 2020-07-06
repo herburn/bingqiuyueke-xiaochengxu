@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

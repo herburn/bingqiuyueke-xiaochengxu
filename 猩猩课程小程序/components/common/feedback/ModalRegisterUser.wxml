@@ -1,0 +1,6 @@
+<show-modal bind_init="_initComponent" class="show-model" id="registerUserModal">
+    <view class="btn-box" slot="btn-box">
+        <view bindtap="_proxy" class="btn-cancel" data-wpy-evt="1016-0">继续逛逛</view>
+        <button bindgetuserinfo="_proxy" class="btn-confirm" data-wpy-evt="1016-1" openType="getUserInfo">立即登录</button>
+    </view>
+</show-modal>

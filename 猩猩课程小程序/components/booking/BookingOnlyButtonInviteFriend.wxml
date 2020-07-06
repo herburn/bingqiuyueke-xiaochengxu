@@ -1,0 +1,5 @@
+<view class="prompt-container" wx:if="{{isShow}}">
+    <button bindtap="_proxy" class="icon-container" data-wpy-evt="1094-0" openType="share">
+        <image class="fixed-prompt-icon" src="images/prompt-invite-friend.png"></image>
+    </button>
+</view>

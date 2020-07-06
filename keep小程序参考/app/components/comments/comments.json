@@ -1,0 +1,8 @@
+{
+    "component": true,
+    "usingComponents": {
+        "keep-avatar": "/miniprogram_npm/keep-ui-lite/lib/components/avatar/index",
+        "keep-tag": "/miniprogram_npm/keep-ui-lite/lib/components/tag/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

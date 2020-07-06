@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "radio-button": "./../common/dataEntry/RadioButton"
+    }
+}

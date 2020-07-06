@@ -1,0 +1,52 @@
+@import "../../../../../__wuBaseWxss__/0.wxss";
+
+.keep-tag {
+    display: inline-block;
+    padding: 0 8rpx;
+    border-radius: 2rpx;
+}
+
+.keep-tag--brand {
+    background-image: linear-gradient(135deg,#24c789,#4aa5d0);
+    color: #fff;
+}
+
+.keep-tag--activity {
+    background-image: linear-gradient(135deg,#ffcc53,#ff8f5b);
+    color: #fff;
+}
+
+.keep-tag--discount {
+    background-image: linear-gradient(135deg,#ffa474,#ff5363);
+    color: #fff;
+}
+
+.keep-tag--green {
+    background-color: #d3f3e7;
+    color: #24c789;
+}
+
+.keep-tag--gray {
+    background-color: #f5f5f5;
+    color: #24c789;
+}
+
+.keep-tag--size--default {
+    height: 34rpx;
+    line-height: 34rpx;
+    font-size: 22rpx;
+}
+
+.keep-tag--size--small {
+    height: 30rpx;
+    line-height: 30rpx;
+    font-size: 18rpx;
+}
+
+.keep-tag--weight--normal {
+    font-weight: 400;
+}
+
+.keep-tag--weight--bold {
+    font-weight: 700;
+}

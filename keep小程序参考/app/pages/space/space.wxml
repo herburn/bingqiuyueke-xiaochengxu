@@ -1,0 +1,67 @@
+<navigatorBar backgroundColor="rgba(255,255,255,{{navigatorBarOpacity}})" fixed="fixed" navigationBarColor="{{navigationBarColor}}"></navigatorBar>
+<view class="container" style="padding-bottom: {{privilegeInfo.schedulePreviewPrivilege&&targetDate>weekEnd?100:0}}rpx;">
+    <view class="top-card">
+        <view class="banner">
+            <swiper bindchange="swiperIndexChange" bindtap="previewBanner" class="swiper" current="{{swiperIndex}}" duration="300">
+                <swiper-item wx:for="{{gym.coverList}}" wx:key="{{item}}">
+                    <image class="slide-image keep-course-cover-placeholder" mode="aspectFill" src="{{item+'?imageMogr2/thumbnail/750x/quality/95'}}"></image>
+                </swiper-item>
+            </swiper>
+            <view class="swiper-index">{{swiperIndex+1}}/{{gym.coverList.length}}</view>
+            <view class="banner-mask" style="height: {{totalNavHeight}}px;"></view>
+        </view>
+        <keep-card customClass="gym-info" shadow="shadow">
+            <view class="gym-name-wrap keep-1px-border bottom-border">
+                <view class="gym-name">
+                    <view class="name">{{gym.name}}</view>
+                    <view bindtap="collectStore" class="collection-common {{isGymCollected?'active':''}}"></view>
+                </view>
+                <view class="score-wrap">
+                    <view class="score" wx:if="{{gym.stars>0}}">
+                        <view class="keep-star {{starList[item]}}" wx:for="{{5}}" wx:key="{{item}}"></view>
+                        <text>{{gym.stars}}分</text>
+                    </view>
+                    <view class="score" wx:else>暂无评分</view>
+                    <keep-tag customClass="operation-tags" size="small" wx:if="{{gymTags&&gymTags.length}}" wx:for="{{gymTags}}" wx:key="{{index}}">{{item.title}}</keep-tag>
+                </view>
+            </view>
+            <view class="address-wrap keep-1px-border bottom-border">
+                <view bindtap="openMap" class="address keep-right-more-arrow-new">
+                    <view class="place">{{gym.place}}</view>
+                </view>
+                <navigator bindtap="sensorsTrack" class="address line keep-right-more-arrow-new" data-events="server_gym_poi_guide" hoverClass="none" url="/app/packages/preview/viewImage/viewImage?src={{gym.guideImage}}" wx:if="{{gym.guideImage}}">
+                    <view class="place">线路指引</view>
+                </navigator>
+            </view>
+            <view class="facilities" wx:if="{{gym.basicFacility.length||gym.cleaningFacility.length}}">
+                <navigator bindtap="sensorsTrack" class="title-wrap" data-events="server_gym_poi_service" hoverClass="none" url="/app/packages/preview/facilities/facilities?gymId={{gym.id}}">
+                    <view class="title">服务设施</view>
+                    <view class="more keep-right-more-arrow-new">更多</view>
+                </navigator>
+                <view class="fac-item">
+                    <view wx:if="{{!(index>2)}}" wx:for="{{gym.basicFacility}}" wx:key="{{index}}">
+                        <image mode="aspectFill" src="{{item.icon}}"></image>
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view wx:if="{{!(index>1)}}" wx:for="{{gym.cleaningFacility}}" wx:key="{{index}}">
+                        <image mode="aspectFill" src="{{item.icon}}"></image>
+                        <text>{{item.title}}</text>
+                    </view>
+                </view>
+            </view>
+        </keep-card>
+    </view>
+    <view class="poi-tab" id="poiTop" style="top: {{totalNavHeight}}px">
+        <keep-tabs bindchange="tabChange" current="{{tabIndex}}">
+            <keep-tab name="{{0}}" title="门店课程"></keep-tab>
+            <keep-tab name="{{1}}" title="用户评价"></keep-tab>
+        </keep-tabs>
+    </view>
+    <view wx:if="{{tabIndex==0}}">
+        <schedules coachInfoMap="{{coachInfoMap}}" courseInfoMap="{{courseInfoMap}}" gymInfoMap="{{gymInfoMap}}" id="schedules" packagePrivilegeInfo="{{packagePrivilegeInfo}}" scheduleDynamicInfoMap="{{scheduleDynamicInfoMap}}" schedules="{{schedules}}" scrollTop="{{tabsTop}}"></schedules>
+    </view>
+    <view class="comments-wrap" wx:if="{{tabIndex==1}}">
+        <comments comments="{{commentsList}}"></comments>
+        <keep-load-more loading="{{!noMore}}" tip="没有更多了" wx:if="{{commentsList.length}}"></keep-load-more>
+    </view>
+</view>

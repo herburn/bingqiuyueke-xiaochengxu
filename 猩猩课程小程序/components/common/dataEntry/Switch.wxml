@@ -1,0 +1,3 @@
+<view bindtap="_proxy" class="switch" data-wpy-evt="1070-0">
+    <view class="switch-core {{[isActive?'active':'']}}"></view>
+</view>

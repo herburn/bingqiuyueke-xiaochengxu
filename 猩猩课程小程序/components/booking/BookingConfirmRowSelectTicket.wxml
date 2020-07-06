@@ -1,0 +1,7 @@
+<view class="row">
+    <view class="label">代金券：</view>
+    <view bindtap="_proxy" class="value" data-wpy-evt="1059-0">
+        <view class="detail">{{ticketString}}</view>
+        <text class="iconfont icon-arrow-right icon-r-arrow" wx:if="{{validTicketCount>0}}"></text>
+    </view>
+</view>

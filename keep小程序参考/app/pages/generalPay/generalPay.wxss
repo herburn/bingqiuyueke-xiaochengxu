@@ -1,0 +1,245 @@
+.coupon-wrap {
+    background: #fafafa;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    z-index: 400;
+    padding-bottom: 28rpx;
+    transform: translateX(100%);
+}
+
+.coupon-wrap.show {
+    transform: translateX(0%);
+    transition: all 0.45s ease;
+}
+
+.coupon-wrap .coupon-item {
+    position: relative;
+    margin: 28rpx 28rpx 0;
+    background-color: #fff;
+    border: 1rpx solid #ccc;
+    border-radius: 8rpx;
+}
+
+.coupon-wrap .coupon-item .coner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 56rpx;
+    height: 56rpx;
+}
+
+.coupon-wrap .coupon-item .coupon-info {
+    display: flex;
+    justify-content: space-between;
+    height: 190rpx;
+}
+
+.coupon-wrap .coupon-item .coupon-info .left-part {
+    margin-left: 28rpx;
+    width: 430rpx;
+}
+
+.coupon-wrap .coupon-item .coupon-info .left-part .coupon-title {
+    margin-top: 42rpx;
+    line-height: 34rpx;
+    font-size: 34rpx;
+    font-weight: bold;
+    color: #333;
+}
+
+.coupon-wrap .coupon-item .coupon-info .left-part .coupon-sponsor {
+    margin-top: 18rpx;
+    line-height: 24rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.coupon-wrap .coupon-item .coupon-info .left-part .valid-date {
+    margin-top: 26rpx;
+    line-height: 22rpx;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.coupon-wrap .coupon-item .coupon-info .right-part {
+    width: 200rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coupon-wrap .coupon-item .coupon-info .right-part .amount {
+    margin-top: 38rpx;
+    color: #ff5363;
+}
+
+.coupon-wrap .coupon-item .coupon-info .right-part .amount text {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.coupon-wrap .coupon-item .coupon-info .right-part .amount .unit {
+    position: relative;
+    top: 6rpx;
+    line-height: 36rpx;
+    font-size: 36rpx;
+}
+
+.coupon-wrap .coupon-item .coupon-info .right-part .amount .count {
+    line-height: 70rpx;
+    font-size: 70rpx;
+}
+
+.coupon-wrap .coupon-item .coupon-info .right-part .bound {
+    margin-top: 18rpx;
+    line-height: 26rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.coupon-wrap .coupon-item .line {
+    position: absolute;
+    top: 172rpx;
+    left: -1rpx;
+    right: -1rpx;
+    height: 36rpx;
+    background-image: url("https://static1.keepcdn.com/2019/05/24/16/1558688006730_696x36.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.coupon-wrap .coupon-item .coupon-rules {
+    background-color: #fafafa;
+    padding-left: 28rpx;
+    padding-right: 32rpx;
+    border-radius: 0 0 8rpx 8rpx;
+}
+
+.coupon-wrap .coupon-item .coupon-rules .rules-title {
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 22rpx;
+    color: #999;
+}
+
+.coupon-wrap .coupon-item .coupon-rules .rules-title:after {
+    position: relative;
+    top: 3rpx;
+    display: inline-block;
+    content: '';
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 8rpx;
+    background-image: url("https://static1.keepcdn.com/2019/05/24/16/1558686862138_24x24.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.coupon-wrap .coupon-item .coupon-rules .rules-title.show-rules:after {
+    transform: rotate(180deg);
+}
+
+.coupon-wrap .coupon-item .coupon-rules .rules-content {
+    padding-bottom: 18rpx;
+    line-height: 30rpx;
+    font-size: 22rpx;
+    color: #999;
+}
+
+page {
+    background: #fafafa;
+    padding-bottom: 116rpx;
+}
+
+.list {
+    background: #fff;
+}
+
+.list .item {
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 28rpx;
+}
+
+.list .item .label {
+    color: #333;
+    font-size: 32rpx;
+    width: 170rpx;
+}
+
+.list .item .right {
+    flex: 1;
+    text-align: right;
+    color: #999;
+    font-size: 26rpx;
+}
+
+.list .item .right.green {
+    color: #24c789;
+}
+
+.list .item .select {
+    padding-right: 43rpx;
+    background: url("https://static1.keepcdn.com/2018/04/09/17/1523266148587_26x45.png") no-repeat right center;
+    background-size: auto 27.2rpx;
+}
+
+.list .item .highlight {
+    color: #24c789;
+    font-size: 36rpx;
+    font-weight: bold;
+}
+
+.list .pay-type {
+    padding: 0 28rpx;
+    font-size: 26rpx;
+}
+
+.list .pay-type .title {
+    color: #999;
+    padding: 28rpx 0;
+}
+
+.list .pay-type .pay-item {
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+    margin-right: -28rpx;
+}
+
+.list .pay-type .pay-item:last-child:after {
+    border-bottom: 0;
+}
+
+.list .pay-type .pay-item image.type {
+    width: 63rpx;
+    height: 63rpx;
+    vertical-align: middle;
+    margin-right: 21rpx;
+}
+
+.list .pay-type .pay-item view {
+    flex: 1;
+    background: url("https://static1.keepcdn.com/2018/04/09/18/1523268375428_45x45.png") no-repeat right center;
+    background-size: auto 30rpx;
+    height: 40rpx;
+    margin-right: 28rpx;
+}
+
+.submit {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 116rpx;
+    line-height: 116rpx;
+    color: #fff;
+    font-size: 36rpx;
+    text-align: center;
+    background: #24c789;
+}

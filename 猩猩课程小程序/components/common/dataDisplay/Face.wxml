@@ -1,0 +1,1 @@
+<image bindtap="_proxy" class="default-face {{classMap[size]||'sm-avatar'}}" data-extra-data-se="{{extraData}}" data-region-id-se="faceBtn" data-region-id-sm="faceBtn" data-trainer-user-id-sm="{{navigatorData.trainerUserId}}" data-wpy-evt="1039-0" id="btn" lazyLoad="{{true}}" src="{{face}}"></image>

@@ -1,0 +1,15 @@
+{
+    "usingComponents": {
+        "schedules": "/app/components/schedules/schedules",
+        "comments": "/app/components/comments/comments",
+        "keep-card": "/miniprogram_npm/keep-ui-lite/lib/components/card/index",
+        "keep-tag": "/miniprogram_npm/keep-ui-lite/lib/components/tag/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "keep-tabs": "/miniprogram_npm/keep-ui-lite/lib/components/tabs/index",
+        "keep-tab": "/miniprogram_npm/keep-ui-lite/lib/components/tab/index",
+        "keep-load-more": "/miniprogram_npm/keep-ui-lite/lib/components/load-more/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+}

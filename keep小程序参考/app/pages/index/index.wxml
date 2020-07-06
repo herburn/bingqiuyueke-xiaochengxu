@@ -1,0 +1,49 @@
+<navigatorBar bindtapnav="scrollToTop" title="约课"></navigatorBar>
+<view class="banner-animate" style="transform: translate3d(0, {{!showBanner&&bannerInfo?'-180rpx':'0rpx'}}, 0)">
+    <view class="banner" wx:if="{{bannerInfo&&bannerInfo.picture}}">
+        <navigator hoverClass="none" style="background-image: url({{bannerInfo.picture}}?imageMogr2/thumbnail/750x/quality/95)" url="{{bannerInfo.schema}}"></navigator>
+    </view>
+    <view class="sticky-wrapper" style="top: {{totalNavHeight}}px">
+        <view class="schedule-filters">
+            <view class="filters">
+                <view bindtap="toGymFilter" class="screens {{screenGymLength?'green':''}}">
+                    <view>{{showCityName}}门店</view>
+                    <view>
+                        <text wx:if="{{screenGymLength}}">({{screenGymLength}})</text>
+                    </view>
+                </view>
+                <navigator class="screens {{screenOtherLength?'green':''}}" hoverClass="none" url="/app/pages/scheduleFilter/scheduleFilter">
+                    <view>课程</view>
+                    <view>
+                        <text wx:if="{{screenOtherLength}}">({{screenOtherLength}})</text>
+                    </view>
+                </navigator>
+            </view>
+            <view capture-catch:tap="tapSwitch" class="switch">
+                <switch checked="{{switchStatus}}" color="#24C789"></switch>
+                <view>只看有空位</view>
+            </view>
+        </view>
+        <view class="schedule-date">
+            <swiper current="{{dateSwiperIndex}}" displayMultipleItems="{{date.length>7?7:date.length}}" duration="300">
+                <swiper-item bindtap="selectDate" class="{{dateIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{date}}" wx:key="{{index}}">
+                    <view class="week">{{item.week}}</view>
+                    <view class="date">{{item.day}}</view>
+                </swiper-item>
+            </swiper>
+        </view>
+    </view>
+    <image class="loading" mode="aspectFit" src="https://static1.keepcdn.com/2018/12/13/12/1544673942422_64x64.gif" style="transform: translate3d(0, {{loading||pullDownloading?'100rpx':'0rpx'}}, 0)"></image>
+</view>
+<swiper bindchange="swiperChange" class="schedule-wrapper {{ready?'ready':''}}" current="{{dateIndex}}" duration="200" style="padding-top: calc(252rpx + {{totalNavHeight}}px); transform: translate3d(0, {{showBanner?loading?'300rpx':'180rpx':loading?'120rpx':'0rpx'}}, 0)">
+    <swiper-item wx:for="{{date}}" wx:key="{{index}}">
+        <scroll-view scrollY bindscroll="viewScroll" bindscrolltolower="scrolltolower" bindscrolltoupper="scrolltoupper" bindtouchend="touchend" bindtouchstart="touchstart" lowerThreshold="800" scrollTop="{{scrollTop}}" upperThreshold="50">
+            <courseTable bindsetgymactivity="setGymActivity" coachInfoMap="{{coachInfoMap}}" courseInfoMap="{{courseInfoMap}}" gymInfoMap="{{gymInfoMap}}" lastScheduleWeekEnd="{{lastScheduleWeekEnd}}" packagePrivilegeInfo="{{packagePrivilegeInfo}}" schedules="{{schedules[index]}}"></courseTable>
+            <view class="slogan" wx:if="{{ready}}">- 身型由己 -</view>
+        </scroll-view>
+    </swiper-item>
+</swiper>
+<view class="tap-tips" wx:if="{{showTapTips}}">双击这里，刷新课表</view>
+<privilege privilegeInfo="{{packagePrivilegeInfo}}"></privilege>
+<popupModal popupInfo="{{popupInfo}}"></popupModal>
+<prizeModal userHonorHisItem="{{userHonorHisItem}}"></prizeModal>

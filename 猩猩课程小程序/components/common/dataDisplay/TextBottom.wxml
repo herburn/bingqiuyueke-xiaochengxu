@@ -1,0 +1,2 @@
+<view class="bottom-text bottom-text-bottom {{[mode==='bottom'?'bottom-text-active':'']}}">底线</view>
+<view class="bottom-text {{[mode==='loading'?'bottom-text-active':'']}}">加载中...</view>

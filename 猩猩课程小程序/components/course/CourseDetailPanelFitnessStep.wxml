@@ -1,0 +1,24 @@
+<view class="content-radius-box">
+    <panel-title bind_init="_initComponent" iconClass="icon-step" title="健身步骤"></panel-title>
+    <view class="fitness-step">
+        <view class="fitness-step-item">
+            <text class="highlight">STEP 1</text>
+            <text>预约付费成功</text>
+        </view>
+        <image class="fitness-step-arrow" src="/images/common/icon-b-arrow-fitness-step.png"></image>
+        <view class="fitness-step-item">
+            <text class="highlight">STEP 2</text>
+            <text>获得入场密码</text>
+        </view>
+        <image class="fitness-step-arrow" src="/images/common/icon-b-arrow-fitness-step.png"></image>
+        <view class="fitness-step-item">
+            <text class="highlight">STEP 3</text>
+            <text>门禁输入密码</text>
+        </view>
+        <image class="fitness-step-arrow" src="/images/common/icon-b-arrow-fitness-step.png"></image>
+        <view class="fitness-step-item">
+            <text class="highlight">STEP 4</text>
+            <text>验证成功入场上课</text>
+        </view>
+    </view>
+</view>

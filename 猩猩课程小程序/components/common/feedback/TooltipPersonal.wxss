@@ -1,0 +1,34 @@
+.personal-prompt {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 26rpx;
+    color: #333;
+    position: fixed;
+    bottom: 16rpx;
+    right: 154rpx;
+    z-index: 700;
+    width: 256rpx;
+    height: 79rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.32);
+    background-color: #fcc800;
+}
+
+.personal-prompt .icon-triangle {
+    position: absolute;
+    bottom: -12rpx;
+    left: 50%;
+    z-index: 700;
+    width: 0;
+    height: 0;
+    margin-left: -9rpx;
+    border-top: 18rpx solid #fcc800;
+    border-left: 14rpx solid transparent;
+    border-right: 14rpx solid transparent;
+}

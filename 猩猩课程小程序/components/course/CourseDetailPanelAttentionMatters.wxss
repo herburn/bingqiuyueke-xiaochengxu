@@ -1,0 +1,11 @@
+.content-radius-box {
+    box-sizing: border-box;
+    padding: 24rpx;
+    border-radius: 16rpx;
+    background-color: #333;
+}
+
+.attention-matters {
+    font-size: 28rpx;
+    color: #767678;
+}

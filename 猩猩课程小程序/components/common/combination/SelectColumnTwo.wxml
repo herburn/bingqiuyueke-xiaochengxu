@@ -1,0 +1,26 @@
+<view class="select-two-filter">
+    <view class="col" style=" {{'width:'+config[index].width+';'}}" wx:for="{{data}}" wx:for-item="col" wx:key="index">
+        <block wx:if="{{col.length===1}}">
+            <block wx:for="{{col}}" wx:for-item="row" wx:key="index">
+                <view class="title">{{row.title}}</view>
+                <scroll-view class="scroll-view" scrollY="{{true}}" style="height: calc(100% - 93rpx);">
+                    <view class="content">
+                        <view bindtap="_proxy" class="row-item {{[item.isActive?'row-item-active':'']}}" data-wpy-evt="1177-0" data-wpytap-a="{{item}}" wx:for="{{row.items}}" wx:key="value">
+              {{item.label}}
+            </view>
+                    </view>
+                </scroll-view>
+            </block>
+        </block>
+        <scroll-view class="scroll-view" scrollY="{{true}}" style="height: 100%;" wx:else>
+            <block wx:for="{{col}}" wx:for-item="row" wx:key="index">
+                <view class="title">{{row.title}}</view>
+                <view class="content">
+                    <view bindtap="_proxy" class="row-item {{[item.isActive?'row-item-active':'']}}" data-wpy-evt="1177-1" data-wpytap-a="{{item}}" wx:for="{{row.items}}" wx:key="value">
+              {{item.label}}
+            </view>
+                </view>
+            </block>
+        </scroll-view>
+    </view>
+</view>

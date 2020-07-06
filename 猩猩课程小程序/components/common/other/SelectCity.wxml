@@ -1,0 +1,7 @@
+<view bindtap="_proxy" class="select-city" data-wpy-evt="1034-0" wx:if="{{!isActivated}}">
+  {{currentCity}}<view class="iconfont icon-down"></view>
+</view>
+<view bindtap="_proxy" class="select-city select-city-activated" data-wpy-evt="1034-1" style=" {{'width:'+menuButtonHeightPxStr+';'+'height:'+menuButtonHeightPxStr+';'+'font-size:'+closeSizePxStr+';'}}" wx:else>
+    <view class="iconfont icon-close"></view>
+</view>
+<modal-city-select bind_init="_initComponent" bindtapCity="_proxy" bindtapOnlineClass="_proxy" data-wpy-evt="1034-2" isShow="{{isActivated}}"></modal-city-select>

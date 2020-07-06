@@ -1,0 +1,18 @@
+<view bindtap="_proxy" class="month-record-card" data-wpy-evt="1037-0">
+    <view class="title-month">{{record.monthText}}</view>
+    <view class="record-content">
+        <view class="count">
+            <view class="value DINCondensedOld">{{record.workoutCount}}</view>
+            <view class="desc">训练次数</view>
+        </view>
+        <view class="day">
+            <view class="value DINCondensedOld">{{record.workoutDays}}</view>
+            <view class="desc">训练天数</view>
+        </view>
+        <view class="duration">
+            <view class="value DINCondensedOld">{{record.workoutMins}}</view>
+            <view class="desc">训练时长/分钟</view>
+        </view>
+    </view>
+    <image class="bg" mode="aspectFill" src="{{record.background||defaultBg}}"></image>
+</view>

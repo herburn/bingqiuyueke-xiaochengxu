@@ -1,0 +1,67 @@
+.unfinished-content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #242424;
+}
+
+.unfinished-content .booking-detail-body {
+    -webkit-box-flex: 1;
+    flex: auto;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.unfinished-content .booking-detail-body .body-top .row {
+    position: relative;
+    display: flex;
+}
+
+.unfinished-content .booking-detail-body .body-top .row::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -24rpx;
+    width: 702rpx;
+    height: 2rpx;
+    background-color: #767678;
+    opacity: .1;
+}
+
+.unfinished-content .booking-detail-body .body-top .row:first-child {
+    margin-top: -32rpx;
+}
+
+.unfinished-content .booking-detail-body .body-top .row:last-child {
+    margin-bottom: 32rpx;
+}
+
+.unfinished-content .booking-detail-body .body-bottom {
+    -webkit-box-flex: 1;
+    flex: auto;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.unfinished-content .booking-detail-body .body-bottom .price-row {
+    margin-bottom: 40rpx;
+}
+
+.unfinished-content .booking-detail-body .body-bottom .page-btn {
+    margin-top: auto;
+}
+
+.unfinished-content .booking-detail-body .body-bottom .btn-tip {
+    font-size: 22rpx;
+    color: #999;
+    padding: 16rpx 0 0;
+    text-align: center;
+}

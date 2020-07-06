@@ -1,0 +1,61 @@
+<navigatorBar title="{{navigatorBarTitle}}"></navigatorBar>
+<view class="page" wx:if="{{orderInfo}}">
+    <view class="list">
+        <view class="item keep-1px-border bottom-border">
+            <view class="label">购买内容</view>
+            <view class="right">
+                <view class="value">{{orderInfo.skuList[0].skuName}}</view>
+            </view>
+        </view>
+        <view class="item keep-1px-border bottom-border" wx:for="{{orderInfo.skuList[0].attrList}}" wx:key="{{index}}">
+            <view class="label">{{item.attrName}}</view>
+            <view class="right">{{item.attrValue}}</view>
+        </view>
+        <view bindtap="showCoupons" class="item keep-1px-border bottom-border" wx:if="{{orderInfo.couponInfo}}">
+            <view class="label">优惠券</view>
+            <view class="right green select">-¥{{orderInfo.displayCouponPrice}}</view>
+        </view>
+        <block wx:if="{{orderInfo.promotionList}}">
+            <view class="item keep-1px-border bottom-border" wx:for="{{orderInfo.promotionList}}" wx:key="{{index}}">
+                <div class="label">{{item.name}}</div>
+                <div class="right">- ¥{{item.displayAmount}}</div>
+            </view>
+        </block>
+        <view class="item keep-1px-border bottom-border">
+            <view class="label">价格</view>
+            <view class="right highlight">¥{{orderInfo.displayPrice}}</view>
+        </view>
+        <view class="pay-type">
+            <view class="title">支付方式</view>
+            <view class="pay-item keep-1px-border bottom-border">
+                <image class="type" mode="aspectFill" src="https://static1.keepcdn.com/2018/04/09/17/1523267760147_95x95.png"></image>
+                <view>微信支付</view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="buy" class="submit {{iphonex?'iphonex':''}}">确定</view>
+</view>
+<scroll-view scrollY bindtap="closeCoupons" class="coupon-wrap {{showCouponList?'show':''}}" style="top: {{totalNavHeight}}px">
+    <view catchtap="selectCoupon" class="coupon-item" data-item="{{item}}" wx:for="{{couponList}}" wx:key="{{item}}">
+        <image class="coner" mode="aspectFit" src="https://static1.keepcdn.com/2019/05/27/18/1558953056325_56x56.png" wx:if="{{item.couponCode==orderInfo.couponInfo.couponCode}}"></image>
+        <view class="coupon-info">
+            <view class="left-part">
+                <view class="coupon-title keep-text-overflow">{{item.showDesc}}</view>
+                <view class="coupon-sponsor">{{item.sponsorCopy}}</view>
+                <view class="valid-date">{{item.validDate}}</view>
+            </view>
+            <view class="right-part">
+                <view class="amount">
+                    <text class="unit">¥</text>
+                    <text class="count">{{item.amount/100}}</text>
+                </view>
+                <view class="bound" wx:if="{{item.bound}}">满{{item.bound/100}}可用</view>
+            </view>
+        </view>
+        <view class="line"></view>
+        <view class="coupon-rules">
+            <view catchtap="showCouponRules" class="rules-title {{item.showCouponRules?'show-rules':''}}" data-index="{{index}}">使用说明</view>
+            <view class="rules-content" wx:if="{{item.showCouponRules}}">优惠券不可叠加使用</view>
+        </view>
+    </view>
+</scroll-view>

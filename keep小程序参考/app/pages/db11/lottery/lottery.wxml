@@ -1,0 +1,121 @@
+<navigatorBar></navigatorBar>
+<view class="lottery" wx:if="{{lottery}}">
+    <view class="date">活动时间：11月5日-11月11日 每天均赠送抽奖机会</view>
+    <view class="turntable">
+        <view class="swiper" wx:if="{{lottery.lotteryWinner&&lottery.lotteryWinner.length}}">
+            <swiper autoplay="autoplay" circular="circular" duration="500" easingFunction="easeOutCubic" interval="2000" vertical="vertical">
+                <swiper-item wx:for="{{lottery.lotteryWinner}}" wx:key="{{index}}">{{item}}</swiper-item>
+            </swiper>
+        </view>
+        <view class="card {{running?'running':''}}" wx:if="{{lottery.couponList&&lottery.couponList.length}}">
+            <view class="item {{index==cardIndex?'active':''}} {{item.couponName=='1000'?'big':''}}" wx:for="{{lottery.couponList}}" wx:key="{{index}}">
+                <block wx:if="{{item.couponName=='谢谢参与'}}">
+                    <image mode="aspectFit" src="https://static1.keepcdn.com/2019/10/18/16/1571386767484_61x61.png"></image>
+                    <view class="text">谢谢参与</view>
+                </block>
+                <block wx:else>
+                    <view class="ticket">¥<text>{{item.couponName}}</text>
+                    </view>
+                    <view class="text">课包{{item.couponName=='1000'?'神':''}}券</view>
+                </block>
+            </view>
+            <view bindtap="doLogin" class="item btn" hoverClass="click-btn" hoverStayTime="150" wx:if="{{!login}}">
+                <image src="https://static1.keepcdn.com/2019/10/18/11/1571370848607_90x101.png"></image>
+            </view>
+            <view bindtap="getLotteryCoupon" class="item btn" hoverClass="click-btn" hoverStayTime="150" wx:elif="{{lottery.lotteryCount>0}}">
+                <image src="https://static1.keepcdn.com/2019/10/18/11/1571370848607_90x101.png"></image>
+                <view class="text">你有 {{lottery.lotteryCount}} 次机会</view>
+            </view>
+            <button class="item btn" openType="share" wx:elif="{{lottery.lotteryStatus==2}}">
+                <image src="https://static1.keepcdn.com/2019/10/22/16/1571734772884_138x83.png" style="width: 138rpx; height: 83rpx"></image>
+                <view class="text">需好友打开链接</view>
+            </button>
+            <view class="item btn disabled" wx:else>
+                <image src="https://static1.keepcdn.com/2019/10/22/16/1571734515971_90x100.png"></image>
+                <view class="text">你有 0 次机会</view>
+            </view>
+        </view>
+    </view>
+    <view class="rate">
+        <view class="rate-line">
+            <view class="text">中奖率</view>
+            <view class="line">
+                <view class="inner" style="width: {{luckyCount.width}}">{{luckyCount.text}}</view>
+            </view>
+        </view>
+        <view class="rate-tips">抽奖次数越多，越有可能抽中大额券</view>
+    </view>
+    <view class="coupon-title">
+        <view>我的优惠券</view>
+    </view>
+    <view class="coupon-wrap">
+        <scroll-view wx:if="{{lottery.userCouponsList&&lottery.userCouponsList.length}}">
+            <view style="display: flex">
+                <view class="coupon-item" wx:for="{{lottery.userCouponsList}}" wx:key="{{index}}">
+                    <view class="ticket">¥<text>{{item.couponName/100}}</text>
+                    </view>
+                    <view class="text">课包券</view>
+                    <view class="count">x{{item.couponCount}}</view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="coupon-disabled" wx:else>暂未获得优惠券</view>
+    </view>
+    <view class="bottom">
+        <block wx:if="{{lottery.userCouponsList&&lottery.userCouponsList.length}}">
+            <navigator class="coupon-btn" url="/app/packages/classBag/list/list" wx:if="{{lottery.couponStatus==1}}">立即使用</navigator>
+            <view class="coupon-btn disabled" wx:else>立即使用</view>
+            <view class="coupon-tips">优惠券可在11月8日至11月11日叠加课包直降使用</view>
+        </block>
+        <view class="rule">
+            <view class="rule-title">活动规则</view>
+            <view>1. 活动时间：11月5日-11月11日，每天均可参与。</view>
+            <view>2. 课包优惠券可在11月8日-11月11日购买活动课包时使用，每笔订单限用1张。</view>
+            <view>3. 所获奖品只可用于正常使用，不可用于商业牟利，一经发现将取消中奖资格，并保留追究法律责任的权利。</view>
+            <view>4. 本活动最终解释权归Keep所有。</view>
+        </view>
+    </view>
+    <view catchtouchmove="banTouch" class="modal-wrap" wx:if="{{showModal}}">
+        <view class="modal-animate">
+            <viwe class="modal">
+                <view class="modal-top">
+                    <block wx:if="{{winPrize}}">
+                        <navigator class="koach" hoverClass="none" url="/app/pages/coach/coach?coachId={{winPrize.coachUserId}}">
+                            <image mode="aspectFill" src="{{winPrize.coachAvatar}}"></image>
+                        </navigator>
+                        <view class="koach-name">{{winPrize.coachName}} 赠送你</view>
+                        <view class="ticket-wrap">
+                            <view class="ticket">
+                                <view>
+                                    <view class="ticket-name">课包优惠券·狂欢节</view>
+                                    <view class="ticket-tips">11.8-11.11 {{winPrize.coupon.couponDesc}}</view>
+                                </view>
+                                <view class="ticket-price">¥<text>{{winPrize.coupon.couponName}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                    <view class="no-prize" wx:else>
+                        <view>很遗憾，没有抽中</view>
+                        <view>下次再接再厉</view>
+                    </view>
+                    <view class="btn-wrap">
+                        <view bindtap="closeModal" class="btn">我知道了</view>
+                        <button class="btn share" openType="share" wx:if="{{lottery.lotteryStatus==2}}">分享可再抽1次</button>
+                    </view>
+                </view>
+                <view class="modal-btm">
+                    <view class="icon-line"></view>
+                    <view class="icon-line right"></view>
+                    <view class="lucky-line">
+                        <view class="text">中奖率</view>
+                        <view class="line">
+                            <view class="inner" style="width: {{luckyCount.width}}">{{luckyCount.text}}</view>
+                        </view>
+                    </view>
+                    <view class="lucky-tips">抽奖次数越多，越有可能抽中大额券</view>
+                </view>
+            </viwe>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,10 @@
+<view class="select-prompt" wx:if="{{isActionSheet}}">
+    <view class="prompt-list">
+        <block wx:for="{{itemList}}" wx:key="index">
+            <button bindtap="_proxy" class="list" data-wpy-evt="1017-0" data-wpytap-a="{{index}}" openType="share" wx:if="{{item.isShare}}">
+        {{item.content}}</button>
+            <view bindtap="_proxy" class="list" data-wpy-evt="1017-1" data-wpytap-a="{{index}}" wx:else>{{item.content}}</view>
+        </block>
+        <view bindtap="_proxy" class="list-cancel {{[isFullDisplay?'full-display':'']}}" data-wpy-evt="1017-2">取消</view>
+    </view>
+</view>

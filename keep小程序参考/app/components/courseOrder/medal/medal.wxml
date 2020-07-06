@@ -1,0 +1,31 @@
+<view wx:if="{{medalCheckin}}">
+    <view class="medal-mask" wx:if="{{firstCheckInInfo&&firstCheckInInfo.exchange}}">
+        <view class="medal-box">
+            <view class="top-mask"></view>
+            <view class="medal">
+                <view class="medal-title">「{{medalInfo.username}}」</view>
+                <view class="medal-text">欢迎来到 Keepland<view class="view">恭喜你获得新用户专属手环</view>
+                </view>
+                <image class="first-pic" mode="aspectFit" src="{{medalInfo.picUrl}}?imageMogr2/thumbnail/260x/quality/95"></image>
+                <view class="medal-tips">请凭此截图到前台领取</view>
+            </view>
+            <view bindtap="closeFirstCheckIn" class="medal-close"></view>
+        </view>
+    </view>
+    <view class="medal-mask" wx:elif="{{medalInfo&&medalInfo.exchange}}">
+        <view class="medal-box">
+            <view class="top-mask"></view>
+            <view class="medal">
+                <view class="medal-title">「{{medalInfo.username}}」</view>
+                <view class="medal-text">恭喜你获得实体勋章</view>
+                <view class="medal-pic">
+                    <image class="image" mode="aspectFit" src="{{medalInfo.picUrl}}?imageMogr2/thumbnail/260x/quality/95"></image>
+                    <view class="medal-gym">{{medalInfo.honorName}}</view>
+                    <view class="medal-gymtext">前200名训练用户可获得</view>
+                </view>
+                <view class="medal-tips">* 请到前台领取，并出示此页面截图</view>
+            </view>
+            <view bindtap="closeMedal" class="medal-close"></view>
+        </view>
+    </view>
+</view>

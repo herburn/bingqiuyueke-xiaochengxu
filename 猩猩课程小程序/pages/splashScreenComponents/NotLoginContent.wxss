@@ -1,0 +1,42 @@
+.navigator-bar {
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #242424;
+}
+
+.content .img-tip {
+    margin-top: 31vh;
+}
+
+.content .button {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 36rpx;
+    color: #fff;
+    width: 702rpx;
+    height: 108rpx;
+    margin: auto 0 48rpx;
+    border-radius: 16rpx;
+    font-weight: bold;
+    background-color: #67c83b;
+}

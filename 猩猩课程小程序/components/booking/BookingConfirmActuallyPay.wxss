@@ -1,0 +1,30 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.need-to-pay {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 40rpx;
+    padding: 0 24rpx;
+}
+
+.need-to-pay .text {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    height: 39rpx;
+    margin-top: 24rpx;
+    margin-right: 16rpx;
+    line-height: 39rpx;
+}
+
+.need-to-pay .money {
+    font-size: 72rpx;
+    color: #fcc800;
+    height: 86rpx;
+    line-height: 86rpx;
+}

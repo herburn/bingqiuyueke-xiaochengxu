@@ -1,0 +1,38 @@
+<navigatorBar backgroundColor="#584F60" color="#fff" navigationBarColor="white" title="领取入场券"></navigatorBar>
+<view class="invitation-wrap {{received?'received':''}} {{invitationType===1&&!received&&!forbid?'transfertoken':''}}" wx:if="{{invitationInfo}}">
+    <image class="logo" mode="aspectFill" src="/app/images/keepland_logo1.png"></image>
+    <view class="invitation">
+        <view class="inviter-info">
+            <image class="avatar" mode="aspectFill" src="{{invitationInfo.inviter.avatar+'?imageMogr2/thumbnail/128x/quality/95'}}" wx:if="{{invitationInfo.inviter.avatar}}"></image>
+            <image class="avatar" mode="aspectFill" src="/app/images/default_avatar.png" wx:else></image>
+            <view class="username">{{invitationInfo.inviter.username}}</view>
+            <view class="des">送你一张入场券</view>
+        </view>
+        <view class="line"></view>
+        <view class="schedule-info">
+            <image class="received" src="/app/images/ticket_received.png" wx:if="{{received}}"></image>
+            <view bindtap="gotoCourse" class="schedule-name" data-id="{{invitationInfo.schedule.id}}">{{invitationInfo.schedule.scheduleName}}</view>
+            <view class="gym-name">{{invitationInfo.gymName}}</view>
+            <view class="schedule-time">{{invitationInfo.schedule.formatTimeRange}}</view>
+            <view class="input-token" wx:if="{{invitationType===1&&!received&&!forbid}}">
+                <image class="icon" mode="aspectFill" src="/app/images/keepland_slash.png"></image>
+                <view class="des">输入口令，领入场券</view>
+                <view class="input-wrap">
+                    <view bindtap="showKeyboard" class="token {{[isShowKeyboard&&showToken.length==index?'inputing':'',tokenError?'error':'']}}" data-show="{{true}}" wx:for="{{4}}" wx:key="{{ index }}">
+                        <text>{{showToken[index]}}</text>
+                        <view class="cursor" wx:if="{{isShowKeyboard&&showToken.length==index}}"></view>
+                    </view>
+                </view>
+                <view class="tip">温馨提示：领取成功的课程，暂不支持取消</view>
+                <input bindblur="showKeyboard" bindinput="tokenInput" data-show="{{false}}" focus="{{isShowKeyboard}}" maxlength="4" type="number" value="{{transferToken}}"></input>
+            </view>
+        </view>
+        <view bindtap="actionAcceptInvitation" class="button {{forbid||received?'forbid':''}}">{{invitationInfo.acceptMsg}}</view>
+    </view>
+    <view bindtap="gotoCourse" class="goto-course" data-id="{{invitationInfo.schedule.id}}" wx:if="{{received}}">查看课程</view>
+    <view class="slogan-wrap">
+        <image class="icon" mode="aspectFill" src="/app/images/keepland_slash.png"></image>
+        <image class="slogan" mode="aspectFill" src="/app/images/keepland_slogan.png"></image>
+    </view>
+</view>
+<view class="errmsg" wx:else>{{errmsg}}</view>

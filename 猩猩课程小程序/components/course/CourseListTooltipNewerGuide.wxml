@@ -1,0 +1,4 @@
+<view class="prompt {{[isSatisfyShowRefresh?'prompt-show':'',!isSatisfyShowRefresh?'prompt-hide':'']}}">
+    <view>双击这里，刷新课表</view>
+    <view class="icon-triangle"></view>
+</view>

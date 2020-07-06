@@ -1,0 +1,16 @@
+<sticky-wrapper bind_init="_initComponent" height="143rpx" id="stickyWeekNavbar" top="{{topPx}}" zIndex="{{601}}">
+    <week-navbar bind_init="_initComponent" bindonTapCamp="_proxy" bindonTapPersonal="_proxy" bindswitchWeek="_proxy" class="week-navbar" data-region-id-sm="weekWeekNavbar" data-wpy-evt="1183-0" id="weekNavbar" mode="{{weekMode}}" pageName="{{pageName}}" slot="sticky" weekActive="{{weekIndex}}" weeks="{{weeks}}"></week-navbar>
+    <swiper bindchange="_proxy" class="swiper {{[!isShowHeader?'no-header':'']}}" current="{{swiperIndex}}" data-wpy-evt="1183-3" duration="150" skipHiddenItemLayout="{{true}}" slot="content" style="height: {{swiperItemHeightPx}}px;">
+        <swiper-item class="swiper-item" wx:for="{{dateBoxesSchedulesList}}" wx:for-item="dateBoxesSchedules" wx:key="date">
+            <subscribe-notice bind_init="_initComponent" class="subscribe-notice" date="{{dateBoxesSchedules.date}}" msg="{{subscribeMap[dateBoxesSchedules.date].msg}}" wx:if="{{subscribeMap[dateBoxesSchedules.date].isShow&&isShowSubscribeNotice}}"></subscribe-notice>
+            <novice-banner bind_init="_initComponent" class="novice-banner" wx:if="{{isShowNoviceBanner}}"></novice-banner>
+            <banner bannerList="{{classBannerPromotion}}" bind_init="_initComponent" borderRadius="16rpx" class="banner" dotBottom="8rpx" height="168rpx" isShowMask="{{true}}" wx:if="{{!isShowNoviceBanner&&classBannerPromotion.length>0}}"></banner>
+            <class-day beforeHeight="{{swiperItemsBeforeHeight[index]}}" bind_init="_initComponent" boxesListShow="{{swiperItemsBoxesListShow[index]}}" boxesSchedulesList="{{dateBoxesSchedules.boxesSchedulesList}}" class="class-day" classBoxPromotionMap="{{classBoxPromotionMap}}" classPromotionMap="{{classPromotionMap}}" isAllowTrainerNavigate="{{isAllowTrainerNavigate}}" isNovice="{{isNovice}}" isShowFav="{{isShowFav}}" isShowHeader="{{isShowHeader}}" pageShow="{{pageShow}}" style="{{(weekIndex-index)*(weekIndex-index)>0?'display:none;':''}};"></class-day>
+        </swiper-item>
+        <swiper-item class="swiper-item camp-swiper-item" wx:if="{{isShowCampItem}}">
+            <trainer-camp-list bind_init="_initComponent" campSchedules="{{campSchedules}}" class="camp-list" from="{{from}}" profile="{{profile}}" trainerUserId="{{trainerUserId}}"></trainer-camp-list>
+        </swiper-item>
+    </swiper>
+</sticky-wrapper>
+<view id="box-header" style="height: 96rpx;" wx:if="{{!queryFinish}}"></view>
+<view id="class-entry" style="height: 168rpx;" wx:if="{{!queryFinish}}"></view>

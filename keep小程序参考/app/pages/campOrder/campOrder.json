@@ -1,0 +1,9 @@
+{
+    "backgroundColor": "#FFFFFF",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "showModalBox": "/app/components/showModalBox/showModalBox",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

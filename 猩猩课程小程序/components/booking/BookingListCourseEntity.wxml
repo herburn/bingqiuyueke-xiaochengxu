@@ -1,0 +1,35 @@
+<view class="booking-course-entry">
+    <view class="booking-course-entry-wrap">
+        <view class="column-face">
+            <face bind_init="_initComponent" class="face" face="{{order.face}}" navigatorData="{{navigatorData}}" navigatorPage="{{navigatorPage}}"></face>
+        </view>
+        <view bindtap="_proxy" class="column-info" data-wpy-evt="1038-0">
+            <view class="content-1 ellipsis">{{order.className}}</view>
+            <view class="content-2">
+                <block wx:if="{{!order.isMultipleLessons}}">
+                    <view class="content-2-text1">{{order.date}}</view>
+                    <view class="content-2-text2">{{order.week}}</view>
+                    <view class="content-2-text3">{{order.duration}}</view>
+                    <text class="iconfont icon-gift gift-icon" wx:if="{{order.isGift===1}}"></text>
+                </block>
+                <block wx:else>
+                    <view class="content-2-text4">剩余</view>
+                    <view class="content-2-text5">{{order.date}}/{{order.week}}</view>
+                    <view class="content-2-text4">课时</view>
+                </block>
+            </view>
+            <view class="content-3">
+                <view class="content-3-text1 {{[order.isMyBookingPersonal?'theme-color':'']}}">{{order.boxName}}</view>
+                <block wx:if="{{type==='myGiven'}}">
+                    <view class="receive-status status" wx:if="{{order.status===1}}">已领取</view>
+                    <view class="wait-status status" wx:if="{{order.status===10}}">待领取</view>
+                    <view class="cancel-status status" wx:if="{{order.status===11}}">已取消</view>
+                </block>
+            </view>
+        </view>
+        <view bindtap="_proxy" class="btn" data-wpy-evt="1038-1" hoverClass="btn-primary-hover-class">{{btnText}}</view>
+        <image class="not-check-in-mark" src="{{notCheckIn}}" wx:if="{{order.checkIn==0}}"></image>
+        <image class="status-icon" src="{{willOutdated}}" wx:if="{{order.orderType===20&&order.personalStatus===14}}"></image>
+        <image class="status-icon" src="{{outdated}}" wx:if="{{order.orderType===20&&order.personalStatus===13}}"></image>
+    </view>
+</view>

@@ -1,0 +1,6 @@
+<view bindtap="handleClickItem" class="custom-class {{utils.bem( 'tabs-tab',[scroll?'scroll':'',current?'current':''] )}}">
+    <view class="keep-tabs-tab--title {{current?'keep-tabs-tab--title--current':''}}">{{title}}</view>
+    <slot></slot>
+    <view class="keep-tabs-tab--bar" wx:if="{{current}}"></view>
+</view>
+<wxs module="utils" src="../../utils/utils.wxs" />

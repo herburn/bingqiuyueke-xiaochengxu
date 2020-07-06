@@ -1,0 +1,5 @@
+<view bindtap="_proxy" catchtouchmove="_proxy" class="animation-mask {{[show?'show-mask':'',downAnimate&&!slideDownAnimationEnd?'hide-mask':'']}}" data-wpy-evt="1206-0">
+    <view bindanimationend="_proxy" catchtap="_proxy" class="content-wrap {{[show?'show-content':'',downAnimate&&!slideDownAnimationEnd?'hide-content':'']}}" data-wpy-evt="1206-2" style=" {{'height:'+contentHeight+';'}}">
+        <slot name="content"></slot>
+    </view>
+</view>

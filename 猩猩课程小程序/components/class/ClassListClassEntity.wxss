@@ -1,0 +1,114 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+.class-schedule {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 168rpx;
+    background-color: #333;
+}
+
+.class-schedule .face {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0 16rpx;
+}
+
+.class-schedule .main {
+    -webkit-box-flex: 1;
+    flex: auto;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    padding-right: 10rpx;
+}
+
+.class-schedule .main .title {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    width: 370rpx;
+    margin-top: 24rpx;
+}
+
+.class-schedule .main .content {
+    display: flex;
+    margin: auto 0;
+}
+
+.class-schedule .main .content .period {
+    font-size: 22rpx;
+    color: #fcc800;
+    margin-right: 8rpx;
+}
+
+.class-schedule .main .content .price {
+    font-size: 22rpx;
+    color: #f2f2f7;
+}
+
+.class-schedule .main .tags {
+    font-size: 22rpx;
+    color: #767678;
+    width: 370rpx;
+    margin-bottom: 24rpx;
+}
+
+.class-schedule .btn {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    align-self: center;
+    margin: 0 16rpx;
+}
+
+.class-schedule .btn-grey {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #c9c9cd;
+    background-color: #767678;
+}
+
+.class-schedule .btn-disable {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #999;
+    background-color: #767678;
+}
+
+.class-schedule .mark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    width: 54rpx;
+    height: 54rpx;
+}

@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "schedules": "/app/components/schedules/schedules",
+        "comments": "/app/components/comments/comments",
+        "keep-card": "/miniprogram_npm/keep-ui-lite/lib/components/card/index",
+        "keep-avatar": "/miniprogram_npm/keep-ui-lite/lib/components/avatar/index",
+        "keep-tabs": "/miniprogram_npm/keep-ui-lite/lib/components/tabs/index",
+        "keep-tab": "/miniprogram_npm/keep-ui-lite/lib/components/tab/index",
+        "keep-load-more": "/miniprogram_npm/keep-ui-lite/lib/components/load-more/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "backgroundColor": "#ffffff",
+    "onReachBottomDistance": 800,
+    "enablePullDownRefresh": true
+}

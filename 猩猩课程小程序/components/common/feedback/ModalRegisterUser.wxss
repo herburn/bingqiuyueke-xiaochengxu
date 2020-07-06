@@ -1,0 +1,32 @@
+.show-model {
+    position: relative;
+    z-index: 1101;
+}
+
+.btn-box {
+    font-size: 32rpx;
+    color: #767678;
+    position: relative;
+    display: flex;
+    -webkit-box-flex: 1;
+    flex: 1;
+    height: 113rpx;
+}
+
+.btn-box .btn-cancel,.btn-box .btn-confirm {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.btn-box .btn-confirm {
+    color: #333;
+    background-color: #fcc800;
+}

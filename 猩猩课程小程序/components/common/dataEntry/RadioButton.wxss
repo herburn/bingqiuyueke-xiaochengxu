@@ -1,0 +1,92 @@
+.num-selection {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+}
+
+.num-selection .num-item {
+    font-size: 26rpx;
+    color: #c9c9cd;
+    position: relative;
+    z-index: 2;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    text-align: center;
+    line-height: 56rpx;
+    background: #767678;
+}
+
+.num-selection .num-item-active {
+    color: #333;
+    background: #fcc800;
+}
+
+.num-selection .num-item-disabled {
+    color: #999;
+    background: #767678;
+}
+
+.num-selection .first-item {
+    margin-left: 0;
+}
+
+.num-selection .auto-width {
+    width: auto;
+    padding: 0 24rpx;
+}
+
+.num-item-wrap {
+    position: relative;
+    margin: 0 0 24rpx 24rpx;
+}
+
+.lesson-four {
+    width: 552rpx;
+}
+
+.lesson-four .num-item-wrap:first-child {
+    margin-left: 0;
+}
+
+.lesson-more-four {
+    width: 432rpx;
+    flex-wrap: wrap;
+}
+
+.discounts {
+    position: absolute;
+    z-index: 3;
+    left: -15rpx;
+    top: -30rpx;
+    width: 55rpx;
+    height: 40rpx;
+}
+
+.first-tip {
+    position: absolute;
+    z-index: 3;
+    left: -15rpx;
+    top: -30rpx;
+    width: 84rpx;
+    height: 40rpx;
+}
+
+.triangle-icon {
+    position: absolute;
+    z-index: 1;
+    left: -15rpx;
+    top: 3rpx;
+    width: 17rpx;
+    height: 16rpx;
+}
+
+.triangle-icon-top-2 {
+    top: 2rpx;
+    left: -16rpx;
+}

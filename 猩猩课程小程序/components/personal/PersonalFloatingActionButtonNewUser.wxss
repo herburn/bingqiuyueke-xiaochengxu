@@ -1,0 +1,26 @@
+.new-user-prompt {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: fixed;
+    right: 32rpx;
+    bottom: 170rpx;
+    z-index: 701;
+    width: 88rpx;
+    height: 88rpx;
+}
+
+.new-user-prompt .icon-container {
+    width: inherit;
+    height: inherit;
+}
+
+.new-user-prompt .fixed-prompt-icon {
+    width: 100%;
+    height: 100%;
+}

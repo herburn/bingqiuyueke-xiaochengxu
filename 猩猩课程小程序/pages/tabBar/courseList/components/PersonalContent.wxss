@@ -1,0 +1,93 @@
+.divider {
+    position: relative;
+    width: 702rpx;
+    height: 2rpx;
+    background: #333;
+}
+
+.divider::after {
+    position: absolute;
+    bottom: 0;
+    left: 24rpx;
+    width: 678rpx;
+    height: 2rpx;
+    background: rgba(118,118,120,0.1);
+    content: "";
+}
+
+.personal-list {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 702rpx;
+    margin: 0 auto;
+    padding-bottom: 48rpx;
+}
+
+.personal-list .content-list {
+    width: 100%;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.personal-list .one-box .schedules {
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.personal-list .one-box .schedules-item {
+    position: relative;
+}
+
+.personal-list .one-box .schedules-item:last-of-type .divider {
+    display: none;
+}
+
+.personal-list .info-row {
+    padding: 24rpx 0;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.personal-list .info-row .box-name {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex: 1;
+    height: 39rpx;
+    line-height: 39rpx;
+}
+
+.personal-list .info-row .open-map {
+    font-size: 26rpx;
+    color: #767678;
+    height: 36rpx;
+    line-height: 36rpx;
+}
+
+.personal-list .bottom-slogan {
+    font-size: 28rpx;
+    color: #767678;
+    width: 648rpx;
+    height: 39rpx;
+    margin: 0 auto;
+    padding: 48rpx 0;
+    line-height: 39rpx;
+}
+
+.no-data {
+    width: 100%;
+    padding-top: 40rpx;
+}

@@ -1,0 +1,7 @@
+{
+    "publicComponents": {
+        "video": "component/video/video",
+        "live": "component/live/live"
+    },
+    "main": "component/txv-context.js"
+}

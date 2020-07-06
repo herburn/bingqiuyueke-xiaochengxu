@@ -1,0 +1,7 @@
+<view class="user-guide">
+    <view class="mask" style="top: {{totalNavHeight}}px" wx:if="{{popupPackageRecomme}}">
+        <view bindtap="toClassBag" class="user-guide-strong"></view>
+        <view bindtap="close" class="close"></view>
+    </view>
+    <navigator class="user-guide-weak" url="/app/packages/classBag/list/list" wx:if="{{floatPackageRecomme&&!popupPackageRecomme}}"></navigator>
+</view>

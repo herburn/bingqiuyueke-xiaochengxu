@@ -1,0 +1,41 @@
+<view class="wait-selector">
+    <view class="current-waiting">
+        <view class="total-count">
+            <text>当前等位人数</text>
+            <text class="count">{{preWaitInfo.totalWaitingCount}}</text>
+        </view>
+        <view class="waiting-success-rate">
+            <text>等位成功率 </text>
+            <text class="rate">{{preWaitInfo.waitingSuccessRatio}}</text>
+        </view>
+        <view class="pay-tips">
+            <view class="des">有空位自动付款约课，等不到位不扣款</view>
+            <view class="des">等位可以随时取消</view>
+        </view>
+    </view>
+    <view class="selector-info">
+        <view class="title-wrap">
+            <view class="title"> 支付选择</view>
+            <view class="subtitle" wx:if="{{preWaitInfo.availableCount&&preWaitInfo.consumCount}}">课包剩余 <text>{{preWaitInfo.availableCount}}  </text>个，本次消耗 <text>{{preWaitInfo.consumCount}}  </text>个</view>
+        </view>
+        <view bindtap="selectPayment" class="payment {{item.payType==currentPayment.payType?'selected':''}} {{item.availableStatus==1||item.payType==2?'':'forbid'}}" data-payment="{{item}}" wx:for="{{preWaitInfo.availablePayment}}" wx:key="{{ index }}">
+            <image class="icon" mode="aspectFit" src="{{item.icon}}"></image>
+            <view class="title">{{item.title}}</view>
+            <view class="des">{{item.description}}</view>
+        </view>
+        <view class="pay-wrap {{iphonex?'iphonex':''}} {{canSubmit?'':'disabled'}}">
+            <form bindsubmit="preCreateWaiting" reportSubmit="true">
+                <button class="button" formType="submit">
+                    <block wx:if="{{canSubmit}}">
+                        <text wx:if="{{currentPayment.payType==2&&currentPayment.availableStatus==-1}}">开通微信免密，加入等位</text>
+                        <text wx:else>一键加入等位</text>
+                    </block>
+                    <block wx:else>
+                        <image class="loading-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/04/16/18/1555409028587_48x48.png"></image>
+                        <text>处理中</text>
+                    </block>
+                </button>
+            </form>
+        </view>
+    </view>
+</view>

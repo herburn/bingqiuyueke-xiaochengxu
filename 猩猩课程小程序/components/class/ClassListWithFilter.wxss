@@ -1,0 +1,18 @@
+.bottom-text {
+    display: flex;
+    padding: 0;
+}
+
+.class-filter-content {
+    width: 100%;
+    height: 100%;
+}
+
+.class-filter-content .filter-item {
+    display: none;
+    height: 100%;
+}
+
+.class-filter-content .filter-item-active {
+    display: block;
+}

@@ -1,0 +1,27 @@
+<view catchtouchmove="_proxy" class="booking-number-dialog" data-wpy-evt="1219-0">
+    <view class="panel">
+        <view class="title">预约编号</view>
+        <view class="row trainer">
+            <face bind_init="_initComponent" class="face" face="{{bookingNumberInfo.trainer.face}}" size="small"></face>
+            <view class="content">
+                <view class="label">{{bookingNumberInfo.trainer.name}}</view>
+                <view class="tips">请在需要核验报名信息时，出示此页面给教练</view>
+            </view>
+        </view>
+        <view class="row time">
+            <view class="label">当前时间:</view>
+            <view class="value">{{currentTime}}</view>
+        </view>
+        <view class="row person">
+            <view class="label">预约人数:</view>
+            <view class="value">{{bookingNumberInfo.bookingNumbers.length}}人</view>
+        </view>
+        <view class="row number">
+            <view class="label">预约编号:</view>
+        </view>
+        <view class="number-img">
+            <view class="img" wx:for="{{bookingNumberInfo.bookingNumbers}}" wx:for-item="number" wx:key="index">{{number}}</view>
+        </view>
+        <view bindtap="_proxy" class="btn" data-wpy-evt="1219-1" hoverClass="btn-primary-hover-class">关闭</view>
+    </view>
+</view>

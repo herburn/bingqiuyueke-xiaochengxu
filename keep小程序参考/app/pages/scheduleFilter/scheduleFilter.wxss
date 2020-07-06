@@ -1,0 +1,97 @@
+page {
+    background: #fff;
+}
+
+.course-screen {
+    padding: 0 0 150rpx 28rpx;
+}
+
+.course-screen.iphonex {
+    padding-bottom: 200rpx;
+}
+
+.course-screen .screen-head {
+    font-size: 32rpx;
+    color: #333;
+    padding-top: 16rpx;
+    line-height: 45rpx;
+    font-weight: bold;
+}
+
+.course-screen .screen-title {
+    font-size: 28rpx;
+    color: #666;
+    padding-top: 36rpx;
+    line-height: 40rpx;
+}
+
+.time {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.time>view {
+    font-size: 24rpx;
+    color: #584f60;
+    text-align: center;
+    background: #f2f2f2;
+    border: 1rpx solid #f2f2f2;
+    border-radius: 100rpx;
+    margin: 24rpx 24rpx 0 0;
+    box-sizing: border-box;
+    width: 215rpx;
+    height: 54rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.time>view.selected {
+    color: #24c789;
+    background: #e9faf3;
+    border: 1rpx solid #24c789;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    height: 124rpx;
+}
+
+.btn view {
+    margin: 0 8rpx;
+    text-align: center;
+    width: 340rpx;
+    line-height: 69rpx;
+    box-sizing: border-box;
+    border: 1rpx solid #24c789;
+    border-radius: 68rpx;
+    font-size: 28rpx;
+}
+
+.btn view:first-child {
+    color: #24c789;
+}
+
+.btn view:last-child {
+    color: #fff;
+    background: #24c789;
+}
+
+.btn view:last-child.gray {
+    background: #70e0ae;
+    border-color: #70e0ae;
+}
+
+.iphonex .btn {
+    padding-bottom: 68rpx;
+}

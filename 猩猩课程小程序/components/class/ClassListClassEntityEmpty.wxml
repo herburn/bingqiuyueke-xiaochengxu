@@ -1,0 +1,3 @@
+<view class="class-empty" wx:if="{{emptyReason!=='已结束'}}">{{emptyReason}}</view>
+<view bindtap="_proxy" class="class-empty" data-wpy-evt="1222-0" wx:else>今日课程已结束，点击查看已结束课程<view class="iconfont icon-arrow-right"></view>
+</view>

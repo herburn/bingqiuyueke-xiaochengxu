@@ -1,0 +1,80 @@
+<navigatorBar></navigatorBar>
+<view class="container" wx:if="{{waitingInfo}}">
+    <navigator class="course-card {{waitingInfo.scheduleHeadDetail.coachInfos.length>1?'multi-coach':''}}" hoverClass="none" url="/app/pages/courseDetail/courseDetail?courseBaseId={{waitingInfo.scheduleHeadDetail.courseBaseId}}&scheduleId={{scheduleId}}">
+        <image class="course-cover keep-course-cover-placeholder keep-course-cover-mark" mode="aspectFill" src="{{waitingInfo.scheduleHeadDetail.courseCover+'?imageMogr2/thumbnail/750x/quality/95'}}"></image>
+        <view class="info-wrap">
+            <view class="gym-coach">
+                <text>{{waitingInfo.scheduleHeadDetail.gymName}}</text>
+                <text wx:if="{{waitingInfo.scheduleHeadDetail.coachInfos.length==1}}">{{waitingInfo.scheduleHeadDetail.coachInfos[0].name}}</text>
+            </view>
+            <view class="gym-coach all-coach" wx:if="{{waitingInfo.scheduleHeadDetail.coachInfos.length>1}}">
+                <block wx:for="{{waitingInfo.scheduleHeadDetail.coachInfos}}" wx:key="{{ index }}">
+                    <text>{{item.name}}</text>
+                    <text wx:if="{{index!=waitingInfo.scheduleHeadDetail.coachInfos.length-1}}">、</text>
+                </block>
+            </view>
+            <view class="course-time">{{waitingInfo.scheduleHeadDetail.formatTimeRange}}</view>
+            <view class="course-name keep-text-overflow">{{waitingInfo.scheduleHeadDetail.scheduleName}}</view>
+        </view>
+        <view class="count-down" wx:if="{{waitingInfo.status!=1&&waitingInfo.showCountdown}}">
+            <view class="tip">距离开始</view>
+            <view class="count">{{waitingInfo.countdownStr}}</view>
+        </view>
+    </navigator>
+    <view class="waiting-cancel" wx:if="{{waitingInfo.status==1}}">
+        <image class="icon" mode="aspectFit" src="https://static1.keepcdn.com/2018/12/10/15/1544428030473_291x290.png"></image>
+        <view class="status">等位已取消</view>
+        <view class="description">继续参加训练，再接再厉哦</view>
+    </view>
+    <block wx:else>
+        <view class="waiting-status" style="padding-top: {{waitingInfo.scheduleHeadDetail.coachInfos.length>1?'130rpx':'150rpx'}}">
+            <block wx:if="{{waitingInfo.status==0}}">
+                <view class="tips" wx:if="{{waitingInfo.payType==7&&waitingInfo.availableStatus==0}}">
+                    <view class="warn-icon"></view>
+                    <text>课包余量不足，无法正常扣款，将导致等位失败</text>
+                </view>
+                <view class="status">等位中</view>
+                <view class="position">
+                    <text>第</text>
+                    <text class="count"> {{waitingInfo.currentWaitingPosition}} </text>
+                    <text>位/共 {{waitingInfo.totalWaitingCount}} 位</text>
+                </view>
+                <view class="pay-type">
+                    <text>付款方式：</text>
+                    <text wx:if="{{waitingInfo.payType==2}}">微信支付</text>
+                    <text wx:elif="{{waitingInfo.payType==7}}">课包支付</text>
+                </view>
+            </block>
+            <block wx:elif="{{waitingInfo.status==3}}">
+                <image class="fail-icon" mode="aspectFit" src="/app/images/icon_failure.png"></image>
+                <view class="status">等位失败</view>
+                <view class="fail-reason">原因：{{waitingInfo.failReason}}</view>
+            </block>
+            <view class="description" wx:if="{{waitingInfo.description&&!waitingInfo.newUser}}">{{waitingInfo.description}}</view>
+        </view>
+        <view class="bottom-option {{waitingInfo.newUser?'bottom-option-new-user':''}}">
+            <navigator class="button buy" hoverClass="none" url="/app/packages/classBag/list/list?opened_from=0" wx:if="{{waitingInfo.payType==7&&waitingInfo.availableStatus==0}}">补充课包</navigator>
+            <view bindtap="cancel" class="button border" wx:if="{{waitingInfo.status==0}}">取消等位</view>
+            <navigator class="button border" hoverClass="none" url="/app/pages/courseConfirm/courseConfirm?scheduleId={{scheduleId}}" wx:elif="{{waitingInfo.status==3&&!waitingInfo.scheduleUrgentOffline}}">重新等位</navigator>
+            <view class="canceltime-selector-box" wx:if="{{avaliableTimeList.length}}">{{cancelDateText?cancelDateText+' 自动取消等位':' 担心忘记取消等位？'}}<view bindtap="openPicker" class="canceltime-selector">{{cancelDateText?'修改':'设置取消等位时间'}}</view>
+            </view>
+            <view bindtap="closePicker" class="picker-mask" wx:if="{{showPickerMask}}">
+                <view animation="{{pickerAnimation}}" class="picker-container" style="visibility: {{showPickerMask?'visible':'hidden'}}">
+                    <view class="picker-header">
+                        <view bindtap="closePicker" class="picker-cancel">取消</view>
+                        <view class="picker-desc">设置取消等位时间</view>
+                        <view bindtap="confirmPicker" class="picker-confirm">确定</view>
+                    </view>
+                    <view class="picker-body">
+                        <picker-view bindchange="pickerValueChange" indicatorStyle="height:70rpx;text-align:center;font-size:46rpx;color:#333333" style="width:100%;height:432rpx;" value="{{[selectedIndex]}}">
+                            <picker-view-column>
+                                <view style="text-align:center" wx:for="{{avaliableTimeList}}" wx:key="{{index}}">{{item.value||item}}</view>
+                            </picker-view-column>
+                        </picker-view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <navigator class="new-user-guide" url="/app/packages/activity/newUser/newUser" wx:if="{{waitingInfo.newUser}}"></navigator>
+    </block>
+</view>

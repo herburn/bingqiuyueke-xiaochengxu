@@ -1,0 +1,51 @@
+<view class="class-evaluate">
+    <award-modal bind_init="_initComponent" class="award-modal" id="award-modal">
+        <view class="award-content" slot="content">
+            <image class="top-img" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/evaluate/succes-modal-top.png"></image>
+            <view class="row">评价成功，感谢您的反馈！</view>
+            <view class="row second-row">已获得{{awardSuper}}点super值</view>
+        </view>
+    </award-modal>
+    <view class="evaluate-outdated" wx:if="{{evaluateStatus===3}}">
+        <image class="cry-img" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/page-status-icon/outdated.png"></image>
+        <view class="title">本课程评价已过期</view>
+        <view class="tips">目前无法进行课程评价了哟</view>
+    </view>
+    <view class="evaluate-box" wx:if="{{showEvaluateBox}}">
+        <view class="title-row">
+            <view class="title">课程评价</view>
+            <view class="tips" wx:if="{{evaluateStatus===1}}">{{evaluateTips}}</view>
+        </view>
+        <view class="overall-row question-row">
+            <view class="desc">您对本次服务的整体满意度</view>
+            <view class="scores-row">
+                <image bindtap="_proxy" class="score-img" data-wpy-evt="1068-0" data-wpytap-a="{{index}}" src="{{img}}" wx:for="{{totalScoreImgs}}" wx:for-item="img" wx:key="index"></image>
+            </view>
+        </view>
+        <view class="evaluate-content" style="{{questionBoxStyle}};">
+            <view class="question-row {{[question.tagRowShow?'tag-row-show':'']}}" wx:for="{{questionComments}}" wx:for-item="question" wx:key="extId">
+                <view class="desc">{{question.title}}</view>
+                <view class="scores-row">
+                    <image bindtap="_proxy" class="score-img" data-wpy-evt="1068-1" data-wpytap-a="{{idx}}" data-wpytap-b="{{item}}" src="{{item.img}}" wx:for="{{question.scoreImgs}}" wx:for-index="idx" wx:key="idx"></image>
+                </view>
+                <view class="tag-row">
+                    <view class="desc optional">{{question.subTitle}}</view>
+                    <view class="tags">
+                        <view bindtap="_proxy" class="tag {{[tag.active?'active':'']}}" data-wpy-evt="1068-2" data-wpytap-a="{{tag}}" wx:for="{{question.tags}}" wx:for-index="tagIdx" wx:for-item="tag" wx:key="tagIdx">
+              {{tag.name}}
+            </view>
+                    </view>
+                </view>
+            </view>
+            <view class="question-row suggestion" wx:if="{{suggestionBoxShow}}">
+                <view class="desc optional" wx:if="{{evaluateStatus===2&&suggestionResult!==''}}">{{evaluateData.template.suggestTitle}}</view>
+                <textarea bindinput="_proxy" class="suggestion-input" data-wpy-evt="1068-3" disabled="{{suggestionDisabled}}" maxlength="200" placeholder="{{suggestionPlaceHoler}}" placeholderStyle="color:#767678;" value="{{suggestionResult}}"></textarea>
+            </view>
+            <view class="submit-area" wx:if="{{evaluateStatus===1}}">
+                <view bindtap="_proxy" class="submit-btn {{[!canSubmit?'submit-btn-disable':'']}}" data-order-id-se="{{nOrderId}}" data-region-id-se="classEvaluationSubmitBtn" data-template-type-se="{{templateType}}" data-wpy-evt="1068-4" id="submitBtn">提交</view>
+                <view class="tips">提交后不可修改哦～</view>
+            </view>
+        </view>
+    </view>
+    <image hidden class="hidden-score" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/evaluate/star_active.png"></image>
+</view>

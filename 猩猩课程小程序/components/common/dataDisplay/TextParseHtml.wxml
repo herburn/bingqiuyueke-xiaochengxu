@@ -1,0 +1,10 @@
+<view class="filter-text" style=" {{'color:'+fontColor+';'}}">
+    <view class="filter-text" wx:for="{{filterData}}" wx:for-item="filterItem" wx:key="index">
+        <block wx:for="{{filterItem}}" wx:key="index">
+            <slot name="indexName"></slot>
+            <text bindtap="_proxy" data-wpy-evt="1079-0" data-wpytap-a="{{item}}" wx:if="{{item.isUrl}}">《<text class="link-style">{{item.content}}</text>》
+        </text>
+            <text wx:else>{{item.content}}</text>
+        </block>
+    </view>
+</view>

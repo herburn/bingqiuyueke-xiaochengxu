@@ -1,0 +1,43 @@
+.mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+    animation: fadeIn 0.6s 0.6s both;
+}
+
+.mask .user-guide-strong {
+    position: fixed;
+    width: 580rpx;
+    height: 580rpx;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: url("https://static1.keepcdn.com/2019/07/11/12/1562817756651_580x580.png") no-repeat center;
+    background-size: cover;
+}
+
+.mask .close {
+    display: block;
+    width: 64rpx;
+    height: 64rpx;
+    background: url("https://static1.keepcdn.com/2018/08/01/11/1533095496576_64x64.png") no-repeat center;
+    background-size: 64rpx;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 265rpx;
+}
+
+.user-guide-weak {
+    width: 170rpx;
+    height: 170rpx;
+    position: fixed;
+    right: 0;
+    bottom: 234rpx;
+    z-index: 2;
+    background: url("https://static1.keepcdn.com/2019/07/11/14/1562825410808_170x170.png") no-repeat center;
+    background-size: cover;
+}

@@ -1,0 +1,1822 @@
+page {
+    background-color: #fff;
+}
+
+.container {
+    padding: 28rpx 28rpx 0;
+}
+
+.to-publish-tips {
+    position: fixed;
+    left: 0;
+    z-index: 17;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 112rpx;
+    background-color: #fff;
+    box-shadow: 0 8rpx 20rpx 0 rgba(0,0,0,0.05);
+}
+
+.to-publish-tips .text {
+    margin-left: 28rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.to-publish-tips .button {
+    margin-right: 28rpx;
+    width: 136rpx;
+    height: 56rpx;
+    line-height: 56rpx;
+    border-radius: 56rpx;
+    background-image: linear-gradient(135deg,#24c7af 0%,#24c789 100%);
+    box-shadow: 0 8rpx 24rpx 0 rgba(36,199,137,0.2);
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.camp-card {
+    height: 252rpx;
+    padding: 0 28rpx;
+    margin-bottom: 20rpx;
+    background-image: url("https://static1.keepcdn.com/2019/11/22/10/1574391517230_1041x378.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.camp-card .camp-coach-info {
+    padding: 24rpx 0;
+    display: flex;
+    align-items: center;
+}
+
+.camp-card .camp-coach-info .coach-name {
+    display: flex;
+    align-items: center;
+    margin-left: 8rpx;
+    font-size: 26rpx;
+    font-weight: bold;
+    color: rgba(255,255,255,0.8);
+}
+
+.camp-card .camp-coach-info .coach-name .name {
+    display: block;
+    max-width: 240rpx;
+    margin-right: 12rpx;
+}
+
+.camp-card .camp-info-card {
+    height: 128rpx;
+    padding: 0 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.camp-card .camp-info-card .camp-info {
+    flex: 1;
+    overflow: hidden;
+    margin-right: 20rpx;
+}
+
+.camp-card .camp-info-card .camp-name {
+    line-height: 40rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #000;
+}
+
+.camp-card .camp-info-card .count-place {
+    line-height: 32rpx;
+    margin-top: 16rpx;
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.5);
+}
+
+.camp-card .camp-info-card .count-place .line {
+    display: inline-block;
+    margin: 0 12rpx;
+    transform: translateY(2rpx);
+    width: 2rpx;
+    height: 21rpx;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.training-data {
+    margin-bottom: 24rpx;
+    padding-bottom: 54rpx;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.1);
+    border-radius: 8rpx;
+}
+
+.training-data .course {
+    position: relative;
+    width: 694rpx;
+    height: 280rpx;
+    border-radius: 8rpx 8rpx 0 0;
+    overflow: hidden;
+}
+
+.training-data .course.multi-coach {
+    height: 310rpx;
+}
+
+.training-data .course.multi-coach .gym-coach {
+    margin-top: 8rpx;
+}
+
+.training-data .course.multi-coach .gym-coach.multi text {
+    margin: 0 10rpx;
+}
+
+.training-data .course .cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.training-data .course .info-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(88,79,96,0.6);
+    text-align: center;
+    color: #fff;
+}
+
+.training-data .course .info-wrap .time {
+    margin-top: 38rpx;
+    line-height: 42rpx;
+    font-size: 30rpx;
+}
+
+.training-data .course .info-wrap .name {
+    margin-top: 4rpx;
+    line-height: 67rpx;
+    font-size: 48rpx;
+    letter-spacing: -1.22rpx;
+}
+
+.training-data .course .info-wrap .gym-coach {
+    margin-top: 12rpx;
+    font-size: 26rpx;
+    line-height: 37rpx;
+    white-space: nowrap;
+}
+
+.training-data .course .info-wrap .gym-coach text {
+    margin: 0 20rpx;
+}
+
+.training-data .user-info {
+    position: relative;
+    z-index: 2;
+    margin-top: -31rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.training-data .user-info .avatar-wrap {
+    width: 116rpx;
+    height: 116rpx;
+}
+
+.training-data .user-info .avatar-wrap .avatar {
+    display: block;
+    width: 100rpx;
+    height: 100rpx;
+    border: 8rpx solid #fff;
+    border-radius: 50%;
+}
+
+.training-data .user-info .avatar-wrap:before {
+    top: -6rpx;
+}
+
+.training-data .user-info .name-wrap {
+    margin-top: 13rpx;
+    display: flex;
+    align-items: center;
+}
+
+.training-data .user-info .name {
+    line-height: 45rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.training-data .user-info .month-demon-wrap {
+    margin-top: 23rpx;
+    height: 42rpx;
+    display: flex;
+}
+
+.training-data .motto {
+    padding: 0rpx 68rpx 30rpx;
+    color: #999;
+}
+
+.training-data .user-data {
+    padding: 28rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.training-data .user-data view {
+    font-size: 20rpx;
+    color: #333;
+}
+
+.training-data .user-data view .name {
+    color: #999;
+    margin-bottom: 12rpx;
+}
+
+.training-data .user-data view .count {
+    font-family: Keep;
+    position: relative;
+    top: 6rpx;
+    margin: 0 6rpx;
+    line-height: 60rpx;
+    font-size: 54rpx;
+    color: #333;
+}
+
+.training-data .user-data.co-with-adi {
+    margin-bottom: -2rpx;
+    padding: 52rpx 139rpx 0rpx;
+}
+
+.training-data .user-data.co-with-adi .totalTraining,.training-data .user-data.co-with-adi .time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.training-data .user-data.co-with-adi .totalTraining .name,.training-data .user-data.co-with-adi .time .name {
+    margin-bottom: 11rpx;
+    align-self: flex-end;
+}
+
+.training-data .user-data.co-with-adi .totalTraining view,.training-data .user-data.co-with-adi .time view {
+    display: flex;
+}
+
+.training-data .user-data.co-with-adi .totalTraining view .unit,.training-data .user-data.co-with-adi .time view .unit {
+    align-self: flex-end;
+    margin-bottom: 11rpx;
+}
+
+.training-data .cooperate .title {
+    padding: 38rpx 0 24rpx 84rpx;
+    line-height: 48rpx;
+    font-size: 24rpx;
+    color: #666;
+    background: url("https://static1.keepcdn.com/2019/01/24/15/1548314136043_48x48.png") no-repeat 28rpx 38rpx;
+    background-size: 48rpx 48rpx;
+}
+
+.training-data .cooperate .title navigator {
+    float: right;
+    color: #584f60;
+    padding-right: 28rpx;
+    text-decoration: underline;
+}
+
+.training-data .cooperate .image-view {
+    padding-top: 50rpx;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url("https://static1.keepcdn.com/2019/01/24/15/1548314370744_530x530.png") no-repeat center;
+    background-size: 530rpx;
+}
+
+.training-data .cooperate .image-view image {
+    width: 260rpx;
+    display: block;
+    border-radius: 8rpx;
+    box-shadow: 0 0 16rpx 1rpx #d8d8d8;
+}
+
+.training-data .cooperate .image-view view {
+    font-size: 24rpx;
+    color: #666;
+    padding-top: 28rpx;
+}
+
+.training-data .heart-rate .title {
+    padding: 38rpx 0 24rpx 84rpx;
+    line-height: 48rpx;
+    font-size: 24rpx;
+    color: #666;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAMAAABiM0N1AAAAZlBMVEUAAABYT2BZUGFmX2pYT2BcUGRZUGJaUGJ6a3pZT2FZT2FZUGFdV2ZeUmVZUGBaUWNbUmNZUGFZT2BZUGFYT2BZUGFZT2BcUmRZT2FZT2FZUGFYUGFZT2FZUGFaUGJZT2BYT2FYT2DOpoiOAAAAIXRSTlMA+b8K3kBmOQWzn3ARHFkwKIKsi+XSpCDXTZPsxnlH8ckXedjNAAACcElEQVRYw+2X23LqMAxFLTuNc09IyI0UqP7/Jw+2CcF2HEx7ZtqHrAeYEbBlaQsjyM7Ozu+Slbxneoj1vMzeEulTCihoGz7HeNPKENC095TJE8CFz4uIXT5xAZLcRycF1OkY64wQpC9logQtgsCOJdELoRglUxeOY9gEml4jYt2Eknhbp0HBMZzz8a9Z5ovPZw6PMtBs6YwqGdNaZjWFqWOPGw0aZPl6sICbTqHHZCMHd5tC6bf5+ti2o5lRTkPoFBINgYp4UIFom3MS7cKqC1mwisu3KtM+WQI6Ru+ianN7D1qHOsTA4QtsTECHxucy8e4PsoqY1c4hRIVnz4Hz0jQL4Rt1CNViOMyseGVkjVZM7oYTV72h04BYOEtLHEIHvMG0EzbnRwERm3k0++QQ4ocb2TJWgFjdHkCOywlw5lgRUjrsdxyQSgfOIgk+kd5nriQW5YfNUbanEAZIPZhpe3VvgW3DGVc5RoSwKyIn3PgSMlg3rV4XOty9PJHYmL7Q0aKqpiucGFHdmcwDkUFUlhEnrom5tavWLjtj5H3dEzwfKAoMz2xi1RqNXsRqy5v49c0HXA9SI30JHjfpSf6C6W0M9fRsQOvrYcNk+Z2hXufataVyvYCD3SZ7eIH7muTcEgpcEnn9/BcOHVCO+cBaefjCrdMyz00rcO1AqVpLcu/VT9s3rF2lJ95USinWPM7ix/3oTz6oIsqneQ5kaMjf3I4pCiB8jDfIAM3Im7D7ZUdzeUKKktryy3+9vaZRlF7RNtIfHqCkbdVzwMk3ybS7vM7I9ymmWWYqyI/IElD/GjLyU0qKSEvyP+h7srOz81f4B9m4XOGuS9KzAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: 48rpx 48rpx;
+    background-position: 28rpx 38rpx;
+}
+
+.training-data .heart-rate .heart-rate-info {
+    display: -webkit-box;
+    margin: 0 10%;
+    text-align: center;
+}
+
+.training-data .heart-rate .heart-rate-info>view {
+    width: 1%;
+    -webkit-box-flex: 1;
+}
+
+.training-data .heart-rate .heart-rate-info>view .text {
+    margin-bottom: 5rpx;
+    line-height: 33rpx;
+    font-size: 24rpx;
+    color: #584f60;
+}
+
+.training-data .heart-rate .heart-rate-info>view .value {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.training-data .heart-rate .heart-rate-info>view .value .count {
+    margin-right: 4rpx;
+    font-family: Keep;
+    font-size: 56rpx;
+    color: #24c789;
+}
+
+.training-data .heart-rate .chart {
+    display: block;
+    width: 694rpx;
+    height: 660rpx;
+}
+
+.training-data .save-training-data {
+    margin: 20rpx auto 0;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.training-photo {
+    margin-bottom: 24rpx;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.1);
+    border-radius: 8rpx;
+}
+
+.training-photo .title {
+    padding: 28rpx 0 26rpx 84rpx;
+    line-height: 48rpx;
+    font-size: 24rpx;
+    color: #666;
+    background-image: url("https://static1.keepcdn.com/2019/09/23/18/1569233054625_48x48.png");
+    background-repeat: no-repeat;
+    background-size: 48rpx 48rpx;
+    background-position: 28rpx 28rpx;
+}
+
+.training-photo .photo-info {
+    text-align: center;
+}
+
+.training-photo .photo-info .info .text {
+    margin-top: 16rpx;
+    font-size: 28rpx;
+    color: #666;
+    line-height: 40rpx;
+}
+
+.training-photo .photo-info .info .tip {
+    margin-top: 8rpx;
+    padding-bottom: 100rpx;
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+    line-height: 38rpx;
+}
+
+.training-photo .photo-info .copy-account {
+    margin-top: -68rpx;
+    padding-bottom: 54rpx;
+}
+
+.training-photo .photo-info .copy-account-btn {
+    margin: auto;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.training-photo .scroll-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 11rpx 28rpx 48rpx;
+}
+
+.training-photo .scroll-wrap .photo {
+    margin-right: 10rpx;
+}
+
+.training-photo .scroll-wrap .photo:last-child {
+    margin-right: 0;
+    padding-right: 28rpx;
+}
+
+.training-photo .scroll-wrap .photo image {
+    display: block;
+    width: 380rpx;
+    height: 260rpx;
+}
+
+.training-photo .photo-wrapper .photo-likes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24rpx;
+    color: #666;
+    height: 110rpx;
+    padding: 0 28rpx;
+    border-top: 1rpx solid #efefef;
+}
+
+.training-photo .photo-wrapper .photo-likes image {
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.training-photo .photo-wrapper .photo-likes .likes {
+    display: flex;
+    align-items: center;
+}
+
+.training-photo .photo-wrapper .photo-likes .likes image {
+    border-radius: 50%;
+    border: 4rpx solid #fff;
+    display: block;
+    margin-right: -24rpx;
+}
+
+.training-photo .photo-wrapper .photo-likes .likes view {
+    padding-left: 39rpx;
+}
+
+.training-photo .photo-wrapper .photo-likes .likes-btn {
+    display: flex;
+    align-items: center;
+    padding: 15rpx 0 15rpx 52rpx;
+    background: url("https://static1.keepcdn.com/2019/11/15/17/1573811168491_72x72.png") no-repeat center left;
+    background-size: 48rpx;
+}
+
+.training-photo .photo-wrapper .photo-likes .likes-btn.is-likes {
+    background-image: url("https://static1.keepcdn.com/2019/11/19/15/1574147026715_72x72.png");
+    color: #24c789;
+}
+
+.training-rank {
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.1);
+    border-radius: 8rpx;
+}
+
+.training-rank .title {
+    padding: 28rpx 0 26rpx 84rpx;
+    line-height: 48rpx;
+    font-size: 24rpx;
+    color: #666;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABIBAMAAACnw650AAAAKlBMVEUAAABaUGJYUGFaUGRZUGFZUWBZT2BZT2BaUGJYUGFYUGFcUmZYUWJYT2Bm3nPaAAAADXRSTlMAgLMzeUXrpGTFwhmIsRwBngAAALZJREFUSMdjGAWjgIYgRBAIXPGrYb8LBgV4FcVCFF3Fq8gXougKXkWyd5OUlNTuXiSgSIGBgWm4KeLJBYbOTQP8is6CwzAbv6JcsKIb+BVBYuMiIUXNxlaEFRkA5WihCJJEJTbgVQRNosl4FUGT6E28imBJFK8icBLVwqMIzmAeVTQ0FC0ClTjQogdHBMPKLl8UBpqiuZBSEF4cYk10ZpDyFF6wYk2+3I2gkhlRRMMzwigYBVQHAFfGQAVtPXHiAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-size: 48rpx 48rpx;
+    background-position: 28rpx 28rpx;
+}
+
+.training-rank .rank-info .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 44rpx;
+}
+
+.training-rank .rank-info .info .text {
+    line-height: 33rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.training-rank .rank-info .info .rank {
+    line-height: 93rpx;
+    font-size: 78rpx;
+    font-weight: bold;
+    color: #24c789;
+}
+
+.training-rank .rank-info .avatars {
+    padding: 24rpx 38rpx 18rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.training-rank .rank-info .avatars .avatar {
+    flex: none;
+    width: 20%;
+    text-align: center;
+    padding-bottom: 28rpx;
+}
+
+.training-rank .rank-info .avatars image {
+    width: 96rpx;
+    height: 96rpx;
+    border: 6rpx solid #fff;
+    border-radius: 50%;
+}
+
+.training-rank .rank-info .avatars image.self {
+    border: 6rpx solid #24c789;
+}
+
+.training-rank .rank-info .more {
+    height: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.gym-training-rank {
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.1);
+    border-radius: 8px;
+    margin-top: 24rpx;
+    padding: 0 28rpx 30rpx;
+}
+
+.gym-training-rank .title {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAkBJREFUaAXtWLFOG0EQfXNwQSmIiJBi/wBKKBI+IelSYjo3kQxILigQBR2ipItElCaSC4NSABIFRvmC1HSkgYrWh4SEdBIILG4ya2yCVufz3uIcNuxK9t7Mzc6+92b2rDPghlPAKeAUcAo8ZwXIhHyxMPuLGB8ZCAAOQBQQqA7igLg101DgR8P11/7LYH13/dIkby9izAhMlwS7+RByIQh1WXFLGJ4QbtlCOvJQfzXu/6lUKhfmWeMjh+PdD/MyeBSMUckycZspErM11EUEhEHjWK7etd22c2oC5NEnMOVkwxyYc0ycB1o2kBekb6TNRroBEpJvu8WY3E9NYHtv43e3xKXC0tjV0EUeUUNI0j+SHImN+W7r09xPTcAk+Wbt27nEqc+RHl+cLvWUgKdvMGj2wBOwbiFphbsHi6razv6m0SM5rsLlctkPz6JJ3Nx8YMKU/Oa8l2QHW7WN1bj4+z5rAveT2F4XC6WfAnYqPG1MMrPfzCOyKGXk81mm/iYgKL80y8jNbysd+uUMKAYnRKilZWHdQg/p+TZIj2iBPO9wZIwPq9VqqPz62WrHdpqtCXRKmMYvh/RHmvi42H5poThsRj7rCuil7kVLGSHWgga+Ao6AVtHMTesz8Fg9ryvkWkhXJGvbVSBrxfX9XAV0RbK2XQWyVlzfL/E9tjgztwaOluXN6YW+MBObcA3yvu7sVVc67ZfcQsyLjwZeIVbCKQwJI5kA0Xf5k/Y6Yf3/vdWsgGBwwyngFHAKOAWcAk9Vgb+TL5lJkDXYVwAAAABJRU5ErkJggg==");
+    background-size: 48rpx;
+    background-repeat: no-repeat;
+    background-position: left center;
+    font-size: 24rpx;
+    color: #666;
+    line-height: 33rpx;
+    padding: 36rpx 56rpx;
+}
+
+.gym-training-rank .gym-rank-info {
+    box-sizing: border-box;
+    height: 320rpx;
+    padding: 40rpx 28rpx;
+    background-image: url("https://static1.keepcdn.com/2019/01/11/17/1547200033701_638x320.png");
+    background-size: cover;
+    color: #fff;
+    border-radius: 8rpx;
+}
+
+.gym-training-rank .gym-rank-info .rank,.gym-training-rank .gym-rank-info .training-times {
+    display: flex;
+    align-items: center;
+}
+
+.gym-training-rank .gym-rank-info .describe {
+    font-size: 26rpx;
+}
+
+.gym-training-rank .gym-rank-info .number {
+    line-height: 45rpx;
+    font-size: 32rpx;
+    margin-left: 12rpx;
+}
+
+.gym-training-rank .gym-rank-info .gym-name {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.gym-training-rank .gym-rank-info .rank-explanation {
+    font-size: 22rpx;
+    color: #fff;
+    opacity: 0.8;
+    margin-top: 12rpx;
+}
+
+.gym-training-rank .gym-rank-info .rank {
+    margin-top: 57rpx;
+    color: #fff;
+    font-weight: bold;
+}
+
+.gym-training-rank .gym-rank-info .rank .noun-change {
+    margin-left: 14.6rpx;
+    padding-left: 24rpx;
+    font-size: 24rpx;
+}
+
+.gym-training-rank .gym-rank-info .rank .noun-change.rise {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAUZJREFUOBHtU71KxEAQnkliY+WRi3/goSiChYU+QsDWxifw76k8PW0sBBtbQbwX0FIUQUHQO3PxxMLmNhlnFtfbhNzpCXZuszvfX2ZnCUKfFUW7kwmmxyJxyVkLgs3HXnLsRcTx3lQnTc8IaE40CHg75Dih7288FHkKg57atWlUikNgxjax+I48L5word/buJydPNB83Z+FRNXzIaLTGHNakzNmgqK3g3lSnTo7Kjldt2RONKLtgnL1z9Vq7SwoQpnJuMH67TyzhocUlsvbV6LTHTVeaouK4PynIWIUrXjEKzU+t6tLSQKnQOQLMPBCjF0XVpxUwdGvQ+Sr3IBkePwShzyoVdMJ18N8zgzScNZ+w553U7Pn5GvYBtRXVXRh6qLd9XB5tLR1aXOZ57eJQc//Qd9P7O9mFIyMXQOi/n8K+2BOa3LkB+J0d3SG6WIjAAAAAElFTkSuQmCC");
+    background-size: 17.2rpx 17.6rpx;
+    background-repeat: no-repeat;
+    background-position: left center;
+    color: #e7eb9b;
+}
+
+.gym-training-rank .gym-rank-info .rank .noun-change.fall {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAT9JREFUOBHtkj9Lw1AUxe95jSLFTRDRVSod3NwFcXYp/sHZZuqX8Ds4SPQDNIiLs/gJ3BwKRVEERYSsUhBze++LSV6SVltwNEvOPee83wvvBVR62PfrFMW3RNwsRd8jerRgNhAEH25u3MHqyKyNh2hDNrCd4soqqJhPPP2Dfj+qPzsjcKt9TOCdbE+mulxxI5tHCvQJlP9HjCtPIIfEvDqyP9aUjdgJQfOG2NsTK3LsaWWkDOgq3vXXKY6vRS1OR8E7GbONi+DOgixs/6hJX3wjn7w0EQz0RjVsITzvaT8DJbB2I4Hxyo8w4CWBnPXTXuH6EUpQM5sEPKeFylsz6diuExZA6iMMHsjzFPbo9BKpnmS2UworIM3RPX0ib1Zh91lftXg2y8xcFM4otxPFB51l+hxc2mlmroXuyWu5k85DY+lXvkYe4hgAAAAASUVORK5CYII=");
+    background-size: 17.2rpx 17.6rpx;
+    background-repeat: no-repeat;
+    background-position: left center;
+    color: #ff5363;
+}
+
+.gym-training-rank .gym-rank-info .training-times {
+    color: #fff;
+    margin-top: 16rpx;
+    font-weight: bold;
+}
+
+.gym-training-rank .jump-to-tank-list {
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+    margin-top: 31rpx;
+}
+
+.complete {
+    padding-bottom: 50rpx;
+}
+
+.to-publish {
+    margin-top: 24rpx;
+    padding-bottom: 30rpx;
+}
+
+.to-publish .title {
+    padding: 28rpx 28rpx 0rpx 84rpx;
+    background-image: url("https://static1.keepcdn.com/2019/06/12/15/1560323892075_48x48.png");
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.to-publish .title .statu {
+    background: url("https://static1.keepcdn.com/2019/04/04/18/1554372652355_32x32.png") no-repeat left center;
+    font-size: 24rpx;
+    color: #999;
+    background-repeat: no-repeat;
+    height: 33rpx;
+    line-height: 33rpx;
+    background-size: 32rpx 32rpx;
+    padding-left: 40rpx;
+}
+
+.to-publish .star-wrap {
+    background: #fafafa;
+    padding: 20rpx;
+    margin: 32rpx 28rpx 28rpx;
+}
+
+.to-publish .star-wrap .stars {
+    display: flex;
+    padding-right: 34rpx;
+    margin-bottom: 8rpx;
+}
+
+.to-publish .star-wrap .stars .star-img {
+    width: 27rpx;
+    height: 27rpx;
+    margin-right: 10rpx;
+}
+
+.to-publish .star-wrap .tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.to-publish .star-wrap .tags-wrap .tags {
+    font-size: 24rpx;
+    color: #24c789;
+    padding: 5rpx 18rpx;
+    border: 1rpx solid #24c789;
+    margin-right: 12rpx;
+    border-radius: 4rpx;
+    margin-top: 12rpx;
+}
+
+.to-publish .publish-content {
+    font-size: 28rpx;
+    color: #333;
+    margin: 28rpx 54rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    word-break: break-all;
+}
+
+.to-publish.show-expirence-seal {
+    background: url("https://static1.keepcdn.com/2019/02/15/14/1550211042081_120x120.png") no-repeat right 27.4rpx top 23rpx;
+    background-size: 120rpx;
+}
+
+.to-publish.show-expirence-seal .title {
+    display: flex;
+}
+
+.to-publish.show-expirence-seal .title .stars {
+    float: left;
+    padding-left: 20rpx;
+}
+
+.to-publish .photo {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 0 0 28rpx 54rpx;
+}
+
+.to-publish .photo image {
+    width: 190rpx;
+    height: 190rpx;
+    padding-right: 8rpx;
+}
+
+.to-publish .photo image:nth-child(3n+3) {
+    padding-right: 0;
+}
+
+.to-publish .photo .pic-count {
+    position: absolute;
+    bottom: 60rpx;
+    right: 66rpx;
+    background: rgba(0,0,0,0.4);
+    text-align: center;
+    line-height: 32rpx;
+    border-radius: 4rpx;
+    padding: 5rpx 10rpx;
+    color: #fff;
+    font-size: 24rpx;
+}
+
+.coupon_share {
+    position: fixed;
+    top: 868rpx;
+    right: 0;
+    z-index: 2;
+    border: none;
+    border-radius: 0;
+    width: 132rpx;
+    height: 246rpx;
+    background-color: transparent;
+    background-image: url("https://static1.keepcdn.com/2018/05/07/19/1525692257794_132x246.png");
+    background-size: 132rpx 246rpx;
+    background-repeat: no-repeat;
+}
+
+.coupon_share:after {
+    border: none;
+}
+
+.course-info {
+    position: relative;
+    margin-bottom: 24rpx;
+    width: 694rpx;
+    height: 250rpx;
+    border-radius: 8rpx;
+    overflow: hidden;
+}
+
+.course-info.multi-coach {
+    height: 270rpx;
+}
+
+.course-info.multi-coach .gym-coach.multi {
+    margin-top: 4rpx;
+}
+
+.course-info.multi-coach .gym-coach.multi text {
+    margin-right: 0;
+}
+
+.course-info.multi-coach .course-time {
+    margin-top: 27rpx;
+}
+
+.course-info .course-cover {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.course-info .course-cover:after {
+    background-image: none;
+    background-color: #584f60;
+    opacity: 0.7;
+}
+
+.course-info .info-wrap {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 28rpx;
+    right: 28rpx;
+    color: #fff;
+}
+
+.course-info .gym-coach {
+    margin-top: 28rpx;
+    line-height: 37rpx;
+    font-size: 26rpx;
+    white-space: nowrap;
+}
+
+.course-info .gym-coach text {
+    margin-right: 32rpx;
+}
+
+.course-info .course-time {
+    margin-top: 48rpx;
+    line-height: 42rpx;
+    font-size: 30rpx;
+}
+
+.course-info .course-name {
+    margin-top: 4rpx;
+    line-height: 67rpx;
+    font-size: 48rpx;
+    font-weight: bold;
+}
+
+.course-info .count-down {
+    position: absolute;
+    top: 0;
+    right: 28rpx;
+    width: 140rpx;
+    height: 100rpx;
+    background-color: #ff5363;
+    box-shadow: 0 -2rpx 4rpx 0 #ff5363;
+    border-radius: 0 0 8rpx 8rpx;
+    overflow: hidden;
+    text-align: center;
+    color: #fff;
+}
+
+.course-info .count-down .tip {
+    margin-top: 14rpx;
+    line-height: 37rpx;
+    font-size: 26rpx;
+}
+
+.course-info .count-down .count {
+    line-height: 36rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.multi-ticket {
+    position: relative;
+    margin-bottom: 24rpx;
+    padding-bottom: 52rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.multi-ticket .title {
+    padding-top: 58rpx;
+    padding-bottom: 34rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.multi-ticket .title text {
+    display: block;
+    line-height: 32rpx;
+}
+
+.multi-ticket .users {
+    display: flex;
+}
+
+.multi-ticket .users .user-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.multi-ticket .users .user-wrap .avatar-wrap {
+    position: relative;
+}
+
+.multi-ticket .users .user-wrap .avatar {
+    display: block;
+    width: 80rpx;
+    height: 80rpx;
+    border: 6rpx solid transparent;
+    border-radius: 50%;
+}
+
+.multi-ticket .users .user-wrap .avatar.self {
+    border: 6rpx solid #24c789;
+}
+
+.multi-ticket .users .user-wrap .accept {
+    position: absolute;
+    bottom: 2rpx;
+    right: -15rpx;
+    display: block;
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.multi-ticket .users .user-wrap .name {
+    margin-top: 6rpx;
+    line-height: 37rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.multi-ticket .users .user-wrap .name.empty {
+    color: #999;
+}
+
+.multi-ticket .users.double .user-block {
+    flex: 1;
+}
+
+.multi-ticket .users.double .user-block .inviter {
+    float: right;
+}
+
+.multi-ticket .users.double .user-block .invitee {
+    float: left;
+}
+
+.multi-ticket .users.double .spacing {
+    margin-top: 34rpx;
+    width: 94rpx;
+    height: 24rpx;
+}
+
+.multi-ticket .users.double .spacing .transfer-arrow {
+    display: block;
+    margin: 0 auto;
+    width: 42rpx;
+    height: 24rpx;
+}
+
+.multi-ticket .users.multi {
+    justify-content: space-around;
+}
+
+.multi-ticket .share-btn {
+    margin: 45rpx auto 0;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+}
+
+.multi-ticket .corner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 94rpx;
+    height: 94rpx;
+}
+
+.course-option {
+    box-sizing: border-box;
+    border-radius: 8rpx;
+    box-shadow: 0 0 20rpx 0 rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.course-option.card {
+    padding: 60rpx 28rpx;
+}
+
+.course-option.cancel-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 302rpx;
+    padding: 0 56rpx;
+}
+
+.course-option.cancel-card .des {
+    margin-top: 28rpx;
+    line-height: 44rpx;
+}
+
+.course-option .tip {
+    line-height: 50rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.course-option .tip text {
+    color: #151515;
+    font-weight: bold;
+    padding: 0 12rpx;
+}
+
+.course-option .btn {
+    margin: 42rpx auto 0;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.course-option .btn.disabled {
+    opacity: 0.5;
+}
+
+.course-option .des {
+    margin-top: 36rpx;
+    line-height: 38rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.course-option .des.text-center {
+    text-align: center;
+}
+
+.course-option .success-without-heart-tap {
+    padding: 62rpx 0 70rpx;
+    text-align: center;
+}
+
+.course-option .success-without-heart-tap .icon-mark {
+    width: 112rpx;
+    height: 112rpx;
+}
+
+.course-option .success-without-heart-tap .desp {
+    padding-top: 8rpx;
+    font-size: 36rpx;
+    color: #333;
+    line-height: 50rpx;
+}
+
+.sub-tip {
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+    line-height: 34rpx;
+    padding-top: 60rpx;
+}
+
+.bind-wristband {
+    padding: 60rpx 0;
+    border-radius: 8rpx;
+}
+
+.bind-wristband .title {
+    line-height: 58rpx;
+    font-size: 42rpx;
+    color: #333;
+    text-align: center;
+}
+
+.bind-wristband .pic-tip {
+    display: block;
+    margin: 50rpx auto 0;
+    width: 690rpx;
+    height: 372rpx;
+}
+
+.bind-wristband .wristband-id {
+    margin: 0 auto;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border: 1rpx solid rgba(51,51,51,0.2);
+    border-radius: 100rpx;
+    text-align: center;
+    font-size: 36rpx;
+    color: #333;
+}
+
+.bind-wristband .btn {
+    margin: 32rpx auto 0;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.bind-wristband .btn.disabled {
+    opacity: 0.5;
+}
+
+.bind-wristband .sub-tip {
+    transform: translateY(-30rpx);
+}
+
+.ready-btn {
+    background: #24c789;
+    border-radius: 100rpx;
+    width: 556rpx;
+    line-height: 100rpx;
+    margin: 60rpx auto 0;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.change-band {
+    font-size: 26rpx;
+    color: #666;
+    text-align: center;
+    line-height: 36rpx;
+    padding-top: 30rpx;
+    margin-top: 30rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-band text {
+    margin-left: 14rpx;
+    color: #24c789;
+    text-decoration: underline;
+}
+
+.signed-in-success {
+    padding: 60rpx 0;
+    border-radius: 8rpx;
+}
+
+.signed-in-success .signed-info {
+    margin: 0 28rpx;
+}
+
+.signed-in-success .signed-info:after {
+    bottom: 0;
+    height: 4rpx;
+    border-bottom: 4rpx dotted #efefef;
+}
+
+.signed-in-success .signed-info .title {
+    font-size: 48rpx;
+    color: #333;
+    text-align: center;
+}
+
+.signed-in-success .signed-info .title text {
+    display: block;
+    line-height: 67rpx;
+}
+
+.signed-in-success .signed-info .station {
+    margin-top: 32rpx;
+    text-align: center;
+}
+
+.signed-in-success .signed-info .station .text {
+    line-height: 45rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.signed-in-success .signed-info .station .number {
+    display: inline-block;
+    margin-top: 12rpx;
+    width: 60rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #24c789;
+    font-size: 42rpx;
+    font-weight: bold;
+    color: #fff;
+}
+
+.signed-in-success .signed-info .station .room {
+    margin-top: 8rpx;
+    font-size: 44rpx;
+    font-weight: bold;
+    color: #24c789;
+}
+
+.signed-in-success .signed-info .wristband-number {
+    padding: 42rpx 0 60rpx;
+    line-height: 33rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.signed-in-success .pic-tip {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin-top: -56rpx;
+    width: 694rpx;
+    height: 1360rpx;
+}
+
+.signed-in-success .change-wristband {
+    line-height: 37rpx;
+    font-size: 26rpx;
+    color: #666;
+    text-align: center;
+}
+
+.signed-in-success .change-wristband .change {
+    color: #24c789;
+    text-decoration: underline;
+}
+
+.gym-address {
+    padding: 50rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gym-address .info {
+    flex: 1;
+    background: url("https://static1.keepcdn.com/2018/11/08/14/1541657486130_54x54.png") no-repeat center right;
+    background-size: 54rpx;
+}
+
+.gym-address .info .name {
+    display: flex;
+    align-items: center;
+    line-height: 42rpx;
+    font-size: 30rpx;
+    color: #333;
+    padding-left: 40rpx;
+}
+
+.gym-address .info .address {
+    margin-top: 12rpx;
+    line-height: 37rpx;
+    padding-left: 40rpx;
+    width: 600rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 26rpx;
+    color: #999;
+}
+
+.gym-address .icon-map {
+    display: block;
+    width: 72rpx;
+    height: 72rpx;
+}
+
+.show-adidas-register-wrap {
+    margin: 50rpx 0rpx 0rpx;
+    width: 694rpx;
+    height: 140rpx;
+}
+
+.show-adidas-register-wrap .show-adidas-register {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.show-adidas-register-wrap .show-adidas-register image {
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+}
+
+.small-banner {
+    width: 694rpx;
+    margin: 50rpx auto 60rpx;
+}
+
+.small-banner image {
+    width: 694rpx;
+    height: 140rpx;
+    display: block;
+}
+
+.small-banner view {
+    font-size: 24rpx;
+    color: #999;
+    text-align: center;
+    line-height: 34rpx;
+    padding-top: 30rpx;
+}
+
+.purchase-note {
+    margin-top: 60rpx;
+}
+
+.purchase-note .info {
+    margin-bottom: 60rpx;
+}
+
+.purchase-note .info .title {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.purchase-note .info .des {
+    margin-top: 34rpx;
+    line-height: 38rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.purchase-note .info .des view {
+    position: relative;
+    padding-left: 23rpx;
+}
+
+.purchase-note .info .des view:before {
+    content: '';
+    position: absolute;
+    top: 17rpx;
+    left: 0;
+    display: block;
+    width: 4rpx;
+    height: 4rpx;
+    border-radius: 50%;
+    background-color: #666;
+}
+
+.order-info {
+    padding-bottom: 64rpx;
+}
+
+.order-info.padding-top {
+    padding-top: 42rpx;
+}
+
+.order-info .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-info .title .text {
+    line-height: 45rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.order-info .order {
+    margin-top: 34rpx;
+}
+
+.order-info .order .item {
+    line-height: 38rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.order-info .order .pay {
+    line-height: 48rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #24c789;
+    margin-top: 8rpx;
+}
+
+.order-info .refund {
+    margin: 20rpx auto 0;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    border: 1rpx solid #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #24c789;
+}
+
+.order-info .refund.margin-top {
+    margin-top: 65rpx;
+}
+
+.order-info .transfer {
+    margin: 65rpx auto 0;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.order-info .transfer:after {
+    display: none;
+}
+
+.order-info .contact {
+    padding: 0;
+    margin: 52rpx auto 0;
+    height: 33rpx;
+    line-height: 33rpx;
+    background-color: #fff;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.order-info .contact:after {
+    display: none;
+}
+
+.order-info .contact.margin-top {
+    margin-top: 65rpx;
+}
+
+.invite-ticket {
+    position: fixed;
+    bottom: 224rpx;
+    right: 16rpx;
+    width: 134rpx;
+    height: 170rpx;
+    z-index: 18;
+    background: url("https://static1.keepcdn.com/2018/08/01/11/1533094064117_134x170.png") no-repeat center/contain;
+    transform: translateX(110%);
+    animation: sliedIn 0.4s 0.4s forwards;
+}
+
+.db11 {
+    position: fixed;
+    bottom: 224rpx;
+    right: 16rpx;
+    z-index: 18;
+    transform: translateX(110%);
+    animation: sliedIn 0.4s 0.4s forwards;
+}
+
+.db11 image {
+    display: block;
+    width: 160rpx;
+    height: 130rpx;
+}
+
+.invite-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 20;
+    opacity: 0;
+    animation: fadeIn 0.3s 0.3s forwards;
+}
+
+.invite-mask .invite-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 583rpx;
+}
+
+.invite-mask .invite-box .navigator {
+    display: block;
+    position: relative;
+    border-radius: 8rpx;
+    overflow: hidden;
+    transform: scale(0.9);
+    animation: scaleIn 0.3s 0.3s forwards;
+}
+
+.invite-mask .invite-box .navigator image {
+    display: block;
+    width: 580rpx;
+    height: 580rpx;
+}
+
+.invite-mask .invite-box .navigator .invite-text {
+    position: absolute;
+    top: 298rpx;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 44rpx;
+    color: #fff;
+    line-height: 62rpx;
+}
+
+.invite-mask .invite-box .navigator .invite-text view {
+    padding-bottom: 36rpx;
+}
+
+.invite-mask .invite-box .navigator .invite-text view:last-child {
+    display: inline-block;
+    width: 240rpx;
+    height: 76rpx;
+    line-height: 76rpx;
+    background-image: linear-gradient(-45deg,#4aa5d0 0%,#24c789 100%);
+    border-radius: 38rpx;
+    font-size: 30rpx;
+    padding: 0;
+}
+
+.invite-mask .invite-box .invite-close {
+    display: block;
+    height: 48rpx;
+    margin-top: 48rpx;
+    background: url("https://static1.keepcdn.com/2018/08/01/11/1533095496576_64x64.png") no-repeat center;
+    background-size: 48rpx;
+}
+
+.wrist-success {
+    text-align: center;
+    padding: 60rpx 0;
+}
+
+.wrist-success .title {
+    padding-bottom: 55rpx;
+    line-height: 67rpx;
+    font-size: 48rpx;
+    color: #333;
+    margin: 0 28rpx;
+}
+
+.wrist-success .bpm-info {
+    padding-bottom: 0;
+}
+
+.wrist-success .sub-title {
+    font-size: 36rpx;
+    line-height: 58rpx;
+}
+
+.wrist-success .band-tips {
+    display: block;
+    width: 100%;
+    padding-top: 35rpx;
+}
+
+.wrist-success .sub-tip {
+    transform: translateY(-25rpx);
+    padding: 0;
+}
+
+.bpm-info {
+    padding-top: 77rpx;
+    padding-bottom: 86rpx;
+    text-align: center;
+}
+
+.bpm-info .bpm {
+    display: inline-block;
+    margin-right: 6rpx;
+    font-family: 'Keep';
+    font-size: 72rpx;
+    color: #ff5363;
+}
+
+.bpm-info .text {
+    display: inline-block;
+    padding-top: 24rpx;
+    font-size: 24rpx;
+    font-weight: bold;
+    color: #ccc;
+    background-image: url("data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAwCAMAAABpN6nPAAAAkFBMVEUAAAD/Vmb/VGP/VWb/U2P/U2P/Zof/VGP/U2P/VGT/W2X/Xmr/WWn/U2T/U2T/U2P/VGP/VGT/VGP/VWX/V2X/tbX/U2P/VGT/U2T/VGX/VWT/V2b/VGP/VGP/VWT/VWX/Wmj/V27/VGT/VGP/VGT/U2X/VmT/U2T/U2P/VGT/VGT/U2T/VGT/VGT/VGP/U2PpxFH/AAAAL3RSTlMAMfc++ukE8tBeGBMQ1uThy7l9SycB3MWOcU4hpZt1Nh0KsItnVka+rKuSha6CVbH2OJIAAAHQSURBVEjHrdaJjqJAFAXQK/sOLqjgvrfaPff//26AQbCgkCaZk5AQtoJbr15AxbXXUaDp0Xeyx5t98h3pWhCtbRdNsztriylK0wVr9xneHTYUHffFKEeKNgdUVhabTBVQTTZZq+oenW3K9aqwTS/v8nzKaBplfA+5Lw7yhYzKgVQAEQeKgBkHm2HCwSYYc7AxfA7mw6Sc5VzYwYRCuRRYUE5BQKnQAM6UC2B1JQR4CqWsjvQ0B5l7V3rP7gLDlFLPjhNX5Aw9f646+kd9zc4ULiXmMXDJtlMWlYOXUXnWBW6NPMNovE6BOFSLy5aozZm7AbDLSE5be7pbHVBKuQZgvQ2EmcacXQWrGxCNqXhA8kCm/CaLmfxw5lHsuhDkK+YMOPtWiA/knGKo+WY5SexUHa08A4jXeftDIbZYqYNZtioy0MvVlvvDWh2Mp1PuiUzsCy3MQ+nSVZlxmW7tgsqRclfAmAvtGjU3pNTNEHtIKGS80yilB0Lt7yCw+Qs2Gs7sdUbLlj22kPjhRz+QWvKDJTpsB7xbLTUpZab4YCSd5XCEjxxJW1046GFMNAq0iYF+O6FE5zv8ymEj+d3o9+qLvooBjMTMgk4MDOOeTi7+p7+WABhGG+kVTwAAAABJRU5ErkJggg==");
+    background-size: 26rpx 24rpx;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.keep-wristband-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.7);
+    z-index: 20;
+}
+
+.keep-wristband-loading .loading-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 576rpx;
+    height: 576rpx;
+    background: #fff;
+    border-radius: 8rpx;
+    text-align: center;
+}
+
+.keep-wristband-loading .loading-wrap .loading-line {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 64rpx auto 0;
+}
+
+.keep-wristband-loading .loading-wrap .loading-line .line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    box-sizing: border-box;
+    border: 6px solid #efefef;
+    border-radius: 50%;
+}
+
+.keep-wristband-loading .loading-wrap .loading-line image {
+    width: 90px;
+    height: 90px;
+    display: block;
+    margin: 0 auto;
+    padding-top: 50rpx;
+}
+
+.keep-wristband-loading .loading-wrap .loading-line canvas {
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.keep-wristband-loading .loading-wrap .loading-tips {
+    font-size: 36rpx;
+    line-height: 50rpx;
+    color: #333;
+    padding-top: 60rpx;
+}
+
+.keep-wristband-loading .loading-wrap .loading-subtips {
+    font-size: 26rpx;
+    color: #999;
+    line-height: 34rpx;
+    padding-top: 24rpx;
+}
+
+.error-msg {
+    text-align: left;
+}
+
+.error-msg .err-title {
+    font-size: 48rpx;
+    color: #333;
+    line-height: 67rpx;
+    padding: 0 0 55rpx 239rpx;
+    background: url("https://static1.keepcdn.com/2019/09/04/17/1567588341062_44x44.png") no-repeat top 11rpx left 175rpx;
+    background-size: 44rpx;
+    line-height: 67rpx;
+}
+
+.error-msg .err-tips {
+    margin: 0 28rpx;
+    border-top: 2rpx dashed #efefef;
+    display: flex;
+    align-items: center;
+    padding: 55rpx 0 25rpx 64rpx;
+}
+
+.error-msg .err-tips .err-tips-left {
+    font-size: 24rpx;
+    color: #666;
+    font-weight: bold;
+}
+
+.error-msg .err-tips .err-tips-right {
+    font-size: 26rpx;
+    color: #999;
+    line-height: 44rpx;
+    padding-left: 32rpx;
+}
+
+.preview-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    z-index: 21;
+}
+
+.preview-img swiper {
+    height: 100%;
+}
+
+.preview-img swiper swiper-item {
+    background: url("https://static1.keepcdn.com/keepland/0_1573652891349.jpg?imageMogr2/thumbnail/300x/quality/80") no-repeat center;
+    background-size: contain;
+}
+
+.preview-img .preview-info .review-tips,.preview-img .preview-info .bottoms {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding: 0 28rpx;
+}
+
+.preview-img .preview-info .review-tips {
+    top: 48px;
+    background-color: rgba(255,255,255,0.2);
+    height: 110rpx;
+    font-size: 28rpx;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.preview-img .preview-info .review-tips view {
+    padding-left: 60rpx;
+    background: url("https://static1.keepcdn.com/2019/11/19/15/1574149021794_72x72.png") no-repeat center left;
+    background-size: 48rpx;
+}
+
+.preview-img .preview-info .review-tips text {
+    padding-right: 36rpx;
+    background: url("https://static1.keepcdn.com/2019/11/19/15/1574149178045_48x48.png") no-repeat center right;
+    background-size: 32rpx;
+}
+
+.preview-img .preview-info .review-tips.show {
+    opacity: 1;
+}
+
+.preview-img .preview-info .bottoms {
+    bottom: 0;
+}
+
+.preview-img .preview-info .bottoms.iphonex {
+    bottom: 48rpx;
+}
+
+.preview-img .preview-info .bottoms .pagination {
+    font-size: 32rpx;
+    line-height: 1;
+}
+
+.preview-img .preview-info .bottoms view {
+    display: flex;
+    align-items: center;
+}
+
+.preview-img .preview-info .bottoms view .download {
+    width: 48rpx;
+    height: 48rpx;
+    background: url("https://static1.keepcdn.com/2019/11/19/11/1574134152293_72x72.png") no-repeat center;
+    background-size: 48rpx;
+    padding: 32rpx 24rpx;
+}
+
+.preview-img .preview-info .bottoms view .like-btn {
+    padding: 32rpx 0 32rpx 80rpx;
+    font-size: 28rpx;
+    background: url("https://static1.keepcdn.com/2019/11/19/11/1574134440209_72x72.png") no-repeat center left 24rpx;
+    background-size: 48rpx;
+}
+
+.preview-img .preview-info .bottoms view .like-btn.is-likes {
+    background-image: url("https://static1.keepcdn.com/2019/11/19/15/1574147026715_72x72.png");
+    color: #24c789;
+}

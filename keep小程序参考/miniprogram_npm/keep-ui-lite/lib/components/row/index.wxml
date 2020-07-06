@@ -1,0 +1,3 @@
+<view class="custom-class keep-row">
+    <slot></slot>
+</view>

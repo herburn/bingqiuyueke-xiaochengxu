@@ -1,0 +1,70 @@
+@import "../../../__wuBaseWxss__/0.wxss";
+
+.select-one-filter {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 24rpx 32rpx 12rpx;
+    background-color: #333;
+}
+
+.select-one-filter .scroll-view {
+    height: 100%;
+}
+
+.select-one-filter .btn-item {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 26rpx;
+    color: #f2f2f7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 66rpx;
+    margin-bottom: 24rpx;
+    border-radius: 8rpx;
+    padding-right: 88rpx;
+    padding-left: 88rpx;
+    line-height: 66rpx;
+    background-color: #767678;
+}
+
+.select-one-filter .btn-item-active {
+    font-size: 26rpx;
+    color: #333;
+    background-color: #fcc800;
+}
+
+.select-one-filter .btn-item:last-child {
+    margin-bottom: 48rpx;
+}
+
+.select-one-filter .checkbox-item {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 26rpx;
+    color: #c9c9cd;
+    height: 40rpx;
+    margin-bottom: 24rpx;
+}
+
+.select-one-filter .checkbox-item .iconfont {
+    margin-right: 16rpx;
+    font-size: 40rpx;
+}
+
+.select-one-filter .checkbox-item .icon-tick-circle-filled {
+    color: #fcc800;
+}

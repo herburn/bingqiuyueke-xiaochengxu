@@ -1,0 +1,136 @@
+page {
+    background: #242424;
+}
+
+.navigator-bar {
+    position: fixed;
+    z-index: 1100;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.my-booking .acc-total-info {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 225rpx 0 48rpx 0;
+    box-shadow: 0 0 24rpx 0 rgba(0,0,0,0.32);
+}
+
+.my-booking .acc-total-info .user-face {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 9999rpx;
+}
+
+.my-booking .acc-total-info .total-day,.my-booking .acc-total-info .times {
+    -webkit-box-flex: 1;
+    flex: 1;
+    height: 91rpx;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.my-booking .acc-total-info .num {
+    font-size: 64rpx;
+    color: #fcc800;
+    height: 64rpx;
+    line-height: 64rpx;
+}
+
+.my-booking .acc-total-info .desc {
+    font-size: 28rpx;
+    color: #767678;
+    height: 39rpx;
+    line-height: 39rpx;
+}
+
+.my-booking .not-start-list {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 0 24rpx;
+}
+
+.my-booking .not-start-list .record-item {
+    width: 100%;
+    margin-bottom: 24rpx;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.my-booking .not-start-list .record-item:last-child {
+    margin-bottom: 0;
+}
+
+.my-booking .title-wrap {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 24rpx 0;
+}
+
+.my-booking .title-wrap .sub-title {
+    margin: 0;
+}
+
+.my-booking .sub-title {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    height: 39rpx;
+    line-height: 39rpx;
+}
+
+.my-booking .booking-records {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 702rpx;
+    margin: 0 24rpx;
+}
+
+.my-booking .booking-records .sub-title {
+    margin: 24rpx 0;
+}
+
+.my-booking .booking-records .month-card {
+    margin-bottom: 24rpx;
+}
+
+.my-booking .booking-records .month-card:last-child {
+    margin-bottom: 0;
+}
+
+.copy-right-bottom {
+    display: block;
+    margin-top: auto;
+    padding: 24rpx 0;
+}

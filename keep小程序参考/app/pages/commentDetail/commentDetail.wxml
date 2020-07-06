@@ -1,0 +1,94 @@
+<navigatorBar title="评价详情"></navigatorBar>
+<view class="comment-deleted" wx:if="{{detail&&(reviewStatu==-20||reviewStatu==5)}}">
+    <image mode="widthFix" src="https://static1.keepcdn.com/2019/04/18/19/1555585626898_300x200.png"></image>
+    <view class="deleted-desc">{{reviewStatu==20?'该条评价已删除':'该条评价审核中'}}</view>
+</view>
+<view class="detail" style="height: calc(100vh - {{totalNavHeight}}px);padding-bottom:{{iphonex?'145rpx':'97rpx'}}" wx:if="{{detail&&reviewStatu!=-20&&reviewStatu!=5}}">
+    <scroll-view scrollY bindscrolltolower="loadMore" scrollIntoView="{{toView}}" scrollWithAnimation="scroll-with-animation" style="height:100%;">
+        <view class="comment">
+            <view class="head">
+                <view class="baseinfo-box">
+                    <view class="author-head" style="background-image: url({{detail.authorUser.avatar?detail.authorUser.avatar+'?imageMogr2/thumbnail/160x/quality/95':'/app/images/default_avatar.png'}})"></view>
+                    <view class="nickname-likestar_box">
+                        <view class="nickname-likestar_wrap">
+                            <view class="nickname"> {{detail.authorUser.name}}<image class="keep-vip-icon" mode="aspectFit" src="{{detail.authorUser.vipImgBig}}" wx:if="{{detail.authorUser.vip}}"></image>
+                            </view>
+                            <view class="likestar">
+                                <image class="star" src="/app/images/icon_star_on.png" wx:for="{{detail.review.stars}}" wx:key="{{index}}"></image>
+                                <image class="star" src="/app/images/icon_star.png" wx:for="{{5-detail.review.stars}}" wx:key="{{index}}"></image>
+                            </view>
+                        </view>
+                        <view class="officereply-statu_box">
+                            <view class="officereply-tag keep-border-btn green" wx:if="{{detail.hasOfficialReply}}">小助手已回复 </view>
+                            <view class="statu" style="margin-top:{{detail.hasOfficialReply?'8rpx':'0'}};" wx:if="{{detail.review.stateValue==10}}">未公开  </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="body">
+                <view class="content-box">
+                    <view class="comment-text">{{detail.review.content}}</view>
+                    <view class="nine-grid">
+                        <view class="img-box" wx:for="{{detail.review.images}}" wx:for-index="imgIndex" wx:for-item="imgItem" wx:key="{{imgIndex}}">
+                            <image bindtap="displayImage" data-images="{{detail.review.images}}" data-imgitem="{{imgItem}}" mode="aspectFill" src="{{imgItem+'?imageMogr2/thumbnail/226x/quality/95'}}"></image>
+                        </view>
+                    </view>
+                    <view class="coach-course_box">
+                        <view class="kind">
+                            <view class="kind-coach">教练<view>
+                                    <block wx:for="{{detail.coachInfos}}" wx:key="{{ index }}">
+                                        <text bindtap="navCoach" data-coach="{{item.id}}">{{item.name}}</text>
+                                        <text wx:if="{{index!=detail.coachInfos.length-1}}">、</text>
+                                    </block>
+                                </view>
+                            </view>
+                            <view class="kind-course">课程<view bindtap="navCourse">{{detail.schedule.scheduleName}}</view>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="date-del_box">
+                        <view class="date">{{detail.review.createTime}}</view>
+                        <view bindtap="deleteComment" class="del-icon" data-id="{{detail.review.id}}" wx:if="{{detail.canDelete}}"></view>
+                    </view>
+                </view>
+            </view>
+            <view class="footer" id="subcomment">
+                <view class="sub-comment_box">
+                    <view class="counts" style="margin-bottom:{{detail.review.comments?'38rpx':'0'}}">{{detail.review.comments}} 评论</view>
+                    <view class="no-subcomment" wx:if="{{!detail.review.comments}}">快来发表你的评论吧</view>
+                    <view bindtap="checkoutReplyType" class="user-subcomment" data-item="{{item}}" id="{{item.commentId}}" wx:if="{{item.commentStatus>=5&&item.commentStatus!=10}}" wx:for="{{commentResponseList}}" wx:key="{{item.commentId}}">
+                        <view class="subcomment_head">
+                            <view class="avatar-nickname">
+                                <view class="user-head" style="background-image: url({{item.author.avatar?item.author.avatar+'?imageMogr2/thumbnail/140x/quality/95':'/app/images/default_avatar.png'}})"></view>
+                                <view class="nickname-durtime">
+                                    <view class="nickname"> {{item.author.name}}<image class="keep-vip-icon" mode="aspectFit" src="{{item.author.vipImgBig}}" wx:if="{{item.author.vip}}"></image>
+                                    </view>
+                                    <view class="durtime">{{item.createTime}}</view>
+                                </view>
+                            </view>
+                            <view bindtap="checkoutReplyType" class="reply-icon" data-item="{{item}}"></view>
+                        </view>
+                        <view class="subcomment_body">
+                            <view class="reply-user" wx:if="{{item.replyId}}">回复<view class="reply-username">{{item.replyUser.name}}：</view>
+                            </view>
+                            <view class="subcomment-content">{{item.content}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom" wx:if="{{!noMore}}">
+                <image src="https://static1.keepcdn.com/2018/12/13/12/1544673942422_64x64.gif"></image>
+            </view>
+            <view class="bottom" wx:else>- 身型由己 -</view>
+        </view>
+    </scroll-view>
+    <view class="reply-input_box" style="padding-bottom:{{iphonex?'61rpx':'13rpx'}}">
+        <view class="input">
+            <view class="{{!inputFocus&&!commentText.length?'pen-icon':''}}"></view>
+            <input bindfocus="getFoucus" bindinput="commentInput" focus="{{inputFocus}}" placeholder="{{placeholder}}" value="{{commentText}}"></input>
+        </view>
+        <view bindtap="replyComment" class="{{commentText.length?'reply-active':' reply-default'}}">发布</view>
+    </view>
+</view>
+<view bindtouchstart="dismissMask" class="mask" hidden="{{maskHidden}}"></view>
+<canvas canvasId="shareImgCanvas" class="sharecard"></canvas>

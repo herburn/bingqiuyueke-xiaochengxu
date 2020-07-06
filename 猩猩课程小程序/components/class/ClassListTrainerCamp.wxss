@@ -1,0 +1,41 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.camp-item {
+    margin-left: 24rpx;
+    margin-right: 24rpx;
+}
+
+.camp-subscribe {
+    margin-top: 24rpx;
+}
+
+.camp-subscribe .tip-msg {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    height: 39rpx;
+    margin-bottom: 16rpx;
+    text-align: center;
+    line-height: 39rpx;
+}
+
+.camp-subscribe .subscribe-btn {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 28rpx;
+    color: #f2f2f7;
+}
+
+.camp-subscribe .subscribe-btn .iconfont {
+    margin-left: 8rpx;
+    font-size: 24rpx;
+}
+
+.camp-subscribe-empty {
+    padding: 116rpx 0 164rpx;
+}

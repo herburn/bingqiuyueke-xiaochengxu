@@ -1,0 +1,9 @@
+<view class="agreement" style=" {{'color:'+fontColor+';'}}">
+    <block wx:if="{{hasTitle}}">重要：</block>
+  成功预约本课程即表示已阅读并同意《
+  <text bindtap="_proxy" class="text-highlight" data-wpy-evt="1083-0">超级猩猩隐私协议</text>》
+  及《<text bindtap="_proxy" class="text-highlight" data-wpy-evt="1083-1">超级猩猩运动注意事项及免责声明</text>》。Notice: "
+  <text bindtap="_proxy" class="text-highlight" data-wpy-evt="1083-2">SUPERMONKEY Privacy Notice</text>" and "
+  <text bindtap="_proxy" class="text-highlight" data-wpy-evt="1083-3">SUPERMONKEY Fitness Attentions and Disclaimers</text>
+  " would be considered as being read and agreed after booked a class.
+</view>

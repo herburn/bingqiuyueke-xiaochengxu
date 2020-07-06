@@ -1,0 +1,2 @@
+<view bindtap="_proxy" class="row" data-wpy-evt="1088-0">开启课程通知<view class="iconfont icon-arrow-right"></view>
+</view>

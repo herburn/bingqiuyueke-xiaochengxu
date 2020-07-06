@@ -1,0 +1,8 @@
+<view class="show-toast" wx:if="{{isShowToast&&mask}}">
+    <view class="toast-text-box">
+        <view class="title">{{title}}</view>
+    </view>
+</view>
+<view class="toast-text-box no-mask" wx:if="{{isShowToast&&!mask}}">
+    <view class="title">{{title}}</view>
+</view>

@@ -1,0 +1,42 @@
+.online-tip {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.online-tip .title {
+    font-size: 28rpx;
+    color: #fcc800;
+    height: 39rpx;
+    text-align: center;
+    line-height: 39rpx;
+}
+
+.online-tip .code-img {
+    display: block;
+    margin: 32rpx auto 16rpx;
+    box-sizing: border-box;
+    width: 240rpx;
+    height: 240rpx;
+    border: solid 8rpx #fcc800;
+    border-radius: 16px;
+}
+
+.online-tip .text {
+    font-size: 22rpx;
+    color: #c9c9cd;
+    height: 31rpx;
+    line-height: 31rpx;
+    text-align: center;
+}
+
+.online-tip .multi-line-text {
+    font-size: 26rpx;
+    color: #767678;
+}
+
+.online-tip .multi-line-text .item-0 {
+    margin-bottom: 8rpx;
+    color: #c9c9cd;
+}

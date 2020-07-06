@@ -1,0 +1,13 @@
+.box-filter-content {
+    width: 100%;
+    height: 100%;
+}
+
+.box-filter-content .filter-item {
+    display: none;
+    height: 100%;
+}
+
+.box-filter-content .filter-item-active {
+    display: block;
+}

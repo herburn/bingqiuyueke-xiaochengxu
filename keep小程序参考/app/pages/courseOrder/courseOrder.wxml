@@ -1,0 +1,468 @@
+<navigatorBar title="我的预约"></navigatorBar>
+<navigator class="db11" hoverClass="none" url="/app/pages/db11/activity/activity" wx:if="{{db11}}">
+    <image src="https://static1.keepcdn.com/2019/10/25/15/1571987071668_160x130.png"></image>
+</navigator>
+<view bindtouchend="end" bindtouchmove="move" class="container" wx:if="{{order&&course}}">
+    <block wx:if="{{order.userBookStatus==5||order.userBookStatus==6}}">
+        <view bindtap="gotoPublish" class="to-publish-tips" style="top: {{totalNavHeight}}px" wx:if="{{!course.reviewInfo||!course.reviewInfo.review}}">
+            <view class="text">本节课体验如何？</view>
+            <view class="button">去评价</view>
+        </view>
+        <view style="margin-top: {{course.reviewInfo&&course.reviewInfo.review?'0rpx':'112rpx'}}">
+            <keep-card bindtap="jumpCampDetail" customClass="camp-card" wx:if="{{course.coachCampDetail}}">
+                <view class="camp-coach-info">
+                    <keep-avatar borderWidth="3" customClass="coach-avatar" size="48" src="{{course.userPersonalInfo.avatar}}"></keep-avatar>
+                    <view class="coach-name">
+                        <text class="name keep-text-overflow">{{course.userPersonalInfo.name}}</text>
+                        <text>为你打造专属训练营</text>
+                    </view>
+                </view>
+                <keep-card customClass="camp-info-card">
+                    <view class="camp-info">
+                        <view class="camp-name keep-text-overflow">{{course.coachCampDetail.campName}}</view>
+                        <view class="count-place">
+                            <text class="count">{{course.coachCampDetail.campCourseCount}} 节课</text>
+                            <text class="line"></text>
+                            <text class="place">{{course.coachCampDetail.gymName}}</text>
+                        </view>
+                    </view>
+                    <keep-button shape="circle" size="small">去看看</keep-button>
+                </keep-card>
+            </keep-card>
+            <view class="training-data">
+                <navigator class="course {{order.scheduleInfo.coachInfos.length>1?'multi-coach':''}}" hoverClass="none" url="/app/pages/courseDetail/courseDetail?scheduleId={{order.orderDetailInfo.scheduleId}}">
+                    <image class="cover keep-course-cover-placeholder keep-course-cover-mark" mode="aspectFill" src="{{course.courseInfo.courseCover+'?imageMogr2/thumbnail/750x/quality/95'}}"></image>
+                    <view class="info-wrap">
+                        <view class="time">{{order.scheduleInfo.formatTimeRange}}</view>
+                        <view class="name keep-text-overflow">{{order.scheduleInfo.scheduleName}}</view>
+                        <view class="gym-coach">
+                            <text>{{course.gymInfo.gymRoomName}}</text>
+                            <text wx:if="{{order.scheduleInfo.coachInfos.length==1}}">{{order.scheduleInfo.coachInfos[0].name}}</text>
+                        </view>
+                        <view class="gym-coach multi" wx:if="{{order.scheduleInfo.coachInfos.length>1}}">
+                            <text wx:for="{{order.scheduleInfo.coachInfos}}" wx:key="{{ index }}">{{item.name}}</text>
+                        </view>
+                    </view>
+                </navigator>
+                <view class="user-info">
+                    <view class="avatar-wrap {{course.userPersonalInfo.monthDemonTitles&&course.userPersonalInfo.monthDemonTitles.length?'keep-month-demon-horn-big':''}}">
+                        <image class="avatar" mode="aspectFill" src="{{course.userPersonalInfo.avatar?course.userPersonalInfo.avatar+'?imageMogr2/thumbnail/200x/quality/95':'/app/images/default_avatar.png'}}"></image>
+                    </view>
+                    <view class="name-wrap">
+                        <view class="name">{{course.userPersonalInfo.name}}</view>
+                        <image class="keep-vip-icon" mode="aspectFit" src="{{course.userPersonalInfo.vipImgBig}}" wx:if="{{course.userPersonalInfo.vip}}"></image>
+                    </view>
+                    <view class="month-demon-wrap">
+                        <block wx:if="{{course.userPersonalInfo.monthDemonTitles&&course.userPersonalInfo.monthDemonTitles.length}}">
+                            <view class="keep-month-demon-title" wx:for="{{course.userPersonalInfo.monthDemonTitles}}" wx:key="{{ index }}">{{item}}</view>
+                        </block>
+                    </view>
+                </view>
+                <view class="motto keep-1px-border bottom-border"></view>
+                <view class="user-data {{course.gymInfo.gymOperationType=='flash'?'co-with-adi':'keep-1px-border bottom-border'}}">
+                    <view class="totalTraining">
+                        <view class="name">总训练</view>
+                        <view>
+                            <text class="count">{{course.userTrainingInfo.totalTrainingCount}}</text>
+                            <text class="unit">次</text>
+                        </view>
+                    </view>
+                    <view class="calorie" wx:if="{{course.gymInfo.gymOperationType!=='flash'}}">
+                        <view class="name">本次燃脂</view>
+                        <view>
+                            <text class="count">{{course.userTrainingInfo.calorie}}</text>
+                            <text class="unit">千卡</text>
+                        </view>
+                    </view>
+                    <view class="time">
+                        <view class="name">本次时间</view>
+                        <view>
+                            <text class="count">{{order.scheduleInfo.scheduleMinuteDuration}}</text>
+                            <text class="unit">分钟</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="cooperate" wx:if="{{course.promotingInfo.operationCardItem}}">
+                    <view class="title"> 活动<navigator hoverClass="none" url="/app/pages/webView/webView?url={{operationPath}}{{course.promotingInfo.operationCardItem.scheduleOperationId}}/{{order.orderDetailInfo.userId}}">解锁记录</navigator>
+                    </view>
+                    <view class="image-view">
+                        <image mode="widthFix" src="{{course.promotingInfo.operationCardItem.image}}"></image>
+                        <view>恭喜你，成功解锁「{{course.promotingInfo.operationCardItem.title}}」</view>
+                    </view>
+                </view>
+                <view class="heart-rate" wx:if="{{course.userTrainingInfo.heartRateUrl&&course.gymInfo.gymOperationType!=='falsh'}}">
+                    <view class="title">心率</view>
+                    <view class="heart-rate-info">
+                        <view class="average">
+                            <view class="text">平均心率</view>
+                            <view class="value">
+                                <text class="count">{{course.userTrainingInfo.avgHeartRate}}</text>
+                                <text>bpm</text>
+                            </view>
+                        </view>
+                        <view class="max">
+                            <view class="text">最大心率</view>
+                            <view class="value">
+                                <text class="count">{{course.userTrainingInfo.maxHeartRate}}</text>
+                                <text>bpm</text>
+                            </view>
+                        </view>
+                    </view>
+                    <image class="chart" mode="aspectFit" src="{{course.userTrainingInfo.heartRateUrl}}"></image>
+                </view>
+                <view bindtap="saveTrainingData" class="save-training-data" wx:if="{{course.gymInfo.gymOperationType!=='flash'}}">{{course.promotingInfo.operationCardItem?'点击有惊喜':'生成数据报告'}}</view>
+            </view>
+        </view>
+        <view class="training-photo" id="train_photo" wx:if="{{course.userTrainingInfo.canSeeScheduleImage}}">
+            <view class="title">训练照片</view>
+            <view class="photo-info" wx:if="{{!course.userTrainingInfo.imageList.length}}">
+                <view class="info">
+                    <view class="text">教练还没有上传照片</view>
+                    <view class="tip">上传后将通过 Keepland 公众号提醒你哦</view>
+                </view>
+                <view class="copy-account" wx:if="{{!course.userPersonalInfo.hasSubscribed}}">
+                    <view bindtap="copyAccount" class="copy-account-btn">去关注公众号</view>
+                </view>
+            </view>
+            <view class="photo-wrapper" wx:else>
+                <scroll-view>
+                    <view class="scroll-wrap">
+                        <view bindtap="previewImg" class="photo" data-index="{{index}}" wx:for="{{course.userTrainingInfo.imageList}}" wx:key="{{index}}">
+                            <image mode="aspectFill" src="{{item}}?imageMogr2/thumbnail/300x/quality/80"></image>
+                        </view>
+                    </view>
+                </scroll-view>
+                <view class="photo-likes">
+                    <view class="likes">
+                        <block wx:if="{{course.userTrainingInfo.imageLikeCount}}">
+                            <image mode="aspectFill" src="{{item.avatar}}?imageMogr2/thumbnail/50x/quality/95" wx:for="{{course.userTrainingInfo.imageLikeInfos}}" wx:key="{{index}}"></image>
+                            <view>{{course.userTrainingInfo.imageLikeCount}} 人</view>
+                        </block>
+                    </view>
+                    <view bindtap="addLike" class="likes-btn {{course.userTrainingInfo.likeImage?'is-likes':''}}">喜欢</view>
+                </view>
+            </view>
+        </view>
+        <block wx:if="{{course.gymInfo.gymOperationType!=='flash'}}">
+            <view class="training-rank">
+                <view class="title">排名</view>
+                <view class="rank-info">
+                    <view class="info">
+                        <view class="text">消耗卡路里 {{course.userTrainingInfo.calorie}}kcal</view>
+                        <view class="rank" wx:if="{{calorieRank}}">{{calorieRank}}</view>
+                    </view>
+                    <view class="avatars keep-1px-border bottom-border">
+                        <view class="avatar" wx:for="{{course.userTrainingInfo.calorieRanking}}" wx:key="{{index}}">
+                            <image class="{{index+1==calorieRank?'self':''}}" mode="aspectFill" src="{{item.avatar?item.avatar+'?imageMogr2/thumbnail/200x/quality/95':'/app/images/default_avatar.png'}}"></image>
+                        </view>
+                    </view>
+                    <view bindtap="moreRank" class="more" data-scheduleId="{{order.orderDetailInfo.scheduleId}}" data-userId="{{order.orderDetailInfo.userId}}">查看更多排名</view>
+                </view>
+            </view>
+            <navigator class="gym-training-rank" hoverClass="none" url="/app/packages/training/trainingRank/trainingRank?monthAt={{monthAt}}&gymId={{course.gymInfo.gymId}}" wx:if="{{course.userTrainingInfo.fixedRank}}">
+                <view class="title">门店排行榜</view>
+                <view class="gym-rank-info">
+                    <view class="gym-name">{{course.gymInfo.gymName}}</view>
+                    <view class="rank-explanation">截至本次训练完，榜单排名</view>
+                    <view class="rank">
+                        <text class="describe">排名</text>
+                        <text class="number">{{course.userTrainingInfo.fixedRank}}</text>
+                        <text class="noun-change {{course.userTrainingInfo.rankChange<0?'fall':''}} {{course.userTrainingInfo.rankChange>0?'rise':''}}" wx:if="{{course.userTrainingInfo.rankChange!==0}}">{{course.userTrainingInfo.rankChange}}</text>
+                    </view>
+                    <view class="training-times">
+                        <text class="describe">次数</text>
+                        <text class="number">{{course.userTrainingInfo.fixedTrainingCount}}</text>
+                    </view>
+                </view>
+                <view class="jump-to-tank-list">查看最新排行榜</view>
+            </navigator>
+        </block>
+        <block wx:if="{{course.reviewInfo&&course.reviewInfo.review}}">
+            <navigator class="to-publish training-rank {{course.reviewInfo.review.experience?'show-expirence-seal':''}}" hoverClass="none" id="review" url="/app/pages/commentDetail/commentDetail?reviewId={{course.reviewInfo.review.id}}" wx:if="{{course.reviewInfo.review.stateValue>=20||course.reviewInfo.review.stateValue==10}}">
+                <view class="title">
+                    <view>评价详情</view>
+                    <view class="statu" wx:if="{{course.reviewInfo.review.stateValue==10}}">未公开</view>
+                </view>
+                <view class="star-wrap">
+                    <view class="stars" wx:if="{{course.reviewInfo.review.stars>0}}">
+                        <image class="star-img" src="/app/images/comment_star_on.png" wx:for="{{course.reviewInfo.review.stars}}" wx:key="{{index}}"></image>
+                        <image class="star-img" src="/app/images/comment_star.png" wx:for="{{5-course.reviewInfo.review.stars}}" wx:key="{{index}}"></image>
+                    </view>
+                    <view class="tags-wrap" wx:if="{{course.reviewInfo.tags.length}}">
+                        <view class="tags" wx:for="{{course.reviewInfo.tags}}" wx:key="{{index}}">{{item}}</view>
+                    </view>
+                </view>
+                <view class="publish-content" style="margin-top : {{course.reviewInfo.review.stateValue==10?'0':'32rpx'}}" wx:if="{{course.reviewInfo.review.content}}">{{course.reviewInfo.review.content}}</view>
+                <view class="photo" wx:if="{{course.reviewInfo.review.images.length}}">
+                    <image mode="aspectFill" src="{{item+'?imageMogr2/thumbnail/380x/quality/95'}}" wx:if="{{!(index>2)}}" wx:for="{{course.reviewInfo.review.images}}" wx:key="{{index}}"></image>
+                    <view class="pic-count" wx:if="{{course.reviewInfo.review.images.length>3}}">共{{course.reviewInfo.review.images.length}}张</view>
+                </view>
+            </navigator>
+        </block>
+        <newClassEnvelopes newCourseEnvelopes="{{newCourseEnvelopes}}" newCourseEnvelopesHide="{{newCourseEnvelopesHide}}" wx:if="{{newCourseEnvelopes}}"></newClassEnvelopes>
+        <newUserGuide floatPackageRecomme="{{floatPackageRecomme}}" popupPackageRecomme="{{popupPackageRecomme}}" totalNavHeight="{{totalNavHeight}}"></newUserGuide>
+    </block>
+    <block wx:else>
+        <navigator class="course-info {{order.scheduleInfo.coachInfos.length>1?'multi-coach':''}}" hoverClass="none" url="/app/pages/courseDetail/courseDetail?scheduleId={{order.orderDetailInfo.scheduleId}}">
+            <image class="course-cover keep-course-cover-placeholder keep-course-cover-mark" mode="aspectFill" src="{{course.courseInfo.courseCover+'?imageMogr2/thumbnail/750x/quality/95'}}"></image>
+            <view class="info-wrap">
+                <view class="gym-coach">
+                    <text>{{course.gymInfo.gymRoomName}}</text>
+                    <text wx:if="{{order.scheduleInfo.coachInfos.length==1}}">{{order.scheduleInfo.coachInfos[0].name}}</text>
+                </view>
+                <view class="gym-coach multi" wx:if="{{order.scheduleInfo.coachInfos.length>1}}">
+                    <block wx:for="{{order.scheduleInfo.coachInfos}}" wx:key="{{ index }}">
+                        <text>{{item.name}}</text>
+                        <text wx:if="{{index!=order.scheduleInfo.coachInfos.length-1}}">、</text>
+                    </block>
+                </view>
+                <view class="course-time">{{order.scheduleInfo.formatTimeRange}}</view>
+                <view class="course-name keep-text-overflow">{{order.scheduleInfo.scheduleName}}</view>
+            </view>
+            <view class="count-down" wx:if="{{countdownStr}}">
+                <view class="tip">距离开始</view>
+                <view class="count">{{countdownStr}}</view>
+            </view>
+        </navigator>
+        <view class="course-option no-des card" wx:if="{{order.userBookStatus==1}}">
+            <view class="tip">支付处理中，下拉刷新</view>
+        </view>
+        <block wx:elif="{{order.userBookStatus==2||order.userBookStatus==4||order.userBookStatus==9}}">
+            <view class="multi-ticket" wx:if="{{order.orderDetailInfo.amount>1||order.orderDetailInfo.invitationStatus==1}}">
+                <image class="corner" mode="aspectFit" src="/app/images/double_ticket_icon.png" wx:if="{{order.orderDetailInfo.invitationType==0}}"></image>
+                <image class="corner" mode="aspectFit" src="/app/images/transfer_ticket_icon.png" wx:else></image>
+                <view class="title" wx:if="{{order.orderDetailInfo.inviter&&order.orderDetailInfo.userId==order.orderDetailInfo.inviter.id}}">
+                    <text wx:if="{{order.orderDetailInfo.invitee}}">入场券已被你的好友接收</text>
+                    <block wx:else>
+                        <text>提前把入场券发给你的朋友</text>
+                        <text>ta才能获得入场资格</text>
+                    </block>
+                </view>
+                <view class="title" wx:else>
+                    <text>你已接收入场券</text>
+                </view>
+                <view class="users double">
+                    <view class="user-block">
+                        <view class="user-wrap inviter">
+                            <image class="avatar {{order.orderDetailInfo.invitationType==0&&order.orderDetailInfo.userId==order.orderDetailInfo.inviter.id?'self':''}}" mode="aspectFill" src="{{order.orderDetailInfo.inviter.avatar?order.orderDetailInfo.inviter.avatar+'?imageMogr2/thumbnail/200x/quality/95':'/app/images/default_avatar.png'}}"></image>
+                            <view class="name">{{order.orderDetailInfo.inviter.name}}</view>
+                        </view>
+                    </view>
+                    <view class="spacing">
+                        <image class="transfer-arrow" mode="aspectFit" src="/app/images/icon_transfer_arrow_right.png" wx:if="{{order.orderDetailInfo.invitationType==1}}"></image>
+                    </view>
+                    <view class="user-block">
+                        <view class="user-wrap invitee">
+                            <block wx:if="{{order.orderDetailInfo.invitee}}">
+                                <view class="avatar-wrap">
+                                    <image class="avatar {{order.orderDetailInfo.invitationType==0&&order.orderDetailInfo.userId==order.orderDetailInfo.invitee.id?'self':''}}" mode="aspectFill" src="{{order.orderDetailInfo.invitee.avatar?order.orderDetailInfo.invitee.avatar+'?imageMogr2/thumbnail/200x/quality/95':'/app/images/default_avatar.png'}}"></image>
+                                    <image class="accept" mode="aspectFit" src="/app/images/icon_success.png" wx:if="{{order.orderDetailInfo.invitationType==1}}"></image>
+                                </view>
+                                <view class="name">{{order.orderDetailInfo.invitee.name}}</view>
+                            </block>
+                            <block wx:else>
+                                <image class="avatar" mode="aspectFill" src="/app/images/default_avatar.png"></image>
+                                <view class="name empty">待占位</view>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <button class="keep-wx-button share-btn" openType="share" wx:if="{{!order.orderDetailInfo.invitee}}">
+                    <view class="icon"></view>
+                    <text>把入场券发给好友</text>
+                </button>
+            </view>
+            <view class="course-option card" wx:if="{{order.userBookStatus==2}}">
+                <view class="tip"> 开课前<text>30</text>分钟在前台扫码签到</view>
+                <view bindtap="scanCode" class="btn {{order.scheduleInfo.enableCheckin?'':'disabled'}}">扫码签到</view>
+                <view class="sub-tip" wx:if="{{course.braceletInfo.braceletBind&&course.braceletInfo.gymBraceletSwitch}}">本账号已绑定 Keep 手环，可佩戴手环采集训练数据</view>
+            </view>
+            <view class="course-option" wx:elif="{{order.userBookStatus==4}}">
+                <view class="wrist-success" wx:if="{{course.braceletInfo.braceletBind&&useKeepBand&&course.braceletInfo.gymBraceletSwitch&&course.braceletInfo.currentBind=='bracelet'}}">
+                    <view wx:if="{{currentBpm}}">
+                        <view class="title keep-1px-border bottom-border">
+                            <text>手环连接成功</text>
+                        </view>
+                        <view class="bpm-info">
+                            <view class="bpm">{{currentBpm.bpm}}</view>
+                            <view class="text">BPM</view>
+                        </view>
+                    </view>
+                    <view wx:else>
+                        <view class="error-msg" wx:if="{{showBpmError}}">
+                            <view class="err-title">手环连接失败</view>
+                            <view class="err-tips">
+                                <view class="err-tips-left">请确认</view>
+                                <view class="err-tips-right">
+                                    <view>1、在运动场内使用手环功能</view>
+                                    <view>2、已佩戴手环并打开 Keepland 模式</view>
+                                </view>
+                            </view>
+                        </view>
+                        <block wx:else>
+                            <view class="title sub-title">佩戴手环并打开 Keepland 模式</view>
+                            <view class="sub-tip">请在运动场内使用手环功能</view>
+                        </block>
+                        <image class="band-tips" mode="widthFix" src="https://static1.keepcdn.com/2019/08/29/16/1567068406745_1041x660.png"></image>
+                        <view bindtap="readyKeep" class="ready-btn">确认模式已开启</view>
+                        <view bindtap="changeWristband" class="change-band">切换设备<text>使用心率带</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="signed-in-success" wx:elif="{{signedInSuccess||course.braceletInfo.currentBind=='wristband'}}">
+                    <view class="signed-info keep-1px-border bottom-border">
+                        <view class="title" wx:if="{{currentBpm}}">
+                            <text>心率带连接成功</text>
+                        </view>
+                        <view class="title" wx:else>
+                            <text>签到成功</text>
+                            <text>请正确佩戴心率带</text>
+                        </view>
+                        <block wx:if="{{course.courseInfo.courseType=='training'}}">
+                            <view class="station" wx:if="{{course.courseInfo.workoutPlayType!='sectionSingleLoop'&&order.orderDetailInfo.station>0}}">
+                                <view class="text">训练区站位</view>
+                                <view class="number">{{order.orderDetailInfo.station}}</view>
+                            </view>
+                        </block>
+                        <view class="station" wx:else>
+                            <view class="text">训练场地</view>
+                            <view class="room">塑形区</view>
+                        </view>
+                        <view class="wristband-number">心率带号码：{{wristbandId}}</view>
+                    </view>
+                    <view class="bpm-info" wx:if="{{currentBpm}}">
+                        <view class="bpm">{{currentBpm.bpm}}</view>
+                        <view class="text">BPM</view>
+                    </view>
+                    <image class="pic-tip" mode="aspectFit" src="{{course.braceletInfo.wearGuideUrl}}" wx:else></image>
+                    <view class="change-wristband">
+                        <text>无法连接？</text>
+                        <text bindtap="changeWristband" class="change">更换设备</text>
+                    </view>
+                </view>
+                <view class="success-without-heart-tap" wx:elif="{{course.gymInfo.gymOperationType=='flash'}}">
+                    <image class="icon-mark" src="https://static1.keepcdn.com/2019/07/25/10/1564020694817_112x112.png"></image>
+                    <view class="desp">签到成功</view>
+                </view>
+                <view class="bind-wristband" wx:else>
+                    <view wx:if="{{useKeepBand&&course.braceletInfo.gymBraceletSwitch}}">
+                        <view class="title">本账号未绑定手环</view>
+                        <view class="sub-tip">若已有 Keep 手环，请参照手环使用手册绑定本账号</view>
+                    </view>
+                    <view wx:else>
+                        <view class="title">输入心率带号码</view>
+                        <image class="pic-tip" mode="aspectFit" src="{{course.braceletInfo.bindGuideUrl}}"></image>
+                        <input bindinput="changeWristbandId" class="wristband-id" cursorSpacing="80" placeholder="输入号码" placeholderStyle="line-height: 100rpx;color: rgba(51,51,51,0.50);" type="number"></input>
+                        <view bindtap="bindWristband" class="btn {{wristbandId?'':'disabled'}}">确定</view>
+                    </view>
+                    <view bindtap="changeKeepWristband" class="change-band" wx:if="{{course.braceletInfo.gymBraceletSwitch}}">切换设备<text>使用{{useKeepBand?'心率带':'Keep手环'}}</text>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="course-option card" wx:elif="{{order.userBookStatus==3}}">
+            <view class="tip">课程已结束</view>
+            <view class="des text-center">你未参加本次课程，期待下次课程与你相见。</view>
+        </view>
+        <view class="course-option cancel-card" wx:elif="{{order.userBookStatus==7||order.userBookStatus==8}}">
+            <view class="tip">{{order.orderDetailInfo.refundReason}}</view>
+            <view class="des text-center">{{order.orderDetailInfo.refundDescription}}</view>
+        </view>
+    </block>
+    <navigator class="gym-address keep-1px-border bottom-border" hoverClass="none" url="/app/pages/space/space?gymId={{course.gymInfo.gymId}}">
+        <view class="info">
+            <view class="name keep-location-icon-black">{{course.gymInfo.gymRoomName}}</view>
+            <view class="address">{{course.gymInfo.place}}</view>
+        </view>
+    </navigator>
+    <navigator class="small-banner" hoverClass="none" url="/app/packages/activity/wristband/wristband" wx:if="{{course.promotingInfo.saleBraceletUrl}}">
+        <image mode="aspectFit" src="{{course.promotingInfo.saleBraceletUrl}}"></image>
+        <view wx:if="{{!course.braceletInfo.braceletBind&&course.braceletInfo.gymBraceletSwitch}}">若已有 Keep 手环，请参照手环使用手册绑定本账号</view>
+    </navigator>
+    <view class="show-adidas-register-wrap" wx:if="{{adiLink}}">
+        <navigator class="show-adidas-register" hoverClass="none" url="/app/pages/webView/webView?title=%E6%B3%A8%E5%86%8C%E6%9C%89%E7%A4%BC&url={{adiLink}}">
+            <image mode="aspectFit" src="{{course.promotingInfo.cooperationResources.picture}}"></image>
+        </navigator>
+    </view>
+    <view class="purchase-note" wx:if="{{order.userBookStatus==2||order.userBookStatus==4}}">
+        <view class="info" wx:if="{{course.courseInfo.sportRiskRemind}}">
+            <view class="title">运动风险提示</view>
+            <view class="des">
+                <view wx:for="{{util.formatReturn(course.courseInfo.sportRiskRemind)}}" wx:for-item="content" wx:key="{{content}}">{{content}}</view>
+            </view>
+        </view>
+        <view class="info">
+            <view class="title">取消预约与转课规则</view>
+            <view class="des">
+                <view wx:for="{{ruleDetails}}" wx:for-item="content" wx:key="{{content}}">{{content}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="order-info {{order.userBookStatus!=2&&order.userBookStatus!=4?'padding-top':''}}" wx:if="{{order.userBookStatus!=1&&!(order.userBookStatus==7&&order.orderDetailInfo.orderType==1)}}">
+        <view class="title">
+            <text class="text">订单详情</text>
+        </view>
+        <view class="order">
+            <view class="item">订单编号：{{order.orderDetailInfo.orderNo}}</view>
+            <view class="item">下单时间：{{order.orderDetailInfo.createTime}}</view>
+            <block wx:if="{{order.scheduleInfo.courseTag!=='企业专场'&&order.scheduleInfo.courseTag!=='新课体验专场'}}">
+                <block wx:if="{{!order.orderDetailInfo.inviter||order.orderDetailInfo.userId==order.orderDetailInfo.inviter.id}}">
+                    <view class="item">购买人数：{{order.orderDetailInfo.amount}}人</view>
+                    <block wx:if="{{order.orderDetailInfo.payType==7}}">
+                        <view class="item" wx:if="{{order.orderDetailInfo.packagePrice*order.orderDetailInfo.amount-order.orderDetailInfo.packageAmount}}">优惠减免：-{{order.orderDetailInfo.packagePrice*order.orderDetailInfo.amount-order.orderDetailInfo.packageAmount}}个课包</view>
+                    </block>
+                    <block wx:else>
+                        <view class="item" wx:if="{{order.orderDetailInfo.totalDiscount>0}}">优惠减免：-￥{{order.orderDetailInfo.totalDiscount/100}}</view>
+                    </block>
+                    <view class="item pay">
+                        <text decode="{{true}}">实&nbsp;&nbsp;&nbsp;&nbsp;付:  </text>
+                        <text wx:if="{{order.orderDetailInfo.payType==7}}"> {{order.orderDetailInfo.packageAmount}}个课包</text>
+                        <text class="pay" wx:else>¥{{order.orderDetailInfo.totalPaid/100}}</text>
+                    </view>
+                </block>
+                <view class="item" wx:else>课程原价：¥{{order.orderDetailInfo.centPrice/100}}</view>
+            </block>
+        </view>
+        <view bindtap="transferOrder" class="transfer" wx:if="{{order.orderDetailInfo.transferAble}}">转课给朋友</view>
+        <view bindtap="orderPreRefund" class="refund {{order.orderDetailInfo.transferAble?'':'margin-top'}}" wx:if="{{order.orderDetailInfo.refundable}}">取消预约</view>
+        <button bindcontact="bindcontact" class="contact {{!order.orderDetailInfo.transferAble&&!order.orderDetailInfo.refundable?'margin-top':''}}" openType="contact" sessionFrom="nickName={{course.userPersonalInfo.name||''}}|avatarUrl={{course.userPersonalInfo.avatar||''}}" type="primary">
+            <text>遇到问题？</text>
+            <text style="text-decoration:underline;">联系客服</text>
+        </button>
+    </view>
+    <view bindtap="readyKeep" catchtouchmove="banMove" class="keep-wristband-loading" wx:if="{{showBpmLoading}}">
+        <view class="loading-wrap">
+            <view class="loading-line">
+                <view class="line"></view>
+                <image mode="aspectFit" src="https://static1.keepcdn.com/2019/09/04/11/1567568145827_180x180.png"></image>
+                <canvas canvasId="keepLine"></canvas>
+            </view>
+            <view class="loading-tips">手环连接中</view>
+            <view class="loading-subtips">手环在运动场内连接更稳定哦</view>
+        </view>
+    </view>
+    <view class="preview-img" wx:if="{{showPreviewImg}}">
+        <swiper bindchange="swiperChange" bindtap="hidePreviewImg" current="{{previewCurrent}}" duration="200">
+            <swiper-item style="background-image: url({{item}}?imageMogr2/thumbnail/750x/quality/80)" wx:for="{{course.userTrainingInfo.imageList}}" wx:key="{{index}}"></swiper-item>
+        </swiper>
+        <view class="preview-info">
+            <view bindtap="gotoPublish" class="review-tips {{showSuccessTips?'show':''}}" style="top: {{totalNavHeight}}px">
+                <view>保存成功</view>
+                <text>去评价</text>
+            </view>
+            <view class="bottoms {{iphonex?'iphonex':''}}">
+                <view class="pagination">{{previewCurrent+1}}/{{course.userTrainingInfo.imageList.length}}</view>
+                <view>
+                    <view bindtap="downloadImg" class="download"></view>
+                    <view bindtap="addLikeInner" class="like-btn {{course.userTrainingInfo.likeImage?'is-likes':''}}">
+                        <view wx:if="{{course.userTrainingInfo.imageLikeCount}}">{{course.userTrainingInfo.imageLikeCount}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <showModalBox showModalInfo="{{transferOrderInfo}}"></showModalBox>
+    <showModalBox showModalInfo="{{refundOrderInfo}}"></showModalBox>
+    <medal medalCheckin="{{medalCheckin}}"></medal>
+</view>
+<wxs module="util" src="../../wxs/util.wxs" />

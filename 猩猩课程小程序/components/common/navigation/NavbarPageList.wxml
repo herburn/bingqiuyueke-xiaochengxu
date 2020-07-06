@@ -1,0 +1,12 @@
+<view class="course-selected-navbar">
+    <view class="selected-list">
+        <view bindtap="_proxy" class="selected-item {{[item.value===selectedValue?'selected-item-active':'',item.isRed?'selected-item-red':'']}}" data-wpy-evt="1035-0" data-wpytap-a="{{item}}" id="courseItem" wx:for="{{courses}}" wx:key="value">
+      {{item.label}}
+    </view>
+    </view>
+    <view bindtap="_proxy" class="filter" data-wpy-evt="1035-1" wx:if="{{isFilterBtn}}">
+        <view class="filter-title {{[isFilterActive?'filter-title-active':'']}}">筛选</view>
+        <view class="iconfont icon-filter filter-icon {{[!isFilterActive?'filter-icon-default':'']}}"></view>
+        <view class="iconfont icon-filter filter-icon {{[isFilterActive?'filter-icon-active':'']}}"></view>
+    </view>
+</view>

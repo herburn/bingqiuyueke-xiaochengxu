@@ -1,0 +1,37 @@
+@import "../../__wuBaseWxss__/1.wxss";
+
+.class-box-header {
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100vw;
+    height: 96rpx;
+    padding: 0 24rpx;
+}
+
+.class-box-header__label {
+    font-size: 32rpx;
+    color: #f2f2f7;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.class-box-header__label .iconfont {
+    padding: 10rpx;
+    padding-left: 0;
+    font-size: 40rpx;
+}
+
+.class-box-header__label .iconfont.icon-heart-filled {
+    color: #fcc800;
+}
+
+.class-box-header__map {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}

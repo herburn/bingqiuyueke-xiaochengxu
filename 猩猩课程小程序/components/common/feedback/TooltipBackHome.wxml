@@ -1,0 +1,4 @@
+<view class="prompt bounce" style="left: {{promptLeft}}px; top: {{promptTop}}px;" wx:if="{{isShow}}">
+    <view>没有合适的课程？点击首页查看更多</view>
+    <view class="icon-triangle" style="left: {{left}}px;"></view>
+</view>

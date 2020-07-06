@@ -1,0 +1,151 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+@import "../../__wuBaseWxss__/2.wxss";
+
+.booking-detail-header {
+    position: relative;
+    z-index: 0;
+    padding: 208rpx 24rpx 0 24rpx;
+    box-sizing: border-box;
+}
+
+.booking-detail-header .booking-detail-header-bg {
+    background-image: url("https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/bg-circle-monkey.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 700rpx;
+    -webkit-background-size: 100% 700rpx;
+    background-size: 100% 700rpx;
+    background-position: center top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+}
+
+.booking-detail-header .course-name {
+    max-width: 600rpx;
+    margin-right: 8rpx;
+    font-size: 48rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.booking-detail-header .course-name-link {
+    margin-bottom: 8rpx;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.booking-detail-header .course-date {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.booking-detail-header .link-course-detail {
+    border: 2rpx solid #333;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 8rpx;
+    width: 80rpx;
+    height: 48rpx;
+    color: #333;
+    font-size: 26rpx;
+}
+
+.booking-detail-header .trainer-container {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    margin: 24rpx 0;
+    border-radius: 16rpx;
+    padding: 24rpx;
+    background-color: #333;
+}
+
+.booking-detail-header .trainer-container .trainer-info {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 16rpx;
+    color: #767678;
+    font-size: 26rpx;
+}
+
+.booking-detail-header .trainer-container .trainer-info .trainer-name {
+    margin-bottom: 8rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.booking-detail-header .trainer-container .trainer-info .right-icon {
+    margin-left: 0;
+    font-size: 36rpx;
+    color: #767678;
+}
+
+.booking-detail-header .trainer-container .trainer-info .chat-intro {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    font-size: 26rpx;
+}
+
+.booking-detail-header.dark-bg .booking-detail-header-bg {
+    background-image: url("https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/bg-circle-monkey-dark.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 700rpx;
+    -webkit-background-size: 100% 700rpx;
+    background-size: 100% 700rpx;
+    background-position: center top;
+}
+
+.booking-detail-header.dark-bg .link-course-detail {
+    border-color: #f2f2f7;
+}
+
+.booking-detail-header.dark-bg .course-name,.booking-detail-header.dark-bg .link-course-detail {
+    color: #f2f2f7;
+}
+
+.booking-detail-header.dark-bg .course-date {
+    color: #767678;
+}
+
+.booking-detail-header.dark-bg .trainer-container .trainer-info {
+    color: #767678;
+}
+
+.booking-detail-header.dark-bg .trainer-container .trainer-name {
+    color: #fff;
+}

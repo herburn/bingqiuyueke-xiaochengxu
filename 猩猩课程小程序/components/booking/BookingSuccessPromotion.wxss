@@ -1,0 +1,14 @@
+.booking-success-promotion {
+    width: 654rpx;
+    height: 163rpx;
+    margin: 24rpx auto 0;
+    border-radius: 16rpx;
+    overflow: hidden;
+}
+
+.booking-success-promotion .click-behavior,.booking-success-promotion .promotion-banner {
+    width: 654rpx;
+    height: 163rpx;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

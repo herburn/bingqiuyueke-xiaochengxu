@@ -1,0 +1,17 @@
+{
+    "component": true,
+    "usingComponents": {
+        "booking-detail-body": "./../../../../components/booking/BookingDetailBody",
+        "booking-detail-header": "./../../../../components/booking/BookingDetailHeader",
+        "subscribe-msg-row": "./../../../../components/booking/BookingDetailRowSubscribeMsg",
+        "address-row": "./../../../../components/booking/BookingDetailRowAddress",
+        "price-row": "./../../../../components/booking/BookingDetailRowPrice",
+        "refund-dialog": "./../../../../components/booking/BookingDetailPopoverRefund",
+        "page-resident-button": "./../../../../components/common/dataEntry/ButtonPageResident",
+        "person-num-unfinished-row": "./../../../../components/booking/BookingDetailRowPeopleNumberUnfinished",
+        "first-read-row": "./../../../../components/booking/BookingDetailRowFirstBookingNotes",
+        "booking-num-unfinished-row": "./../../../../components/booking/BookingDetailRowBookingNumberUnfinished",
+        "entry-password-unfinished-row": "./../../../../components/booking/BookingDetailRowEntryPasswordUnfinished",
+        "waiting-count-row": "./../../../../components/booking/BookingDetailRowWaitingCount"
+    }
+}

@@ -1,0 +1,59 @@
+@import "../../../../../__wuBaseWxss__/0.wxss";
+
+.keep-notice-bar {
+    display: flex;
+    align-items: center;
+    border-radius: 8rpx;
+    box-sizing: border-box;
+    position: relative;
+    font-size: 26rpx;
+    padding: 0 30rpx;
+}
+
+.keep-notice-bar--left {
+    justify-content: flex-start;
+}
+
+.keep-notice-bar--center {
+    justify-content: center;
+}
+
+.keep-notice-bar--center .left-icon {
+    position: absolute;
+    left: 30rpx;
+}
+
+.keep-notice-bar--right {
+    justify-content: flex-end;
+}
+
+.keep-notice-bar--right .left-icon {
+    position: absolute;
+    left: 30rpx;
+}
+
+.keep-notice-bar--primary {
+    background-color: #fffcf6;
+    border: 1rpx solid #ffdac6;
+}
+
+.keep-notice-bar--default {
+    background-color: #fffcf0;
+    border: 1rpx solid rgba(0,0,0,.05);
+}
+
+.keep-notice-bar .right-arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: url(https://static1.keepcdn.com/2019/09/19/12/1568866634348_16x34.png) no-repeat right 30rpx center;
+    background-size: 16rpx 34rpx;
+}
+
+.keep-notice-bar .left-icon {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}

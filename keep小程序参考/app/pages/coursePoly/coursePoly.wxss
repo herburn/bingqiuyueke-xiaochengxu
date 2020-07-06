@@ -1,0 +1,31 @@
+.schedule-head {
+    background-color: #fff;
+    padding: 20rpx 30rpx 0;
+    height: 58rpx;
+}
+
+.schedule-head navigator {
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.schedule-head .screens {
+    font-size: 30rpx;
+    color: #000;
+    line-height: 42rpx;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.schedule-head .screens view:last-child {
+    padding-right: 28rpx;
+    min-height: 20rpx;
+    background: url("https://static1.keepcdn.com/2019/05/05/12/1557029514106_20x20.png") no-repeat center right;
+    background-size: 20rpx;
+}
+
+.schedule-head .screens.green {
+    color: #24c789;
+}

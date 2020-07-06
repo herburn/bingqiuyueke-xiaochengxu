@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "camp-item-layout": "./CampItemLayout"
+    }
+}

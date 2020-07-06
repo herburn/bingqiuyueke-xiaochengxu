@@ -1,0 +1,22 @@
+<view class="refund-status-container">
+    <block wx:if="{{status===4}}">
+        <view class="refund-status">已取消,退款操作中:</view>
+        <view class="refund-status-result">已申请{{refundAmount}}元退款至微信钱包</view>
+    </block>
+    <block wx:if="{{status===5||status===8}}">
+        <view class="refund-status">已取消并退款:</view>
+        <view class="refund-status-result">款项已退回至{{payWay}}</view>
+    </block>
+    <block wx:if="{{status===6}}">
+        <view class="refund-status">已取消:</view>
+        <view class="refund-status-result">本次取消不支持退款</view>
+    </block>
+    <block wx:if="{{status===9}}">
+        <view class="refund-status">课程等候未排上:</view>
+        <view class="refund-status-result">款项已退回至超猩卡</view>
+    </block>
+    <block wx:if="{{status===12}}">
+        <view class="refund-status">已取消并退款:</view>
+        <view class="refund-status-result">款项已退回至{{payWay}}</view>
+    </block>
+</view>

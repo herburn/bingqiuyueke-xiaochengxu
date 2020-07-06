@@ -1,0 +1,37 @@
+<view class="online-list" wx:if="{{isShowOnlineCamp}}">
+    <navigator-bar bind_init="_initComponent" class="navigator-bar" menu="custom" style=" {{'background-color:'+navigatorBgColor+';'}}" title="SUPERMONKEY">
+        <select-city bind_init="_initComponent" bindchangeCity="_proxy" data-wpy-evt="835-0" slot="custom"></select-city>
+    </navigator-bar>
+    <online-camp bind_init="_initComponent" id="onlineCampHome" isFixTop="{{isFixTop}}" showBanner="{{showBanner}}" top="{{top}}"></online-camp>
+</view>
+<view class="course-list" wx:else>
+    <navigator-bar backgroundColor="#242424" bind_init="_initComponent" menu="custom" title="SUPERMONKEY">
+        <select-city bind_init="_initComponent" bindchangeCity="_proxy" data-wpy-evt="835-1" slot="custom"></select-city>
+    </navigator-bar>
+    <sticky-wrapper bind_init="_initComponent" capture-bind:tap="_proxy" data-wpy-evt="835-2" height="100rpx" id="stickyCourseNav" top="{{courseSelectedNavTop}}">
+        <course-selected-navbar bind_init="_initComponent" bindswitchCourse="_proxy" bindswitchFilter="_proxy" class="course-selected-navbar" courses="{{courses}}" data-wpy-evt="835-3" isFilterActive="{{courseNavMap[selectedCourseType].isFilterActive}}" isFilterBtn="{{true}}" selectedValue="{{selectedCourseType}}" slot="sticky"></course-selected-navbar>
+        <view class="course-content" slot="content">
+            <class-content-filter bind_init="_initComponent" bindconfirmFilter="_proxy" bindonFilter="_proxy" bindopenFilter="_proxy" class="class {{[selectedCourseType==='class'?'class-active':'']}}" data-region-id-se="classListWithFilter" data-wpy-evt="835-5" id="class" isShowFav="{{true}}"></class-content-filter>
+            <personal-content bind_init="_initComponent" bindonFilter="_proxy" class="personal {{[selectedCourseType==='personal'?'personal-active':'']}}" data-wpy-evt="835-8" id="personal"></personal-content>
+            <camp-content bind_init="_initComponent" bindonFilter="_proxy" class="camp {{[selectedCourseType==='camp'?'camp-active':'']}}" data-wpy-evt="835-9" id="camp" tagList="{{tagList}}"></camp-content>
+        </view>
+    </sticky-wrapper>
+    <copy-right-bottom bind_init="_initComponent" class="copy-right-bottom"></copy-right-bottom>
+</view>
+<page-loading bind_init="_initComponent" bindreload="_proxy" data-wpy-evt="835-10" id="__LoadingPage__"></page-loading>
+<show-toast bind_init="_initComponent" id="__Toast__"></show-toast>
+<show-modal bind_init="_initComponent" id="__Modal__"></show-modal>
+<show-action-sheet bind_init="_initComponent" id="__ActionSheet__"></show-action-sheet>
+<show-add-wechat-modal bind_init="_initComponent" id="__ModalAddWeChat__"></show-add-wechat-modal>
+<show-picker-view bind_init="_initComponent" id="__PickerView__"></show-picker-view>
+<register-user bind_init="_initComponent" id="__ModalRegisterUser__"></register-user>
+<unauthorized-msg bind_init="_initComponent" id="__ModalUnauthorizedMsg__"></unauthorized-msg>
+<reject-msg bind_init="_initComponent" id="__ModalRejectMsg__"></reject-msg>
+<modal-subscribe-msg-guide1 bind_init="_initComponent" id="__ModalSubscribeMsgGuide1__"></modal-subscribe-msg-guide1>
+<modal-subscribe-msg-guide2 bind_init="_initComponent" id="__ModalSubscribeMsgGuide2__"></modal-subscribe-msg-guide2>
+<follow-public-prompt bind_init="_initComponent" id="__NoticeFollowPublic__"></follow-public-prompt>
+<ticket-prompt bind_init="_initComponent" id="__TooltipTicket__"></ticket-prompt>
+<newer-guide bind_init="_initComponent" id="__CourseListTooltipNewerGuide__"></newer-guide>
+<personal-expire-prompt bind_init="_initComponent" id="__TooltipPersonal__"></personal-expire-prompt>
+<new-user-prompt bind_init="_initComponent" id="__FloatingActionButtonNewUser__"></new-user-prompt>
+<alert-after-share bind_init="_initComponent" id="__AlertAfterShare__"></alert-after-share>

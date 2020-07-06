@@ -1,0 +1,7 @@
+<view class="booking-success-promotion" wx:if="{{positionInfo.isPositionActive&&positionInfo.promotions.length}}">
+    <observer-promotion-view bind_init="_initComponent" data-region-id-sm="courseBookingSuccessPromotion" id="courseBookingSuccess" info="{{positionInfo.promotionInfo}}" uniqueId="{{positionInfo.promotionInfo.relateId}}">
+        <click-behavior bind_init="_initComponent" class="click-behavior" data-region-id-sm="courseBookingSuccessPromotion" id="courseBookingSuccess" info="{{positionInfo.promotionInfo}}">
+            <view class="promotion-banner" style=" {{'background-image:'+'url('+positionInfo.promotionInfo.img+')'+';'}}"></view>
+        </click-behavior>
+    </observer-promotion-view>
+</view>

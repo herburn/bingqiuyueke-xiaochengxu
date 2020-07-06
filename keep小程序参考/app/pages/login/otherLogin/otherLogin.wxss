@@ -1,0 +1,37 @@
+.other-login {
+    padding-bottom: 94rpx;
+    overflow: hidden;
+}
+
+.title {
+    margin: 68rpx 0;
+    font-size: 48rpx;
+    color: #333;
+    text-align: center;
+}
+
+.explain {
+    position: relative;
+    margin: 0 60rpx 42rpx 92rpx;
+    font-size: 30rpx;
+    color: #666;
+}
+
+.explain:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 10rpx;
+    left: -40rpx;
+    width: 12rpx;
+    height: 12rpx;
+    background-color: #24c789;
+    border-radius: 12rpx;
+}
+
+.explain-img {
+    display: block;
+    margin: 0 auto;
+    width: 523rpx;
+    height: 2353rpx;
+}

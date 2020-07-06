@@ -1,0 +1,26 @@
+page {
+    background-color: #584f60;
+}
+
+.avatar {
+    display: block;
+    margin: 268rpx auto 80rpx;
+    width: 134rpx;
+    height: 134rpx;
+    border-radius: 50%;
+}
+
+.login {
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    background-color: #24c789;
+    text-align: center;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.login:after {
+    display: none;
+}

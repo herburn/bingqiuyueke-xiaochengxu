@@ -1,0 +1,27 @@
+<view bindtap="tapNav" class="custom-nav-holder {{fixed?'position-fixed':''}}" style="height: {{customNav.totalNavHeight}}px">
+    <view class="custom-nav position-fixed" style="background: {{backgroundColor}}">
+        <view class="custom-status-bar" style="height: {{customNav.statusBarHeight}}px"></view>
+        <view class="custom-title-bar" style="height: {{customNav.titleBarHeight}}px">
+            <view class="custom-nav-content">
+                <view class="custom-left-wrap {{navigationBarColor=='black'?'':'black'}}">
+                    <view class="custom-left-tab" wx:if="{{isTabPage}}">
+                        <image src="https://static1.keepcdn.com/2019/09/30/15/1569830161335_299x84.png" wx:if="{{logo=='brand'}}"></image>
+                        <image src="https://static1.keepcdn.com/2019/09/30/15/1569830183327_299x84.png" wx:elif="{{logo=='white'}}"></image>
+                        <view class="title" wx:elif="{{title}}">{{title}}</view>
+                    </view>
+                    <view class="custom-left" wx:else>
+                        <view bindtap="back" class="bd-right">
+                            <image src="{{navigationBarColor=='black'?'/app/images/custom_back_black.png':'https://static1.keepcdn.com/2019/04/18/12/1555563497967_48x48.png'}}"></image>
+                        </view>
+                        <view bindtap="backHome">
+                            <image src="{{navigationBarColor=='black'?'https://static1.keepcdn.com/2019/10/10/19/1570705945732_48x48.png':'https://static1.keepcdn.com/2019/10/10/19/1570706056961_48x48.png'}}"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="custom-mid" style="color: {{color||'#333'}}" wx:if="{{!isTabPage}}"> {{title}}</view>
+                <view class="custom-right"></view>
+                <view class="custom-message" style="line-height: {{customNav.titleBarHeight}}px; color: {{color||'#fff'}}" wx:if="{{numberMessage}}">{{numberMessage}}条新消息</view>
+            </view>
+        </view>
+    </view>
+</view>

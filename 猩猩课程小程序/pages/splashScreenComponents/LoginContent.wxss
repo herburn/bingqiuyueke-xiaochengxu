@@ -1,0 +1,37 @@
+.content {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fcc800;
+}
+
+.content .logo-wrapper {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-top: 31vh;
+    width: 320rpx;
+    height: 320rpx;
+}
+
+.content .logo-wrapper .logo-img {
+    width: 290rpx;
+    height: 300rpx;
+}
+
+.content .text {
+    font-size: 32rpx;
+    color: #333;
+    margin-top: auto;
+    margin-bottom: 6.16vh;
+}

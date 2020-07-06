@@ -1,0 +1,168 @@
+<navigator-bar backgroundColor="{{navBarBg}}" bind_init="_initComponent" menu="none" style="position: fixed;z-index: 10;" title="超猩卡"></navigator-bar>
+<view class="my" style=" {{'visibility:'+visibility+';'}}">
+    <view class="card-box">
+        <image class="card-bg" mode="aspectFill" src="{{myInfo.cardBackgroundImg}}"></image>
+        <view class="card-container">
+            <view class="card-header">
+                <face bind_init="_initComponent" bindtap="_proxy" data-region-id-se="faceBtnMy" data-wpy-evt="837-0" face="{{myInfo.face}}" id="faceBtnMy" navigatorPage="EditUserInfo"></face>
+                <image class="super-monkey" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/my/bg-my-super-monkey.png"></image>
+            </view>
+            <image class="card-center-icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/my/bg-my-life.png"></image>
+            <view class="card-bottom">
+                <view class="text" wx:if="{{!isSuperCard}}">{{rechargeText}} <text bindtap="_proxy" data-wpy-evt="837-1">查看特权</text>
+                </view>
+                <view bindtap="_proxy" class="balance" data-wpy-evt="837-2" wx:else>
+          余额：
+          <view class="nums DINCondensedOld" style="padding-top:{{isFullDisplay?'0':'8rpx'}};" wx:if="{{!hideBalance}}">
+            {{isSuperCardFrozen?0:totalBalance/100}}</view>
+                    <view class="nums" wx:else>******</view>
+                    <image class="icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/my/icon-money-open.png" wx:if="{{!hideBalance}}"></image>
+                    <image class="icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/my/icon-money-close.png" wx:else></image>
+                </view>
+                <view bindtap="_proxy" class="btn-box" data-wpy-evt="837-3" wx:if="{{isSuperCardFrozen}}">
+          进度
+        </view>
+                <view bindtap="_proxy" class="btn-box" data-region-id-se="chargeBottomBtnMy" data-wpy-evt="837-4" id="chargeBottomBtn" wx:elif="{{isSuperCard}}">
+          充值
+        </view>
+                <view bindtap="_proxy" class="btn-box" data-region-id-se="chargeBottomBtnMy" data-wpy-evt="837-5" id="chargeBottomBtn" wx:else>开通</view>
+            </view>
+        </view>
+    </view>
+    <view class="panel-box">
+        <view class="panel">
+            <view bindtap="_proxy" class="vip-box" data-region-id-se="seeVipRightsMy" data-wpy-evt="837-6" id="seeVipRights">
+                <view class="level">
+                    <view class="vip-info">
+                        <image class="icon" src="{{!isSuperCard?vipLevelMap[userVip.levelId].disableIconUrl:vipLevelMap[userVip.levelId].iconUrl}}"></image>
+                        <view class="info" style="color: {{!isSuperCard?'#afaeaf':levelConfig[userVip.levelId].color}};">
+                            <view class="cn">{{vipLevelMap[userVip.levelId].vipLevelName}}</view>
+                            <view class="en">{{vipLevelMap[userVip.levelId].vipLevelEnName}}</view>
+                        </view>
+                    </view>
+                    <view class="arrow-text">
+                        <view>查看会员权益</view>
+                        <view class="arrow"></view>
+                    </view>
+                </view>
+                <view class="equity" wx:if="{{!isSuperCard}}">
+                    <view>开通超猩卡立享{{vipLevelMap[userVip.levelId].vipLevelName}}权益</view>
+                    <view class="arrow"></view>
+                </view>
+                <view class="progress" wx:else>
+                    <view class="percent" wx:if="{{userVip.levelId<3}}">
+                        <view class="value DINCondensedOld">
+                            <view class="real">{{userVip.curExp}}</view>
+                            <view class="semicolon">/</view>
+                            <view class="target-value">{{vipLevelMap[vipLevelMap[userVip.levelId].nextLevelId].startExp}}</view>
+                        </view>
+                        <view class="target">
+                            <view class="real" style="width: {{userVip.curExp/vipLevelMap[userVip.levelId].endExp*100+'%'}}; background: {{'linear-gradient(to right, '+levelConfig[userVip.levelId].gradientStart+', '+levelConfig[userVip.levelId].gradientEnd+');'}};"></view>
+                        </view>
+                    </view>
+                    <view class="percent" wx:else>
+                        <view class="value DINCondensedOld">
+                            <view class="real">{{myInfo.userTrainRewardTask.curValue}}</view>
+                            <view class="semicolon">/</view>
+                            <view class="target-value">{{myInfo.userTrainRewardTask.targetValue}}</view>
+                        </view>
+                        <view class="banana-target">
+                            <block wx:for="{{trainRewardTaskTarget}}" wx:key="index">
+                                <image class="icon-banana" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/vip/common/banana-active.png" wx:if="{{myInfo.userTrainRewardTask.curValue>=index+1}}"></image>
+                                <image class="icon-banana" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/vip/common/banana.png" wx:else></image>
+                            </block>
+                        </view>
+                    </view>
+                    <view class="tips" wx:if="{{userVip.levelId<3}}">再获得{{vipLevelMap[vipLevelMap[userVip.levelId].nextLevelId].startExp-userVip.curExp}}点Super值即可升至{{vipLevelMap[vipLevelMap[userVip.levelId].nextLevelId].vipLevelName}}</view>
+                    <view class="tips" wx:else>{{myInfo.userTrainRewardTask.curValue?'再收集'+8-myInfo.userTrainRewardTask.curValue+'根能量香蕉即可获取好礼':'收集8根能量香蕉，获取猩球好礼'}} </view>
+                </view>
+            </view>
+            <view class="row-list">
+                <view bindtap="_proxy" class="row" data-region-id-se="superRankRowMy" data-wpy-evt="837-7" id="superRankRow">
+                    <view class="label">SuperRank排名</view>
+                    <view class="text" wx:if="{{!isSuperCard}}">
+            训练时长<text class="light DINCondensedOld" style="margin: 0 8rpx -10rpx 8rpx;"> {{superNumber}} </text>分钟
+          </view>
+                    <view class="text" wx:else>
+            第<text class="light DINCondensedOld" style="margin: 0 8rpx -10rpx 8rpx;">{{superNumber}}</text>名
+          </view>
+                    <view class="arrow"></view>
+                </view>
+                <view bindtap="_proxy" class="row" data-region-id-se="badgeRowMy" data-wpy-evt="837-8" id="badgeRow">
+                    <view class="label">猩章
+            <view class="circle" wx:if="{{newBadgeNumber>0}}"></view>
+                    </view>
+                    <view class="text" wx:if="{{!isSuperCard}}">{{badgeText}}</view>
+                    <view class="text" wx:else>
+                        <text class="light DINCondensedOld">{{myInfo.badgeCount}}</text>枚</view>
+                    <view class="arrow"></view>
+                </view>
+                <view bindtap="_proxy" class="row" data-wpy-evt="837-9" wx:if="{{isNeedBindPhoneNumber}}">
+                    <view class="label">手机号
+            <view class="circle"></view>
+                    </view>
+                    <view class="text prompt">点击绑定，以免错过预约</view>
+                    <view class="arrow {{[isNeedBindPhoneNumber?'arrow-active':'']}}"></view>
+                </view>
+                <view bindtap="_proxy" class="row" data-region-id-se="ticketRowMy" data-wpy-evt="837-10" id="ticketRow">
+                    <view class="label">代金券
+            <view class="circle" wx:if="{{expireTicketNumber||newTicketNumber}}"></view>
+                    </view>
+                    <view class="text prompt" wx:if="{{expireTicketNumber}}">有{{expireTicketNumber}}张券将过期</view>
+                    <view class="text prompt" wx:elif="{{newTicketNumber}}">{{newTicketNumber}}张 总计{{allTicketValue}}元</view>
+                    <view class="arrow {{[newTicketNumber||expireTicketNumber?'arrow-active':'']}}"></view>
+                </view>
+                <navigator appId="wxaad1ec32ca918244" bindtap="_proxy" class="row" data-region-id-se="inviteRowMy" data-wpy-evt="837-11" id="inviteRow" openType="navigate" path="pages/SplashScreen?url=MyInvitation" target="miniProgram" version="release" wx:if="{{myInviteInfoNumber}}">
+                    <view class="label">邀请有礼
+            <view class="circle"></view>
+                    </view>
+                    <view class="text prompt">有新的好友接受邀请</view>
+                    <view class="arrow arrow-active"></view>
+                </navigator>
+                <navigator appId="wxaad1ec32ca918244" bindtap="_proxy" class="row" data-region-id-se="inviteRowMy" data-wpy-evt="837-12" id="inviteRow" openType="navigate" path="pages/SplashScreen?url=InvitationIndex" target="miniProgram" version="release" wx:else>
+                    <view class="label">邀请有礼</view>
+                    <view class="text prompt">送好友¥60优惠券</view>
+                    <view class="arrow"></view>
+                </navigator>
+                <view bindtap="_proxy" class="row" data-region-id-se="myGivenRowMy" data-wpy-evt="837-13" id="myGivenRow">
+                    <view class="label">我的赠送</view>
+                    <view class="arrow"></view>
+                </view>
+                <view bindtap="_proxy" class="row row-promotion" data-region-id-se="noticeManageRowMy" data-wpy-evt="837-14" id="noticeManageRow">
+                    <view class="label">通知管理</view>
+                    <view class="arrow"></view>
+                </view>
+                <view bindtap="_proxy" class="row" data-region-id-se="companyServiceRowMy" data-wpy-evt="837-15" id="companyServiceRow">
+                    <view class="label">企业服务</view>
+                    <view class="arrow"></view>
+                </view>
+                <view class="row row-promotion" wx:if="{{promotionConfig.isPositionActive&&promotionConfig.promotions.length}}" wx:for="{{promotionConfig.promotions}}" wx:for-item="promotion" wx:key="index">
+                    <click-behavior bind_init="_initComponent" class="row-promotion-component" data-region-id-sm="supermonkeyCardMenuRowPromotion" id="supermonkeyCardMenuRow" info="{{promotion}}">
+                        <view class="row-promotion-container">
+                            <view class="label">{{promotion.title}}</view>
+                            <view class="arrow"></view>
+                        </view>
+                    </click-behavior>
+                </view>
+            </view>
+        </view>
+    </view>
+    <copy-right-bottom bind_init="_initComponent" class="copy-right-bottom" isShowVersion="{{true}}"></copy-right-bottom>
+</view>
+<vip-equity-pop bind_init="_initComponent" id="vipEquityPop"></vip-equity-pop>
+<vip-upgrade-modal bind_init="_initComponent" id="vip-upgrade-modal"></vip-upgrade-modal>
+<business-service-modal bind_init="_initComponent" id="service-modal"></business-service-modal>
+<page-loading bind_init="_initComponent" bindreload="_proxy" data-wpy-evt="837-16" id="__LoadingPage__"></page-loading>
+<show-toast bind_init="_initComponent" id="__Toast__"></show-toast>
+<show-modal bind_init="_initComponent" id="__Modal__"></show-modal>
+<show-action-sheet bind_init="_initComponent" id="__ActionSheet__"></show-action-sheet>
+<show-add-wechat-modal bind_init="_initComponent" id="__ModalAddWeChat__"></show-add-wechat-modal>
+<show-picker-view bind_init="_initComponent" id="__PickerView__"></show-picker-view>
+<register-user bind_init="_initComponent" id="__ModalRegisterUser__"></register-user>
+<unauthorized-msg bind_init="_initComponent" id="__ModalUnauthorizedMsg__"></unauthorized-msg>
+<reject-msg bind_init="_initComponent" id="__ModalRejectMsg__"></reject-msg>
+<modal-subscribe-msg-guide1 bind_init="_initComponent" id="__ModalSubscribeMsgGuide1__"></modal-subscribe-msg-guide1>
+<modal-subscribe-msg-guide2 bind_init="_initComponent" id="__ModalSubscribeMsgGuide2__"></modal-subscribe-msg-guide2>
+<ticket-prompt bind_init="_initComponent" id="__TooltipTicket__"></ticket-prompt>
+<personal-expire-prompt bind_init="_initComponent" id="__TooltipPersonal__"></personal-expire-prompt>
+<newer-guide bind_init="_initComponent" id="__CourseListTooltipNewerGuide__"></newer-guide>

@@ -1,0 +1,9 @@
+.follow-img-container {
+    padding: 24rpx 42rpx;
+}
+
+.follow-img {
+    width: 456rpx;
+    height: 480rpx;
+    display: block;
+}

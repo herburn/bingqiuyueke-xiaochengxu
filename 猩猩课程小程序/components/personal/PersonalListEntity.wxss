@@ -1,0 +1,122 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+.booking-course-entry {
+    width: 100%;
+    background: #333;
+}
+
+.booking-course-entry-wrap {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    position: relative;
+    padding: 24rpx 16rpx;
+}
+
+.booking-course-entry .column-info {
+    -webkit-box-flex: 1;
+    flex: 1;
+    margin-left: 16rpx;
+    height: 120rpx;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.booking-course-entry .content-1 {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    width: 383rpx;
+    height: 39rpx;
+    line-height: 39rpx;
+}
+
+.booking-course-entry .content-2 {
+    font-size: 22rpx;
+    color: #767678;
+    width: 383rpx;
+    height: 31rpx;
+    margin-bottom: 2rpx;
+    line-height: 31rpx;
+}
+
+.booking-course-entry .content-3 {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    font-size: 22rpx;
+    color: #fcc800;
+    height: 31rpx;
+    line-height: 31rpx;
+}
+
+.booking-course-entry .content-3-text2 {
+    margin-left: 8rpx;
+    color: #f2f2f7;
+}
+
+.booking-course-entry .btn {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+}
+
+.booking-course-entry .btn-grey {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #c9c9cd;
+    background-color: #767678;
+}
+
+.booking-course-entry .btn-disable {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #999;
+    background-color: #767678;
+}
+
+.booking-course-entry .status-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 54rpx;
+    height: 54rpx;
+}

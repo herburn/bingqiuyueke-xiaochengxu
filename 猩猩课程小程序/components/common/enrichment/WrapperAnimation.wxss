@@ -1,0 +1,50 @@
+@import "../../../__wuBaseWxss__/3.wxss";
+
+.animation-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 799;
+    display: none;
+    overflow: hidden;
+    height: 100%;
+    background: rgba(0,0,0,0.64);
+}
+
+.content-wrap {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 800;
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    height: 78.8%;
+    border-radius: 48rpx 48rpx 0 0;
+    background: #333;
+}
+
+.show-content {
+    bottom: 0;
+    animation: fadeInUp .6s cubic-bezier(.4,0,.2,1) both;
+}
+
+.hide-content {
+    display: block;
+    animation: fadeDown .6s cubic-bezier(.4,0,.2,1) both;
+}
+
+.show-mask {
+    display: block;
+    height: 100%;
+    animation: fadeInBg .6s cubic-bezier(.4,0,.2,1) both;
+}
+
+.hide-mask {
+    display: block;
+    height: 100%;
+    animation: fadeOutBg .6s cubic-bezier(.4,0,.2,1) both;
+}

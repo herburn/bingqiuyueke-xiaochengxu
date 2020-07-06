@@ -1,0 +1,7 @@
+.splashScreen,.login,.not-login,.service-unavailable {
+    display: none;
+}
+
+.splashScreen-active,.login-active,.not-login-active,.service-unavailable-active {
+    display: block;
+}

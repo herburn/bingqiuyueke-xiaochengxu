@@ -1,0 +1,5 @@
+<view class="checkin-row">
+    <view class="label checkin" wx:if="{{checkinInfo.checkin===1}}">{{checkinInfo.label}}</view>
+    <view class="label un-checkin" wx:else>{{checkinInfo.label}}</view>
+    <view class="note">{{checkinInfo.note}}</view>
+</view>

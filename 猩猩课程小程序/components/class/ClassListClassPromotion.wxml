@@ -1,0 +1,9 @@
+<view bindtap="_proxy" class="schedule" data-wpy-evt="1225-0">
+    <face bind_init="_initComponent" class="face" face="{{info.img}}"></face>
+    <view class="main">
+        <view class="title ellipsis">{{info.title}}</view>
+        <view class="highlight ellipsis">{{info.highlight}}</view>
+        <view class="subtitle ellipsis">{{info.subtitle}}</view>
+    </view>
+    <view class="btn" hoverClass="btn-primary-hover-class">{{info.buttonText}}</view>
+</view>

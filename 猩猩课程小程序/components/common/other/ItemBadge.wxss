@@ -1,0 +1,39 @@
+.badge {
+    width: 100%;
+    height: 100%;
+}
+
+.badge .badge-detail {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.badge .badge-detail .badge-box {
+    width: 100%;
+    height: 100%;
+}
+
+.badge .badge-detail .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.badge .badge-detail .mask image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.badge .badge-detail .complete {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

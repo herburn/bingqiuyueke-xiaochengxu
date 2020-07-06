@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "schedules": "/app/components/schedules/schedules",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,153 @@
+<navigatorBar backgroundColor="rgba(255,255,255,{{navigatorBarOpacity}})" fixed="fixed" navigationBarColor="{{navigationBarColor}}"></navigatorBar>
+<view class="{{autoplay?'hidden':''}}" style="padding-bottom: {{iphonex?'24px':''}}" wx:if="{{camp}}">
+    <view class="banner-wrap">
+        <swiper bindchange="bannerChange" class="banner" current="{{bannerCurrent}}" duration="250">
+            <swiper-item catchtap="play" wx:if="{{camp.videoPoster}}">
+                <image mode="aspectFill" src="{{camp.videoPoster}}?imageMogr2/thumbnail/750x/quality/95"></image>
+                <view class="play-icon"></view>
+            </swiper-item>
+            <swiper-item bindtap="previewBanner" data-src="{{item}}" wx:for="{{camp.coverList}}" wx:key="{{index}}">
+                <image mode="aspectFill" src="{{item}}?imageMogr2/thumbnail/750x/quality/95"></image>
+            </swiper-item>
+        </swiper>
+        <view bindtap="changeMedia" class="banner-tip {{bannerCurrent>0?'on':''}}" wx:if="{{camp.videoPoster&&camp.coverList.length}}">
+            <view>预告片</view>
+            <view>图片</view>
+        </view>
+        <view class="banner-count" wx:if="{{!camp.videoPoster||bannerCurrent>0}}"> {{camp.videoPoster?bannerCurrent+'/'+camp.coverList.length:bannerCurrent+1+'/'+camp.coverList.length}}</view>
+        <view class="banner-mask" style="height: {{totalNavHeight}}px;"></view>
+    </view>
+    <view class="video-wrap" wx:if="{{autoplay}}">
+        <video autoplay="{{autoplay}}" bindfullscreenchange="videoFullScreen" class="{{autoplay?'autoplay':''}}" enablePlayGesture="{{true}}" showFullscreenBtn="{{!isAndroid}}" src="{{camp.previewVideo}}"></video>
+        <cover-view bindtap="play" style="top: {{totalNavHeight-40}}px" wx:if="{{showCloseBtn}}">
+            <cover-image src="https://static1.keepcdn.com/2019/03/11/09/1552269022589_48x48.png"></cover-image>
+        </cover-view>
+    </view>
+    <keep-card customClass="base-wrap" shadow="shadow">
+        <view class="base">
+            <view class="countdown-wrap {{countDown?'going':'over'}}">
+                <view class="sign-info" wx:if="{{camp.status==-1||camp.status==1||camp.status==0&&!countDown}}">报名已截止</view>
+                <block wx:elif="{{countDown}}">
+                    <view class="sign-info">距报名截止</view>
+                    <view class="countdown">
+                        <view class="num">{{countDown.day}}</view>
+                        <view class="text">天</view>
+                        <view class="num">{{countDown.hour}}</view>
+                        <view class="text">时</view>
+                        <view class="num">{{countDown.min}}</view>
+                        <view class="text">分</view>
+                        <view class="num">{{countDown.sec}}</view>
+                        <view class="text">秒</view>
+                    </view>
+                </block>
+            </view>
+            <view class="name">
+                <view>{{camp.formatCampName.EN}}</view>
+                <view>{{camp.formatCampName.CN}}</view>
+            </view>
+            <view class="course-num">{{camp.period}} 节课</view>
+            <view class="tags-book-count">
+                <view class="tags-wrap">
+                    <keep-tag customClass="tags" fontWeight="normal" type="gray" wx:for="{{camp.salesTags}}" wx:key="{{index}}">{{item}}</keep-tag>
+                </view>
+            </view>
+            <view class="camp-info keep-1px-border top-border">
+                <view class="info camp-course-num">
+                    <view class="title">课时(节)</view>
+                    <view class="count">{{camp.period}}</view>
+                </view>
+                <view class="info">
+                    <view class="title">时间(分钟)</view>
+                    <view class="count">{{camp.duration}}</view>
+                </view>
+                <view class="info">
+                    <view class="title">燃脂(千卡)</view>
+                    <view class="count">{{camp.calorie}}</view>
+                </view>
+                <view class="info camp-difficulty">
+                    <view class="title">难度</view>
+                    <view class="count difficulty">{{camp.difficulty}}</view>
+                </view>
+            </view>
+        </view>
+    </keep-card>
+    <keep-card customClass="gym-card-wrap" shadow="shadow">
+        <view class="capacity-gym keep-1px-border bottom-border">
+            <view class="capacity">开营人数：{{camp.minCapacity}} ~ {{camp.maxCapacity}}</view>
+            <navigator class="gym" data-place="location" data-value="{{camp.gymId}}" hoverClass="none" url="/app/pages/space/space?gymId={{camp.gymId}}">
+                <view class="keep-right-more-arrow-new">{{camp.gymName}} - {{camp.roomName}}</view>
+            </navigator>
+        </view>
+        <view class="book-user" wx:if="{{camp.userInfos&&camp.userInfos.length}}">
+            <navigator class="keep-right-more-arrow-new" hoverClass="none" url="/app/pages/courseBookList/courseBookList?campId={{camp.id}}">
+                <view class="avatar" style="left:{{index*50}}rpx;z-index:{{5-index}}" wx:if="{{!(index>=5)}}" wx:for="{{camp.userInfos}}" wx:key="{{index}}">
+                    <keep-avatar borderWidth="4" size="70" src="{{item.avatar}}"></keep-avatar>
+                </view>
+                <view class="avatar" style="left:{{5*50}}rpx;" wx:if="{{camp.userInfos.length>=5}}">
+                    <keep-avatar size="70" src="https://static1.keepcdn.com/2019/10/06/19/1570360730901_105x105.png"></keep-avatar>
+                </view>
+                <view class="book-count">
+                    <text>已预约</text>
+                    <text class="book">{{camp.bookedCount}}</text>
+                    <text class="total">/{{camp.maxCapacity}}</text>
+                </view>
+            </navigator>
+        </view>
+        <view class="coach-wrap keep-1px-border top-border">
+            <navigator class="coach" hoverClass="none" url="/app/pages/coach/coach?coachId={{camp.coachDetail.userId}}" wx:if="{{camp.coachDetail}}">
+                <keep-avatar customClass="coach-avatar" size="90" src="{{camp.coachDetail.avatar}}"></keep-avatar>
+                <view class="coach-name keep-right-more-arrow-new">{{camp.coachDetail.name}}</view>
+            </navigator>
+            <view class="coach-desc">{{camp.coachDetail.introduction}}</view>
+        </view>
+    </keep-card>
+    <view class="camp-wrap">
+        <view class="common-title">
+            <view>课程简介</view>
+            <image class="logo" mode="aspectFit" src="{{camp.campLogo}}?imageMogr2/thumbnail/230x/quality/95" wx:if="{{camp.campLogo}}"></image>
+        </view>
+        <view class="brand-desc" wx:if="{{camp.descriptionDetails&&camp.descriptionDetails[0].title=='品牌描述'}}">{{camp.descriptionDetails[0].content}}</view>
+        <view class="camp-desc">
+            <view wx:if="{{camp.descriptionDetails[1].content}}">{{camp.descriptionDetails[1].content}}</view>
+        </view>
+        <view class="arrange-wrap">
+            <view class="common-title arrange-title">
+                <view>课程安排</view>
+                <view class="beats-num">（共 {{camp.period}} 节）</view>
+            </view>
+            <view class="arrange" wx:for="{{camp.campSections}}" wx:for-item="campSection" wx:key="{{ index }}">
+                <view class="period-name">{{campSection.sectionName}}</view>
+                <view class="camp-course {{index!==0?'keep-1px-border top-border':''}}" wx:for="{{campSection.campCourses}}" wx:for-item="campCourse" wx:key="{{ index }}">
+                    <view class="camp-course-serial">{{campCourse.index>9?campCourse.index:'0'+campCourse.index}}</view>
+                    <view class="camp-course-info">
+                        <view class="camp-course-name">{{campCourse.courseName}}</view>
+                        <view class="camp-course-time">{{campCourse.courseTimeRange}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="suited">
+            <view wx:if="{{item.title!='运动风险提示'&&item.title!='特别说明'&&item.title!='品牌描述'&&item.title!='课程描述'}}" wx:for="{{camp.descriptionDetails}}" wx:key="{{index}}">
+                <view class="common-title">{{item.title}}</view>
+                <view class="desc" wx:for="{{item.contentList}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="btn divide-7-5" wx:if="{{camp.status==0||camp.status==2}}">
+        <view class="count schedule-count {{iphonex?'iphonex':''}}">
+            <view class="sales-price">
+                <text class="unit">¥</text>
+                <text>{{camp.centSalesPrice/100}}</text>
+                <text class="pay-limitation">（不支持使用课包）</text>
+            </view>
+        </view>
+        <view class="submit">
+            <keep-button bind:click="handleBtn" customClass="{{iphonex?'iphonex':''}}" data-status="{{camp.status}}">{{btnTextMap[camp.status]}}</keep-button>
+        </view>
+    </view>
+    <view class="btn" wx:else>
+        <view class="submit">
+            <keep-button bind:click="handleBtn" customClass="{{iphonex?'iphonex':''}}" data-status="{{camp.status}}" disabled="{{camp.status!=3?true:false}}">{{btnTextMap[camp.status]}}</keep-button>
+        </view>
+    </view>
+</view>

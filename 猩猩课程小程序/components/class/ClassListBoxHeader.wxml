@@ -1,0 +1,6 @@
+<view class="class-box-header">
+    <view bindtap="_proxy" class="class-box-header__label" data-region-id-se="boxFavClassListBoxHeader" data-wpy-evt="1221-0" id="boxFav">
+        <view class="iconfont icon-heart-outlined {{[favStatus===1?'icon-heart-filled':'']}}" wx:if="{{isShowFav&&!isUnregistered}}"></view>{{boxInfo.name}}
+  </view>
+    <view bindtap="_proxy" class="class-box-header__map" data-wpy-evt="1221-1">查看地图</view>
+</view>

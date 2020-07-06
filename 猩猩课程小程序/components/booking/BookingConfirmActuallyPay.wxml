@@ -1,0 +1,4 @@
+<view class="need-to-pay">
+    <view class="text">还需支付</view>
+    <view class="money DINCondensedOld">¥{{leftToPay}}</view>
+</view>

@@ -1,0 +1,69 @@
+.confirm-header {
+    position: relative;
+    padding: 24rpx 24rpx 16rpx;
+    text-align: left;
+}
+
+.confirm-header .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 48rpx;
+    color: #fcc800;
+    margin-bottom: 24rpx;
+    font-weight: 500;
+    word-break: break-all;
+}
+
+.confirm-header .monkey-mark {
+    position: absolute;
+    top: 24rpx;
+    right: 24rpx;
+    width: 194rpx;
+    height: 194rpx;
+}
+
+.confirm-header .top-row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    font-size: 28rpx;
+    color: #c9c9cd;
+    margin-bottom: 16rpx;
+    line-height: 39rpx;
+}
+
+.confirm-header .time,.confirm-header .trainer,.confirm-header .address {
+    width: 90rpx;
+}
+
+.confirm-header .line-up {
+    padding: 16rpx 0;
+    font-size: 32rpx;
+    color: #f2f2f7;
+}
+
+.confirm-header .line-up .highlight {
+    font-size: 36rpx;
+    color: #fcc800;
+}
+
+.confirm-header .detail {
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+
+.confirm-header::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2rpx;
+    background: rgba(118,118,120,0.1);
+}

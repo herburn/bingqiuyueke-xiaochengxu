@@ -1,0 +1,24 @@
+<navigatorBar></navigatorBar>
+<view class="container {{status==0||status==2?'loading':''}}">
+    <image class="package-icon" mode="aspectFit" src="/app/images/icon_empty_success.png" wx:if="{{status==3}}"></image>
+    <image class="package-icon" mode="aspectFit" src="/app/images/icon_failure.png" wx:elif="{{status==-3}}"></image>
+    <image class="package-icon" mode="aspectFit" src="/app/images/icon_class_bag_big.png" wx:elif="{{status==1}}"></image>
+    <image class="package-icon" mode="aspectFit" src="https://static1.keepcdn.com/2019/01/23/14/1548224519814_200x200.gif" wx:else></image>
+    <view class="title" wx:if="{{status==1}}">课包购买成功</view>
+    <block wx:elif="{{status==2}}">
+        <view class="title">正在预约...</view>
+        <view class="tips">稍等请勿退出页面</view>
+    </block>
+    <block wx:elif="{{status==3}}">
+        <view class="title">预约成功</view>
+        <view class="tips">即将自动跳转</view>
+    </block>
+    <block wx:elif="{{status==-3}}">
+        <view class="title">预约失败</view>
+        <view class="tips">预约人数已满，您可以使用课包自动等位</view>
+    </block>
+    <block wx:else>
+        <view class="title">正在购买课包...</view>
+        <view class="tips">稍等请勿退出页面</view>
+    </block>
+</view>

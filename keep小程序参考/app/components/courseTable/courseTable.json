@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "keep-card": "/miniprogram_npm/keep-ui-lite/lib/components/card/index",
+        "keep-avatar": "/miniprogram_npm/keep-ui-lite/lib/components/avatar/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "keep-tag": "/miniprogram_npm/keep-ui-lite/lib/components/tag/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

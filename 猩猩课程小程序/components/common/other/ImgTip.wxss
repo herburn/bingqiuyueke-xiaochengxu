@@ -1,0 +1,17 @@
+.img-tip {
+    width: 100%;
+}
+
+.img-tip .tip-img {
+    display: block;
+    margin: 0 auto;
+}
+
+.img-tip .tip-msg {
+    font-size: 32rpx;
+    color: #f2f2f7;
+    height: 45rpx;
+    margin-top: 8rpx;
+    text-align: center;
+    line-height: 45rpx;
+}

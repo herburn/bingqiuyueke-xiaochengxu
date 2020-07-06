@@ -1,0 +1,1 @@
+<txv-video autoplay="{{autoplay}}" bind_init="_initComponent" bindended="_proxy" bindpause="_proxy" bindplay="_proxy" data-region-id-se="smVideo" data-vid-se="{{vid}}" data-wpy-evt="1192-0" height="{{height}}rpx" id="video" objectFit="{{objectFit}}" playerid="{{vid}}" poster="{{poster}}" vid="{{vid}}" width="{{width}}rpx" wx:if="{{vid}}"></txv-video>

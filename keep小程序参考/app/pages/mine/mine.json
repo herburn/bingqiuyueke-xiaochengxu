@@ -1,0 +1,12 @@
+{
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#ffffff",
+    "usingComponents": {
+        "newCouponModal": "/app/components/newCouponModal/newCouponModal",
+        "keep-avatar": "/miniprogram_npm/keep-ui-lite/lib/components/avatar/index",
+        "keep-card": "/miniprogram_npm/keep-ui-lite/lib/components/card/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "keep-notice-bar": "/miniprogram_npm/keep-ui-lite/lib/components/notice-bar/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

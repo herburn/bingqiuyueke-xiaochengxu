@@ -1,0 +1,10 @@
+{
+    "component": true,
+    "usingComponents": {
+        "camp-card": "./../camp/CampListCard",
+        "banner": "./../common/other/BannerTop",
+        "click-behavior": "./../common/enrichment/ClickBehavior",
+        "online-camp-item": "./OnlineCampItem",
+        "bottom-text": "./../common/dataDisplay/TextBottom"
+    }
+}

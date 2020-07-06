@@ -1,0 +1,38 @@
+.switch {
+    display: flex;
+}
+
+.switch-core {
+    position: relative;
+    display: inline-block;
+    width: 76rpx;
+    height: 48rpx;
+    outline: none;
+    border-radius: 38rpx;
+    box-sizing: border-box;
+    background-color: #767678;
+    cursor: pointer;
+    transition: border-color .3s,background-color .3s;
+}
+
+.switch-core::after {
+    position: absolute;
+    top: 5rpx;
+    left: 4rpx;
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 100%;
+    box-shadow: 0 8rpx 24rpx -8rpx rgba(0,0,0,0.32);
+    background-color: #f2f2f7;
+    content: "";
+    transition: all .3s;
+}
+
+.switch-core.active {
+    background-color: #fcc800;
+}
+
+.switch-core.active::after {
+    left: 100%;
+    margin-left: -44rpx;
+}

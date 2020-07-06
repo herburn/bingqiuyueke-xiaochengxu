@@ -1,0 +1,13 @@
+<navigatorBar backgroundColor="#584F60" navigationBarColor="white"></navigatorBar>
+<view class="container" wx:if="{{keepUserInfo}}">
+    <view class="title">该账号今天暂无已预约的课程，是否切换 Keep 账号？</view>
+    <view class="user">
+        <view class="avatar-wrap">
+            <image class="avatar" mode="aspectFill" src="{{keepUserInfo.avatar?keepUserInfo.avatar+'?imageMogr2/thumbnail/268x/quality/95':'/app/images/default_avatar.png'}}"></image>
+            <image class="icon-k" mode="aspectFit" src="/app/images/icon_logo.png"></image>
+        </view>
+        <view class="name"> {{keepUserInfo.userName}}</view>
+    </view>
+    <button bindtap="jumpLogin" class="button login">切换账号</button>
+    <button bindtap="jumpHome" class="button home">返回首页</button>
+</view>

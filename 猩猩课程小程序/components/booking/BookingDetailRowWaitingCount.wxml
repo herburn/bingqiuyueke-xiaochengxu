@@ -1,0 +1,7 @@
+<view class="waiting-count-row">
+  当前等候
+  <text class="highlight" space="nbsp">{{' '+waitInfo.waitingCount+' '}}</text>
+  人，你是第
+  <text class="highlight" space="nbsp">{{' '+waitInfo.waitingOrder+' '}}</text>
+  位哟！
+</view>

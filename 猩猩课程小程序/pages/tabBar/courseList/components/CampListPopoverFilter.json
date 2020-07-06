@@ -1,0 +1,7 @@
+{
+    "component": true,
+    "usingComponents": {
+        "select-column-three": "./../../../../components/common/combination/SelectColumnThree",
+        "popover-layout-filter": "./../../../../components/common/feedback/PopoverLayoutFilter"
+    }
+}

@@ -1,0 +1,4 @@
+<view bindtap="_proxy" class="banner" data-region-id-se="noviceBannerClassListBannerNovice" data-region-id-sm="noviceBannerClassListBannerNovice" data-wpy-evt="1215-0" id="noviceBanner">
+    <image class="img" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/new-user-guide.png"></image>
+    <view class="mask"></view>
+</view>

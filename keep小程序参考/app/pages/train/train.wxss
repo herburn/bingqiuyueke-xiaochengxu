@@ -1,0 +1,187 @@
+page {
+    background: #fff;
+}
+
+.custom-nav {
+    background-color: #fafafa;
+}
+
+.need-login {
+    height: calc(100vh - 68px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.need-login image {
+    padding-top: 305rpx;
+    width: 290rpx;
+    height: 290rpx;
+}
+
+.need-login text {
+    font-size: 28rpx;
+    color: #666;
+    padding: 10rpx 0 24rpx;
+}
+
+.need-login .login {
+    width: 240rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border-radius: 72rpx;
+    font-size: 28rpx;
+}
+
+.train .top-wrap {
+    padding: 30rpx 0 40rpx;
+    background-color: #fafafa;
+}
+
+.train .recent-train {
+    padding: 0 30rpx 20rpx;
+}
+
+.train .recent-train .content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-right: 35rpx;
+    font-size: 24rpx;
+}
+
+.train .recent-train .content text:first-child {
+    color: rgba(0,0,0,0.4);
+}
+
+.train .recent-train .content text:last-child {
+    color: rgba(0,0,0,0.7);
+    font-weight: bold;
+}
+
+.top-card {
+    width: 690rpx;
+    height: 274rpx;
+    margin: 0 auto;
+}
+
+.top-card .card {
+    padding: 30rpx 30rpx 28rpx;
+}
+
+.top-card .card .month {
+    display: flex;
+    justify-content: space-between;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.top-card .card .month view:last-child {
+    color: rgba(0,0,0,0.4);
+    margin-right: 35rpx;
+    font-weight: normal;
+}
+
+.top-card .card .duration {
+    height: 112rpx;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.top-card .card .duration .duration-content {
+    position: relative;
+    top: -4rpx;
+    height: 52rpx;
+}
+
+.top-card .card .duration .duration-content text:first-child {
+    font-size: 60rpx;
+    color: #24c789;
+    font-family: 'Keepfont2019';
+    margin-right: 10rpx;
+}
+
+.top-card .card .duration .duration-content text:last-child {
+    font-size: 24rpx;
+    color: rgba(0,0,0,0.4);
+    position: relative;
+    top: -4rpx;
+}
+
+.top-card .card .train-record {
+    display: flex;
+    margin-top: 30rpx;
+    line-height: 36rpx;
+    height: 36rpx;
+}
+
+.top-card .card .train-record view {
+    flex: 1;
+}
+
+.top-card .card .train-record view text:first-child {
+    font-family: Keepfont2019;
+    font-size: 40rpx;
+    margin-right: 10rpx;
+}
+
+.top-card .card .train-record view text:last-child {
+    color: rgba(0,0,0,0.4);
+    font-size: 24rpx;
+    position: relative;
+    top: -4rpx;
+}
+
+.bottom-card {
+    box-shadow: 0 -10rpx 20rpx 0 rgba(0,0,0,0.02);
+    background: #fff;
+}
+
+.swiper {
+    min-height: calc(100vh - 700rpx);
+    transition: height 0.3s;
+}
+
+.tab-wrap {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 8;
+    margin-top: -10rpx;
+}
+
+.tab-wrap .tab {
+    position: relative;
+}
+
+.tab-wrap .tab .badge {
+    margin-left: 10rpx;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.history {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    height: 136rpx;
+    background-color: #fff;
+}
+
+.history view:nth-child(1) {
+    font-size: 40rpx;
+    color: #000;
+    font-weight: bold;
+}
+
+.history view:nth-child(2) {
+    font-size: 26rpx;
+    padding-right: 36rpx;
+    color: rgba(0,0,0,0.4);
+}

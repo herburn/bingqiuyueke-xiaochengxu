@@ -1,0 +1,111 @@
+.equity-pop-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 800;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.equity-pop-mask .icon-close {
+    position: absolute;
+    z-index: 700;
+    top: 196rpx;
+    right: 24rpx;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.equity-pop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 702rpx;
+    height: 960rpx;
+    border-radius: 16rpx;
+    background: #fff;
+    transform: translate3d(-50%,0,0);
+}
+
+.equity-pop .swiper-item {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.equity-pop .swiper-wrap {
+    width: 562rpx;
+    height: 510rpx;
+    margin: 22rpx auto;
+}
+
+.equity-pop .swiper-wrap .icon {
+    width: 562rpx;
+    height: 510rpx;
+}
+
+.equity-pop .indicator {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 166rpx;
+    margin: 32rpx auto 0;
+}
+
+.equity-pop .indicator .dot {
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 16rpx;
+    background: #b4b4b8;
+}
+
+.equity-pop .indicator .dot.active {
+    width: 54rpx;
+    border-radius: 8rpx;
+    background: #fcc800;
+}
+
+.equity-pop .tit {
+    font-size: 36rpx;
+    color: #242424;
+    margin-top: 48rpx;
+    margin-bottom: 16rpx;
+    text-align: center;
+}
+
+.equity-pop .text {
+    width:;
+    text-align: center;
+    font-size: 28rpx;
+    color: #767678;
+}
+
+.equity-pop .link-btn {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 114rpx;
+    border-radius: 0 0 16rpx 16rpx;
+    color: #242424;
+    background: #fcc800;
+}

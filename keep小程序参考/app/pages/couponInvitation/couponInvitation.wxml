@@ -1,0 +1,39 @@
+<navigatorBar backgroundColor="#584F60" navigationBarColor="white"></navigatorBar>
+<view class="invitation-wrap" style="background-image: url({{inviteImg}})" wx:if="{{promotion}}">
+    <image class="logo" mode="aspectFill" src="https://static1.keepcdn.com/2018/08/02/15/1533193300121_428x192.png"></image>
+    <view class="invitation">
+        <view class="inviter-info">
+            <image class="quotationmark" mode="aspectFill" src="https://static1.keepcdn.com/2018/08/02/15/1533193203036_24x24.png"></image>
+            <image class="avatar" mode="aspectFill" src="{{inviter.avatar+'?imageMogr2/thumbnail/128x/quality/95'}}" wx:if="{{inviter.avatar}}"></image>
+            <image class="avatar" mode="aspectFill" src="/app/images/default_avatar.png" wx:else></image>
+            <view class="username">{{inviter.name}}</view>
+            <view class="content">
+                <view class="des" decode="{{true}}" wx:if="{{trainingCount>0}}">已经在 Keepland 训练了</view>
+                <view class="times" decode="{{true}}" wx:if="{{trainingCount>0}}">{{trainingCount}}</view>
+                <view class="des" decode="{{true}}" wx:if="{{trainingCount>0}}">次，</view>
+                <view class="des" wx:else>准备来 Keepland 开始训练</view>
+            </view>
+            <view class="content">忍不住把它推荐给你，快来一起训练吧！</view>
+        </view>
+        <view bindtap="acceptInvitation" class="schedule-info">
+            <view class="schedule-content">
+                <view class="schedule-name">{{promotion.title}}</view>
+                <view class="schedule-time">{{promotion.sponsorCopy}}</view>
+            </view>
+            <image class="line" mode="aspectFill" src="https://static1.keepcdn.com/2018/08/02/15/1533193259781_18x180.png"></image>
+            <view class="qrcode-content">
+                <view class="price-symbol">¥</view>
+                <view class="price">{{promotion.amountCent/100}}</view>
+            </view>
+            <view class="received {{promotion.hasBound||success?'has-bound':''}}">
+                <view class="content" wx:if="{{!promotion.hasBound}}">立即领取</view>
+                <view class="content" wx:else>已领取</view>
+            </view>
+        </view>
+        <view class="btn" wx:if="{{promotion.hasBound||showBtn}}">
+            <navigator class="button" openType="switchTab" url="/app/pages/index/index">
+                <view class="button-content">立即约课</view>
+            </navigator>
+        </view>
+    </view>
+</view>

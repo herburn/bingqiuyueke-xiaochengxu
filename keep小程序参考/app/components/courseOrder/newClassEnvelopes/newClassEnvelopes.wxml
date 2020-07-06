@@ -1,0 +1,19 @@
+<view>
+    <view class="newClassEnvelopes-strong-mask" wx:if="{{newCourseEnvelopes.needCoupon}}">
+        <view class="newClassEnvelopes-wrapper">
+            <view class="newClassEnvelopes-title">
+                <text class="tri-left">第 </text>
+                <text class="bold">{{newCourseEnvelopes.rank}} </text>
+                <text>位打卡新课</text>
+            </view>
+            <view class="newClassEnvelopes-info">
+                <text>内含</text>
+                <text> {{newCourseEnvelopes.count}} 张</text>
+                <text>优惠券</text>
+            </view>
+            <button class="newClassEnvelopes-btn" openType="share">邀请好友来瓜分</button>
+        </view>
+        <view catchtap="close" class="close"></view>
+    </view>
+    <button class="newClassEnvelopes-weak {{newCourseEnvelopesHide?'':'envelopes-hide'}}" openType="share" wx:else></button>
+</view>

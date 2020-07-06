@@ -1,0 +1,6 @@
+var reasonIsChoose = (function(reasonList, reason) {
+    return (reasonList.indexOf(reason) != -1)
+});
+module.exports = ({
+    reasonIsChoose: reasonIsChoose,
+});

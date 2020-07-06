@@ -1,0 +1,18 @@
+<view catchtouchmove="_proxy" class="mask-screen" data-wpy-evt="1015-0" wx:if="{{isShowModal}}">
+    <view class="modal-box">
+        <view class="title" wx:if="{{title}}">{{title}}</view>
+        <view class="content modal-add-coach" wx:if="{{type==='friend'}}">
+      点击<text class="emphasize">[去添加]</text>，在输入框中回复<text class="emphasize">1</text>即可获取教练微信
+    </view>
+        <view class="content modal-add-coach" wx:if="{{type==='group'}}">
+      点击 <text class="emphasize">[去添加]</text>，在输入框中回复<text class="emphasize">1</text>即可获取二维码
+    </view>
+        <view bindtap="_proxy" class="iconfont icon-close close-btn" data-wpy-evt="1015-1"></view>
+        <view class="btn-box">
+            <view class="border-line"></view>
+            <button bindtap="_proxy" class="confirm-btn" data-wpy-evt="1015-2" openType="contact" sessionFrom="{{code}}" style="color: #333; background-color: #fcc800;">
+        {{confirmText}}
+      </button>
+        </view>
+    </view>
+</view>

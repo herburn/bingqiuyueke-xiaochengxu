@@ -1,0 +1,5 @@
+<view class="content-radius-box">
+    <panel-title bind_init="_initComponent" iconClass="icon-warning" title="注意事项"></panel-title>
+    <text-render-paragraph bind_init="_initComponent" fontColor="#767678" paragraphs="{{notes}}"></text-render-paragraph>
+    <agreement bind_init="_initComponent"></agreement>
+</view>

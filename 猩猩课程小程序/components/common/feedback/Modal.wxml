@@ -1,0 +1,26 @@
+<view catchtouchmove="_proxy" class="mask-screen" data-wpy-evt="1014-0" wx:if="{{isShowModal}}">
+    <view class="modal-box" style=" {{'width:'+width+';'+'overflow:'+overflow+';'}}">
+        <view bindtap="_proxy" class="iconfont icon-close close-btn" data-wpy-evt="1014-1" wx:if="{{isCloseIcon}}"></view>
+        <image class="banner" src="{{url}}" wx:if="{{url}}"></image>
+        <view class="title" style="{{titleStyle}};" wx:if="{{title}}">{{title}}</view>
+        <view class="content content--{{contentAlign}}" wx:if="{{openType==='normal'}}">
+            <text space="nbsp">{{content}}</text>
+        </view>
+        <view class="content" wx:elif="{{openType==='custom'}}">
+            <slot name="content"></slot>
+        </view>
+        <view class="btn-box btn-box-disable" style="{{btnStyle}};" wx:if="{{isDisableBtn}}">
+            <view class="border-line"></view>
+            <view bindtap="_proxy" class="btn-cancel" data-wpy-evt="1014-2">{{cancelText}}</view>
+            <view bindtap="_proxy" class="btn-confirm" data-wpy-evt="1014-3">{{confirmText}}</view>
+        </view>
+        <view class="btn-box btn-box-normal" style="{{btnStyle}};" wx:else>
+            <view class="border-line"></view>
+            <block wx:if="{{btnType==='normal'}}">
+                <view bindtap="_proxy" class="btn-cancel" data-wpy-evt="1014-4" wx:if="{{isShowCancel}}">{{cancelText}}</view>
+                <view bindtap="_proxy" class="btn-confirm" data-wpy-evt="1014-5">{{confirmText}}</view>
+            </block>
+            <slot name="btn-box" wx:elif="{{btnType==='custom'}}"></slot>
+        </view>
+    </view>
+</view>

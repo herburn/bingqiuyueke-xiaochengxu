@@ -1,0 +1,38 @@
+.choose-login .banner {
+    display: block;
+    width: 750rpx;
+    height: 372rpx;
+}
+
+.choose-login .line {
+    height: 10rpx;
+    background-image: linear-gradient(225deg,#4aa5d0 0%,#24c789 100%);
+}
+
+.choose-login .login-button {
+    margin: 0 auto;
+    width: 566rpx;
+    height: 100rpx;
+    line-height: 100rpx;
+    border-radius: 100rpx;
+    font-size: 36rpx;
+}
+
+.choose-login .wx-phone {
+    margin-top: 68rpx;
+}
+
+.choose-login .user-phone {
+    margin-top: 38rpx;
+    border: 1rpx solid #24c789;
+    color: #24c789;
+    background-color: #fff;
+}
+
+.choose-login .other-type {
+    margin-top: 122rpx;
+    line-height: 40rpx;
+    font-size: 26rpx;
+    color: #24c789;
+    text-align: center;
+}

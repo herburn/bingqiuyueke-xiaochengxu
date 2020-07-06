@@ -1,0 +1,14 @@
+{
+    "backgroundColor": "#FFFFFF",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "showModalBox": "/app/components/showModalBox/showModalBox",
+        "medal": "/app/components/courseOrder/medal/medal",
+        "newClassEnvelopes": "/app/components/courseOrder/newClassEnvelopes/newClassEnvelopes",
+        "newUserGuide": "/app/components/courseOrder/newUserGuide/newUserGuide",
+        "keep-card": "/miniprogram_npm/keep-ui-lite/lib/components/card/index",
+        "keep-avatar": "/miniprogram_npm/keep-ui-lite/lib/components/avatar/index",
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

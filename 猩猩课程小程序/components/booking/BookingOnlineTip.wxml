@@ -1,0 +1,12 @@
+<view class="online-tip">
+    <view class="title">
+    重要：请尽快保存并识别二维码获取上课方式
+  </view>
+    <view bindtap="_proxy" class="code-area" data-region-id-se="prevPicBtn" data-wpy-evt="1108-0" id="prevPicBtn">
+        <image class="code-img" src="{{codeUrl}}"></image>
+        <view class="text">点我放大查看</view>
+    </view>
+    <multi-line-text arrowStyle="{{arrowStyle}}" bind_init="_initComponent" class="multi-line-text" contentHeight="{{showHeight}}" paddingBottom="0">
+        <view class="{{'item-'+index}}" wx:for="{{trainingEffect}}" wx:key="index">{{item}}</view>
+    </multi-line-text>
+</view>

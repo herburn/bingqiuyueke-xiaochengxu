@@ -1,0 +1,10 @@
+<sm-modal bind_init="_initComponent" class="sm-model" id="rejectMsgModal">
+    <view class="content" slot="content">
+        <view class="tip">可能会错过以下通知：</view>
+        <view class="tip" style="margin-bottom: 32rpx;">(由于微信规则，需允许方可发送通知)</view>
+        <view class="template" wx:for="{{templates}}" wx:for-item="template" wx:key="templateId">
+      • 【{{template.templateName}}】{{template.dialogText}}；
+    </view>
+        <view class="tip">我们不会随意打扰，请放心接收！</view>
+    </view>
+</sm-modal>

@@ -1,0 +1,7 @@
+<navigatorBar backgroundColor="#584F60" color="#fff" navigationBarColor="white" title="其他登录方式"></navigatorBar>
+<view class="other-login">
+    <view class="title">其他登录方式说明</view>
+    <view class="explain">若你曾经通过 QQ、微博、Facebook注册过 Keep 账号，请前往 Keep App 绑定微信</view>
+    <view class="explain">如何绑定：请前往 Keep App「我」-「设置」-「账号管理和绑定」中绑定</view>
+    <image class="explain-img" mode="aspectFit" src="https://static1.keepcdn.com/2018/06/14/01/1528909223072_523x2353.png"></image>
+</view>

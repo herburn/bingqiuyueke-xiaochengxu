@@ -1,0 +1,6 @@
+<view class="sticky-wrapper {{[isPullDown?'sticky-wrapper-pullDown':'']}}" style=" {{'height:'+height+';'+'top:'+topPx+';'+'left:'+leftPx+';'+'z-index:'+zIndex+';'}}">
+    <view class="sticky-wrapper__inner {{[isFixed?'sticky-wrapper__inner-fixed':'']}}" style=" {{'top:'+topPx+';'+'left:'+leftPx+';'+'z-index:'+zIndex+';'}}">
+        <slot name="sticky"></slot>
+    </view>
+</view>
+<slot name="content"></slot>

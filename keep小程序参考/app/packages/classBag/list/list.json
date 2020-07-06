@@ -1,0 +1,7 @@
+{
+    "backgroundColor": "#FAFAFA",
+    "usingComponents": {
+        "showModalBox": "/app/components/showModalBox/showModalBox",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

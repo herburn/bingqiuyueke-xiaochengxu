@@ -1,0 +1,88 @@
+.prompt {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: fixed;
+    right: 328rpx;
+    bottom: 16rpx;
+    z-index: 700;
+    display: none;
+    width: 282rpx;
+    height: 79rpx;
+    border-radius: 8rpx;
+    box-shadow: 0 8rpx 24rpx rgba(0,0,0,0.32);
+    background-color: #fcc800;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.prompt.prompt-show {
+    display: flex;
+    animation: showTip .6s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+.prompt.prompt-hide {
+    display: flex;
+    visibility: hidden;
+    animation: hideTip .6s cubic-bezier(.4,0,.2,1) forwards;
+}
+
+.prompt .icon-triangle {
+    position: absolute;
+    right: 50%;
+    bottom: -12rpx;
+    z-index: 700;
+    width: 0;
+    height: 0;
+    transform: translateX(50%);
+    border-top: 17rpx solid #fcc800;
+    border-left: 14rpx solid transparent;
+    border-right: 14rpx solid transparent;
+}
+
+@-webkit-keyframes showTip {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes showTip {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes hideTip {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}
+
+@keyframes hideTip {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

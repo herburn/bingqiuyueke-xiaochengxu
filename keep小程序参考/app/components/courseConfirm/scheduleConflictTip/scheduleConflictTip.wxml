@@ -1,0 +1,23 @@
+<view bindtap="close" class="schedule-conflict-tip" id="conflict">
+    <view class="body">
+        <view class="title">你已约了该时段的其它课程</view>
+        <view class="conflict-schedule">
+            <view class="date">{{conflictScheduleInfo.scheduleStringDate}}</view>
+            <view class="schedule-wrap">
+                <image class="coach" mode="aspectFill" src="{{conflictScheduleInfo.coachImg+'?imageMogr2/thumbnail/260x/quality/95'}}" wx:if="{{conflictScheduleInfo.coachImg}}"></image>
+                <view class="schedule">
+                    <view class="name keep-text-overflow">{{conflictScheduleInfo.scheduleName}}</view>
+                    <view class="gym">{{conflictScheduleInfo.gymName}}</view>
+                </view>
+            </view>
+        </view>
+        <view catchtap="confirm" class="button confirm">
+            <text wx:if="{{conflictScheduleInfo.openedFrom==1}}">继续等位</text>
+            <text wx:else>继续约课</text>
+        </view>
+        <view catchtap="cancel" class="button cancel">
+            <text wx:if="{{conflictScheduleInfo.openedFrom==1}}">不等了</text>
+            <text wx:else>不约了</text>
+        </view>
+    </view>
+</view>

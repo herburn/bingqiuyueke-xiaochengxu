@@ -1,0 +1,5 @@
+<view class="page-loading page-loading-loading" wx:if="{{status==='loading'}}"></view>
+<view class="page-loading page-loading-failure" wx:elif="{{status==='failure'}}">
+    <img-tip bind_init="_initComponent" class="img-tip" imgSrc="/components/common/loading/images/find-signal.png" tipMsg="{{failText}}"></img-tip>
+    <page-resident-button bind_init="_initComponent" bindtapPageBtn="_proxy" class="reload-btn" data-wpy-evt="1012-0" items="{{items}}"></page-resident-button>
+</view>

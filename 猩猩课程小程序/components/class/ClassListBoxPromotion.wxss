@@ -1,0 +1,89 @@
+@import "../../__wuBaseWxss__/2.wxss";
+
+.schedule {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    width: 100%;
+    height: 168rpx;
+}
+
+.schedule .bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 168rpx;
+}
+
+.schedule .main {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 370rpx;
+    margin: 0 auto 0 152rpx;
+    padding: 40rpx 10rpx 40rpx 0;
+}
+
+.schedule .main .title,.schedule .main .highlight {
+    width: 100%;
+}
+
+.schedule .main .highlight {
+    font-size: 32rpx;
+    color: #fcc800;
+}
+
+.schedule .main .title {
+    font-size: 26rpx;
+    color: #c9c9cd;
+}
+
+.schedule .btn {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    align-self: center;
+    margin: 0 16rpx;
+}
+
+.schedule .btn-grey {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #c9c9cd;
+    background-color: #767678;
+}
+
+.schedule .btn-disable {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 120rpx;
+    height: 56rpx;
+    border-radius: 8rpx;
+    font-size: 26rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #333;
+    background-color: #fcc800;
+    color: #999;
+    background-color: #767678;
+}

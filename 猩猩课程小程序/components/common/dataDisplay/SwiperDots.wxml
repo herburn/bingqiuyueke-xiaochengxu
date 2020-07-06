@@ -1,0 +1,3 @@
+<view class="swiper-indicator">
+    <view class="swiper-indicator-dot {{[current===idx?'active':'']}}" style=" {{'background:'+(current===idx?dotActiveColor:dotColor)+';'}}" wx:for="{{count}}" wx:for-item="idx" wx:key="index"></view>
+</view>

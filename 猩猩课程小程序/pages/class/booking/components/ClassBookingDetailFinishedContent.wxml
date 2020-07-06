@@ -1,0 +1,15 @@
+<view class="finished-content">
+    <booking-detail-header bind_init="_initComponent" chatType="friend" detail="{{bookingDetail.header}}"></booking-detail-header>
+    <booking-detail-body bind_init="_initComponent" class="booking-detail-body" isShowTips="{{false}}" theme="dark">
+        <view class="body-top" slot="top">
+            <checkin-row bind_init="_initComponent" checkinInfo="{{bookingDetail.checkinInfo}}" class="row"></checkin-row>
+            <entry-password-row bind_init="_initComponent" class="row" value="{{bookingDetail.entryPassword}}" wx:if="{{bookingDetail.entryPassword}}"></entry-password-row>
+            <person-num-row bind_init="_initComponent" class="row person-num" value="{{bookingDetail.bookingCount+'人'}}"></person-num-row>
+            <booking-num-row bind_init="_initComponent" bookingNumberInfo="{{bookingDetail.bookingNumberInfo}}" class="row" wx:if="{{bookingDetail.bookingNumberInfo}}"></booking-num-row>
+            <course-photo-row bind_init="_initComponent" class="row" photoUrl="{{bookingDetail.schedulePhotoUrl}}" wx:if="{{bookingDetail.schedulePhotoUrl}}"></course-photo-row>
+        </view>
+        <view class="body-bottom" slot="bottom">
+            <price-row bind_init="_initComponent" needAmount="{{bookingDetail.price.actuallyPay}}" orderAmount="{{bookingDetail.price.totalPrice}}" payWay="{{bookingDetail.price.payTypeStr}}"></price-row>
+        </view>
+    </booking-detail-body>
+</view>

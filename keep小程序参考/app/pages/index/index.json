@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "courseTable": "/app/components/courseTable/courseTable",
+        "privilege": "/app/components/privilege/privilege",
+        "popupModal": "/app/components/popupModal/popupModal",
+        "prizeModal": "/app/components/prizeModal/prizeModal",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

@@ -1,0 +1,79 @@
+@import "../../../../__wuBaseWxss__/0.wxss";
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.store-item {
+    width: 702rpx;
+}
+
+.store-item .store-post {
+    position: relative;
+    height: 280rpx;
+    overflow: hidden;
+}
+
+.store-item .store-img {
+    width: 100%;
+    height: 280rpx;
+    border-radius: 16rpx 16rpx 0 0;
+    display: block;
+}
+
+.store-item .store-like {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.store-item .store-like .icon-heart-outlined,.store-item .store-like .icon-heart-filled {
+    padding: 24rpx;
+    font-size: 40rpx;
+    color: #f2f2f7;
+}
+
+.store-item .store-like .icon-heart-filled {
+    color: #fcc800;
+}
+
+.store-item .store-info {
+    position: relative;
+    z-index: 1;
+    border-radius: 0 0 16rpx 16rpx;
+    padding: 16rpx 24rpx;
+    background: #333;
+}
+
+.store-item .store-info .name-address {
+    width: 74%;
+}
+
+.store-item .store-info .store-name {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    height: 39rpx;
+    line-height: 39rpx;
+}
+
+.store-item .store-info .store-address {
+    font-size: 26rpx;
+    color: #767678;
+    height: 36rpx;
+    margin-top: 8rpx;
+    line-height: 36rpx;
+}
+
+.store-item .store-info .ad-wrapper {
+    position: absolute;
+    right: 16rpx;
+    bottom: 58rpx;
+}
+
+.store-item .store-info .gift-ad-icon {
+    display: block;
+    width: 40rpx;
+    height: 41rpx;
+}

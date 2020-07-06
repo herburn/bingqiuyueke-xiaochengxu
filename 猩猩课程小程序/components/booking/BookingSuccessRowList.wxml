@@ -1,0 +1,6 @@
+<view class="course-info">
+    <view class="sm-panel" wx:if="{{panel.value}}" wx:for="{{panels}}" wx:for-index="idx" wx:for-item="panel" wx:key="idx">
+        <view class="sm-panel-title">{{panel.label}}：</view>
+        <view class="sm-panel-content ellipsis">{{panel.value}}</view>
+    </view>
+</view>

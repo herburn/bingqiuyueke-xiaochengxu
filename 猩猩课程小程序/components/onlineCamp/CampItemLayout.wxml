@@ -1,0 +1,36 @@
+<view class="online-camp-item">
+    <view class="coach-avatar">
+        <face bind_init="_initComponent" extraData="{{extraData}}" face="{{schedule.faceUrl}}" navigatorData="{{schedule.faceNavigateData}}" navigatorPage="TrainerIndex"></face>
+        <view class="tag" wx:if="{{schedule.ifEverBooking}}">
+            <text class="badge-text">我曾约过</text>
+        </view>
+    </view>
+    <view bindtap="_proxy" class="schedule-info-wrapper" data-wpy-evt="1209-0">
+        <view class="schedule-info">
+            <view class="schedule-name">{{schedule.pageScheduleName}}</view>
+            <view class="schedule-section">{{schedule.sections}}</view>
+            <view class="schedule-extra-info">
+                <text class="highlight">{{schedule.timeRange}}</text>
+                <text>￥{{schedule.price/100}}</text>
+                <text wx:if="{{schedule.remainBookingCount>2}}">(上限{{schedule.traineeCount}}人)</text>
+                <text wx:else>
+                    <block wx:if="{{schedule.remainBookingCount<=0}}">(满员)</block>
+                    <block wx:else>(仅剩{{schedule.remainBookingCount}}席)</block>
+                </text>
+            </view>
+        </view>
+        <view class="schedule-options" wx:if="{{isModal}}">
+            <image class="disabled-select-img" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/disabled-select.png" wx:if="{{isDisableClick}}"></image>
+            <text class="iconfont {{isSelectedSchedule?'icon-tick-circle-filled':'icon-circle-outlined'}}" wx:else></text>
+        </view>
+        <view class="schedule-btns" wx:else>
+            <button catchtap="_proxy" class="schedule-btn" data-region-id-se="bookingBtn" data-wpy-evt="1209-1" hoverClass="btn-primary-hover-class" id="bookingBtn" wx:if="{{schedule.scheduleStatus===1||schedule.scheduleStatus===2}}">报名</button>
+            <button class="schedule-btn-grey" wx:if="{{schedule.scheduleStatus===3}}">满员</button>
+        </view>
+    </view>
+    <view class="badge">
+        <image class="status-icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/status-will-full.png" wx:if="{{schedule.scheduleStatus===2}}"></image>
+        <image class="status-icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation2/common/icon-full-mark.png" wx:if="{{schedule.scheduleStatus===3}}"></image>
+        <image class="status-icon" src="https://img.supermonkey.com.cn/webapp/monkey-reservation/camp_new_icon.png" wx:if="{{isShowNewBadge}}"></image>
+    </view>
+</view>

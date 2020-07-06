@@ -1,0 +1,12 @@
+<view class="select-one-filter">
+    <scroll-view class="scroll-view" scrollY="{{true}}">
+        <view>
+            <view bindtap="_proxy" class="btn-item {{[item.isActive?'btn-item-active':'']}}" data-wpy-evt="1186-0" data-wpytap-a="{{item}}" wx:for="{{data[0]}}" wx:key="value">
+        {{item.label}}
+      </view>
+        </view>
+        <view bindtap="_proxy" class="checkbox-item" data-wpy-evt="1186-1" data-wpytap-a="{{item}}" wx:for="{{data[1]}}" wx:key="value">
+            <view class="iconfont {{[item.isActive?'icon-tick-circle-filled':'',!item.isActive?'icon-circle-outlined':'']}}"></view>{{item.label}}
+    </view>
+    </scroll-view>
+</view>

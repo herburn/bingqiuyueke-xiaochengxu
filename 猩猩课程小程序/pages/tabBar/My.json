@@ -1,0 +1,26 @@
+{
+    "component": true,
+    "usingComponents": {
+        "unauthorized-msg": "./../../components/subscribeMsg/ModalUnauthorizedMsg",
+        "reject-msg": "./../../components/subscribeMsg/ModalRejectMsg",
+        "modal-subscribe-msg-guide1": "./../../components/subscribeMsg/ModalSubscribeMsgGuide1",
+        "modal-subscribe-msg-guide2": "./../../components/subscribeMsg/ModalSubscribeMsgGuide2",
+        "newer-guide": "./../../components/course/CourseListTooltipNewerGuide",
+        "page-loading": "./../../components/common/loading/LoadingPage",
+        "show-toast": "./../../components/common/feedback/Toast",
+        "show-modal": "./../../components/common/feedback/Modal",
+        "show-add-wechat-modal": "./../../components/common/feedback/ModalAddWeChat",
+        "register-user": "./../../components/common/feedback/ModalRegisterUser",
+        "vip-equity-pop": "./../../components/common/feedback/AlertVipRights",
+        "ticket-prompt": "./../../components/common/feedback/TooltipTicket",
+        "business-service-modal": "./../../components/common/feedback/AlertBusinessService",
+        "personal-expire-prompt": "./../../components/common/feedback/TooltipPersonal",
+        "show-action-sheet": "./../../components/common/dataEntry/ActionSheet",
+        "show-picker-view": "./../../components/common/dataEntry/PickerView",
+        "face": "./../../components/common/dataDisplay/Face",
+        "copy-right-bottom": "./../../components/common/other/CopyRightBottom",
+        "vip-upgrade-modal": "./../../components/common/other/ModalVIPUpgrade",
+        "navigator-bar": "./../../components/common/navigation/NavigatorBar",
+        "click-behavior": "./../../components/common/enrichment/ClickBehavior"
+    }
+}

@@ -1,0 +1,38 @@
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.item-select-wrapper {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    padding: 24rpx 24rpx 0;
+    flex-wrap: wrap;
+}
+
+.item-select-wrapper .item {
+    font-size: 26rpx;
+    color: #f2f2f7;
+    height: 66rpx;
+    margin: 0 24rpx 24rpx 0;
+    border-radius: 8rpx;
+    text-align: center;
+    line-height: 66rpx;
+    background: #767678;
+}
+
+.item-select-wrapper .item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.item-select-wrapper .active {
+    color: #333;
+    background: #fcc800;
+}

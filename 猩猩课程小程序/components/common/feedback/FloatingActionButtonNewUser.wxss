@@ -1,0 +1,76 @@
+.new-user-prompt .icon-container {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: fixed;
+    right: 32rpx;
+    bottom: 170rpx;
+    z-index: 700;
+    width: 88rpx;
+    height: 88rpx;
+}
+
+.new-user-prompt .icon-container .fixed-prompt-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.new-user-prompt .mask-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 800;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.64);
+    z-index: 700;
+}
+
+.new-user-prompt .mask-container .container {
+    position: relative;
+    width: 700rpx;
+    height: 820rpx;
+}
+
+.new-user-prompt .mask-container .container .new-user-img {
+    position: absolute;
+    left: -25rpx;
+    width: 750rpx;
+    height: 862rpx;
+}
+
+.new-user-prompt .mask-container .container .icon-close {
+    position: absolute;
+    top: -48rpx;
+    right: 0;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.new-user-prompt .mask-container .container.special-ratio {
+    width: 700rpx;
+    height: 960rpx;
+}
+
+.new-user-prompt .mask-container .container.special-ratio .new-user-img {
+    left: -24rpx;
+    width: 745rpx;
+    height: 1020rpx;
+}
+
+.new-user-prompt .mask-container .container.special-ratio .icon-close {
+    right: 0;
+}

@@ -1,0 +1,140 @@
+@import "../../__wuBaseWxss__/0.wxss";
+
+.booking-success-main {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin-top: 125rpx;
+    border-radius: 16rpx;
+    padding: 0 0 24rpx;
+    font-size: 28rpx;
+    background-color: #333;
+}
+
+.booking-success-main .add-desc {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.booking-success-main .right-icon {
+    margin-left: 0;
+    font-size: 36rpx;
+    color: #767678;
+}
+
+.class-tips {
+    font-size: 28rpx;
+    color: #f2f2f7;
+    position: absolute;
+    top: 24rpx;
+    z-index: 1;
+    line-height: 39rpx;
+}
+
+.class-tips.left {
+    left: 24rpx;
+}
+
+.class-tips.right {
+    right: 24rpx;
+}
+
+.coach-info {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 8rpx;
+    padding-top: 84rpx;
+    font-size: 26rpx;
+    color: #767678;
+}
+
+.coach-info .coach-avatar {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.coach-info .coach-name {
+    margin-bottom: 8rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.course-extra {
+    margin-top: 40rpx;
+    padding: 0 24rpx;
+    text-align: center;
+}
+
+.course-extra .course-tips {
+    margin-bottom: 8rpx;
+    font-size: 22rpx;
+    color: #767678;
+}
+
+.course-extra .course-super-value {
+    font-size: 22rpx;
+    color: #f2f2f7;
+}
+
+.course-btn-group {
+    padding: 24rpx 24rpx 0;
+}
+
+.course-btn-group .btn-back-booking {
+    margin-bottom: 40rpx;
+    font-size: 28rpx;
+    color: #f2f2f7;
+    text-align: center;
+}
+
+.course-btn-group .btn-check-booking {
+    box-sizing: border-box;
+    height: 106rpx;
+    border-radius: 16rpx;
+    line-height: 106rpx;
+    font-size: 36rpx;
+    color: #333;
+    text-align: center;
+    background-color: #fcc800;
+}
+
+.course-btn-group .btn-check-booking-grey {
+    color: #bbb;
+    background-color: #767678;
+}
+
+.course-btn-group .btn-check-booking-disable {
+    color: #767678;
+    background-color: #2d2d2d;
+}
+
+.sep-line {
+    height: 0;
+    border-bottom: 2rpx solid rgba(118,118,120,0.1);
+    margin-top: 32rpx;
+}
+
+.online-tip {
+    margin-top: 32rpx;
+    padding: 0 24rpx;
+}

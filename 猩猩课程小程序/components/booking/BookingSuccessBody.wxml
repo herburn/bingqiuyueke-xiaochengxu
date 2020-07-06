@@ -1,0 +1,28 @@
+<view class="booking-success-main">
+    <view bindtap="_proxy" class="class-tips left" data-wpy-evt="1063-0" wx:if="{{detail.tipUrl&&!isFirstBooking}}">课程Tips
+  </view>
+    <view bindtap="_proxy" class="class-tips right" data-wpy-evt="1063-1" wx:if="{{isFirstBooking}}">首约必读</view>
+    <view class="coach-info">
+        <view class="coach-avatar">
+            <face bind_init="_initComponent" face="{{detail.face}}" size="large"></face>
+        </view>
+        <view class="coach-name">{{detail.name}}</view>
+        <view bindtap="_proxy" class="add-desc" data-course-type-se="{{courseType}}" data-region-id-se="addFriendBtn" data-wpy-evt="1063-2" id="addFriendBtn">
+      {{chatText}}
+      <text class="iconfont icon-arrow-right right-icon"></text>
+        </view>
+    </view>
+    <panel-list bind_init="_initComponent" panels="{{filteredPanels}}"></panel-list>
+    <row-subscribe bind_init="_initComponent" courseType="{{courseType}}" navigateInfo="{{subscribeNavigateInfo}}"></row-subscribe>
+    <booking-online-tip arrowStyle="display:none;" bind_init="_initComponent" class="online-tip" codeUrl="{{detail.qrcode}}" showHeight="100%" wx:if="{{detail.campType===3}}"></booking-online-tip>
+    <view class="sep-line" wx:if="{{detail.campType===3}}"></view>
+    <view class="course-extra">
+        <view class="course-tips" wx:if="{{detail.note}}">须知：{{detail.note}}</view>
+        <view class="course-super-value">每节课程签到成功后均可获得100点Super值！</view>
+    </view>
+    <view class="course-btn-group">
+        <view bindtap="_proxy" class="btn-back-booking" data-course-type-se="{{courseType}}" data-region-id-se="backTbn" data-wpy-evt="1063-3" id="backTbn">返回继续预约</view>
+        <button bindtap="_proxy" class="btn-check-booking" data-course-type-se="{{courseType}}" data-region-id-se="reservationRecordsBtn" data-wpy-evt="1063-4" hoverClass="active-opacity" id="reservationRecordsBtn">查看我的预约</button>
+    </view>
+    <promotion bind_init="_initComponent" positionInfo="{{positionInfo}}"></promotion>
+</view>

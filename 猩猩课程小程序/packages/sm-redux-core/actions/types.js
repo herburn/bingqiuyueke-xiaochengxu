@@ -1,0 +1,27 @@
+Object.defineProperty(exports, "__esModule", {
+    value: !0
+}), exports.FETCH_STATUS_PUT = exports.FETCH_MUTEX = exports.FETCH_CANCEL = exports.FETCH_FAILURE = exports.FETCH_SUCCESS = exports.FETCH_LOADING = void 0;
+
+var FETCH_LOADING = "FETCH_LOADING";
+
+exports.FETCH_LOADING = FETCH_LOADING;
+
+var FETCH_SUCCESS = "FETCH_SUCCESS";
+
+exports.FETCH_SUCCESS = FETCH_SUCCESS;
+
+var FETCH_FAILURE = "FETCH_FAILURE";
+
+exports.FETCH_FAILURE = FETCH_FAILURE;
+
+var FETCH_CANCEL = "FETCH_CANCEL";
+
+exports.FETCH_CANCEL = FETCH_CANCEL;
+
+var FETCH_MUTEX = "FETCH_MUTEX";
+
+exports.FETCH_MUTEX = FETCH_MUTEX;
+
+var FETCH_STATUS_PUT = "fetch/status/PUT";
+
+exports.FETCH_STATUS_PUT = FETCH_STATUS_PUT;

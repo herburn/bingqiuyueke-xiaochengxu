@@ -1,0 +1,19 @@
+.num-choose {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    padding: 32rpx 24rpx 8rpx 24rpx;
+}
+
+.num-choose .num-title {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    height: 56rpx;
+    line-height: 56rpx;
+}

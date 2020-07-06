@@ -1,0 +1,128 @@
+@import "../../../../__wuBaseWxss__/0.wxss";
+
+.camp-list-container {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.new-camp-btn {
+    margin-top: 24rpx;
+    border-radius: 16rpx;
+    padding: 18rpx 24rpx;
+    background-color: #333;
+}
+
+.new-camp-btn__text {
+    font-size: 28rpx;
+    color: #c9c9cd;
+    position: relative;
+    line-height: 36rpx;
+}
+
+.new-camp-btn__text::after {
+    position: absolute;
+    top: 0;
+    right: -3rpx;
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 100%;
+    background-color: #fb6666;
+    content: '';
+}
+
+.empty-camp-title {
+    font-size: 28rpx;
+    color: #767678;
+    position: relative;
+    margin-top: 48rpx;
+    margin-bottom: 24rpx;
+}
+
+.empty-camp-title::before,.empty-camp-title::after {
+    position: absolute;
+    content: '';
+    height: 2rpx;
+    width: 160rpx;
+    background-color: #767678;
+    transform: translateY(-50%);
+}
+
+.empty-camp-title::before {
+    top: 50%;
+    left: -176rpx;
+}
+
+.empty-camp-title::after {
+    top: 50%;
+    right: -176rpx;
+}
+
+.camp-list,.online-camp-content {
+    width: 702rpx;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.camp-empty {
+    padding-top: 40rpx;
+    font-size: 28rpx;
+    color: #f2f2f7;
+}
+
+.online-camp-list {
+    width: 702rpx;
+    margin-top: 48rpx;
+}
+
+.online-camp-list .title-row {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.online-camp-list .title-row .left {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 32rpx;
+    color: #fcc800;
+}
+
+.online-camp-list .title-row .left .iconfont {
+    margin-right: 8rpx;
+    font-size: 45rpx;
+}
+
+.online-camp-list .title-row .right {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 28rpx;
+    color: #f2f2f7;
+}
+
+.online-camp-list .title-row .right .iconfont {
+    margin-left: 8rpx;
+    font-size: 24rpx;
+}

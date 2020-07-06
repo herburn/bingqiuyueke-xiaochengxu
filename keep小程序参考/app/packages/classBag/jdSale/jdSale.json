@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "keep-button": "/miniprogram_npm/keep-ui-lite/lib/components/button/index",
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    }
+}

@@ -1,0 +1,5 @@
+<navigator-bar bind_init="_initComponent" class="navigator-bar" title="超级猩猩"></navigator-bar>
+<view class="content">
+    <img-tip bind_init="_initComponent" class="img-tip" imgSrc="https://img.supermonkey.com.cn/webapp/monkey-reservation2/page-status-icon/door.png" tipMsg="登录后方可继续"></img-tip>
+    <button bindgetuserinfo="_proxy" class="button" data-wpy-evt="1006-0" openType="getUserInfo">微信登录</button>
+</view>

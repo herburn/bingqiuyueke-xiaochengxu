@@ -1,0 +1,4 @@
+<button appParameter="{{appParameter}}" bindcontact="bindcontact" binderror="binderror" bindgetphonenumber="bindgetphonenumber" bindgetuserinfo="bindgetuserinfo" bindtap="bindclick" class="custom-class {{utils.bem( 'button',[size,shape] )}} {{utils.bem( border?'button--border':'button',[type] )}} {{disabled?'disabled':''}}" formType="{{formType}}" hoverClass="{{(border?'keep-button--border--':'keep-button--')+type+'--active'}}" openType="{{openType}}" sendMessageImg="{{sendMessageImg}}" sendMessagePath="{{sendMessagePath}}" sendMessageTitle="{{sendMessageTitle}}" sessionFrom="{{sessionFrom}}" showMessageCard="{{showMessageCard}}">
+    <slot></slot>
+</button>
+<wxs module="utils" src="../../utils/utils.wxs" />

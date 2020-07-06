@@ -1,0 +1,14 @@
+<view class="class-schedule">
+    <face bind_init="_initComponent" class="face" extraData="{{schedule.trainerInfo.extraData}}" face="{{schedule.trainerInfo.face}}" isAllowNavigate="{{isAllowTrainerNavigate}}" navigatorData="{{schedule.trainerInfo.navigatorData}}" navigatorPage="{{schedule.trainerInfo.navigatorPage}}"></face>
+    <view bindtap="_proxy" class="main" data-region-id-se="midClassListClassEntity" data-schedule-se="{{schedule}}" data-wpy-evt="1223-0" id="scheduleMid">
+        <view class="title ellipsis">{{schedule.scheduleInfo.className}}</view>
+        <view class="content">
+            <view class="period">{{schedule.scheduleInfo.period}}</view>
+            <view class="price">{{schedule.scheduleInfo.price}}</view>
+        </view>
+        <view class="tags ellipsis">{{schedule.scheduleInfo.tagText}}</view>
+    </view>
+    <view bindtap="_proxy" class="btn {{[!schedule.btnInfo.navigatorPage?'btn-disable':'']}}" data-collect-data-sm="{{schedule.collectData}}" data-region-id-se="btnClassListClassEntity" data-region-id-sm="btnClassListClassEntity" data-schedule-se="{{schedule}}" data-wpy-evt="1223-1" hoverClass="{{schedule.btnInfo.navigatorPage?'btn-primary-hover-class':''}}" id="scheduleBtn">{{schedule.btnInfo.text}}
+  </view>
+    <image class="mark" lazyLoad="{{true}}" src="{{schedule.markInfo.src}}"></image>
+</view>

@@ -1,0 +1,24 @@
+{
+    "component": true,
+    "usingComponents": {
+        "unauthorized-msg": "./../../../components/subscribeMsg/ModalUnauthorizedMsg",
+        "reject-msg": "./../../../components/subscribeMsg/ModalRejectMsg",
+        "modal-subscribe-msg-guide1": "./../../../components/subscribeMsg/ModalSubscribeMsgGuide1",
+        "modal-subscribe-msg-guide2": "./../../../components/subscribeMsg/ModalSubscribeMsgGuide2",
+        "page-loading": "./../../../components/common/loading/LoadingPage",
+        "show-toast": "./../../../components/common/feedback/Toast",
+        "show-modal": "./../../../components/common/feedback/Modal",
+        "show-add-wechat-modal": "./../../../components/common/feedback/ModalAddWeChat",
+        "register-user": "./../../../components/common/feedback/ModalRegisterUser",
+        "show-action-sheet": "./../../../components/common/dataEntry/ActionSheet",
+        "show-picker-view": "./../../../components/common/dataEntry/PickerView",
+        "navigator-bar": "./../../../components/common/navigation/NavigatorBar",
+        "agreement": "./../../../components/course/CourseTextAgreement",
+        "text-render-paragraph": "./../../../components/common/dataDisplay/TextRenderParagraph",
+        "booking-detail-header": "./../../../components/booking/BookingDetailHeader",
+        "booking-detail-body": "./../../../components/booking/BookingDetailBody",
+        "refund-status": "./../../../components/booking/BookingDetailRowRefundStatus",
+        "booking-detail-price": "./../../../components/booking/BookingDetailRowPrice",
+        "personal-rule-tip": "./../../../components/personal/PersonalTextRuleTip"
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "component": true,
+    "usingComponents": {
+        "class-list": "./ClassList",
+        "banner-class-filter": "./ClassListPopoverFilter",
+        "class-filter": "./../common/feedback/PopoverLayoutFilter",
+        "bottom-text": "./../common/dataDisplay/TextBottom",
+        "select-two-filter": "./../common/combination/SelectColumnTwo",
+        "select-one-filter": "./../common/combination/SelectColumnOne"
+    }
+}

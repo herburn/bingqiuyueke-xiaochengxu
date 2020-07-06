@@ -1,0 +1,19 @@
+{
+    "name": "keepland",
+    "version": "4.4.2",
+    "description": "Keepland 小程序",
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+        "qupload": "node ./core/cli/qshell.js",
+        "less": "node ./core/cli/wxss.js",
+        "dev": "node ./core/cli/pug.js"
+    },
+    "dependencies": {
+        "jwt-decode": "^2.2.0",
+        "keep-ui-lite": "^1.1.1",
+        "keep-wechatapp-common-header": "^1.1.0",
+        "keep-wechatapp-sensorsdata": "^1.1.0",
+        "moment": "^2.24.0"
+    }
+}

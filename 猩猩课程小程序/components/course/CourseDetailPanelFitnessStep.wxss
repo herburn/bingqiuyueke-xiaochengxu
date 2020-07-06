@@ -1,0 +1,48 @@
+.content-radius-box {
+    box-sizing: border-box;
+    padding: 24rpx;
+    border-radius: 16rpx;
+    background-color: #333;
+}
+
+.fitness-step {
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.fitness-step-item {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 654rpx;
+    height: 64rpx;
+    border-radius: 16rpx;
+    font-size: 30rpx;
+    color: #ececec;
+    background-color: #242424;
+}
+
+.fitness-step-item .highlight {
+    padding-right: 14rpx;
+    font-size: 32rpx;
+    font-weight: bolder;
+    color: #fcc800;
+}
+
+.fitness-step-arrow {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    width: 36rpx;
+    height: 16rpx;
+    margin: 20rpx auto;
+}

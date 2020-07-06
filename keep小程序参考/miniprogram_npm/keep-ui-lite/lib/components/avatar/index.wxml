@@ -1,0 +1,4 @@
+<view bindtap="previewAvatar" class="custom-class keep-avatar" style="width: {{size}}rpx;height: {{size}}rpx;">
+    <image mode="aspectFill" src="{{src}}?imageMogr2/thumbnail/{{size}}x/quality/95" wx:if="{{src}}"></image>
+    <view class="keep-avatar--border" style="border-color: {{borderColor}};border-width: {{borderWidth}}rpx;" wx:if="{{borderWidth>0}}"></view>
+</view>

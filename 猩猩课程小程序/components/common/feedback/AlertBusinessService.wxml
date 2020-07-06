@@ -1,0 +1,9 @@
+<view>
+    <view class="service-mask" wx:if="{{isServiceModalShow}}">
+        <modal-open-custom-service bind_init="_initComponent" data="{{detail.chatSessionId}}" id="modal-open-custom-service">
+            <view class="service-img-container" slot="content">
+                <image class="service-img" src="http://img.supermonkey.com.cn/webapp/monkey-reservation2/common/business-service.png"></image>
+            </view>
+        </modal-open-custom-service>
+    </view>
+</view>

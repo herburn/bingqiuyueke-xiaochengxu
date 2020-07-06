@@ -1,0 +1,9 @@
+.service-img-container {
+    padding: 24rpx 42rpx;
+}
+
+.service-img {
+    width: 437rpx;
+    height: 360rpx;
+    display: block;
+}

@@ -1,0 +1,33 @@
+.preview-privilege-tip {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 17;
+    padding: 0 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 74rpx;
+    background-color: #fffcf6;
+    line-height: 1;
+    transition: transform 0.4s;
+    transition: transform 0.4s,-webkit-transform 0.4s;
+}
+
+.preview-privilege-tip .title {
+    font-size: 24rpx;
+    background-image: linear-gradient(to right,#24c789,#4aa5d0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.preview-privilege-tip .expire {
+    font-size: 22rpx;
+    line-height: 24rpx;
+    color: rgba(0,0,0,0.4);
+}
+
+.preview-privilege-tip.moved {
+    transform: translateY(100%);
+}

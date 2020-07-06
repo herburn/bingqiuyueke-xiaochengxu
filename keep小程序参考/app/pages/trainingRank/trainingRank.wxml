@@ -1,0 +1,4 @@
+<navigatorBar backgroundColor="#584f60" navigationBarColor="white" wx:if="{{!isNew}}"></navigatorBar>
+<view class="container">
+    <web-view src="{{url}}"></web-view>
+</view>

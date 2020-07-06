@@ -1,0 +1,4 @@
+<view class="custom-class {{utils.bem('badge',type)}}" style="width: {{size}}rpx; height: {{size}}rpx; font-size: {{fontSize}}rpx;">
+    <slot></slot>
+</view>
+<wxs module="utils" src="../../utils/utils.wxs" />

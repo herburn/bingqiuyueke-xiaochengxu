@@ -1,0 +1,16 @@
+<navigatorBar></navigatorBar>
+<view class="course-screen {{iphonex?'iphonex':''}}" wx:if="{{dataList}}">
+    <view class="screen-head">课程筛选</view>
+    <view wx:for="{{dataList}}" wx:for-index="key" wx:key="{{key}}">
+        <view class="screen-title">{{keys[key]}}</view>
+        <view class="time">
+            <view bindtap="selectItem" class="{{el.selected?'selected':''}}" data-index="{{idx}}" data-key="{{key}}" wx:for="{{item}}" wx:for-index="idx" wx:for-item="el" wx:key="{{idx}}">
+                <text>{{el.text}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="btn">
+        <view bindtap="reset">重置</view>
+        <view bindtap="submit" class="{{classCount?'':'gray'}}">查看{{classCount}}节课程</view>
+    </view>
+</view>

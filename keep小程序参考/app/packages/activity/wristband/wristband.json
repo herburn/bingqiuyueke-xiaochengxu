@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "navigatorBar": "/app/components/navigatorBar/navigatorBar"
+    },
+    "backgroundColor": "#584F60"
+}
