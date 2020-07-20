@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "pages/index_ok/index_ok",
+    "pages/index/index",
+    
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#0093DD",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "约课"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
